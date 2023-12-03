@@ -1,5 +1,19 @@
 (kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid d6d9a2ef-9c37-4d0e-993e-984d2993d871)
+
   (paper "A4")
-  (lib_symbols)
-  (symbol_instances)
+
+  (title_block
+    (title "充电和射频")
+    (date "2023-12-03")
+  )
+
+  (lib_symbols
+  )
+
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
 )
