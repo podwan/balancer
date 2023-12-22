@@ -1,4 +1,4 @@
-21668842213797942
+21670545384076153
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -90194,10 +90194,17 @@ varistor
 0
 2
 2
-dp
+balancerDriver
 IC_TPS61088RHLR
 
 
 0
 29
 29
+balancerDriver
+QFN-24_L4.0-W4.0-P0.50-BL-EP2.7
+
+
+0
+25
+25
