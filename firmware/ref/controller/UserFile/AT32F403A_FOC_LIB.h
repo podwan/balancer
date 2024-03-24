@@ -1,13 +1,13 @@
 //***************************************************************************************
-// ÇëÎð¸Ä¶¯±¾ÎÄ¼þ
-// ÇëÎð¸Ä¶¯±¾ÎÄ¼þ
-// ÇëÎð¸Ä¶¯±¾ÎÄ¼þ
+// ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
+// ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
+// ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
 
-// M1_Foc.Cali_flag = 0 µç»úÍ£Ö¹
-// M1_Foc.Cali_flag = 1 µç»úÕý³£±Õ»·²¢Ö´ÐÐM1_Control()º¯Êý
-// M1_Foc.Cali_flag = 2 µç½Ç¶ÈÐ£×¼£¬2ÃëºóM1_Foc.Cali_Status = 1£¬M1_Foc.Cali_flag = 1;
-// M1_Foc.Cali_flag = 3 µç»ú¿ª»·Ðý×ª£¨Ç¿ÍÏÐý×ª£©M1_Foc.Cali_Status = 3;
-// M2µç»úÍ¬ÉÏ
+// M1_Foc.Cali_flag = 0 ï¿½ï¿½ï¿½Í£Ö¹
+// M1_Foc.Cali_flag = 1 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ»ï¿½ï¿½ï¿½Ö´ï¿½ï¿½M1_Control()ï¿½ï¿½ï¿½ï¿½
+// M1_Foc.Cali_flag = 2 ï¿½ï¿½Ç¶ï¿½Ð£×¼ï¿½ï¿½2ï¿½ï¿½ï¿½M1_Foc.Cali_Status = 1ï¿½ï¿½M1_Foc.Cali_flag = 1;
+// M1_Foc.Cali_flag = 3 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½M1_Foc.Cali_Status = 3;
+// M2ï¿½ï¿½ï¿½Í¬ï¿½ï¿½
 
 //***************************************************************************************
 
@@ -17,41 +17,41 @@
 #include "at32f403a_407.h"
 #include "math.h"
 
-typedef struct 
+typedef struct
 {
 	uint16_t ThetaOffset;
 	uint16_t Cali_flag;
 	uint16_t Cali_Status;
-	
+
 	uint16_t Encoder_data;
 	float Angle;
-	
+
 	float SinValue;
 	float CosValue;
-	
+
 	float Vd;
-  float Vq;
+	float Vq;
 
-  float Valpha;
-  float Vbeta;
+	float Valpha;
+	float Vbeta;
 
-  float Ia;
-  float Ib;
-  float Ic;
+	float Ia;
+	float Ib;
+	float Ic;
 
-  float Ialpha;
-  float Ibeta;
+	float Ialpha;
+	float Ibeta;
 
-  float Id;
-  float Iq;
-	
+	float Id;
+	float Iq;
+
 	float theta;
-	
+
 	int8_t temp;
-}FocData_t;
+} FocData_t;
 
 typedef struct
-{ 
+{
 	float Kp;
 	float Ki;
 	float Kd;
@@ -72,18 +72,18 @@ typedef struct
 
 	float PID_Out;
 	float OutLimit;
-}PID_Structure_t;
+} PID_Structure_t;
 
 extern PID_Structure_t SpeedPID;
 
 extern FocData_t M1_Foc;
 extern FocData_t M2_Foc;
 
-void M1_Control(void); //ÐèÒª×Ô¼ºÐ´Cº¯Êý
-void M2_Control(void); //ÐèÒª×Ô¼ºÐ´Cº¯Êý
+void M1_Control(void); // ï¿½ï¿½Òªï¿½Ô¼ï¿½Ð´Cï¿½ï¿½ï¿½ï¿½
+void M2_Control(void); // ï¿½ï¿½Òªï¿½Ô¼ï¿½Ð´Cï¿½ï¿½ï¿½ï¿½
 
 void M1_FOC_handle(uint16_t EncoderValue);
 void M2_FOC_handle(uint16_t EncoderValue);
-float PID_Adjust_S(PID_Structure_t* handle,float Given,float Feedback,float RC_Speed);
-	
+float PID_Adjust_S(PID_Structure_t *handle, float Given, float Feedback, float RC_Speed);
+
 #endif
