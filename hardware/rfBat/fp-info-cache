@@ -1,4 +1,4 @@
-23157511786000790
+23166076112598638
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -94766,6 +94766,13 @@ BAT-SMD_BH-18650-B1BA007
 4
 4
 bat_rf
+CONN-SMD_3P-P1.00_WAFER-SH1.0-3PWB
+
+
+0
+5
+5
+bat_rf
 CONN-SMD_4P-P2.54_XH2.54-4AB_vertical
 
 
@@ -94829,6 +94836,13 @@ LED-SMD_4P-L4.0-W1.7_M4020-03003-RGB-862-001
 4
 4
 bat_rf
+PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL
+
+
+0
+9
+9
+bat_rf
 SOP8-PAD
 
 
@@ -94870,3 +94884,24 @@ WIRELM-SMD_ESP8684-WROOM0-1C
 0
 24
 24
+bat_rf
+batCase_18650x2
+
+
+0
+4
+4
+encoder
+PG-DSO-8_L5.0-W4.0-P1.27-LS6.0-BL
+
+
+0
+8
+8
+kicadLib
+CONN-SMD_6P-P1.00_XYECONN_XY-SH1.0-6A61
+
+
+0
+8
+8

@@ -1,6 +1,0 @@
-{
-    "idf.adapterTargetName": "esp32c2",
-    "idf.openOcdConfigs": [
-        "board/esp32c2-ftdi.cfg"
-    ]
-}

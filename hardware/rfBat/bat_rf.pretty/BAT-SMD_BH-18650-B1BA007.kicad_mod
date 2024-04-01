@@ -6,6 +6,7 @@
 	(property "Reference" "REF**"
 		(at 0 -3.207 0)
 		(layer "F.SilkS")
+		(hide yes)
 		(uuid "e0561c74-7307-4a97-b129-231383ba3a64")
 		(effects
 			(font
@@ -18,6 +19,7 @@
 	(property "Value" "std:b34bcd0164c14f5da766b2e654f5ed51"
 		(at 0 -0.667 0)
 		(layer "F.Fab")
+		(hide yes)
 		(uuid "e9e00862-df05-4f33-9c7f-91efdbaa1674")
 		(effects
 			(font
@@ -205,28 +207,6 @@
 		(uuid "6d069382-76a7-42a3-a282-8c212e50c5b6")
 	)
 	(fp_circle
-		(center -27.7 0)
-		(end -26.95 0)
-		(stroke
-			(width 1.5)
-			(type solid)
-		)
-		(fill none)
-		(layer "Dwgs.User")
-		(uuid "0ada647f-bac9-48df-abde-aa019ec7bac3")
-	)
-	(fp_circle
-		(center 27.7 0)
-		(end 28.45 0)
-		(stroke
-			(width 1.5)
-			(type solid)
-		)
-		(fill none)
-		(layer "Dwgs.User")
-		(uuid "9bf475a9-61e8-4681-b81c-3e82cea71b4a")
-	)
-	(fp_circle
 		(center 35.93 17.4)
 		(end 36.323 17.4)
 		(stroke
@@ -335,20 +315,6 @@
 		)
 		(layer "F.CrtYd")
 		(uuid "ff8ec081-5843-48b7-8ab7-bce7a036c319")
-	)
-	(pad "" np_thru_hole circle
-		(at -27.7 0)
-		(size 3.2 3.2)
-		(drill 3.2)
-		(layers "*.Cu" "*.Mask")
-		(uuid "af35bdcf-5c81-4fe8-bd56-9118f3f86706")
-	)
-	(pad "" np_thru_hole circle
-		(at 27.7 0)
-		(size 3.2 3.2)
-		(drill 3.2)
-		(layers "*.Cu" "*.Mask")
-		(uuid "8ba4ea14-22c2-4cae-be18-86bd0772e58b")
 	)
 	(pad "" np_thru_hole circle
 		(at 35.93 17.4)

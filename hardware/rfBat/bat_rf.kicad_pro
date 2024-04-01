@@ -193,7 +193,8 @@
         1.0,
         1.2,
         1.5,
-        2.0
+        2.0,
+        2.2
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -237,6 +238,10 @@
         {
           "diameter": 0.8,
           "drill": 0.5
+        },
+        {
+          "diameter": 1.4,
+          "drill": 0.8
         }
       ],
       "zones_allow_external_fillets": false
@@ -583,13 +588,55 @@
           "label": "DNP",
           "name": "${DNP}",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Device",
+          "name": "Sim.Device",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Type",
+          "name": "Sim.Type",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "SuppliersPartNumber",
+          "name": "SuppliersPartNumber",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "uuid",
+          "name": "uuid",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "描述",
+          "name": "Description",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
-      "name": "Grouped By Value",
+      "name": "",
       "sort_asc": true,
-      "sort_field": "位号"
+      "sort_field": "Reference"
     },
     "connection_grid_size": 50.0,
     "drawing": {
