@@ -7286,7 +7286,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "kicadLib:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
+		(property "Footprint" "balancerDriver:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
 			(at 312.2676 91.44 0)
 			(effects
 				(font
@@ -7732,7 +7732,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "kicadLib:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
+		(property "Footprint" "balancerDriver:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
 			(at 316.0776 203.2 0)
 			(effects
 				(font
@@ -7976,7 +7976,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "kicadLib:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
+		(property "Footprint" "balancerDriver:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
 			(at 316.0776 170.18 0)
 			(effects
 				(font
@@ -8561,7 +8561,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "kicadLib:CONN-TH_MR30PW-F"
+		(property "Footprint" "balancerDriver:CONN-TH_MR30PW-F"
 			(at 364.49 70.866 0)
 			(effects
 				(font
@@ -9458,7 +9458,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "kicadLib:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
+		(property "Footprint" "balancerDriver:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
 			(at 312.2676 58.42 0)
 			(effects
 				(font
@@ -9771,7 +9771,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "kicadLib:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
+		(property "Footprint" "balancerDriver:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
 			(at 189.0776 92.71 0)
 			(effects
 				(font
@@ -9880,7 +9880,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "kicadLib:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
+		(property "Footprint" "balancerDriver:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
 			(at 192.8876 171.45 0)
 			(effects
 				(font
@@ -10508,7 +10508,6 @@
 		)
 	)
 	(symbol
-		(lib_name "kicadLib:MR30PW-F")
 		(lib_id "kicadLib:MR30PW-F")
 		(at 370.84 193.04 0)
 		(unit 1)
@@ -10536,7 +10535,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "kicadLib:CONN-TH_MR30PW-F"
+		(property "Footprint" "balancerDriver:CONN-TH_MR30PW-F"
 			(at 370.84 187.706 0)
 			(effects
 				(font
@@ -11369,7 +11368,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "kicadLib:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
+		(property "Footprint" "balancerDriver:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
 			(at 192.8876 204.47 0)
 			(effects
 				(font
@@ -11478,7 +11477,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "kicadLib:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
+		(property "Footprint" "balancerDriver:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
 			(at 250.0376 58.42 0)
 			(effects
 				(font
@@ -12400,7 +12399,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "kicadLib:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
+		(property "Footprint" "balancerDriver:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
 			(at 253.8476 170.18 0)
 			(effects
 				(font
@@ -12574,7 +12573,7 @@
 				)
 			)
 		)
-		(property "Footprint" "kicadLib:QFN-24_L4.0-W4.0-P0.50-BL-EP2.6"
+		(property "Footprint" "balancerDriver:QFN-24_L4.0-W4.0-P0.50-BL-EP2.6"
 			(at 59.69 182.2704 0)
 			(effects
 				(font
@@ -12999,7 +12998,7 @@
 				)
 			)
 		)
-		(property "Footprint" "kicadLib:QFN-24_L4.0-W4.0-P0.50-BL-EP2.6"
+		(property "Footprint" "balancerDriver:QFN-24_L4.0-W4.0-P0.50-BL-EP2.6"
 			(at 58.42 62.8904 0)
 			(effects
 				(font
@@ -13156,7 +13155,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "kicadLib:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
+		(property "Footprint" "balancerDriver:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
 			(at 189.0776 59.69 0)
 			(effects
 				(font
@@ -14016,7 +14015,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "kicadLib:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
+		(property "Footprint" "balancerDriver:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
 			(at 253.8476 203.2 0)
 			(effects
 				(font
@@ -15206,7 +15205,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "kicadLib:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
+		(property "Footprint" "balancerDriver:PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL"
 			(at 250.0376 91.44 0)
 			(effects
 				(font
