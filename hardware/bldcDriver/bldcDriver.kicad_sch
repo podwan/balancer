@@ -10606,6 +10606,17 @@
 		)
 		(uuid "0b960069-61a4-4eb4-80e1-eaf7cd3a0e83")
 	)
+	(label "TIM1_CH1N"
+		(at 359.41 53.34 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "13fb1310-7f7b-4f37-abe0-f57664c00fe6")
+	)
 	(label "1B_ISENSOR_P"
 		(at 99.06 193.04 180)
 		(fields_autoplaced yes)
@@ -10628,7 +10639,7 @@
 		)
 		(uuid "16416fc5-4355-4b54-903a-1a486b46d050")
 	)
-	(label "2B_iSENSOR_N"
+	(label "2B_ISENSOR_N"
 		(at 218.44 260.35 180)
 		(fields_autoplaced yes)
 		(effects
@@ -10705,18 +10716,7 @@
 		)
 		(uuid "2478e1af-ae04-4302-ba17-0fc9c4dc7335")
 	)
-	(label "TIM8_CH1N"
-		(at 359.41 53.34 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "28536045-a842-46d3-aa68-d56fe87e585b")
-	)
-	(label "2A_iSENSOR_P"
+	(label "2A_ISENSOR_P"
 		(at 218.44 245.11 180)
 		(fields_autoplaced yes)
 		(effects
@@ -11090,7 +11090,7 @@
 		)
 		(uuid "80822e61-a459-4c09-ac7a-b5e4f4a6def9")
 	)
-	(label "1B_iSENSOR_N"
+	(label "1B_ISENSOR_N"
 		(at 252.73 261.62 0)
 		(fields_autoplaced yes)
 		(effects
@@ -11167,7 +11167,7 @@
 		)
 		(uuid "9c9eba66-a347-41cc-8d5c-b816f94ebed9")
 	)
-	(label "1A_iSENSOR_N"
+	(label "1A_ISENSOR_N"
 		(at 252.73 250.19 0)
 		(fields_autoplaced yes)
 		(effects
@@ -11189,7 +11189,7 @@
 		)
 		(uuid "a39a47e8-d0bb-412c-989b-b9f371cf4317")
 	)
-	(label "1B_iSENSOR_P"
+	(label "1B_ISENSOR_P"
 		(at 252.73 255.27 0)
 		(fields_autoplaced yes)
 		(effects
@@ -11288,6 +11288,17 @@
 		)
 		(uuid "befef96d-ee4e-4118-8069-6cce63e58bd2")
 	)
+	(label "TIM8_CH1N"
+		(at 359.41 86.36 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c4df248c-8ff2-491a-b5dc-46241d2e6a4f")
+	)
 	(label "VREF_OP1"
 		(at 144.78 119.38 0)
 		(fields_autoplaced yes)
@@ -11354,7 +11365,7 @@
 		)
 		(uuid "d7007fd6-a7c1-4af9-946d-c1acf930ab82")
 	)
-	(label "2B_iSENSOR_P"
+	(label "2B_ISENSOR_P"
 		(at 218.44 255.27 180)
 		(fields_autoplaced yes)
 		(effects
@@ -11376,7 +11387,7 @@
 		)
 		(uuid "dd87fab2-592f-4345-9f28-21cad6b7c358")
 	)
-	(label "2A_iSENSOR_N"
+	(label "2A_ISENSOR_N"
 		(at 218.44 250.19 180)
 		(fields_autoplaced yes)
 		(effects
@@ -11442,17 +11453,6 @@
 		)
 		(uuid "ecb9fa37-e54d-481b-9bc5-5963d404f18d")
 	)
-	(label "TIM1_CH1N"
-		(at 359.41 111.76 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "f0075515-2ef3-45c5-9fec-f03a13dea335")
-	)
 	(label "VREF_OP2"
 		(at 97.79 242.57 180)
 		(fields_autoplaced yes)
@@ -11497,7 +11497,7 @@
 		)
 		(uuid "f6717819-c3c4-440e-91aa-ec9977ddb321")
 	)
-	(label "1A_iSENSOR_P"
+	(label "1A_ISENSOR_P"
 		(at 252.73 243.84 0)
 		(fields_autoplaced yes)
 		(effects

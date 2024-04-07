@@ -6284,17 +6284,6 @@
 		)
 		(uuid "13476944-2788-449b-8310-4302e3282b37")
 	)
-	(label "2SH_W"
-		(at 382.27 195.58 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "14070e3c-6501-49f7-bb29-5a4bec78d9db")
-	)
 	(label "1GL_C"
 		(at 60.96 93.98 180)
 		(fields_autoplaced yes)
@@ -6316,17 +6305,6 @@
 			(justify left bottom)
 		)
 		(uuid "1f5c3a65-2656-4d02-9d51-90a237eaec58")
-	)
-	(label "2SH_U"
-		(at 382.27 190.5 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "27e07b45-2305-4c18-bf18-8594d0af21db")
 	)
 	(label "2SH_U"
 		(at 85.09 191.77 0)
@@ -6371,6 +6349,17 @@
 			(justify left bottom)
 		)
 		(uuid "3f781805-619c-42df-82c0-38ca1963e9fc")
+	)
+	(label "2SH_W"
+		(at 382.27 190.5 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "429810ad-9fc1-4062-b616-6d6dddd65ab7")
 	)
 	(label "1GH_C"
 		(at 81.28 91.44 0)
@@ -6646,6 +6635,17 @@
 			(justify left bottom)
 		)
 		(uuid "b5d7ccfb-85c7-4043-84d4-4ccb8ecb38a1")
+	)
+	(label "2SH_U"
+		(at 382.27 195.58 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b6d234aa-6368-4d5c-8cba-6c84e5325701")
 	)
 	(label "2GH_B"
 		(at 85.09 196.85 0)
