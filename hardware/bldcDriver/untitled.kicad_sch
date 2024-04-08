@@ -6780,7 +6780,7 @@
 		)
 		(uuid "01a65e4e-9320-4a3a-b8b3-9dbd16b416b6")
 	)
-	(hierarchical_label "1B_iSENSOR-"
+	(hierarchical_label "1B_ISENSOR-"
 		(shape input)
 		(at 257.81 114.3 180)
 		(fields_autoplaced yes)
@@ -6792,7 +6792,7 @@
 		)
 		(uuid "070b5e06-bdfa-411f-937e-305abf82ceee")
 	)
-	(hierarchical_label "1A_iSENSOR_N"
+	(hierarchical_label "1A_ISENSOR-"
 		(shape input)
 		(at 191.77 114.3 180)
 		(fields_autoplaced yes)
@@ -6828,7 +6828,7 @@
 		)
 		(uuid "20db7016-e2c5-41b6-82b2-11ec3423a9b3")
 	)
-	(hierarchical_label "2B_iSENSOR_N"
+	(hierarchical_label "2B_ISENSOR-"
 		(shape input)
 		(at 254 227.33 180)
 		(fields_autoplaced yes)
@@ -6852,7 +6852,7 @@
 		)
 		(uuid "2ac183d5-6191-4916-baf3-f1aea70d77f2")
 	)
-	(hierarchical_label "1B_iSENSOR+"
+	(hierarchical_label "1B_ISENSOR+"
 		(shape input)
 		(at 257.81 100.33 180)
 		(fields_autoplaced yes)
@@ -6876,7 +6876,7 @@
 		)
 		(uuid "4bba6bfe-84b1-496d-8003-b97448cc97b3")
 	)
-	(hierarchical_label "2A_iSENSOR_N"
+	(hierarchical_label "2A_ISENSOR-"
 		(shape input)
 		(at 187.96 224.79 180)
 		(fields_autoplaced yes)
@@ -6888,7 +6888,7 @@
 		)
 		(uuid "6b86bd8d-26a8-4af7-9417-9fffa23494e9")
 	)
-	(hierarchical_label "2B_iSENSOR_P"
+	(hierarchical_label "2B_ISENSOR+"
 		(shape input)
 		(at 254 213.36 180)
 		(fields_autoplaced yes)
@@ -6912,7 +6912,7 @@
 		)
 		(uuid "7f0e31be-3759-4787-89f8-6b858912e631")
 	)
-	(hierarchical_label "2A_iSENSOR_P"
+	(hierarchical_label "2A_ISENSOR+"
 		(shape input)
 		(at 187.96 210.82 180)
 		(fields_autoplaced yes)
@@ -6972,7 +6972,7 @@
 		)
 		(uuid "e8592218-ad40-4b97-8ba8-2f3dbb2ea121")
 	)
-	(hierarchical_label "1A_iSENSOR_P"
+	(hierarchical_label "1A_ISENSOR+"
 		(shape input)
 		(at 191.77 100.33 180)
 		(fields_autoplaced yes)
