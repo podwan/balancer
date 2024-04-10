@@ -1014,9 +1014,9 @@
 			(xyz 0 0 0)
 		)
 	)
-	(model "${KIPRJMOD}/kicad_lceda.3dshapes/CONN-TH_MR30PW-F.wrl"
+	(model "${KIPRJMOD}/model/CONN-TH_MR30PW-F.wrl"
 		(offset
-			(xyz 0 -4.1 -3)
+			(xyz 0 2.4 0)
 		)
 		(scale
 			(xyz 1 1 1)
