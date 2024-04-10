@@ -220,15 +220,15 @@ uint8_t key_cnt = 0, Erase_flag = 0;
 
 void loop() {
 
-  if (eeprom_MacFlag == 1) { 
-    if (digitalRead(9) == 0 && key_cnt < 20) { // 检测BOOT按键
+  if (eeprom_MacFlag == 1) {
+    if (digitalRead(9) == 0 && key_cnt < 20) {  // 检测BOOT按键
       delay(1);
       key_cnt++;
       if (digitalRead(9) == 0 && key_cnt >= 20) {
         if (Erase_flag == 0) {
           Erase_flag = 1;
           for (int i = 0; i < 17; i++) {
-            EEPROM.write(i, 0); // 清空MAC地址数据
+            EEPROM.write(i, 0);  // 清空MAC地址数据
           }
           EEPROM.write(17, 0);  // 清空标志
           EEPROM.commit();
