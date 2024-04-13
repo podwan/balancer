@@ -1,4 +1,4 @@
-23150678920812049
+23159243846972484
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -94759,6 +94759,13 @@ Varistor VF
 2
 2
 balancerDriver
+CONN-SMD_3P-P1.00_BX-SH1.0-3PWT
+
+
+0
+5
+5
+balancerDriver
 CONN-SMD_3P-P1.00_WAFER-SH1.0-3PWB
 
 
@@ -94808,6 +94815,13 @@ PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL
 9
 9
 balancerDriver
+POWERTDFN-8_L3.1-W3.1-P0.65-LS3.3-BL
+
+
+0
+9
+8
+balancerDriver
 QFN-24_L3.0-W3.0-P0.40-BL-EP
 
 
@@ -94821,6 +94835,27 @@ QFN-24_L4.0-W4.0-P0.50-BL-EP2.6
 0
 25
 25
+balancerDriver
+SC70-6_L2.1-W1.3-P0.65-LS2.3-BL
+
+
+0
+6
+6
+balancerDriver
+SMA_L4.3-W2.6-LS5.0-RD
+
+
+0
+2
+2
+balancerDriver
+SOD-123FL_L2.7-W1.8-LS3.8-RD
+
+
+0
+2
+2
 balancerDriver
 TSSOP-20_L6.5-W4.4-P0.65-LS6.4-BL
 

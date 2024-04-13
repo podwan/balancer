@@ -472,7 +472,7 @@
 		(uuid "0365caa3-46bc-46c0-b0d1-8fc12d223c13")
 		(at 28.5 149.720484 90)
 		(property "Reference" "U7"
-			(at 0 -3.207 270)
+			(at 0 -3.207 -90)
 			(layer "F.SilkS")
 			(uuid "071de277-30f0-4c28-9e20-4e818481440c")
 			(effects
@@ -484,7 +484,7 @@
 			)
 		)
 		(property "Value" "TP181A1-CR"
-			(at 0 -0.667 270)
+			(at 0 -0.667 -90)
 			(layer "F.Fab")
 			(uuid "9e3d54da-6932-4e32-a249-cb6e1b863fbd")
 			(effects
@@ -4997,7 +4997,7 @@
 		(uuid "1c2fdb4e-f7c1-405a-b8f2-38e0d6461e40")
 		(at 130.766 95.525 90)
 		(property "Reference" "Q13"
-			(at 0 -3.207 270)
+			(at 0 -3.207 -90)
 			(layer "F.SilkS")
 			(uuid "10a29657-9705-4b2d-99c2-5c1679af6c27")
 			(effects
@@ -5009,7 +5009,7 @@
 			)
 		)
 		(property "Value" "EMB09N03V"
-			(at 0 -0.667 270)
+			(at 0 -0.667 -90)
 			(layer "F.Fab")
 			(uuid "e376d9fa-3d01-4068-9c09-82f80b0b1183")
 			(effects
@@ -6394,7 +6394,7 @@
 		(uuid "24f73a1d-bac6-499f-bc32-81274fbcf38d")
 		(at 28.5 153.4 90)
 		(property "Reference" "U6"
-			(at 0 -3.207 270)
+			(at 0 -3.207 -90)
 			(layer "F.SilkS")
 			(uuid "305107c1-33fe-48bb-9bf4-eb9ab3e19891")
 			(effects
@@ -6406,7 +6406,7 @@
 			)
 		)
 		(property "Value" "TP181A1-CR"
-			(at 0 -0.667 270)
+			(at 0 -0.667 -90)
 			(layer "F.Fab")
 			(uuid "9db35153-6c5f-4fe8-9fc1-e470bb6663b3")
 			(effects
@@ -8229,7 +8229,7 @@
 		(uuid "315f8f6f-5253-4e75-8523-b8071c8f8ca2")
 		(at 134.915 95.525 90)
 		(property "Reference" "Q1"
-			(at 0 -3.207 270)
+			(at 0 -3.207 -90)
 			(layer "F.SilkS")
 			(uuid "6be14337-dc2d-4384-96b6-0a99cf38897b")
 			(effects
@@ -8241,7 +8241,7 @@
 			)
 		)
 		(property "Value" "EMB09N03V"
-			(at 0 -0.667 270)
+			(at 0 -0.667 -90)
 			(layer "F.Fab")
 			(uuid "6c0d3e41-807d-42a2-b232-aee9e91aba6c")
 			(effects
@@ -9821,7 +9821,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor handsolder")
 		(property "Reference" "R7"
-			(at 0 -1.43 360)
+			(at 0 -1.43 0)
 			(layer "F.SilkS")
 			(uuid "d8deb73a-e451-4376-9562-116e72626e32")
 			(effects
@@ -9832,7 +9832,7 @@
 			)
 		)
 		(property "Value" "10R"
-			(at 0 1.43 360)
+			(at 0 1.43 0)
 			(layer "F.Fab")
 			(uuid "17164461-cdf7-4cc4-920e-ae19bb53bdff")
 			(effects
@@ -9984,7 +9984,7 @@
 			(uuid "e238d6f7-72d8-4ce3-b1db-195746ef82eb")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "6732317c-3ac9-4099-ae0c-28fc09cabbe7")
 			(effects
@@ -15349,7 +15349,7 @@
 		(uuid "7080a77d-87aa-4c1c-99f4-74eae58fcb9e")
 		(at 28.5 146.040968 90)
 		(property "Reference" "U8"
-			(at 0 -3.207 270)
+			(at 0 -3.207 -90)
 			(layer "F.SilkS")
 			(uuid "c8d91c69-0793-4441-a65a-8fb551d39844")
 			(effects
@@ -15361,7 +15361,7 @@
 			)
 		)
 		(property "Value" "TP181A1-CR"
-			(at 0 -0.667 270)
+			(at 0 -0.667 -90)
 			(layer "F.Fab")
 			(uuid "bc29b449-063d-47f4-aa2f-2382d9dfe040")
 			(effects
@@ -27870,7 +27870,7 @@
 		(descr "SOD-123")
 		(tags "SOD-123")
 		(property "Reference" "D5"
-			(at 0 -2 360)
+			(at 0 -2 0)
 			(layer "F.SilkS")
 			(uuid "538c0a35-c18c-40c0-a183-16f6f19cfee9")
 			(effects
@@ -27881,7 +27881,7 @@
 			)
 		)
 		(property "Value" "1N4148W"
-			(at 0 2.1 360)
+			(at 0 2.1 0)
 			(layer "F.Fab")
 			(uuid "6f7972b0-3fb8-4f48-baaf-e3f95e7a3977")
 			(effects
@@ -28139,7 +28139,7 @@
 			(uuid "b87bbafb-5aa3-4d72-a066-d0b4dc2c8041")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 -2 360)
+			(at 0 -2 0)
 			(layer "F.Fab")
 			(uuid "1d7f9714-116d-483a-af79-a96e78ab4a6b")
 			(effects
@@ -29547,7 +29547,7 @@
 		(descr "SOD-123")
 		(tags "SOD-123")
 		(property "Reference" "D6"
-			(at 0 -2 360)
+			(at 0 -2 0)
 			(layer "F.SilkS")
 			(uuid "8b52f670-8685-4e0d-80e4-8b7b4294e986")
 			(effects
@@ -29558,7 +29558,7 @@
 			)
 		)
 		(property "Value" "1N4148W"
-			(at 0 2.1 360)
+			(at 0 2.1 0)
 			(layer "F.Fab")
 			(uuid "c2751538-3eca-47d5-853e-cbfd6a221e5a")
 			(effects
@@ -29816,7 +29816,7 @@
 			(uuid "43890aec-2b72-4702-b755-5cfd792ad7de")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 -2 360)
+			(at 0 -2 0)
 			(layer "F.Fab")
 			(uuid "43a47d53-f54a-488f-97e9-de8173b45412")
 			(effects
@@ -30773,7 +30773,7 @@
 		(uuid "fcaf4f9e-7969-4759-bf47-036e34abbdf7")
 		(at 28.5 142.361452 90)
 		(property "Reference" "U9"
-			(at 0 -3.207 270)
+			(at 0 -3.207 -90)
 			(layer "F.SilkS")
 			(uuid "917db3cc-b7bb-4613-95dd-47c8594e96d3")
 			(effects
@@ -30785,7 +30785,7 @@
 			)
 		)
 		(property "Value" "TP181A1-CR"
-			(at 0 -0.667 270)
+			(at 0 -0.667 -90)
 			(layer "F.Fab")
 			(uuid "95ecf8c7-e3de-448d-9f42-e114e8fb32dd")
 			(effects
@@ -38989,7 +38989,7 @@
 		(uuid "d8806029-f3e0-46cd-9f7e-3954f6f145bd")
 		(at 35.7 61.8 90)
 		(property "Reference" "CN1"
-			(at 0 3.207 270)
+			(at 0 3.207 -90)
 			(layer "B.SilkS")
 			(uuid "bbf5e0a2-80cc-4d2b-9ea8-94fed49957ff")
 			(effects
@@ -39001,7 +39001,7 @@
 			)
 		)
 		(property "Value" "MR30PW-F"
-			(at 0 0.667 270)
+			(at 0 0.667 -90)
 			(layer "B.Fab")
 			(uuid "822eb00f-466d-4afa-8bdb-d3ec76506047")
 			(effects
