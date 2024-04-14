@@ -5072,16 +5072,6 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 210.82) (xy 96.52 210.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0bb0ff94-91ee-4314-9598-945903595144")
-	)
-	(wire
-		(pts
 			(xy 35.56 33.02) (xy 44.45 33.02)
 		)
 		(stroke
@@ -5159,16 +5149,6 @@
 			(type default)
 		)
 		(uuid "1ddc7306-0a90-43f7-8860-776fd7c34857")
-	)
-	(wire
-		(pts
-			(xy 142.24 182.88) (xy 147.32 182.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1e880730-4b1d-4b0b-97b4-c0c461835d6c")
 	)
 	(wire
 		(pts
@@ -5442,16 +5422,6 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 182.88) (xy 96.52 182.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4523ab7d-f938-405c-a4b7-9f29d8829002")
-	)
-	(wire
-		(pts
 			(xy 44.45 35.56) (xy 44.45 33.02)
 		)
 		(stroke
@@ -5589,16 +5559,6 @@
 			(type default)
 		)
 		(uuid "52d465ba-43c8-44b4-a10d-56dc29dd3ac0")
-	)
-	(wire
-		(pts
-			(xy 142.24 210.82) (xy 147.32 210.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5397b7cd-f282-426d-bfe3-44332fd0abf1")
 	)
 	(wire
 		(pts
@@ -6999,7 +6959,7 @@
 		)
 		(uuid "09cf4c72-fc5d-4d47-8959-6aedf7b18e71")
 	)
-	(label "2CS1"
+	(label "2CS1+"
 		(at 142.24 185.42 0)
 		(fields_autoplaced yes)
 		(effects
@@ -7010,7 +6970,7 @@
 		)
 		(uuid "0a58ed58-f71c-4959-9a71-853fa86f60da")
 	)
-	(label "1CS2"
+	(label "1CS2+"
 		(at 91.44 213.36 0)
 		(fields_autoplaced yes)
 		(effects
@@ -7021,8 +6981,30 @@
 		)
 		(uuid "1070162b-7698-4930-8029-ecb568052e0a")
 	)
-	(label "1CS2"
-		(at 220.98 259.08 180)
+	(label "2CS1-"
+		(at 142.24 182.88 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "188ab29e-1119-47e7-abfb-b52fcd903b28")
+	)
+	(label "1CS2-"
+		(at 220.98 267.97 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1fc6fe1a-e867-4bc8-abe4-88d157c9a5e6")
+	)
+	(label "1CS2+"
+		(at 220.98 260.35 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7065,6 +7047,17 @@
 		)
 		(uuid "3f69f03a-d305-43bb-9ee3-5289362e64ec")
 	)
+	(label "1CS2-"
+		(at 91.44 210.82 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "40a296da-a1f8-4e93-9f36-21449bb09fe4")
+	)
 	(label "SPI1_MISO"
 		(at 377.19 182.88 180)
 		(fields_autoplaced yes)
@@ -7075,6 +7068,17 @@
 			(justify right bottom)
 		)
 		(uuid "428ba1c1-3a17-49f9-90d3-289d4aedf7b1")
+	)
+	(label "1CS1-"
+		(at 220.98 264.16 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4bfd3209-ccac-40c3-9eb6-935df8b05406")
 	)
 	(label "SPI1_MOSI"
 		(at 321.31 181.61 180)
@@ -7131,8 +7135,8 @@
 		)
 		(uuid "5515c7a6-674f-409a-a6f0-e1ae28fdfd95")
 	)
-	(label "2CS2"
-		(at 255.27 259.08 0)
+	(label "2CS2+"
+		(at 256.54 262.89 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7153,8 +7157,8 @@
 		)
 		(uuid "56109ef2-4309-466c-a7fa-99dc753ac744")
 	)
-	(label "1CS1"
-		(at 220.98 254 180)
+	(label "1CS1+"
+		(at 220.98 256.54 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7186,8 +7190,8 @@
 		)
 		(uuid "606ea6ed-dd49-4a20-a4ca-469433a0be35")
 	)
-	(label "2CS1"
-		(at 255.27 254 0)
+	(label "2CS1+"
+		(at 256.54 259.08 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7208,7 +7212,7 @@
 		)
 		(uuid "62b9e941-b291-4498-8246-844fe05d2e16")
 	)
-	(label "1CS1"
+	(label "1CS1+"
 		(at 91.44 185.42 0)
 		(fields_autoplaced yes)
 		(effects
@@ -7218,6 +7222,17 @@
 			(justify left bottom)
 		)
 		(uuid "62dc52e5-a7bd-4c58-8d27-79429f7df7c7")
+	)
+	(label "NSS1"
+		(at 374.65 57.15 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6460ad03-bc18-4792-92c8-48500a337998")
 	)
 	(label "USART2_RX"
 		(at 317.5 223.52 0)
@@ -7241,17 +7256,6 @@
 		)
 		(uuid "659d851d-eea5-4562-92ca-ddc4fcdd27f5")
 	)
-	(label "NSS1"
-		(at 341.63 64.77 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "681794a9-35ec-4d29-8353-06f15840e4af")
-	)
 	(label "SWCLK"
 		(at 374.65 82.55 0)
 		(fields_autoplaced yes)
@@ -7264,7 +7268,7 @@
 		(uuid "70bc66e4-f335-422e-9e59-013544e099aa")
 	)
 	(label "TIM1_CH1"
-		(at 255.27 236.22 0)
+		(at 256.54 236.22 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7297,7 +7301,7 @@
 		(uuid "8955132d-1b80-4435-b367-cffc87cee61b")
 	)
 	(label "I2C1_SDA"
-		(at 342.9 102.87 180)
+		(at 341.63 102.87 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7308,7 +7312,7 @@
 		(uuid "8ad307f5-c330-4111-8560-1169402e9bb2")
 	)
 	(label "TIM1_CH2"
-		(at 255.27 241.3 0)
+		(at 256.54 241.3 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7373,7 +7377,18 @@
 		)
 		(uuid "9c9eba66-a347-41cc-8d5c-b816f94ebed9")
 	)
-	(label "2CS2"
+	(label "2CS1-"
+		(at 256.54 266.7 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9de05314-63ba-4f03-8fe0-f4066340a104")
+	)
+	(label "2CS2+"
 		(at 142.24 213.36 0)
 		(fields_autoplaced yes)
 		(effects
@@ -7395,6 +7410,17 @@
 		)
 		(uuid "a39a47e8-d0bb-412c-989b-b9f371cf4317")
 	)
+	(label "2CS2-"
+		(at 142.24 210.82 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ac15645d-277e-437b-9095-ea9e06345064")
+	)
 	(label "YI"
 		(at 293.37 74.93 0)
 		(fields_autoplaced yes)
@@ -7405,6 +7431,17 @@
 			(justify left bottom)
 		)
 		(uuid "ae497b6b-4904-4517-b50b-8fb752483d1c")
+	)
+	(label "1CS1-"
+		(at 91.44 182.88 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b3a08459-9c00-4b97-b9ff-118444aa8f3c")
 	)
 	(label "SPI1_MOSI"
 		(at 374.65 64.77 0)
@@ -7494,6 +7531,17 @@
 		)
 		(uuid "c9a8047b-7646-45b0-9dac-d67e8001d5cc")
 	)
+	(label "NSS2"
+		(at 341.63 97.79 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c9f4bba0-a239-4bf8-86cc-63b62508bee9")
+	)
 	(label "TIM8_CH1"
 		(at 220.98 236.22 180)
 		(fields_autoplaced yes)
@@ -7505,6 +7553,17 @@
 		)
 		(uuid "ce22afed-2969-4f11-858a-85c58bd473bc")
 	)
+	(label "2CS2-"
+		(at 256.54 254 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d6f6ec5f-bfa8-4fba-a355-d0823788ed03")
+	)
 	(label "I2C2_SDA"
 		(at 205.74 161.29 0)
 		(fields_autoplaced yes)
@@ -7515,17 +7574,6 @@
 			(justify left bottom)
 		)
 		(uuid "e12d9df3-3f88-4b51-8162-9a66ff091dca")
-	)
-	(label "NSS2"
-		(at 374.65 57.15 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "e559fa5a-06dc-4a49-8e3b-3545f45f3b8e")
 	)
 	(label "USART3_RX"
 		(at 375.92 219.71 180)
@@ -7539,7 +7587,7 @@
 		(uuid "e87bdf2b-1792-4193-995d-bf30ed97f8bb")
 	)
 	(label "TIM1_CH3"
-		(at 255.27 246.38 0)
+		(at 256.54 246.38 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7910,7 +7958,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_Sumida_CDMC6D28_7.25x6.5mm"
+		(property "Footprint" "Inductor_SMD:L_Taiyo-Yuden_NR-40xx_HandSoldering"
 			(at 111.76 33.02 0)
 			(effects
 				(font
@@ -8596,73 +8644,6 @@
 			(project "bldcDriver"
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
 					(reference "C10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GNDA")
-		(at 96.52 210.82 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2dee891d-09aa-4ccd-a004-4f77e0b67bc5")
-		(property "Reference" "#PWR039"
-			(at 102.87 210.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GNDA"
-			(at 101.6 210.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 96.52 210.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 96.52 210.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
-			(at 96.52 210.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a8ce3c32-4c2e-432c-add4-63ce70d4e406")
-		)
-		(instances
-			(project "bldcDriver"
-				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
-					(reference "#PWR039")
 					(unit 1)
 				)
 			)
@@ -9719,73 +9700,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GNDA")
-		(at 96.52 182.88 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5a7038fc-d9d8-4e85-a0a5-9686c826340a")
-		(property "Reference" "#PWR036"
-			(at 102.87 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GNDA"
-			(at 101.6 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 96.52 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 96.52 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
-			(at 96.52 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "db118c4b-634d-4233-b406-ee8648d5ec53")
-		)
-		(instances
-			(project "bldcDriver"
-				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
-					(reference "#PWR036")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+BATT")
 		(at 44.45 30.48 0)
 		(unit 1)
@@ -9945,7 +9859,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Crystal:Crystal_SMD_SeikoEpson_FA238-4Pin_3.2x2.5mm_HandSoldering"
+		(property "Footprint" "Crystal:Crystal_SMD_SeikoEpson_FA238-4Pin_3.2x2.5mm"
 			(at 300.99 74.93 0)
 			(effects
 				(font
@@ -10395,73 +10309,6 @@
 			(project "bldcDriver"
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
 					(reference "R20")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GNDA")
-		(at 147.32 210.82 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "776bfe59-1792-4fda-a7bd-fa91bb6cd857")
-		(property "Reference" "#PWR052"
-			(at 153.67 210.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GNDA"
-			(at 152.4 210.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 147.32 210.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 147.32 210.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
-			(at 147.32 210.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "bb93d576-2ce9-45ae-884e-0f538dbde8d3")
-		)
-		(instances
-			(project "bldcDriver"
-				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
-					(reference "#PWR052")
 					(unit 1)
 				)
 			)
@@ -11339,7 +11186,8 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
-		(at 312.42 223.52 180)
+		(at 312.42 223.52 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11347,7 +11195,7 @@
 		(dnp no)
 		(uuid "9384980b-8b19-4696-8bff-55617d56828d")
 		(property "Reference" "J4"
-			(at 309.88 224.7901 0)
+			(at 309.88 222.2499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11356,7 +11204,7 @@
 			)
 		)
 		(property "Value" "Conn_01x03"
-			(at 309.88 222.2501 0)
+			(at 309.88 224.7899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12666,73 +12514,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GNDA")
-		(at 147.32 182.88 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d2fa0a60-d4a5-4bf1-b1bb-63836c047e16")
-		(property "Reference" "#PWR049"
-			(at 153.67 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GNDA"
-			(at 152.4 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 147.32 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 147.32 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
-			(at 147.32 182.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9fd511c4-1f19-4e60-ba84-88b890e1970b")
-		)
-		(instances
-			(project "bldcDriver"
-				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
-					(reference "#PWR049")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector_Generic:Conn_01x06")
 		(at 326.39 189.23 0)
 		(mirror x)
@@ -13668,7 +13449,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 44.45 216.662 90)
 			(effects
 				(font
@@ -13983,7 +13764,7 @@
 	)
 	(sheet
 		(at 220.98 231.14)
-		(size 34.29 35.56)
+		(size 35.56 40.64)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -14003,7 +13784,7 @@
 			)
 		)
 		(property "Sheetfile" "untitled.kicad_sch"
-			(at 220.98 267.2846 0)
+			(at 220.98 272.3646 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14042,7 +13823,7 @@
 			(uuid "abe795c5-91d4-486b-bde9-4d31f53e999e")
 		)
 		(pin "TIM1_CH2" input
-			(at 255.27 241.3 0)
+			(at 256.54 241.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14052,7 +13833,7 @@
 			(uuid "f8043cba-f559-4d43-a692-6b12ff446aa8")
 		)
 		(pin "TIM1_CH1" input
-			(at 255.27 236.22 0)
+			(at 256.54 236.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14062,7 +13843,7 @@
 			(uuid "1088dd52-5d71-493a-882e-c05fc1e1523b")
 		)
 		(pin "TIM1_CH3" input
-			(at 255.27 246.38 0)
+			(at 256.54 246.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14071,45 +13852,85 @@
 			)
 			(uuid "46a5d9ff-0ad1-4de4-8edf-cd9b82241572")
 		)
-		(pin "2CS1" input
-			(at 255.27 254 0)
+		(pin "2CS1+" input
+			(at 256.54 259.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "321f57b7-64e6-4b90-a442-f776204e25c5")
+			(uuid "64a1446c-2d51-4bda-8dd7-ac084614e2e0")
 		)
-		(pin "2CS2" input
-			(at 255.27 259.08 0)
+		(pin "2CS1-" input
+			(at 256.54 266.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "72724072-03c2-40dd-8f38-0964b1904c24")
+			(uuid "d4d006e0-16f5-49c6-9302-86a71d5c8aac")
 		)
-		(pin "1CS2" input
-			(at 220.98 259.08 180)
+		(pin "2CS2+" input
+			(at 256.54 262.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "56b387be-3056-4ae5-a87e-eaa75a6adda5")
+		)
+		(pin "2CS2-" input
+			(at 256.54 254 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "f509024e-e3e4-4830-bdb9-6b8d4de89661")
+		)
+		(pin "1CS1-" input
+			(at 220.98 264.16 180)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "dc007e47-58bb-4909-9216-6134116f55c5")
+			(uuid "99239879-be9d-49ae-b777-48528b4ee5a3")
 		)
-		(pin "1CS1" input
-			(at 220.98 254 180)
+		(pin "1CS1+" input
+			(at 220.98 256.54 180)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "9acbd931-d893-4799-8ab2-fdfa091b3341")
+			(uuid "219eed05-68a4-43b6-bfd3-770f822ca2ce")
+		)
+		(pin "1CS2+" input
+			(at 220.98 260.35 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "12e2f14d-4fbc-47dc-9552-84c8b8b87cd4")
+		)
+		(pin "1CS2-" input
+			(at 220.98 267.97 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "d9c4bee1-0591-4439-bdb4-9b66581bd2f6")
 		)
 		(instances
 			(project "bldcDriver"
