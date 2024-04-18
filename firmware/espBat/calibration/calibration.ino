@@ -100,7 +100,7 @@ void setup() {
   mySerial.begin(115200, SERIAL_8N1, 20, 21);
 
 #if Step1_BlueTooth
-  BLEinit();
+  BLEinit();All
 #endif
   BClock_Init(1000);  // 定时器单位为ms，发送数据至手机的频率
 }
