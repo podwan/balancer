@@ -18754,7 +18754,7 @@
 		(uuid "abeb6f57-2bbc-414b-a251-a008ae383866")
 		(at 112.5 77.8)
 		(property "Reference" "SW1"
-			(at -7.5 -1.5 360)
+			(at -7.5 -1.5 0)
 			(layer "B.SilkS")
 			(hide yes)
 			(uuid "ed7f8af0-17a7-4d59-8a1e-acf2d33c9bd7")
@@ -18767,7 +18767,7 @@
 			)
 		)
 		(property "Value" "3*4*2.5MM_贴片4脚"
-			(at 0 0.667 360)
+			(at 0 0.667 0)
 			(layer "B.Fab")
 			(uuid "3dedef3a-e7eb-4108-9ef4-c64587f6e790")
 			(effects
@@ -22005,7 +22005,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 0 -1.43 270)
+			(at 0 -1.43 -90)
 			(layer "B.Fab")
 			(uuid "c792d576-f2f7-4a68-83e7-322d40b66552")
 			(effects
@@ -22161,7 +22161,7 @@
 			(uuid "ac8a72e0-50b8-47ba-8232-d0a60775b3c7")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 270)
+			(at 0 0 -90)
 			(layer "B.Fab")
 			(uuid "72504067-10fe-4e6e-ba70-4ae38a4f07e7")
 			(effects
