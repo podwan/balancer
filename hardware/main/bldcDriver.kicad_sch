@@ -6949,6 +6949,17 @@
 		)
 		(uuid "15b710c7-b3ad-41ed-84b2-62b6229906b2")
 	)
+	(label "USART3_TX"
+		(at 375.92 219.71 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1712ed2b-237e-4713-bb22-fe2c733a88a7")
+	)
 	(label "2CS1-"
 		(at 138.43 162.56 0)
 		(fields_autoplaced yes)
@@ -7124,17 +7135,6 @@
 			(justify right bottom)
 		)
 		(uuid "51178706-e5c7-4957-aa43-c9bc55545207")
-	)
-	(label "USART3_TX"
-		(at 375.92 222.25 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "5201cc03-3edf-46e2-9d49-cb3e3889c71d")
 	)
 	(label "VREF"
 		(at 40.64 172.72 0)
@@ -7653,6 +7653,17 @@
 		)
 		(uuid "cb0b58dd-b94c-4b9c-8c59-7cdedf14c54b")
 	)
+	(label "USART3_RX"
+		(at 375.92 222.25 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "cd2087fc-4212-4e0a-8eba-ff88e758b438")
+	)
 	(label "TIM8_CH1"
 		(at 215.9 162.56 180)
 		(fields_autoplaced yes)
@@ -7707,17 +7718,6 @@
 			(justify left bottom)
 		)
 		(uuid "e5ac9e1b-170f-4553-8754-fe5e279a40ff")
-	)
-	(label "USART3_RX"
-		(at 375.92 219.71 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "e87bdf2b-1792-4193-995d-bf30ed97f8bb")
 	)
 	(label "TIM1_CH3"
 		(at 251.46 172.72 0)

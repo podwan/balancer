@@ -33,13 +33,14 @@ void Float2Byte(float f, uint8_t *byte);  // 以上为数据类型转BYTE
 
 #if Step1_BlueTooth
 void getBlueData(uint8_t *Value) {
-  MotorStatus = Value[1];
-  kp = (Value[3] << 8) + Value[2];
-  kp = (Value[3] << 8) + Value[2];
-  kd = (Value[5] << 8) + Value[4];
-  ksp = (Value[7] << 8) + Value[6];
-  ksi = (Value[9] << 8) + Value[8];
-  mySerial.printf("MotorStatus=%d,kp=%d,kd=%d,ksp=%d,ksi=%d\n", MotorStatus, kp, kd, ksp, ksi);
+  // MotorStatus = Value[1];
+  // kp = (Value[3] << 8) + Value[2];
+  // kp = (Value[3] << 8) + Value[2];
+  // kd = (Value[5] << 8) + Value[4];
+  // ksp = (Value[7] << 8) + Value[6];
+  // ksi = (Value[9] << 8) + Value[8];
+  // mySerial.printf("MotorStatus=%d,kp=%d,kd=%d,ksp=%d,ksi=%d\n", MotorStatus, kp, kd, ksp, ksi);
+  mySerial.printf("recved data: %x, %x, %x, %x, %x\n", Value[0], Value[1], Value[2], Value[3], Value[4]);
 }
 #endif
 
