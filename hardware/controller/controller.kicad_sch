@@ -2488,7 +2488,7 @@
 				)
 			)
 		)
-		(symbol "bat_rf:RKJXV1224005"
+		(symbol "espController:RKJXV1224005"
 			(pin_names
 				(offset 1.016) hide)
 			(exclude_from_sim no)
@@ -2510,7 +2510,7 @@
 					)
 				)
 			)
-			(property "Footprint" "bat_rf:SW-TH_RKJXV1224005"
+			(property "Footprint" "espController:SW-TH_RKJXV1224005"
 				(at 0 14.478 0)
 				(effects
 					(font
@@ -2994,7 +2994,7 @@
 				)
 			)
 		)
-		(symbol "bat_rf:SK-12D07-L3-B"
+		(symbol "espController:SK-12D07-L3-B"
 			(pin_names
 				(offset 1.016)
 			)
@@ -3017,7 +3017,7 @@
 					)
 				)
 			)
-			(property "Footprint" "bat_rf:SW-TH_SK-12D07-X-X"
+			(property "Footprint" "espController:SW-TH_SK-12D07-X-X"
 				(at 0 3.3782 0)
 				(effects
 					(font
@@ -3150,7 +3150,7 @@
 				)
 			)
 		)
-		(symbol "bat_rf:TC-1102N-C-AS-B"
+		(symbol "espController:TC-1102N-C-AS-B"
 			(pin_numbers hide)
 			(pin_names
 				(offset 1.016) hide)
@@ -3173,7 +3173,7 @@
 					)
 				)
 			)
-			(property "Footprint" "bat_rf:SW-TH_TC-1102N-C-AS-B"
+			(property "Footprint" "espController:SW-TH_TC-1102N-C-AS-B"
 				(at 0 -1.016 0)
 				(effects
 					(font
@@ -3330,161 +3330,6 @@
 				)
 			)
 		)
-		(symbol "bat_rf:TS-1199A-B-B"
-			(pin_names
-				(offset 1.016) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "SW"
-				(at 0 7.747 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TS-1199A-B-B"
-				(at 0 12.827 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "bat_rf:SW-SMD_L6.0-W6.0-P6.00-LS6.6"
-				(at 0 2.667 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.szlcsc.com/product/details_724359.html"
-				(at 0 -2.413 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "C692476"
-				(at 0 -7.493 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "uuid" "std:a8f90e8ccef74c11ad070f97756e49fb"
-				(at 0 -7.493 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "TS-1199A-B-B_1_1"
-				(circle
-					(center 0 -1.016)
-					(radius 0.254)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -2.54) (xy 0 -0.762)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0 0.762)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -0.762) (xy 0 0.762)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 0.762)
-					(radius 0.254)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin input line
-					(at -5.08 2.54 0)
-					(length 5.08)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -5.08 -2.54 0)
-					(length 5.08)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "espController:TP4059"
 			(pin_names
 				(offset 1.016)
@@ -3508,7 +3353,7 @@
 					)
 				)
 			)
-			(property "Footprint" "kicad_lceda:SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR"
+			(property "Footprint" "espController:SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR"
 				(at 0 2.667 0)
 				(effects
 					(font
@@ -3657,6 +3502,161 @@
 						)
 					)
 					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "espController:TS-1199A-B-B"
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 0 7.747 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TS-1199A-B-B"
+				(at 0 12.827 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "espController:SW-SMD_L6.0-W6.0-P6.00-LS6.6"
+				(at 0 2.667 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.szlcsc.com/product/details_724359.html"
+				(at 0 -2.413 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "C692476"
+				(at 0 -7.493 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "uuid" "std:a8f90e8ccef74c11ad070f97756e49fb"
+				(at 0 -7.493 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TS-1199A-B-B_1_1"
+				(circle
+					(center 0 -1.016)
+					(radius 0.254)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -0.762)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 0.762)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -0.762) (xy 0 0.762)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0.762)
+					(radius 0.254)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin input line
+					(at -5.08 2.54 0)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -5.08 -2.54 0)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4154,6 +4154,12 @@
 		(uuid "1e67f17e-b53c-4e4c-b9ef-c4e7ec0dd953")
 	)
 	(junction
+		(at 114.3 147.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "255c1512-47ca-4b5f-9207-2f60acd14786")
+	)
+	(junction
 		(at 81.28 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4178,10 +4184,10 @@
 		(uuid "721a3aba-f813-4bb5-acc6-f4e3fa3618d5")
 	)
 	(junction
-		(at 173.99 81.28)
+		(at 175.26 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "777b4987-ff11-4b2b-861f-5d1907925c4f")
+		(uuid "76904559-7436-477a-a33d-bcc793aef37a")
 	)
 	(junction
 		(at 200.66 82.55)
@@ -4274,12 +4280,6 @@
 		(uuid "e7c34f43-a255-4f5d-a6e7-62f52dc0282a")
 	)
 	(junction
-		(at 173.99 83.82)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f29f1e19-e530-4096-bae0-2ff886dc82fe")
-	)
-	(junction
 		(at 128.27 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4294,16 +4294,16 @@
 		(uuid "0c0d680b-c9d6-4e4d-8d55-f66a6e5bbb6f")
 	)
 	(no_connect
-		(at 161.29 39.37)
-		(uuid "13a18d6f-6040-4475-bb27-5c7715b41114")
-	)
-	(no_connect
 		(at 228.6 43.18)
 		(uuid "2af3a017-10f2-4d41-baf0-b75cb99cfd2a")
 	)
 	(no_connect
 		(at 52.07 49.53)
 		(uuid "384d3902-7873-4a95-8a02-9be0247da4a3")
+	)
+	(no_connect
+		(at 161.29 34.29)
+		(uuid "a876b578-a434-4416-856d-1be4183e298e")
 	)
 	(no_connect
 		(at 171.45 36.83)
@@ -4378,6 +4378,16 @@
 			(type default)
 		)
 		(uuid "0c5b431f-2662-4697-a22f-1c928f6666fd")
+	)
+	(wire
+		(pts
+			(xy 186.69 82.55) (xy 187.96 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e51696e-ba04-4cff-b557-c236118d43ef")
 	)
 	(wire
 		(pts
@@ -4501,16 +4511,6 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 83.82) (xy 173.99 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "23a6dd20-bf4a-4b29-a36d-d939a7d2a6fa")
-	)
-	(wire
-		(pts
 			(xy 247.65 146.05) (xy 250.19 146.05)
 		)
 		(stroke
@@ -4528,6 +4528,16 @@
 			(type default)
 		)
 		(uuid "2a1868fa-5783-4a78-9660-8dbd9197871d")
+	)
+	(wire
+		(pts
+			(xy 175.26 82.55) (xy 175.26 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c7d6240-4ff1-4f5b-bfcc-53029c7a0a38")
 	)
 	(wire
 		(pts
@@ -4601,16 +4611,6 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 81.28) (xy 173.99 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3991f023-8845-4e60-ace6-ed4460b3fc5e")
-	)
-	(wire
-		(pts
 			(xy 214.63 146.05) (xy 217.17 146.05)
 		)
 		(stroke
@@ -4631,7 +4631,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 82.55) (xy 243.84 82.55)
+			(xy 257.81 82.55) (xy 260.35 82.55)
 		)
 		(stroke
 			(width 0)
@@ -4688,6 +4688,16 @@
 			(type default)
 		)
 		(uuid "4392d3d3-1011-47a0-90a0-b50bd2ee0f3d")
+	)
+	(wire
+		(pts
+			(xy 158.75 39.37) (xy 161.29 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e900066-8fb4-414c-a5ac-a18068cdfca4")
 	)
 	(wire
 		(pts
@@ -4811,16 +4821,6 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 83.82) (xy 186.69 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "644212ef-ab36-4799-b81e-40660e208665")
-	)
-	(wire
-		(pts
 			(xy 260.35 111.76) (xy 262.89 111.76)
 		)
 		(stroke
@@ -4861,6 +4861,16 @@
 	)
 	(wire
 		(pts
+			(xy 175.26 80.01) (xy 176.53 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6bec8dcc-c854-4216-a880-a727a364d493")
+	)
+	(wire
+		(pts
 			(xy 139.7 80.01) (xy 139.7 81.28)
 		)
 		(stroke
@@ -4891,7 +4901,7 @@
 	)
 	(wire
 		(pts
-			(xy 265.43 82.55) (xy 267.97 82.55)
+			(xy 232.41 83.82) (xy 234.95 83.82)
 		)
 		(stroke
 			(width 0)
@@ -4961,6 +4971,16 @@
 	)
 	(wire
 		(pts
+			(xy 175.26 82.55) (xy 176.53 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85905a3d-6540-4026-b2d8-573a2de64fb9")
+	)
+	(wire
+		(pts
 			(xy 102.87 156.21) (xy 102.87 157.48)
 		)
 		(stroke
@@ -4981,7 +5001,7 @@
 	)
 	(wire
 		(pts
-			(xy 265.43 82.55) (xy 265.43 86.36)
+			(xy 232.41 83.82) (xy 232.41 87.63)
 		)
 		(stroke
 			(width 0)
@@ -5111,16 +5131,6 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 83.82) (xy 175.26 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9e08e537-d675-4ee8-9bef-927e575e1d2a")
-	)
-	(wire
-		(pts
 			(xy 52.07 179.07) (xy 52.07 182.88)
 		)
 		(stroke
@@ -5188,16 +5198,6 @@
 			(type default)
 		)
 		(uuid "a4661292-1a01-4171-98a1-e4c9e41e3e86")
-	)
-	(wire
-		(pts
-			(xy 173.99 83.82) (xy 173.99 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a6b1bea5-3daa-464f-beeb-24266c16f735")
 	)
 	(wire
 		(pts
@@ -5401,16 +5401,6 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 34.29) (xy 161.29 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ca8c060e-54a6-49cd-a40c-2c151093fe68")
-	)
-	(wire
-		(pts
 			(xy 201.93 133.35) (xy 199.39 133.35)
 		)
 		(stroke
@@ -5461,6 +5451,16 @@
 	)
 	(wire
 		(pts
+			(xy 175.26 80.01) (xy 175.26 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce8f1369-2622-4fc6-bb2d-5a52c25b52af")
+	)
+	(wire
+		(pts
 			(xy 247.65 146.05) (xy 247.65 148.59)
 		)
 		(stroke
@@ -5471,7 +5471,17 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 82.55) (xy 241.3 86.36)
+			(xy 187.96 82.55) (xy 187.96 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d25026e1-cd5d-4ad9-8f74-3513c4b5ce2e")
+	)
+	(wire
+		(pts
+			(xy 257.81 82.55) (xy 257.81 86.36)
 		)
 		(stroke
 			(width 0)
@@ -5581,7 +5591,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 161.29) (xy 114.3 162.56)
+			(xy 114.3 147.32) (xy 114.3 162.56)
 		)
 		(stroke
 			(width 0)
@@ -5641,7 +5651,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 147.32) (xy 125.73 147.32)
+			(xy 110.49 147.32) (xy 114.3 147.32)
 		)
 		(stroke
 			(width 0)
@@ -5658,6 +5668,16 @@
 			(type default)
 		)
 		(uuid "eadef5c2-7842-4215-afe4-d9f6ac75565a")
+	)
+	(wire
+		(pts
+			(xy 114.3 147.32) (xy 125.73 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0a8e9c4-e3ba-4b52-a847-06783f7e32b7")
 	)
 	(wire
 		(pts
@@ -5681,16 +5701,6 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 81.28) (xy 175.26 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f39ee0e2-eba7-4348-b5dc-6dce50d501d2")
-	)
-	(wire
-		(pts
 			(xy 200.66 82.55) (xy 200.66 83.82)
 		)
 		(stroke
@@ -5708,16 +5718,6 @@
 			(type default)
 		)
 		(uuid "f9c887b5-5beb-419e-b61b-f8d1b9bfb148")
-	)
-	(wire
-		(pts
-			(xy 185.42 83.82) (xy 186.69 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fab8fcbf-5b93-40a8-a006-7752c7eba777")
 	)
 	(wire
 		(pts
@@ -5762,8 +5762,8 @@
 		)
 		(uuid "8bac31d7-defe-49d3-90da-91a5cf4a3853")
 	)
-	(label "YELLOW"
-		(at 146.05 152.4 0)
+	(label "R_D_SW"
+		(at 146.05 167.64 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5771,7 +5771,40 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "10dcedea-23d4-46a4-b7c4-9db7ca154dcd")
+		(uuid "00817393-5e82-45fa-86a9-91ba678b0abd")
+	)
+	(label "ADC1_CH2"
+		(at 207.01 113.03 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "04609fea-c01a-447c-a1bf-542bcf88bf79")
+	)
+	(label "R_U_SW"
+		(at 125.73 157.48 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0ee4b5c8-3a9d-4d20-8f64-cf5e58952394")
+	)
+	(label "RGB"
+		(at 125.73 160.02 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1929c9f0-fd28-4569-bbf4-87f513e9bc27")
 	)
 	(label "RXD"
 		(at 146.05 165.1 0)
@@ -5783,6 +5816,28 @@
 			(justify left bottom)
 		)
 		(uuid "1af44419-c761-469d-a96d-9ba95cd49415")
+	)
+	(label "L_D_SW"
+		(at 234.95 78.74 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1b0189db-8da6-4163-bb1e-2bddb19d6c17")
+	)
+	(label "L_BUTTON"
+		(at 146.05 157.48 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1f4eaa1a-90f7-492a-a692-e2d4af260d6e")
 	)
 	(label "RXD"
 		(at 49.53 168.91 0)
@@ -5806,6 +5861,17 @@
 		)
 		(uuid "2b5edca0-1833-4f10-b22c-e9dfba0e72a1")
 	)
+	(label "L_D_SW"
+		(at 146.05 160.02 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "32577ce7-c26c-4404-b314-4dd10d9e0e98")
+	)
 	(label "EN"
 		(at 91.44 170.18 180)
 		(fields_autoplaced yes)
@@ -5816,6 +5882,61 @@
 			(justify right bottom)
 		)
 		(uuid "3420733b-8a84-4d4f-be4d-d2f5f1f5babd")
+	)
+	(label "ADC1_CH4"
+		(at 125.73 152.4 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3811f737-5272-4a90-85d9-f0a78e063370")
+	)
+	(label "IO9"
+		(at 265.43 135.89 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "47de58cf-96df-42cf-bcb5-28b8cb7a1ed2")
+	)
+	(label "R_U_SW"
+		(at 212.09 80.01 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "56ff0fba-4786-41d7-a912-e030bbd331b3")
+	)
+	(label "R_D_SW"
+		(at 260.35 77.47 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5bdb3588-aba1-42a0-9b24-d7b22b06a921")
+	)
+	(label "RGB"
+		(at 213.36 43.18 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5be62c66-d77b-4840-96b1-4616bbfcce3d")
 	)
 	(label "TXD"
 		(at 49.53 166.37 0)
@@ -5828,6 +5949,17 @@
 		)
 		(uuid "6dd5b19e-8a27-4902-a667-785e56e1ef9f")
 	)
+	(label "ADC1_CH3"
+		(at 146.05 154.94 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7c35e34d-2a6b-40ce-9aed-de3526c5b383")
+	)
 	(label "TXD"
 		(at 146.05 162.56 0)
 		(fields_autoplaced yes)
@@ -5839,16 +5971,38 @@
 		)
 		(uuid "90460330-d9f3-4d4c-8196-39f45d4d6b4b")
 	)
-	(label "BLUE"
-		(at 146.05 167.64 0)
+	(label "IO9"
+		(at 250.19 135.89 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
-		(uuid "a2129810-5620-4c2e-99a5-a9c1ad788e93")
+		(uuid "a459e5d4-8c7c-49a6-be39-9767c6f25484")
+	)
+	(label "ADC1_CH4"
+		(at 247.65 123.19 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a54300c8-c77b-499b-83fd-cc08f5eb6c65")
+	)
+	(label "ADC2_CH0"
+		(at 125.73 154.94 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a9fb1ac2-0bc1-4a4c-8917-8b27381a0c55")
 	)
 	(label "EN"
 		(at 125.73 149.86 180)
@@ -5861,8 +6015,8 @@
 		)
 		(uuid "ad5f9498-761b-4dc8-826c-242b3a69c8d1")
 	)
-	(label "BEEP"
-		(at 146.05 149.86 0)
+	(label "ADC1_CH2"
+		(at 146.05 152.4 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5870,7 +6024,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "b36c6075-1847-41e1-81bf-202b7ccd1185")
+		(uuid "baec5581-0394-486a-9b88-d0e1f9209259")
 	)
 	(label "IO9"
 		(at 49.53 173.99 0)
@@ -5883,7 +6037,73 @@
 		)
 		(uuid "c3ed63f7-330e-47fe-a879-e75d90404406")
 	)
-	(label "RGB"
+	(label "ADC2_CH0"
+		(at 257.81 113.03 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cc58368e-36c9-4183-b8fc-0921f5c62e61")
+	)
+	(label "L_BUTTON"
+		(at 214.63 135.89 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cedb2b5c-39f1-4776-b732-46fade777ad8")
+	)
+	(label "ADC1_CH1"
+		(at 196.85 123.19 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d595ede5-d655-41d7-b184-9e456adf455f")
+	)
+	(label "L_BUTTON"
+		(at 199.39 135.89 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d65e29b0-a085-4432-ba9f-9f40621748c5")
+	)
+	(label "L_U_SW"
+		(at 186.69 80.01 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d7ec1fb6-d7aa-4837-918f-91fdc13e6c66")
+	)
+	(label "ADC1_CH1"
+		(at 146.05 149.86 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e374d83c-df2a-4329-95f0-8623854afd1b")
+	)
+	(label "L_U_SW"
 		(at 146.05 147.32 0)
 		(fields_autoplaced yes)
 		(effects
@@ -5892,29 +6112,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "cbdc2d2b-75ba-427c-8d50-c10211b488fd")
-	)
-	(label "BAT_FB"
-		(at 149.86 91.44 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d28057a0-962d-4410-8ea9-9d20714253d6")
-	)
-	(label "BAT_FB"
-		(at 146.05 154.94 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "e5790e60-0d44-47eb-95c2-4c5ea824d4ab")
+		(uuid "e4b4689a-eba0-4285-8aa2-a720e80ada63")
 	)
 	(label "IO9"
 		(at 125.73 165.1 180)
@@ -5927,72 +6125,16 @@
 		)
 		(uuid "edc42984-eb9e-4dcd-b6a8-6ebe62593fec")
 	)
-	(symbol
-		(lib_id "power:GND")
-		(at 186.69 85.09 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+	(label "ADC1_CH3"
+		(at 149.86 91.44 0)
 		(fields_autoplaced yes)
-		(uuid "0ae23181-6e5b-4ccb-9cca-da1266a73803")
-		(property "Reference" "#PWR017"
-			(at 186.69 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left bottom)
 		)
-		(property "Value" "GND"
-			(at 186.69 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 186.69 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 186.69 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 186.69 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3df07911-02c2-47ad-a545-b1da2576fc25")
-		)
-		(instances
-			(project "controller"
-				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
-					(reference "#PWR017")
-					(unit 1)
-				)
-			)
-		)
+		(uuid "f322a407-a93f-4472-bfb4-7e646163ffec")
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
@@ -6059,6 +6201,169 @@
 		)
 	)
 	(symbol
+		(lib_id "espController:SK-12D07-L3-B")
+		(at 166.37 36.83 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0e201c5b-dc73-43ae-8fed-3c54be44840c")
+		(property "Reference" "SW7"
+			(at 166.624 29.464 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SK-12D07-L3-B"
+			(at 166.37 29.21 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_SPDT_CK_JS102011SAQN"
+			(at 169.7482 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.szlcsc.com/product/details_487802.html"
+			(at 164.6682 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "C480339"
+			(at 159.5882 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "uuid" "std:f81ee0bbf58047c0932804b7db515536"
+			(at 159.5882 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e509f4f1-68f8-4917-bc86-18130c0d6bcb")
+		)
+		(pin "EH"
+			(uuid "009741cb-7f6d-4b96-95ce-a09577374321")
+		)
+		(pin "2"
+			(uuid "a5c988da-40ba-43d7-b96c-2eb8ab9fc160")
+		)
+		(pin "3"
+			(uuid "0d075df3-2603-445a-86b0-bac72996dbf4")
+		)
+		(instances
+			(project "controller"
+				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
+					(reference "SW7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "espController:TS-1199A-B-B")
+		(at 240.03 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0e552026-6bed-4b8f-80c7-844e2c9d3768")
+		(property "Reference" "SW8"
+			(at 242.57 80.0099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TS-1199A-B-B"
+			(at 242.57 82.5499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "espController:SW-SMD_L6.0-W6.0-P6.00-LS6.6"
+			(at 240.03 78.613 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.szlcsc.com/product/details_724359.html"
+			(at 240.03 83.693 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "C692476"
+			(at 240.03 88.773 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "uuid" "std:a8f90e8ccef74c11ad070f97756e49fb"
+			(at 240.03 88.773 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b2710c06-7cc4-4e33-ba00-1a414c303a5a")
+		)
+		(pin "2"
+			(uuid "a8b715f4-30d7-4fbf-9c0e-f7bb28e98446")
+		)
+		(instances
+			(project "controller"
+				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
+					(reference "SW8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3V3")
 		(at 255.27 110.49 0)
 		(unit 1)
@@ -6077,7 +6382,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 252.984 106.68 0)
+			(at 254.762 107.188 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6183,6 +6488,73 @@
 			(project "controller"
 				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
 					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 158.75 39.37 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "16969474-3994-417f-b0fd-5f360c02943b")
+		(property "Reference" "#PWR044"
+			(at 162.56 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VCC"
+			(at 154.94 39.3699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 158.75 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 158.75 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 158.75 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d196745e-0824-4b5a-bed8-bd64dec1a7e6")
+		)
+		(instances
+			(project "controller"
+				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -6520,120 +6892,6 @@
 		)
 	)
 	(symbol
-		(lib_id "bat_rf:RKJXV1224005")
-		(at 256.54 129.54 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "210942c6-b1ae-4433-84d5-28e528c24472")
-		(property "Reference" "SW3"
-			(at 271.78 129.5714 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "RKJXV1224005"
-			(at 271.78 132.1114 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "bat_rf:SW-TH_RKJXV1224005"
-			(at 256.54 115.062 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.szlcsc.com/product/details_157502.html"
-			(at 256.54 120.142 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "C146170"
-			(at 256.54 125.222 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "uuid" "std:95521bddf2bc42b6b3a97ee0acf25854"
-			(at 256.54 125.222 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "43c26979-917e-4a27-8006-badb999ec617")
-		)
-		(pin "5"
-			(uuid "db137669-b301-4cf1-875a-3d0db93bc10d")
-		)
-		(pin "2"
-			(uuid "d5a0595d-77fc-4185-90f9-21f9212b7596")
-		)
-		(pin "7"
-			(uuid "a5faf79d-0c9d-496f-87f6-04f74bb0b4bc")
-		)
-		(pin "a"
-			(uuid "37aa4462-8ede-4de6-bc12-4d0c200945b8")
-		)
-		(pin "b"
-			(uuid "bb9eb512-0018-4648-9818-ae5e292abba7")
-		)
-		(pin "6"
-			(uuid "7eb17091-cab0-4451-8422-f7080d301fc3")
-		)
-		(pin "8"
-			(uuid "7c69c979-b822-4815-921a-695621c3d922")
-		)
-		(pin "c"
-			(uuid "9528de56-f903-4578-bfc3-4a2bf25cf9ff")
-		)
-		(pin "10"
-			(uuid "c327ea61-9842-48ce-ac02-3284d3546390")
-		)
-		(pin "9"
-			(uuid "f8b8fde0-398e-4f52-9640-34e2fa8fcd88")
-		)
-		(pin "d"
-			(uuid "e68dacc3-2031-4a48-9aa4-f218b69c702d")
-		)
-		(pin "1"
-			(uuid "efb3d2db-ef7f-4f0e-90a3-10c2a6083f5f")
-		)
-		(pin "3"
-			(uuid "e2321e5e-4fe1-408d-9c6f-fd4e096a80fa")
-		)
-		(instances
-			(project "controller"
-				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
-					(reference "SW3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3V3")
 		(at 245.11 125.73 90)
 		(unit 1)
@@ -6829,6 +7087,86 @@
 			(project "controller"
 				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
 					(reference "#PWR018")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "espController:TS-1199A-B-B")
+		(at 265.43 80.01 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "325b98ec-ef88-4c4e-95b2-6e24653d02a6")
+		(property "Reference" "SW5"
+			(at 267.97 78.7399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TS-1199A-B-B"
+			(at 267.97 81.2799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "espController:SW-SMD_L6.0-W6.0-P6.00-LS6.6"
+			(at 265.43 77.343 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.szlcsc.com/product/details_724359.html"
+			(at 265.43 82.423 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "C692476"
+			(at 265.43 87.503 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "uuid" "std:a8f90e8ccef74c11ad070f97756e49fb"
+			(at 265.43 87.503 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "315e02d6-ac44-4b3c-8143-1d1ab0005b58")
+		)
+		(pin "2"
+			(uuid "eb9e1793-1cbe-4916-bbb7-31c0c7a98bc2")
+		)
+		(instances
+			(project "controller"
+				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
+					(reference "SW5")
 					(unit 1)
 				)
 			)
@@ -7101,6 +7439,94 @@
 		)
 	)
 	(symbol
+		(lib_id "espController:TP4059")
+		(at 99.06 36.83 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "37f53390-9acd-4817-9d65-4f01423fb296")
+		(property "Reference" "U1"
+			(at 93.726 29.972 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TP4059"
+			(at 100.838 43.688 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "espController:SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR"
+			(at 99.06 39.497 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.szlcsc.com/product/details_81510.html"
+			(at 99.06 34.417 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "C80364"
+			(at 99.06 29.337 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "uuid" "std:c0a8683e471825146d81476b16429dcb"
+			(at 99.06 29.337 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5d1a8ba6-10ca-4354-8b47-bff6c45f0c42")
+		)
+		(pin "6"
+			(uuid "eadeff68-ff1d-4392-8810-f31262163cf4")
+		)
+		(pin "2"
+			(uuid "864613ef-9e7d-4506-89ab-7329ecef9259")
+		)
+		(pin "4"
+			(uuid "1cbdc5f2-c97e-4e12-a706-d03667d07bfd")
+		)
+		(pin "5"
+			(uuid "c57ce977-395d-4df2-acb0-9c53db399f3e")
+		)
+		(pin "3"
+			(uuid "3433c5e1-0b48-402c-a7ed-0602ee8b42b8")
+		)
+		(instances
+			(project "controller"
+				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 130.81 97.79 0)
 		(unit 1)
@@ -7194,7 +7620,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
 			(at 118.11 39.37 0)
 			(effects
 				(font
@@ -7505,73 +7931,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 173.99 85.09 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "48177e5e-b67f-43c9-9ef9-8074cedb2220")
-		(property "Reference" "#PWR016"
-			(at 173.99 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 173.99 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 173.99 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 173.99 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 173.99 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "744bf868-7cc0-4635-bedc-f7eb6504a60b")
-		)
-		(instances
-			(project "controller"
-				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
-					(reference "#PWR016")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 60.96 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7799,7 +8158,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 116.84 34.29 0)
 			(effects
 				(font
@@ -7997,7 +8356,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
 			(at 80.01 36.83 0)
 			(effects
 				(font
@@ -8173,6 +8532,73 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 187.96 83.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6f46edbf-e35f-4899-9b4c-cfa8db3075bc")
+		(property "Reference" "#PWR017"
+			(at 187.96 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 187.96 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 187.96 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 187.96 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 187.96 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "23ddb6a0-c037-42e0-8e6d-5ad65ca3d6fd")
+		)
+		(instances
+			(project "controller"
+				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
+					(reference "#PWR017")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 83.82 182.88 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8233,6 +8659,120 @@
 			(project "controller"
 				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
 					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "espController:RKJXV1224005")
+		(at 205.74 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "75f2e7bc-f56f-4c1d-a0da-4af8e6b4fba7")
+		(property "Reference" "SW2"
+			(at 220.98 129.5714 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "RKJXV1224005"
+			(at 220.98 132.1114 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "espController:SW-TH_RKJXV1224005"
+			(at 205.74 115.062 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.szlcsc.com/product/details_157502.html"
+			(at 205.74 120.142 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "C146170"
+			(at 205.74 125.222 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "uuid" "std:95521bddf2bc42b6b3a97ee0acf25854"
+			(at 205.74 125.222 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "b"
+			(uuid "c07fd7af-f8b4-4e6b-b5ed-3da14a7fc832")
+		)
+		(pin "d"
+			(uuid "bb497871-d6f3-4ab4-8c66-176aa56aa79a")
+		)
+		(pin "a"
+			(uuid "b5a6d35e-ada8-4e27-bbe3-f206e976a26e")
+		)
+		(pin "2"
+			(uuid "a62db6de-0504-4165-8efc-a5ece16f7f9b")
+		)
+		(pin "5"
+			(uuid "aa48768c-187d-4f80-b076-c224d5a622e1")
+		)
+		(pin "8"
+			(uuid "4f0e4b76-dc3e-4096-8756-0e909d39c358")
+		)
+		(pin "6"
+			(uuid "4134ffd5-781a-4a14-8c87-c34bafd33af6")
+		)
+		(pin "10"
+			(uuid "e8b83ed5-ff6e-4104-95ea-baf1ac9e92e8")
+		)
+		(pin "9"
+			(uuid "321c45f8-d5f8-459f-a332-0697329bb3e0")
+		)
+		(pin "1"
+			(uuid "f33d87ea-f24d-4589-9069-38d3af5abd6c")
+		)
+		(pin "c"
+			(uuid "14c533b4-bce4-4498-badf-c8222af25b2b")
+		)
+		(pin "7"
+			(uuid "97dcbbea-8366-4f54-8944-4a83d8b92f11")
+		)
+		(pin "3"
+			(uuid "80d94b30-473a-4242-ab6e-3a526f7c8322")
+		)
+		(pin "4"
+			(uuid "2cad13db-789c-4e14-80ed-55e214085ea9")
+		)
+		(instances
+			(project "controller"
+				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
+					(reference "SW2")
 					(unit 1)
 				)
 			)
@@ -8521,6 +9061,120 @@
 			(project "controller"
 				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
 					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "espController:RKJXV1224005")
+		(at 256.54 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8410adbb-8d7e-4ccf-92b2-2c6e49b988d0")
+		(property "Reference" "SW3"
+			(at 271.78 129.5714 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "RKJXV1224005"
+			(at 271.78 132.1114 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "espController:SW-TH_RKJXV1224005"
+			(at 256.54 115.062 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.szlcsc.com/product/details_157502.html"
+			(at 256.54 120.142 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "C146170"
+			(at 256.54 125.222 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "uuid" "std:95521bddf2bc42b6b3a97ee0acf25854"
+			(at 256.54 125.222 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "b"
+			(uuid "210f7e2c-9b09-431f-9518-4ccbe69f551d")
+		)
+		(pin "d"
+			(uuid "fffdeded-004b-4316-bfd6-29a0c29c7e7b")
+		)
+		(pin "a"
+			(uuid "20c12516-3d2e-4f52-81ee-f14e81964279")
+		)
+		(pin "2"
+			(uuid "9c58984d-964b-4e2a-a2f6-7cd33d297464")
+		)
+		(pin "5"
+			(uuid "df0b81dd-eeca-4c0b-8218-a6e289bbb7fd")
+		)
+		(pin "8"
+			(uuid "f6a2597e-8919-430a-abd9-7ad5dc41fee3")
+		)
+		(pin "6"
+			(uuid "f7f898e1-5035-4522-a5eb-0e0c673c16e9")
+		)
+		(pin "10"
+			(uuid "ca383471-0b8b-4681-aedd-6a836aecbf8e")
+		)
+		(pin "9"
+			(uuid "b6a35e75-26ee-41fb-9cda-24dfc0d63ac3")
+		)
+		(pin "1"
+			(uuid "f448f8ce-9a53-47e0-8f6b-4f5f486a5c9a")
+		)
+		(pin "c"
+			(uuid "3c6b8e23-7b4f-43b2-ab4e-e9adaa758045")
+		)
+		(pin "7"
+			(uuid "0c2eec24-23fc-4402-9721-cbb1046f9c94")
+		)
+		(pin "3"
+			(uuid "a993d8c5-b769-4792-b1a3-8ba84ffdca10")
+		)
+		(pin "4"
+			(uuid "1eb895c8-f080-49c7-8c87-7486cbf048ab")
+		)
+		(instances
+			(project "controller"
+				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
+					(reference "SW3")
 					(unit 1)
 				)
 			)
@@ -8924,76 +9578,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x02")
-		(at 135.89 31.75 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9369d5d2-3649-41fe-89b0-2f9df0eae745")
-		(property "Reference" "J2"
-			(at 138.43 31.7499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Bat"
-			(at 138.43 34.2899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 135.89 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 135.89 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 135.89 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "e039c978-e2b5-4eb2-aa8d-8450266c056b")
-		)
-		(pin "1"
-			(uuid "8f159fc2-9fb4-4450-bb9e-c690ef5dafa8")
-		)
-		(instances
-			(project "controller"
-				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
-					(reference "J2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 252.73 110.49 180)
 		(unit 1)
@@ -9122,6 +9706,73 @@
 			(project "controller"
 				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
 					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 175.26 83.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9c707225-28f0-4ce3-87a0-0271125cbe83")
+		(property "Reference" "#PWR016"
+			(at 175.26 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 175.26 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 175.26 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 175.26 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 175.26 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "543ee894-086a-4ffe-9006-02374ae34669")
+		)
+		(instances
+			(project "controller"
+				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -9390,6 +10041,76 @@
 			(project "controller"
 				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
 					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 135.89 34.29 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a341389c-046d-4a80-8878-aa5510cac79b")
+		(property "Reference" "J2"
+			(at 138.43 34.2901 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Bat"
+			(at 138.43 31.7501 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical"
+			(at 135.89 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 135.89 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 135.89 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "a95e04d8-a43d-4b5f-aabc-7869a9678513")
+		)
+		(pin "1"
+			(uuid "10db6537-3fe4-4ed8-beae-3108afbb500d")
+		)
+		(instances
+			(project "controller"
+				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -9946,7 +10667,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 265.43 86.36 0)
+		(at 232.41 87.63 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9955,7 +10676,7 @@
 		(fields_autoplaced yes)
 		(uuid "b269ae75-7b33-4f65-a980-385d505f2ac3")
 		(property "Reference" "#PWR014"
-			(at 265.43 92.71 0)
+			(at 232.41 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9964,7 +10685,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 265.43 91.44 0)
+			(at 232.41 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9973,7 +10694,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 265.43 86.36 0)
+			(at 232.41 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9982,7 +10703,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 265.43 86.36 0)
+			(at 232.41 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9991,7 +10712,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 265.43 86.36 0)
+			(at 232.41 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10354,86 +11075,6 @@
 		)
 	)
 	(symbol
-		(lib_id "bat_rf:TS-1199A-B-B")
-		(at 273.05 80.01 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "bf6a3826-52ad-4a4e-a9eb-6ccbed18902b")
-		(property "Reference" "SW6"
-			(at 275.59 78.7399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TS-1199A-B-B"
-			(at 275.59 81.2799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "bat_rf:SW-SMD_L6.0-W6.0-P6.00-LS6.6"
-			(at 273.05 77.343 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.szlcsc.com/product/details_724359.html"
-			(at 273.05 82.423 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "C692476"
-			(at 273.05 87.503 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "uuid" "std:a8f90e8ccef74c11ad070f97756e49fb"
-			(at 273.05 87.503 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "fdfeb510-5b46-4955-9217-2985756a98a4")
-		)
-		(pin "1"
-			(uuid "8e0c4178-117c-4bac-9b52-5694c6b9b140")
-		)
-		(instances
-			(project "controller"
-				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
-					(reference "SW6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 123.19 170.18 0)
 		(unit 1)
@@ -10495,86 +11136,6 @@
 			(project "controller"
 				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
 					(reference "#PWR06")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "bat_rf:TS-1199A-B-B")
-		(at 248.92 80.01 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c5509da5-c0b7-40e2-bc96-03eccd6a1dba")
-		(property "Reference" "SW5"
-			(at 251.46 78.7399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TS-1199A-B-B"
-			(at 251.46 81.2799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "bat_rf:SW-SMD_L6.0-W6.0-P6.00-LS6.6"
-			(at 248.92 77.343 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.szlcsc.com/product/details_724359.html"
-			(at 248.92 82.423 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "C692476"
-			(at 248.92 87.503 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "uuid" "std:a8f90e8ccef74c11ad070f97756e49fb"
-			(at 248.92 87.503 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "cdedde1d-2dfe-49ee-8541-27ef58a3d1df")
-		)
-		(pin "1"
-			(uuid "01f69dc9-3b3d-4083-9335-266037aae1cd")
-		)
-		(instances
-			(project "controller"
-				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
-					(reference "SW5")
 					(unit 1)
 				)
 			)
@@ -10853,6 +11414,173 @@
 		)
 	)
 	(symbol
+		(lib_id "espController:TC-1102N-C-AS-B")
+		(at 181.61 80.01 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ca0b604a-c770-4f61-80a6-3876aa2e3b41")
+		(property "Reference" "SW4"
+			(at 181.356 75.692 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TC-1102N-C-AS-B"
+			(at 181.61 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "espController:SW-TH_TC-1102N-C-AS-B"
+			(at 181.61 81.026 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.szlcsc.com/product/details_393914.html"
+			(at 181.61 86.106 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "C406151"
+			(at 181.61 91.186 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "uuid" "std:62ddec029f9448109c55e50d5022673b"
+			(at 181.61 91.186 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "46529216-1918-4ee5-896d-239dbbbc59d7")
+		)
+		(pin "2"
+			(uuid "aba00644-142e-4d20-bb8d-bbd05d2cf15c")
+		)
+		(pin "3"
+			(uuid "83575b79-55af-46b8-a605-ce3ac542dc40")
+		)
+		(pin "1"
+			(uuid "de6ec553-9f04-421f-b77d-740bdce9efc4")
+		)
+		(instances
+			(project "controller"
+				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
+					(reference "SW4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "espController:TC-1102N-C-AS-B")
+		(at 207.01 80.01 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ccce5b31-ba48-4422-95f8-75fcaebd3782")
+		(property "Reference" "SW6"
+			(at 207.264 75.692 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TC-1102N-C-AS-B"
+			(at 207.01 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "espController:SW-TH_TC-1102N-C-AS-B"
+			(at 207.01 81.026 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.szlcsc.com/product/details_393914.html"
+			(at 207.01 86.106 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "C406151"
+			(at 207.01 91.186 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "uuid" "std:62ddec029f9448109c55e50d5022673b"
+			(at 207.01 91.186 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "bc44a0c3-8c0d-40e0-b664-da7ab24004e3")
+		)
+		(pin "2"
+			(uuid "4d52747f-f4c4-4212-b0e7-3a4a49f361f0")
+		)
+		(pin "3"
+			(uuid "484a64d1-9fb9-45d0-9fe3-df06f95058bb")
+		)
+		(pin "1"
+			(uuid "51a68df2-032c-4262-8f6e-a681b207c6c4")
+		)
+		(instances
+			(project "controller"
+				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
+					(reference "SW6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 91.44 97.79 0)
 		(mirror y)
@@ -10918,89 +11646,6 @@
 			(project "controller"
 				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
 					(reference "C10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "bat_rf:TC-1102N-C-AS-B")
-		(at 180.34 81.28 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d39e92ed-51b6-45fd-9cdc-873cadff506b")
-		(property "Reference" "SW4"
-			(at 179.832 76.454 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TC-1102N-C-AS-B"
-			(at 180.34 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "bat_rf:SW-TH_TC-1102N-C-AS-B"
-			(at 180.34 82.296 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.szlcsc.com/product/details_393914.html"
-			(at 180.34 87.376 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "C406151"
-			(at 180.34 92.456 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "uuid" "std:62ddec029f9448109c55e50d5022673b"
-			(at 180.34 92.456 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "d4b033cf-d60c-4a9b-a12c-aa7f5a3dd2b4")
-		)
-		(pin "2"
-			(uuid "c9e5110e-2254-463e-bcc7-239af7dfef39")
-		)
-		(pin "1"
-			(uuid "261e9124-eafa-4a7f-b4f2-87bd367df13f")
-		)
-		(pin "3"
-			(uuid "dcf482d9-a284-4b49-82a0-da01c40d7056")
-		)
-		(instances
-			(project "controller"
-				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
-					(reference "SW4")
 					(unit 1)
 				)
 			)
@@ -11075,89 +11720,6 @@
 		)
 	)
 	(symbol
-		(lib_id "bat_rf:TC-1102N-C-AS-B")
-		(at 207.01 80.01 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "da8e3977-ed2b-464f-be63-f149b51008a6")
-		(property "Reference" "SW7"
-			(at 206.248 76.708 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TC-1102N-C-AS-B"
-			(at 207.01 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "bat_rf:SW-TH_TC-1102N-C-AS-B"
-			(at 207.01 81.026 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.szlcsc.com/product/details_393914.html"
-			(at 207.01 86.106 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "C406151"
-			(at 207.01 91.186 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "uuid" "std:62ddec029f9448109c55e50d5022673b"
-			(at 207.01 91.186 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "6a262e3c-7149-41b7-9f75-489078884208")
-		)
-		(pin "2"
-			(uuid "7e08a0f0-2d32-4a92-af02-8c22ed592f91")
-		)
-		(pin "1"
-			(uuid "4e4351de-7d11-48ef-a714-96bfad6c222c")
-		)
-		(pin "3"
-			(uuid "d168a3b1-77ac-40fa-b42f-98f2205301ed")
-		)
-		(instances
-			(project "controller"
-				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
-					(reference "SW7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3V3")
 		(at 52.07 160.02 0)
 		(unit 1)
@@ -11218,94 +11780,6 @@
 			(project "controller"
 				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
 					(reference "#PWR01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "espController:TP4059")
-		(at 99.06 36.83 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "deed7b50-32d2-48e1-8e54-9e238be520b1")
-		(property "Reference" "U1"
-			(at 99.06 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TP4059"
-			(at 99.06 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "kicad_lceda:SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR"
-			(at 99.06 39.497 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.szlcsc.com/product/details_81510.html"
-			(at 99.06 34.417 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "C80364"
-			(at 99.06 29.337 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "uuid" "std:c0a8683e471825146d81476b16429dcb"
-			(at 99.06 29.337 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "5"
-			(uuid "8686bce2-1d34-4bda-8f61-65b904b384b2")
-		)
-		(pin "2"
-			(uuid "066bf684-eeec-4867-a485-606353b57770")
-		)
-		(pin "6"
-			(uuid "d88d1328-a558-441b-a221-0d28b07ea7b1")
-		)
-		(pin "4"
-			(uuid "16d52fe7-28ff-44e8-9453-91c16cb7f4a6")
-		)
-		(pin "1"
-			(uuid "81059fc6-ba50-496f-94da-e3936d23b541")
-		)
-		(pin "3"
-			(uuid "b3b2d58f-1399-4200-bfcf-f7a6ac453be1")
-		)
-		(instances
-			(project "controller"
-				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
-					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -11455,187 +11929,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:VCC")
-		(at 158.75 34.29 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e7f9f9b5-6c94-4a31-b782-9a76291cda06")
-		(property "Reference" "#PWR044"
-			(at 162.56 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "VCC"
-			(at 154.94 34.2899 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 158.75 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 158.75 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 158.75 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e49d7eb3-ac8e-4bee-947f-06920556866a")
-		)
-		(instances
-			(project "controller"
-				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
-					(reference "#PWR044")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "bat_rf:RKJXV1224005")
-		(at 205.74 129.54 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "efd0828d-c375-4533-a4a8-46f11db2f3d4")
-		(property "Reference" "SW2"
-			(at 220.98 129.5714 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "RKJXV1224005"
-			(at 220.98 132.1114 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "bat_rf:SW-TH_RKJXV1224005"
-			(at 205.74 115.062 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.szlcsc.com/product/details_157502.html"
-			(at 205.74 120.142 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "C146170"
-			(at 205.74 125.222 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "uuid" "std:95521bddf2bc42b6b3a97ee0acf25854"
-			(at 205.74 125.222 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "fbb308df-268a-4712-bc4c-fa987e6883ec")
-		)
-		(pin "5"
-			(uuid "fcc901cd-215a-44ce-81e8-944637ab3e40")
-		)
-		(pin "2"
-			(uuid "24f18373-9dc1-4645-9458-ceef26d8e42d")
-		)
-		(pin "7"
-			(uuid "26f674a5-3e5b-4b90-a2be-1b6dad58ddb0")
-		)
-		(pin "a"
-			(uuid "3ab8e528-2526-42d0-ba51-c99f8f89aa17")
-		)
-		(pin "b"
-			(uuid "e7881de6-f07d-4aad-95f8-5a22c1490442")
-		)
-		(pin "6"
-			(uuid "cbf05d93-5efb-4fc9-9dbc-bb242de9a156")
-		)
-		(pin "8"
-			(uuid "687b0d38-4d13-46b5-a1a4-f8efa91165a8")
-		)
-		(pin "c"
-			(uuid "ad397109-6ef9-40ac-940c-22b32d3bf3a6")
-		)
-		(pin "10"
-			(uuid "4767a97a-8c65-4137-93c3-ef1bd8f0a05a")
-		)
-		(pin "9"
-			(uuid "e0aa006e-b398-49d0-bf13-d6c8b686c7c5")
-		)
-		(pin "d"
-			(uuid "90fd1066-130f-4f96-b54f-c91da1af21bd")
-		)
-		(pin "1"
-			(uuid "0112df0c-fd77-46ac-951a-30d7d02c908e")
-		)
-		(pin "3"
-			(uuid "48cd8359-a69b-42c4-912f-4cc095271a54")
-		)
-		(instances
-			(project "controller"
-				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
-					(reference "SW2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3V3")
 		(at 204.47 110.49 0)
 		(unit 1)
@@ -11654,7 +11947,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 202.184 106.68 0)
+			(at 203.962 107.696 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11763,89 +12056,6 @@
 			(project "controller"
 				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
 					(reference "#PWR019")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "bat_rf:SK-12D07-L3-B")
-		(at 166.37 36.83 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f22dabc1-33f7-44f9-b84c-ce6d52071978")
-		(property "Reference" "SW9"
-			(at 165.354 29.972 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SK-12D07-L3-B"
-			(at 166.37 29.21 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "bat_rf:SW-TH_SK-12D07-X-X"
-			(at 169.7482 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.szlcsc.com/product/details_487802.html"
-			(at 164.6682 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "C480339"
-			(at 159.5882 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "uuid" "std:f81ee0bbf58047c0932804b7db515536"
-			(at 159.5882 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "aedf3ba9-5fdd-4b12-a247-9b7ef6c77daa")
-		)
-		(pin "EH"
-			(uuid "aa82be6a-ba28-4397-b2df-9370e7e0e7e9")
-		)
-		(pin "1"
-			(uuid "800903a2-f7f9-4059-b5c3-1d2a2025e233")
-		)
-		(pin "2"
-			(uuid "03c519d2-37c0-49fe-9ab5-c1cce71c97fd")
-		)
-		(instances
-			(project "controller"
-				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
-					(reference "SW9")
 					(unit 1)
 				)
 			)
@@ -12052,7 +12262,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 241.3 86.36 0)
+		(at 257.81 86.36 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12061,7 +12271,7 @@
 		(fields_autoplaced yes)
 		(uuid "f5c82a2e-5de9-4c1c-ba02-cb6aa223ebfc")
 		(property "Reference" "#PWR013"
-			(at 241.3 92.71 0)
+			(at 257.81 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12070,7 +12280,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 241.3 91.44 0)
+			(at 257.81 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12079,7 +12289,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 241.3 86.36 0)
+			(at 257.81 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12088,7 +12298,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 241.3 86.36 0)
+			(at 257.81 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12097,7 +12307,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 241.3 86.36 0)
+			(at 257.81 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
