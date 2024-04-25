@@ -1,4 +1,4 @@
-23196946821755470
+23202088983441986
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -94759,12 +94759,26 @@ Varistor VF
 2
 2
 bat_rf
+AO3401
+
+
+0
+3
+3
+bat_rf
 BAT-SMD_BH-18650-B1BA007
 
 
 0
 4
 4
+bat_rf
+BAT54C
+
+
+0
+3
+3
 bat_rf
 BULETM-SMD_18P-L20.0-W18.0-P1.50_ESP32-C3-WROOM
 
@@ -94870,6 +94884,13 @@ SOP8-PAD
 0
 9
 9
+bat_rf
+SOT-23
+
+
+0
+3
+3
 bat_rf
 SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR
 
