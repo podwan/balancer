@@ -531,7 +531,7 @@
       "plot": "gerbers/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "bat_rf.step",
       "svg": "",
       "vrml": ""
     },

@@ -1129,9 +1129,9 @@
 		(remove_unused_layers no)
 		(uuid "840a0ef4-94d8-4c9d-8a2c-87f71c7ef4bc")
 	)
-	(model "${KIPRJMOD}/kicad_lceda.3dshapes/SW-TH_RKJXV1224005.step"
+	(model "${KIPRJMOD}/3d/RKJXV1224005.stp"
 		(offset
-			(xyz -0.15 -0.15 -2.2)
+			(xyz -1.15 0.85 -0.2)
 		)
 		(scale
 			(xyz 1 1 1)

@@ -17770,7 +17770,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Buzzer_Beeper:MagneticBuzzer_Kobitone_254-EMB84Q-RO"
+		(property "Footprint" "bat_rf:BUZ-SMD_FUET-9045"
 			(at 276.225 121.92 90)
 			(effects
 				(font
@@ -19646,7 +19646,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "bat_rf:CONN-TH_XT30UPB-F"
+		(property "Footprint" "bat_rf:CONN-TH_XT30U-F"
 			(at 97.79 54.61 0)
 			(effects
 				(font

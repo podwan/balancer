@@ -301,15 +301,15 @@
 		(remove_unused_layers no)
 		(uuid "42108882-2e3e-4be2-b6d4-af1ccb4b88c6")
 	)
-	(model "${KIPRJMOD}/kicad_lceda.3dshapes/SW-TH_TC-1102N-C-AS-B.step"
+	(model "${KIPRJMOD}/3d/TC-1102N-C-AS-B.stp"
 		(offset
-			(xyz 0 -1.14 -4.3)
+			(xyz 0 -0.14 4.2)
 		)
 		(scale
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz 0 0 0)
+			(xyz 0 -90 180)
 		)
 	)
 	(model "${KIPRJMOD}/kicad_lceda.3dshapes/SW-TH_TC-1102N-C-AS-B.wrl"

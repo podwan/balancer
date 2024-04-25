@@ -452,7 +452,7 @@
 		(layers "F.Cu" "F.Paste" "F.Mask")
 		(uuid "4e9351c4-fc61-45ed-aa40-d86b2376f1af")
 	)
-	(model "${KIPRJMOD}/kicad_lceda.3dshapes/SW-SMD_L6.0-W6.0-H5.0-P6.00-LS6.6.step"
+	(model "${KIPRJMOD}/3d/TS-1199A-B-B.stp"
 		(offset
 			(xyz 0 0 0)
 		)
@@ -460,7 +460,7 @@
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz 0 0 0)
+			(xyz 90 180 0)
 		)
 	)
 	(model "${KIPRJMOD}/kicad_lceda.3dshapes/SW-SMD_L6.0-W6.0-H5.0-P6.00-LS6.6.wrl"

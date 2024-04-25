@@ -5,5 +5,17 @@ https://oshwhub.com/shadow27/tai-yang-neng-wu-ren-chuan  设计参考
 # 2024/4/23
 
 - [x] 主体编码器安装孔内移
-- [ ] 电池板蜂鸣器封装更新
-- [ ] 供电接头孔距有问题
+- [x] 电池板蜂鸣器封装更新
+- [x] 供电接头孔距有问题
+
+# 2024/4/24
+
+3d下载网站
+
+https://www.3dcontentcentral.com.cn/ 
+https://grabcad.com/library
+https://componentsearchengine.com/
+https://www.snapeda.com/home/
+https://componentsearchengine.com/
+https://www.ultralibrarian.com/
+https://www.datasheet5.com/
