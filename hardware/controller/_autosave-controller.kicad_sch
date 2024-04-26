@@ -6882,15 +6882,15 @@
 	(symbol
 		(lib_id "espController:TS-1199A-B-B")
 		(at 63.5 173.99 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "0e552026-6bed-4b8f-80c7-844e2c9d3768")
 		(property "Reference" "SW8"
-			(at 66.04 172.7199 0)
+			(at 66.04 175.2601 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6899,7 +6899,7 @@
 			)
 		)
 		(property "Value" "TS-1199A-B-B"
-			(at 66.04 175.2599 0)
+			(at 66.04 172.7201 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6909,7 +6909,7 @@
 			)
 		)
 		(property "Footprint" "espController:SW-SMD_L6.0-W6.0-P6.00-LS6.6"
-			(at 63.5 171.323 0)
+			(at 63.5 176.657 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6918,7 +6918,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.szlcsc.com/product/details_724359.html"
-			(at 63.5 176.403 0)
+			(at 63.5 171.577 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6927,7 +6927,7 @@
 			)
 		)
 		(property "Description" "C692476"
-			(at 63.5 181.483 0)
+			(at 63.5 166.497 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6936,7 +6936,7 @@
 			)
 		)
 		(property "uuid" "std:a8f90e8ccef74c11ad070f97756e49fb"
-			(at 63.5 181.483 0)
+			(at 63.5 166.497 0)
 			(effects
 				(font
 					(size 1.27 1.27)
