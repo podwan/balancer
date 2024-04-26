@@ -6085,6 +6085,10 @@
 		(at 218.44 44.45)
 		(uuid "ebd859d1-0593-41b4-97bf-8814d75be068")
 	)
+	(no_connect
+		(at 45.72 177.8)
+		(uuid "ecd5e22e-e28c-4e13-93c6-65c8b23d2597")
+	)
 	(wire
 		(pts
 			(xy 52.07 22.86) (xy 53.34 22.86)
@@ -15849,7 +15853,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "aae063f9-9bce-4e18-a20d-90ead4b62277")
 		(property "Reference" "U3"
 			(at 160.02 44.45 0)
@@ -17771,7 +17774,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "c5d10a7a-4df1-4608-8d89-dcee549878fc")
 		(property "Reference" "C4"
 			(at 139.7 27.9399 0)
