@@ -5,6 +5,15 @@
 
 
 #define POWER_EN 6
+#define BEEPER 1
+#define KEY 7
+#define GREEN_LED 4
+#define BAT_EN 5
+#define BLUE_LED 10
+#define YELLOW_LED 2
+#define RGB 0
+#define BAT_FB 3
+
 //Default Temperature is in Celsius
 //Comment the next line for Temperature in Fahrenheit
 #define temperatureCelsius
@@ -111,14 +120,31 @@ static void humidityNotifyCallback(BLERemoteCharacteristic* pBLERemoteCharacteri
   newHumidity = true;
   mySerial.print(newHumidity);
 }
+static bool _1000ms, _1ms, powerOff;
+hw_timer_t* timer = NULL;
 
-
-
+static void IRAM_ATTR Timer0_CallBack(void) {
+  static int _1000msCnt;
+  _1ms = 1;
+  if (++_1000msCnt >= 1000) {
+    _1000msCnt = 0;
+    _1000ms = 1;
+  }
+}
 void setup() {
-  pinMode(POWER_EN, OUTPUT);
+
 
 
   mySerial.begin(115200, SERIAL_8N1, 20, 21);
+  pinMode(POWER_EN, OUTPUT);
+  ledcSetup(0, 2700, 14);
+  ledcAttachPin(BEEPER, 0);
+  timer = timerBegin(0, 80, true);
+  timerAttachInterrupt(timer, Timer0_CallBack, true);
+  timerAlarmWrite(timer, 1000, true);  // 单位us,定时模式,10ms
+  timerAlarmEnable(timer);             // 启动定时器
+  pinMode(KEY, INPUT_PULLUP);
+
   //Init BLE device
   // BLEDevice::init("");
   // BLEScan* pBLEScan = BLEDevice::getScan();
@@ -130,6 +156,9 @@ void setup() {
 }
 
 void loop() {
+
+  ledcWrite(0, 8192);
+  //analogWrite(BEEPER, brightness);
   // If the flag "doConnect" is true then we have scanned for and found the desired
   // BLE Server with which we wish to connect.  Now we connect to it.  Once we are
   // connected we set the connected flag to be true.
@@ -147,12 +176,31 @@ void loop() {
   // }
 
   // delay(1000); // Delay a second between loops.
+  if (powerOff) {
+    digitalWrite(POWER_EN, LOW);  //
+  } else
+    digitalWrite(POWER_EN, HIGH);  //
 
-  digitalWrite(POWER_EN, HIGH);  //
-  mySerial.println("high\n");
-  delay(1000);  // Delay a second between loops.
+    
+  if (_1000ms) {
+    _1000ms = 0;
+    mySerial.printf("frequence: %d, duty %d \n");
+  }
 
-  digitalWrite(POWER_EN, LOW);  //
-  mySerial.println("low\n");
-  delay(1000);  // Delay a second between loops.
+  if (_1ms) {
+    _1ms = 0;
+    static int keyDownCnt;
+    if (digitalRead(KEY) == 0) {
+      if (++keyDownCnt >= 3000) {
+        powerOff = 1;
+      }
+    } else {
+      keyDownCnt = 0;
+    }
+  }
+  // delay(1000);  // Delay a second between loops.
+
+  // digitalWrite(POWER_EN, LOW);  //
+  // mySerial.println("low\n");
+  // delay(1000);  // Delay a second between loops.
 }
