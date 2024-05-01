@@ -1,8 +1,6 @@
 #include "BLEDevice.h"
-#include <Wire.h>
-#include <Adafruit_SSD1306.h>
-#include <Adafruit_GFX.h>
-
+#include "beeper.h"
+#include "Freenove_WS2812_Lib_for_ESP32.h"
 
 #define POWER_EN 6
 #define BEEPER 1
@@ -14,11 +12,19 @@
 #define RGB 0
 #define BAT_FB 3
 
-//Default Temperature is in Celsius
-//Comment the next line for Temperature in Fahrenheit
+
+#define RGB_COUNT 2
+
+#define CHANNEL 0
+
+
+Freenove_ESP32_WS2812 strip = Freenove_ESP32_WS2812(RGB_COUNT, RGB, CHANNEL, TYPE_GRB);
+
+// Default Temperature is in Celsius
+// Comment the next line for Temperature in Fahrenheit
 #define temperatureCelsius
 
-//BLE Server name (the other ESP32 name running the server sketch)
+// BLE Server name (the other ESP32 name running the server sketch)
 #define bleServerName "BME280_ESP32"
 
 /* UUID's of the service, characteristic that we want to read*/
@@ -27,49 +33,49 @@ static BLEUUID bmeServiceUUID("91bad492-b950-4226-aa2b-4ede9fa42f59");
 
 // BLE Characteristics
 #ifdef temperatureCelsius
-//Temperature Celsius Characteristic
+// Temperature Celsius Characteristic
 static BLEUUID temperatureCharacteristicUUID("cba1d466-344c-4be3-ab3f-189f80dd7518");
 #else
-//Temperature Fahrenheit Characteristic
+// Temperature Fahrenheit Characteristic
 static BLEUUID temperatureCharacteristicUUID("f78ebbff-c8b7-4107-93de-889a6a06d408");
 #endif
 
 // Humidity Characteristic
 static BLEUUID humidityCharacteristicUUID("ca73b3ba-39f6-4ab3-91ae-186dc9577d99");
 
-//Flags stating if should begin connecting and if the connection is up
+// Flags stating if should begin connecting and if the connection is up
 static boolean doConnect = false;
 static boolean connected = false;
 
-//Address of the peripheral device. Address will be found during scanning...
-static BLEAddress* pServerAddress;
+// Address of the peripheral device. Address will be found during scanning...
+static BLEAddress *pServerAddress;
 
-//Characteristicd that we want to read
-static BLERemoteCharacteristic* temperatureCharacteristic;
-static BLERemoteCharacteristic* humidityCharacteristic;
+// Characteristicd that we want to read
+static BLERemoteCharacteristic *temperatureCharacteristic;
+static BLERemoteCharacteristic *humidityCharacteristic;
 
-//Activate notify
+// Activate notify
 const uint8_t notificationOn[] = { 0x1, 0x0 };
 const uint8_t notificationOff[] = { 0x0, 0x0 };
 
-//Variables to store temperature and humidity
-char* temperatureChar;
-char* humidityChar;
+// Variables to store temperature and humidity
+char *temperatureChar;
+char *humidityChar;
 
-//Flags to check whether new temperature and humidity readings are available
+// Flags to check whether new temperature and humidity readings are available
 boolean newTemperature = false;
 boolean newHumidity = false;
 HardwareSerial mySerial(1);
-//Connect to the BLE Server that has the name, Service, and Characteristics
+// Connect to the BLE Server that has the name, Service, and Characteristics
 bool connectToServer(BLEAddress pAddress) {
-  BLEClient* pClient = BLEDevice::createClient();
+  BLEClient *pClient = BLEDevice::createClient();
 
   // Connect to the remove BLE Server.
   pClient->connect(pAddress);
   mySerial.println(" - Connected to server");
 
   // Obtain a reference to the service we are after in the remote BLE server.
-  BLERemoteService* pRemoteService = pClient->getService(bmeServiceUUID);
+  BLERemoteService *pRemoteService = pClient->getService(bmeServiceUUID);
   if (pRemoteService == nullptr) {
     mySerial.print("Failed to find our service UUID: ");
     mySerial.println(bmeServiceUUID.toString().c_str());
@@ -86,118 +92,169 @@ bool connectToServer(BLEAddress pAddress) {
   }
   mySerial.println(" - Found our characteristics");
 
-  //Assign callback functions for the Characteristics
+  // Assign callback functions for the Characteristics
   temperatureCharacteristic->registerForNotify(temperatureNotifyCallback);
   humidityCharacteristic->registerForNotify(humidityNotifyCallback);
   return true;
 }
 
-//Callback function that gets called, when another device's advertisement has been received
+// Callback function that gets called, when another device's advertisement has been received
 class MyAdvertisedDeviceCallbacks : public BLEAdvertisedDeviceCallbacks {
   void onResult(BLEAdvertisedDevice advertisedDevice) {
-    if (advertisedDevice.getName() == bleServerName) {                 //Check if the name of the advertiser matches
-      advertisedDevice.getScan()->stop();                              //Scan can be stopped, we found what we are looking for
-      pServerAddress = new BLEAddress(advertisedDevice.getAddress());  //Address of advertiser is the one we need
-      doConnect = true;                                                //Set indicator, stating that we are ready to connect
+    if (advertisedDevice.getName() == bleServerName) {                 // Check if the name of the advertiser matches
+      advertisedDevice.getScan()->stop();                              // Scan can be stopped, we found what we are looking for
+      pServerAddress = new BLEAddress(advertisedDevice.getAddress());  // Address of advertiser is the one we need
+      doConnect = true;                                                // Set indicator, stating that we are ready to connect
       mySerial.println("Device found. Connecting!");
     }
   }
 };
 
-//When the BLE Server sends a new temperature reading with the notify property
-static void temperatureNotifyCallback(BLERemoteCharacteristic* pBLERemoteCharacteristic,
-                                      uint8_t* pData, size_t length, bool isNotify) {
-  //store temperature value
-  temperatureChar = (char*)pData;
+// When the BLE Server sends a new temperature reading with the notify property
+static void temperatureNotifyCallback(BLERemoteCharacteristic *pBLERemoteCharacteristic,
+                                      uint8_t *pData, size_t length, bool isNotify) {
+  // store temperature value
+  temperatureChar = (char *)pData;
   newTemperature = true;
 }
 
-//When the BLE Server sends a new humidity reading with the notify property
-static void humidityNotifyCallback(BLERemoteCharacteristic* pBLERemoteCharacteristic,
-                                   uint8_t* pData, size_t length, bool isNotify) {
-  //store humidity value
-  humidityChar = (char*)pData;
+// When the BLE Server sends a new humidity reading with the notify property
+static void humidityNotifyCallback(BLERemoteCharacteristic *pBLERemoteCharacteristic,
+                                   uint8_t *pData, size_t length, bool isNotify) {
+  // store humidity value
+  humidityChar = (char *)pData;
   newHumidity = true;
   mySerial.print(newHumidity);
 }
-static bool _1000ms, _1ms, powerOff;
-hw_timer_t* timer = NULL;
+static bool _1000ms, _1ms, powerOff, _20ms, _10ms;
+hw_timer_t *timer = NULL;
 
 static void IRAM_ATTR Timer0_CallBack(void) {
-  static int _1000msCnt;
+  static int _1000msCnt, _20msCnt, _10msCnt;
   _1ms = 1;
   if (++_1000msCnt >= 1000) {
     _1000msCnt = 0;
     _1000ms = 1;
   }
+
+  if (++_20msCnt >= 20) {
+    _20msCnt = 0;
+    _20ms = 1;
+  }
+
+  if (++_10msCnt >= 10) {
+    _10msCnt = 0;
+    _10ms = 1;
+  }
 }
 void setup() {
 
-
-
   mySerial.begin(115200, SERIAL_8N1, 20, 21);
   pinMode(POWER_EN, OUTPUT);
-  ledcSetup(0, 2700, 14);
-  ledcAttachPin(BEEPER, 0);
+  pinMode(YELLOW_LED, OUTPUT);
+  pinMode(BLUE_LED, OUTPUT);
+  pinMode(GREEN_LED, OUTPUT);
+  pinMode(BAT_EN, OUTPUT);
+  ledcSetup(5, 2700, 10);
+  ledcAttachPin(BEEPER, 5);
   timer = timerBegin(0, 80, true);
   timerAttachInterrupt(timer, Timer0_CallBack, true);
   timerAlarmWrite(timer, 1000, true);  // 单位us,定时模式,10ms
   timerAlarmEnable(timer);             // 启动定时器
   pinMode(KEY, INPUT_PULLUP);
-
-  //Init BLE device
-  // BLEDevice::init("");
-  // BLEScan* pBLEScan = BLEDevice::getScan();
-  // pBLEScan->setAdvertisedDeviceCallbacks(new MyAdvertisedDeviceCallbacks());
-  // pBLEScan->setActiveScan(true);
-  // pBLEScan->start(30);
+  adcAttachPin(BAT_FB);
+  analogSetPinAttenuation(BAT_FB, ADC_ATTENDB_MAX);
+  strip.begin();
+  strip.setBrightness(20);
+  // Init BLE device
+  //  BLEDevice::init("");
+  //  BLEScan* pBLEScan = BLEDevice::getScan();
+  //  pBLEScan->setAdvertisedDeviceCallbacks(new MyAdvertisedDeviceCallbacks());
+  //  pBLEScan->setActiveScan(true);
+  //  pBLEScan->start(30);
 
   mySerial.println("mcu init done\n");
+  beepSet(2, 5, 10);
 }
 
 void loop() {
 
-  ledcWrite(0, 8192);
-  //analogWrite(BEEPER, brightness);
-  // If the flag "doConnect" is true then we have scanned for and found the desired
-  // BLE Server with which we wish to connect.  Now we connect to it.  Once we are
-  // connected we set the connected flag to be true.
-  // if (doConnect == true) {
-  //   if (connectToServer(*pServerAddress)) {
-  //     mySerial.println("We are now connected to the BLE Server.");
-  //     //Activate the Notify property of each Characteristic
-  //     temperatureCharacteristic->getDescriptor(BLEUUID((uint16_t)0x2902))->writeValue((uint8_t*)notificationOn, 2, true);
-  //     humidityCharacteristic->getDescriptor(BLEUUID((uint16_t)0x2902))->writeValue((uint8_t*)notificationOn, 2, true);
-  //     connected = true;
-  //   } else {
-  //     mySerial.println("We have failed to connect to the server; Restart your device to scan for nearby BLE server again.");
-  //   }
-  //   doConnect = false;
-  // }
+  // analogWrite(BEEPER, brightness);
+  //  If the flag "doConnect" is true then we have scanned for and found the desired
+  //  BLE Server with which we wish to connect.  Now we connect to it.  Once we are
+  //  connected we set the connected flag to be true.
+  //  if (doConnect == true) {
+  //    if (connectToServer(*pServerAddress)) {
+  //      mySerial.println("We are now connected to the BLE Server.");
+  //      //Activate the Notify property of each Characteristic
+  //      temperatureCharacteristic->getDescriptor(BLEUUID((uint16_t)0x2902))->writeValue((uint8_t*)notificationOn, 2, true);
+  //      humidityCharacteristic->getDescriptor(BLEUUID((uint16_t)0x2902))->writeValue((uint8_t*)notificationOn, 2, true);
+  //      connected = true;
+  //    } else {
+  //      mySerial.println("We have failed to connect to the server; Restart your device to scan for nearby BLE server again.");
+  //    }
+  //    doConnect = false;
+  //  }
 
   // delay(1000); // Delay a second between loops.
   if (powerOff) {
-    digitalWrite(POWER_EN, LOW);  //
-  } else
-    digitalWrite(POWER_EN, HIGH);  //
+    if (isBeeping() == 0) {
+      digitalWrite(POWER_EN, LOW);
+    }
+  } else {
+    digitalWrite(POWER_EN, HIGH);   //
+    digitalWrite(GREEN_LED, HIGH);  //
+    digitalWrite(BAT_EN, HIGH);  //
+  }
 
-    
   if (_1000ms) {
     _1000ms = 0;
-    mySerial.printf("frequence: %d, duty %d \n");
+    uint adcValue, voltage;
+    adcValue = analogRead(BAT_FB);
+    voltage = analogReadMilliVolts(BAT_FB);
+    mySerial.printf("adcValue: %d, voltage: %d\n", adcValue, voltage);
   }
 
   if (_1ms) {
     _1ms = 0;
     static int keyDownCnt;
-    if (digitalRead(KEY) == 0) {
-      if (++keyDownCnt >= 3000) {
-        powerOff = 1;
+    if (!powerOff) {
+      if (digitalRead(KEY) == 0) {
+        if (++keyDownCnt >= 3000) {
+          powerOff = 1;
+          beepOnce();
+        }
+      } else {
+        keyDownCnt = 0;
       }
-    } else {
-      keyDownCnt = 0;
     }
   }
+
+  if (_20ms) {
+    _20ms = 0;
+    beepPolling();
+  }
+
+  if (_10ms) {
+    _10ms = 0;
+
+    static int j = 0;
+    static int i = 0;
+    if (i < RGB_COUNT) {
+      if (j < 255) {
+        j += 2;
+        strip.setLedColorData(i, strip.Wheel((i * 256 / RGB_COUNT + j) & 255));
+      } else {
+        j = 0;
+        i++;
+      }
+      strip.show();
+      // delay(10);
+    } else {
+      i = 0;
+    }
+  }
+
   // delay(1000);  // Delay a second between loops.
 
   // digitalWrite(POWER_EN, LOW);  //

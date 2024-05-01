@@ -13,3 +13,10 @@
 蓝牙BLE主从机通信参考
 
 [ESP32 BLE Server and Client (Bluetooth Low Energy) | Random Nerd Tutorials](https://randomnerdtutorials.com/esp32-ble-server-client/#ESP32-BLE-Server)
+
+# 2024/4/30
+
+rfBat 问题点：
+
+1. 蜂鸣器太响
+2. 关机后RGB依然点亮

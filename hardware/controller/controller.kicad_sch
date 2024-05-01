@@ -6375,17 +6375,6 @@
 		)
 		(uuid "8bac31d7-defe-49d3-90da-91a5cf4a3853")
 	)
-	(label "L_BUTTON"
-		(at 125.73 157.48 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "0022941d-71f1-4866-a5f4-874302b7d43f")
-	)
 	(label "ADC2_CH0"
 		(at 207.01 113.03 90)
 		(fields_autoplaced yes)
@@ -6396,6 +6385,28 @@
 			(justify left bottom)
 		)
 		(uuid "0c1e30a9-e639-4322-bab4-1ecdf281ab76")
+	)
+	(label "IO9"
+		(at 125.73 165.1 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "10c81d12-eb74-495e-917d-316554f44f6c")
+	)
+	(label "IO9"
+		(at 199.39 135.89 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "15929329-73b4-4715-8af0-7dbb443eddff")
 	)
 	(label "RGB"
 		(at 125.73 160.02 180)
@@ -6485,6 +6496,17 @@
 		)
 		(uuid "3811f737-5272-4a90-85d9-f0a78e063370")
 	)
+	(label "L_U_SW"
+		(at 165.1 77.47 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "46f7ceb3-94cf-4ddf-b61b-df5815e09e16")
+	)
 	(label "R_U_SW"
 		(at 146.05 147.32 0)
 		(fields_autoplaced yes)
@@ -6550,6 +6572,17 @@
 			(justify left bottom)
 		)
 		(uuid "6dd5b19e-8a27-4902-a667-785e56e1ef9f")
+	)
+	(label "IO9"
+		(at 214.63 135.89 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "707d65b0-1fd1-4b7f-ab7c-07a5a8062801")
 	)
 	(label "ADC1_CH3"
 		(at 146.05 154.94 0)
@@ -6683,47 +6716,14 @@
 		)
 		(uuid "c4b254c2-15d8-41b9-a482-c8d6a73502a7")
 	)
-	(label "L_BUTTON"
-		(at 214.63 135.89 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "cedb2b5c-39f1-4776-b732-46fade777ad8")
-	)
-	(label "L_BUTTON"
-		(at 199.39 135.89 180)
+	(label "L_U_SW"
+		(at 125.73 157.48 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
-		)
-		(uuid "d65e29b0-a085-4432-ba9f-9f40621748c5")
-	)
-	(label "L_U_SW"
-		(at 165.1 77.47 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d7ec1fb6-d7aa-4837-918f-91fdc13e6c66")
-	)
-	(label "L_U_SW"
-		(at 118.11 138.43 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
 		)
 		(uuid "d9fef144-ef8d-405d-8746-0d27f21db219")
 	)
@@ -6737,17 +6737,6 @@
 			(justify left bottom)
 		)
 		(uuid "e374d83c-df2a-4329-95f0-8623854afd1b")
-	)
-	(label "IO9"
-		(at 125.73 165.1 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "edc42984-eb9e-4dcd-b6a8-6ebe62593fec")
 	)
 	(label "ADC1_CH3"
 		(at 129.54 107.95 0)
@@ -8279,7 +8268,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2u"
+		(property "Value" "100n"
 			(at 111.76 116.84 0)
 			(effects
 				(font
@@ -8950,7 +8939,7 @@
 				)
 			)
 		)
-		(property "Value" "7m"
+		(property "Value" "7.5m"
 			(at 123.19 101.6 0)
 			(effects
 				(font
@@ -11337,71 +11326,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:VCC")
-		(at 172.72 33.02 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a88ab6a8-14ab-4049-bdc0-ed2264090f1b")
-		(property "Reference" "#PWR044"
-			(at 172.72 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "VCC"
-			(at 172.466 28.194 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 172.72 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 172.72 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 172.72 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "613d8766-0e64-42ef-a67a-1814990d87a2")
-		)
-		(instances
-			(project "controller"
-				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
-					(reference "#PWR044")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 110.49 152.4 0)
 		(unit 1)
@@ -11532,6 +11456,71 @@
 			(project "controller"
 				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
 					(reference "#PWR029")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+BATT")
+		(at 172.72 33.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ae649ec7-c0c3-4661-b163-eb4b411183fb")
+		(property "Reference" "#PWR044"
+			(at 172.72 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+BATT"
+			(at 175.26 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 172.72 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 172.72 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 172.72 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "145b7941-c783-4c87-9ce7-4a82d0a5d48c")
+		)
+		(instances
+			(project "controller"
+				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
