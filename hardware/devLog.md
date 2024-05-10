@@ -19,3 +19,16 @@ https://www.snapeda.com/home/
 https://componentsearchengine.com/
 https://www.ultralibrarian.com/
 https://www.datasheet5.com/
+
+
+
+# 2024/5/8
+
+motorDriver PCB 问题点
+
+- [ ] FB2加大封装
+- [ ] 电源系统有问题
+
+rfBat PCB问题点
+
+3.3V在开启蓝牙的时带不动

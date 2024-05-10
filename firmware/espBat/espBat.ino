@@ -72,6 +72,9 @@ void setup() {
   analogSetPinAttenuation(BAT_FB, ADC_ATTENDB_MAX);
   strip.begin();
   strip.setBrightness(20);
+    digitalWrite(POWER_EN, HIGH);   //
+    // digitalWrite(GREEN_LED, HIGH);  //
+    // digitalWrite(BAT_EN, HIGH);     //
   // Init BLE device
   bleInit();
 
@@ -81,7 +84,7 @@ void setup() {
 
 void loop() {
 
-  blePolling();
+ blePolling();
 
   // delay(1000); // Delay a second between loops.
   if (powerOff) {
