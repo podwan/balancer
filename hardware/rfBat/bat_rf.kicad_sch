@@ -18710,7 +18710,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 144.526 49.784 0)
+			(at 147.066 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)

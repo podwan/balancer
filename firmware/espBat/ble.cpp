@@ -5,7 +5,7 @@
 
 
 
-extern HardwareSerial mySerial;
+extern HardwareSerial serial1;
 
 /* UUID's of the service, characteristic that we want to read*/
 // BLE Service
@@ -38,9 +38,9 @@ static void txNotifyCallback(BLERemoteCharacteristic *pBLERemoteCharacteristic,
                              uint8_t *pData, size_t length, bool isNotify) {
   // store humidity value
 
-  // mySerial.print(length);
+  // serial1.print(length);
   uart_write_bytes(UART_NUM_1, (char *)pData, length);
-  mySerial.printf("recved data \n");
+  serial1.printf("recved data \n");
   digitalWrite(BLUE_LED, HIGH);  //
 }
 
@@ -51,13 +51,13 @@ bool connectToServer(BLEAddress pAddress) {
 
   // Connect to the remove BLE Server.
   pClient->connect(pAddress);
-  mySerial.println(" - Connected to server");
+  serial1.println(" - Connected to server");
 
   // Obtain a reference to the service we are after in the remote BLE server.
   BLERemoteService *pRemoteService = pClient->getService(bmeServiceUUID);
   if (pRemoteService == nullptr) {
-    mySerial.print("Failed to find our service UUID: ");
-    mySerial.println(bmeServiceUUID.toString().c_str());
+    serial1.print("Failed to find our service UUID: ");
+    serial1.println(bmeServiceUUID.toString().c_str());
     return (false);
   }
 
@@ -66,10 +66,10 @@ bool connectToServer(BLEAddress pAddress) {
   txCharacteristic = pRemoteService->getCharacteristic(txCharacteristicUUID);
 
   if (txCharacteristic == nullptr) {
-    mySerial.print("Failed to find our characteristic UUID");
+    serial1.print("Failed to find our characteristic UUID");
     return false;
   }
-  mySerial.println(" - Found our characteristics");
+  serial1.println(" - Found our characteristics");
 
   // Assign callback functions for the Characteristics
   // temperatureCharacteristic->registerForNotify(temperatureNotifyCallback);
@@ -84,7 +84,7 @@ class MyAdvertisedDeviceCallbacks : public BLEAdvertisedDeviceCallbacks {
       advertisedDevice.getScan()->stop();                              // Scan can be stopped, we found what we are looking for
       pServerAddress = new BLEAddress(advertisedDevice.getAddress());  // Address of advertiser is the one we need
       doConnect = true;                                                // Set indicator, stating that we are ready to connect
-      mySerial.println("Device found. Connecting!");
+      serial1.println("Device found. Connecting!");
     }
   }
 };
@@ -107,14 +107,14 @@ void blePolling() {
   //  connected we set the connected flag to be true.
   if (doConnect == true) {
     if (connectToServer(*pServerAddress)) {
-      mySerial.println("We are now connected to the BLE Server.");
+      serial1.println("We are now connected to the BLE Server.");
       //Activate the Notify property of each Characteristic
       // temperatureCharacteristic->getDescriptor(BLEUUID((uint16_t)0x2902))->writeValue((uint8_t *)notificationOn, 2, true);
       txCharacteristic->getDescriptor(BLEUUID((uint16_t)0x2902))->writeValue((uint8_t *)notificationOn, 2, true);
       connected = true;
       
     } else {
-      mySerial.println("We have failed to connect to the server; Restart your device to scan for nearby BLE server again.");
+      serial1.println("We have failed to connect to the server; Restart your device to scan for nearby BLE server again.");
     }
     doConnect = false;
   }

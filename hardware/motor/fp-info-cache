@@ -1,4 +1,4 @@
-23384187279141985
+23385902630448339
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -95451,6 +95451,13 @@ SOD-123FL_L2.7-W1.8-LS3.8-RD
 0
 2
 2
+balancerDriver
+SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BL
+
+
+0
+6
+6
 balancerDriver
 TSSOP-20_L6.5-W4.4-P0.65-LS6.4-BL
 
