@@ -129,7 +129,7 @@ void loop()
     {
       if (digitalRead(KEY) == 0)
       {
-        if (++keyDownCnt >= 3000)
+        if (++keyDownCnt >= 1500)
         {
           powerOff = 1;
           beepOnce();
