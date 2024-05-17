@@ -1,6 +1,10 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
+<<<<<<< HEAD:firmware/motor - currentSensor/Debug/Drivers/STM32G4xx_HAL_Driver/Src/subdir.mk
 # Toolchain: GNU Tools for STM32 (11.3.rel1)
+=======
+# Toolchain: GNU Tools for STM32 (12.3.rel1)
+>>>>>>> 3f97a153d958220e151b39468fc548032aad0f0d:firmware/motor/Debug/Drivers/STM32G4xx_HAL_Driver/Src/subdir.mk
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
@@ -30,6 +34,7 @@ C_SRCS += \
 ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c \
 ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_adc.c 
 
+<<<<<<< HEAD:firmware/motor - currentSensor/Debug/Drivers/STM32G4xx_HAL_Driver/Src/subdir.mk
 C_DEPS += \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.d \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc.d \
@@ -56,6 +61,8 @@ C_DEPS += \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.d \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_adc.d 
 
+=======
+>>>>>>> 3f97a153d958220e151b39468fc548032aad0f0d:firmware/motor/Debug/Drivers/STM32G4xx_HAL_Driver/Src/subdir.mk
 OBJS += \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.o \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc.o \
@@ -82,6 +89,35 @@ OBJS += \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.o \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_adc.o 
 
+<<<<<<< HEAD:firmware/motor - currentSensor/Debug/Drivers/STM32G4xx_HAL_Driver/Src/subdir.mk
+=======
+C_DEPS += \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc_ex.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_i2c_ex.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_spi.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_spi_ex.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim_ex.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_adc.d 
+
+>>>>>>> 3f97a153d958220e151b39468fc548032aad0f0d:firmware/motor/Debug/Drivers/STM32G4xx_HAL_Driver/Src/subdir.mk
 
 # Each subdirectory must supply rules for building sources it contributes
 Drivers/STM32G4xx_HAL_Driver/Src/%.o Drivers/STM32G4xx_HAL_Driver/Src/%.su Drivers/STM32G4xx_HAL_Driver/Src/%.cyclo: ../Drivers/STM32G4xx_HAL_Driver/Src/%.c Drivers/STM32G4xx_HAL_Driver/Src/subdir.mk

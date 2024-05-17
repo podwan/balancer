@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 23166091170600318
+=======
+23212376397743743
+>>>>>>> 3f97a153d958220e151b39468fc548032aad0f0d
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -94759,6 +94763,13 @@ Varistor VF
 2
 2
 bat_rf
+AO3401
+
+
+0
+3
+3
+bat_rf
 BAT-SMD_BH-18650-B1BA007
 
 
@@ -94766,12 +94777,47 @@ BAT-SMD_BH-18650-B1BA007
 4
 4
 bat_rf
+BAT54C
+
+
+0
+3
+3
+bat_rf
 BULETM-SMD_18P-L20.0-W18.0-P1.50_ESP32-C3-WROOM
 
 
 0
 27
 19
+bat_rf
+BUZ-SMD_4P-L5.0-W5.0-P3.80-TL
+
+
+0
+3
+3
+bat_rf
+BUZ-SMD_4P-L8.5-W8.5-TL
+
+
+0
+4
+4
+bat_rf
+BUZ-SMD_FUET-9045
+
+
+0
+2
+2
+bat_rf
+BUZ-SMD_GSC7525RA
+
+
+0
+4
+3
 bat_rf
 CONN-SMD_3P-P1.00_WAFER-SH1.0-3PWB
 
@@ -94793,6 +94839,13 @@ CONN-SMD_XH2.54-4PSMD
 0
 6
 6
+bat_rf
+CONN-TH_XT30U-F
+
+
+0
+2
+2
 bat_rf
 CONN-TH_XT30U-M
 
@@ -94850,6 +94903,20 @@ PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL
 9
 9
 bat_rf
+POWERTDFN-8_L3.1-W3.1-P0.65-LS3.3-BL
+
+
+0
+9
+8
+bat_rf
+PQFN-8_L3.1-W3.1-P0.65-LS3.3-BL
+
+
+0
+9
+8
+bat_rf
 SOP8-PAD
 
 
@@ -94857,6 +94924,30 @@ SOP8-PAD
 9
 9
 bat_rf
+<<<<<<< HEAD
+=======
+SOT-23
+
+
+0
+3
+3
+bat_rf
+SOT-23-5_L2.9-W1.6-P0.95-LS2.8-BL
+
+
+0
+5
+5
+bat_rf
+SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR
+
+
+0
+6
+6
+bat_rf
+>>>>>>> 3f97a153d958220e151b39468fc548032aad0f0d
 SW-SMD_4P-L4.2-W3.3-P2.15-LS5.1
 
 
@@ -94871,12 +94962,47 @@ SW-SMD_EVQPUD02K
 4
 4
 bat_rf
+SW-SMD_L6.0-W6.0-P6.00-LS6.6
+
+
+0
+2
+2
+bat_rf
 SW-TH_3P-SS12D06-1
 
 
 0
 3
 3
+bat_rf
+SW-TH_RKJXV1224005
+
+
+0
+14
+14
+bat_rf
+SW-TH_SK-12D07-X-X
+
+
+0
+5
+4
+bat_rf
+SW-TH_SK-3260D-01-LX
+
+
+0
+3
+3
+bat_rf
+SW-TH_TC-1102N-C-AS-B
+
+
+0
+4
+4
 bat_rf
 USB-C-SMD_HX-TYPE-C-6PIN
 
