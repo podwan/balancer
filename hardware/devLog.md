@@ -26,8 +26,8 @@ https://www.datasheet5.com/
 
 motorDriver PCB 问题点
 
-- [ ] FB2加大封装
-- [ ] 电源系统有问题
+- [x] FB2加大封装
+- [x] 电源系统有问题
 
 rfBat PCB问题点
 
@@ -65,3 +65,11 @@ rfBat PCB问题点
 
   
 
+# 2024/5/19
+
+bldcDriver pcb 问题
+
+- [ ] 晶振封装
+- [ ] 加个USER LED
+- [ ] 加测试点
+- [ ] 加复位按键
