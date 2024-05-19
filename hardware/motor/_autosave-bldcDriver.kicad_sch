@@ -5525,6 +5525,18 @@
 		(uuid "be7e7ecb-4d80-4289-a786-ca2bf08a7a1f")
 	)
 	(junction
+		(at 104.14 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c20837ed-febf-47c9-ba7c-ca75c53aebe2")
+	)
+	(junction
+		(at 120.65 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c277ca3e-83a9-4c3d-a022-fbecde8f3ef7")
+	)
+	(junction
 		(at 246.38 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5691,6 +5703,10 @@
 	(no_connect
 		(at 374.65 77.47)
 		(uuid "747e4f6e-cb2f-4d04-b56f-7fa8245aa461")
+	)
+	(no_connect
+		(at 341.63 118.11)
+		(uuid "7a5d829c-b859-4d42-9405-a59d647f8414")
 	)
 	(no_connect
 		(at 341.63 80.01)
@@ -5933,6 +5949,16 @@
 			(type default)
 		)
 		(uuid "1b6e1937-7ff6-4112-b7bf-914bb97516fd")
+	)
+	(wire
+		(pts
+			(xy 120.65 80.01) (xy 124.46 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1bbb479d-d65d-417d-8dcb-217dbed4a0de")
 	)
 	(wire
 		(pts
@@ -7046,7 +7072,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 80.01) (xy 124.46 80.01)
+			(xy 115.57 80.01) (xy 120.65 80.01)
 		)
 		(stroke
 			(width 0)
@@ -7533,6 +7559,16 @@
 			(type default)
 		)
 		(uuid "a865e123-cec0-4071-9f2d-510b7c7b00e5")
+	)
+	(wire
+		(pts
+			(xy 104.14 80.01) (xy 107.95 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa3cefae-9480-4206-8337-5720748149e4")
 	)
 	(wire
 		(pts
@@ -8426,7 +8462,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 80.01) (xy 107.95 80.01)
+			(xy 101.6 80.01) (xy 104.14 80.01)
 		)
 		(stroke
 			(width 0)
@@ -10289,6 +10325,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 104.14 80.01 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "16934daf-4e3b-4ae0-92e0-42c395440fb3")
+		(property "Reference" "TP21"
+			(at 104.14 75.438 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 106.68 77.9779 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 109.22 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 109.22 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 104.14 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f85230cb-8faa-44cd-a293-79ffe3efa0b9")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
+					(reference "TP21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at 326.39 30.48 0)
 		(unit 1)
@@ -11162,6 +11265,73 @@
 			(project "bldcDriver"
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
 					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 154.94 33.02 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2b545088-f1ce-4904-a022-54c95a565efd")
+		(property "Reference" "TP20"
+			(at 159.512 33.02 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 156.9721 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 154.94 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 154.94 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 154.94 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "398fb6c5-fcb8-4a0a-b57b-6756b35c581b")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
+					(reference "TP20")
 					(unit 1)
 				)
 			)
@@ -14065,6 +14235,73 @@
 			(project "bldcDriver"
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
 					(reference "C50")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 120.65 80.01 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "78b75559-e25f-4f28-9eb1-c7b80eea8d50")
+		(property "Reference" "TP22"
+			(at 120.65 75.438 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 123.19 77.9779 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 125.73 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 125.73 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 120.65 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4700fa31-b866-4a7c-9a67-cac34e4bf440")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
+					(reference "TP22")
 					(unit 1)
 				)
 			)
