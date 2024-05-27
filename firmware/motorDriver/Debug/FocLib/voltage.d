@@ -1,6 +1,6 @@
 FocLib/voltage.o: ../FocLib/voltage.c ../FocLib/voltage.h \
  ../FocLib/bldcMotor.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h \
+ C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/User/userMain.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h \
  ../Core/Inc/stm32g4xx_hal_conf.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h \
@@ -42,13 +42,13 @@ FocLib/voltage.o: ../FocLib/voltage.c ../FocLib/voltage.h \
  ../Core/Inc/tim.h ../Core/Inc/main.h ../Core/Inc/adc.h \
  ../Core/Inc/usart.h ../Core/Inc/spi.h ../FocLib/math_utils.h \
  ../FocLib/pid.h ../FocLib/lowpass_filter.h ../FocLib/encoder.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/comm.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/bldcMotor.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/app.h
+ C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/User/comm.h \
+ C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/User/userMain.h \
+ C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/FocLib/bldcMotor.h \
+ C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/User/app.h
 ../FocLib/voltage.h:
 ../FocLib/bldcMotor.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h:
+C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/User/userMain.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
 ../Core/Inc/stm32g4xx_hal_conf.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h:
@@ -96,7 +96,7 @@ C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h:
 ../FocLib/pid.h:
 ../FocLib/lowpass_filter.h:
 ../FocLib/encoder.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/comm.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/bldcMotor.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/app.h:
+C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/User/comm.h:
+C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/User/userMain.h:
+C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/FocLib/bldcMotor.h:
+C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/User/app.h:

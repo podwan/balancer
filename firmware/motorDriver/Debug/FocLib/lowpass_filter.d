@@ -1,6 +1,6 @@
 FocLib/lowpass_filter.o: ../FocLib/lowpass_filter.c \
  ../FocLib/lowpass_filter.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h \
+ C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/User/userMain.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h \
  ../Core/Inc/stm32g4xx_hal_conf.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h \
@@ -42,7 +42,7 @@ FocLib/lowpass_filter.o: ../FocLib/lowpass_filter.c \
  ../Core/Inc/tim.h ../Core/Inc/main.h ../Core/Inc/adc.h \
  ../Core/Inc/usart.h ../Core/Inc/spi.h
 ../FocLib/lowpass_filter.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h:
+C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/User/userMain.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
 ../Core/Inc/stm32g4xx_hal_conf.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h:

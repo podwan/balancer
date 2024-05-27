@@ -118,6 +118,7 @@ static void motorInit()
 void appInit()
 {
     motorInit();
+    devState = WORK;
     //    MPU6050_Init(); // MPU6050初始化
 }
 static bool zeroReset;
@@ -201,28 +202,28 @@ static void working(void)
     if (flashCnt < 5)
         ledOn = 1;
 
-    if (keyState == USER3_SHORT)
-    {
-        STANDBY_INIT;
-    }
-    else if (keyState == USER2_SHORT)
-    {
-        //  if (bldcMotor.controlMode == VELOCITY)
-        // {
-        //     if (bldcMotor.focTarget == 0)
-        //     {
-        //         bldcMotor.focTarget = 23;
-        //     }
-        //     else if (bldcMotor.focTarget == 23)
-        //     {
-        //         bldcMotor.focTarget = -23;
-        //     }
-        //     else if (bldcMotor.focTarget == -23)
-        //     {
-        //         bldcMotor.focTarget = 23;
-        //     }
-        // }
-    }
+//    if (keyState == USER3_SHORT)
+//    {
+//        STANDBY_INIT;
+//    }
+//    else if (keyState == USER2_SHORT)
+//    {
+//        //  if (bldcMotor.controlMode == VELOCITY)
+//        // {
+//        //     if (bldcMotor.focTarget == 0)
+//        //     {
+//        //         bldcMotor.focTarget = 23;
+//        //     }
+//        //     else if (bldcMotor.focTarget == 23)
+//        //     {
+//        //         bldcMotor.focTarget = -23;
+//        //     }
+//        //     else if (bldcMotor.focTarget == -23)
+//        //     {
+//        //         bldcMotor.focTarget = 23;
+//        //     }
+//        // }
+//    }
 }
 
 void txDataProcess()
@@ -243,14 +244,14 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
     {
 
         // foc(&motor1, hadc1.Instance->JDR1, hadc2.Instance->JDR1);
-        svpwm_test(&motor1, 2.0f, 0.01f);
+         svpwm_test(&motor1, 2.0f, 0.01f);
         dealPer100us();
 
 #if SHOW_WAVE
         // #if SHOW_SVPWM
-                load_data[0] = motor1.Ta;
-                load_data[1] = motor1.Tb;
-                load_data[2] = motor1.Tc;
+        load_data[0] = motor1.Ta;
+        load_data[1] = motor1.Tb;
+        load_data[2] = motor1.Tc;
         //         load_data[3] = motor1.Id;
         //         load_data[4] = motor1.Iq;
         //         load_data[5] = motor1.angle_el;

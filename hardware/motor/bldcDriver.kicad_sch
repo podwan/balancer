@@ -6009,6 +6009,10 @@
 		(uuid "f2d84b90-e9a9-4b84-8bbd-30ec87895610")
 	)
 	(no_connect
+		(at 341.63 102.87)
+		(uuid "feb58e8e-f6ba-4f1c-a7b4-d4c30e9c6526")
+	)
+	(no_connect
 		(at 243.84 50.8)
 		(uuid "ff3f49d1-abc9-4ade-83c1-c5f3a1f7d7eb")
 	)
@@ -9481,17 +9485,6 @@
 		)
 		(uuid "89ca8343-1b5d-4eaf-b128-f775f9660e38")
 	)
-	(label "I2C1_SDA"
-		(at 341.63 102.87 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "8ad307f5-c330-4111-8560-1169402e9bb2")
-	)
 	(label "VREF_OP1"
 		(at 149.86 116.84 0)
 		(fields_autoplaced yes)
@@ -9777,6 +9770,17 @@
 			(justify right bottom)
 		)
 		(uuid "cb0b58dd-b94c-4b9c-8c59-7cdedf14c54b")
+	)
+	(label "SPI1_CS"
+		(at 374.65 49.53 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cb62bc77-8b54-495c-a1d6-87f22033f04e")
 	)
 	(label "VREF_OP1"
 		(at 52.07 184.15 180)
@@ -15091,6 +15095,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 374.65 57.15 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "80fe3e26-28bd-435f-b654-5182f95c9a1e")
+		(property "Reference" "TP10"
+			(at 376.682 55.118 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 376.6821 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 374.65 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 374.65 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 374.65 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a036a701-e4d8-49f7-a083-d610ec2d6236")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
+					(reference "TP10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3V3")
 		(at 198.12 44.45 0)
 		(unit 1)
@@ -18621,73 +18692,6 @@
 			(project "bldcDriver"
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
 					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 374.65 49.53 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "dd269eec-1aff-4f2c-a5db-8d5ab3f7ebe5")
-		(property "Reference" "TP10"
-			(at 376.682 47.498 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 376.6821 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 374.65 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 374.65 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 374.65 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a8ee5858-66ed-4767-9ff3-f9caf56502eb")
-		)
-		(instances
-			(project "bldcDriver"
-				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
-					(reference "TP10")
 					(unit 1)
 				)
 			)
