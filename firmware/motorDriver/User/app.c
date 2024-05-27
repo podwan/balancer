@@ -1,10 +1,10 @@
 
 #include "app.h"
- 
+#include "led.h"
 #include "key.h"
 #include "comm.h"
 #include "mt6701.h"
-#include "focMotor.h"
+#include "bldcMotor.h"
 #include "encoder.h"
 #include "pid.h"
 #include "lowpass_filter.h"
@@ -12,43 +12,44 @@
 #include "userTimer.h"
 #include "voltage.h"
 
-static DevState devState;
+static DevState devState = WORK;
 static KeyState keyState;
 static uchar flashCnt;
 float load_data[8];
 uint8_t tempData[36] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x80, 0x7F};
 
 float txA, txB, txC;
-static FocMotor motor1;
+static BldcMotor motor1;
 
 static void standingBy();
 static void working(void);
 static void updatePwm1(unsigned short int a, unsigned short int b, unsigned short int c);
 static void startPwm1()
 {
-    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
-    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
-    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
-    HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
-    HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
-    HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
+    HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
+    HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2);
+    HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_3);
+    // HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
+    // HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
+    // HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
 }
 static void stopPwm1()
 {
-    HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
-    HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
-    HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_3);
-    HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_1);
-    HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_2);
-    HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_3);
+    HAL_TIM_PWM_Stop(&htim8, TIM_CHANNEL_1);
+    HAL_TIM_PWM_Stop(&htim8, TIM_CHANNEL_2);
+    HAL_TIM_PWM_Stop(&htim8, TIM_CHANNEL_3);
+    // HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_1);
+    // HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_2);
+    // HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_3);
 }
 static void updatePwm1(unsigned short int a, unsigned short int b, unsigned short int c)
 {
-    TIM1->CCR1 = a;
-    TIM1->CCR2 = b;
-    TIM1->CCR3 = c;
+    TIM8->CCR1 = a;
+    TIM8->CCR2 = b;
+    TIM8->CCR3 = c;
 }
 // should be called before interruption enabled
+
 static void motorInit()
 {
     motor1.pole_pairs = 7;
@@ -116,7 +117,8 @@ static void motorInit()
 }
 void appInit()
 {
-   motorInit();
+    motorInit();
+    //    MPU6050_Init(); // MPU6050初始化
 }
 static bool zeroReset;
 void appRunning()
@@ -127,6 +129,7 @@ void appRunning()
     if (++flashCnt >= 10)
         flashCnt = 0;
 
+    ledOn = 0;
 
     uint32_t Vpoten, adc_vbus;
     float Vbus, goalVelocity;
@@ -172,11 +175,11 @@ void appRunning()
         break;
     }
 
-//    LED_drive();
+    LED_drive();
 }
 static void standingBy()
 {
-//    led1On = 1;
+    ledOn = 1;
     // setTorque(&motor1, 0, OPEN_LOOP_TORQUE, 0);
     if (zeroReset == 0)
     {
@@ -195,8 +198,8 @@ static void standingBy()
 static void working(void)
 {
     zeroReset = 0;
-//    if (flashCnt < 5)
-//        led2On = 1;
+    if (flashCnt < 5)
+        ledOn = 1;
 
     if (keyState == USER3_SHORT)
     {
@@ -225,26 +228,29 @@ static void working(void)
 void txDataProcess()
 {
 
-    sprintf(txBuffer, "target:%.2f fullAngle:%.2f velocity:%.2f Uq:%.2f Ud:%.2f Iq:%.2f Id:%.2f elec_angle:%.2f\n", motor1.target, motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id, motor1.angle_el);
+    // sprintf(txBuffer, "target:%.2f fullAngle:%.2f velocity:%.2f Uq:%.2f Ud:%.2f Iq:%.2f Id:%.2f elec_angle:%.2f\n", motor1.target, motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id, motor1.angle_el);
+
+    sprintf(txBuffer, "fullAngle:%.2f velocity:%.2f  shaftAngle:%.2f\n", motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.magEncoder.shaftAngle);
+
     // sprintf(txBuffer, "target:%f Uq:%f\n", motor1.target, motor1.Uq);
     // sprintf(txBuffer, "offset_ia:%f offset_ib:%f, Ia:%f, Ib:%f\n", motor1.offset_ia, motor1.offset_ib, motor1.Ia, motor1.Ib);
 }
 
 void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
 {
-//    HAL_GPIO_WritePin(TEST_GPIO_Port, TEST_Pin, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(TEST_GPIO_Port, TEST_Pin, GPIO_PIN_SET);
     if (hadc == &hadc1)
     {
 
-        //foc(&motor1, hadc1.Instance->JDR1, hadc2.Instance->JDR1);
-        // svpwm_test(&motor1, 4.0f, 0.07f);
+        // foc(&motor1, hadc1.Instance->JDR1, hadc2.Instance->JDR1);
+        svpwm_test(&motor1, 2.0f, 0.01f);
         dealPer100us();
 
 #if SHOW_WAVE
         // #if SHOW_SVPWM
-        //         load_data[0] = motor1.Ta;
-        //         load_data[1] = motor1.Tb;
-        //         load_data[2] = motor1.Tc;
+                load_data[0] = motor1.Ta;
+                load_data[1] = motor1.Tb;
+                load_data[2] = motor1.Tc;
         //         load_data[3] = motor1.Id;
         //         load_data[4] = motor1.Iq;
         //         load_data[5] = motor1.angle_el;
@@ -262,19 +268,19 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
 
         // show current
 
-        load_data[0] = hadc1.Instance->JDR1;
-        load_data[1] = hadc2.Instance->JDR1;
-        load_data[2] = hadc1.Instance->JDR2;
+        // load_data[0] = hadc1.Instance->JDR1;
+        // load_data[1] = hadc2.Instance->JDR1;
+        // load_data[2] = hadc1.Instance->JDR2;
 
-        load_data[3] = motor1.Ialpha;
-        load_data[4] = motor1.Ibeta;
+        // load_data[3] = motor1.Ialpha;
+        // load_data[4] = motor1.Ibeta;
 
-        load_data[5] = motor1.Id;
-        load_data[6] = motor1.Iq;
+        // load_data[5] = motor1.Id;
+        // load_data[6] = motor1.Iq;
 
         memcpy(tempData, (uint8_t *)&load_data, sizeof(load_data));
         HAL_UART_Transmit_DMA(&huart3, (uint8_t *)tempData, sizeof(tempData));
 #endif
     }
-//    HAL_GPIO_WritePin(TEST_GPIO_Port, TEST_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(TEST_GPIO_Port, TEST_Pin, GPIO_PIN_RESET);
 }

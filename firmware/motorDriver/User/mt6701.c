@@ -9,7 +9,7 @@ uint16_t MT6701_GetRawData(void)
     uint16_t txData = 0xFFFF;
     uint16_t timeOut = 200;
 
-    while (HAL_SPI_GetState(&hspi1) != HAL_SPI_STATE_READY)
+    while (HAL_SPI_GetState(&hspi3) != HAL_SPI_STATE_READY)
     {
         if (timeOut-- == 0)
         {
@@ -20,7 +20,7 @@ uint16_t MT6701_GetRawData(void)
 
     MT6701_CS_Enable;
 
-    HAL_StatusTypeDef spiStatus = HAL_SPI_TransmitReceive(&hspi1, (uint8_t *)&txData, (uint8_t *)&rawData, 1, HAL_MAX_DELAY);
+    HAL_StatusTypeDef spiStatus = HAL_SPI_TransmitReceive(&hspi3, (uint8_t *)&txData, (uint8_t *)&rawData, 1, HAL_MAX_DELAY);
     if (spiStatus != HAL_OK)
     {
         MT6701_CS_Disable;

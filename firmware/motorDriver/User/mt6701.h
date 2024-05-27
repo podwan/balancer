@@ -4,9 +4,9 @@
 
 #include "userMain.h"
 
-#define MT6701_CS_Enable GPIOA->BSRR = (uint32_t)GPIO_PIN_4 << 16U
+#define MT6701_CS_Enable HAL_GPIO_WritePin(NSS1_GPIO_Port, NSS1_Pin, GPIO_PIN_RESET)
 
-#define MT6701_CS_Disable GPIOA->BSRR = GPIO_PIN_4
+#define MT6701_CS_Disable HAL_GPIO_WritePin(NSS1_GPIO_Port, NSS1_Pin, GPIO_PIN_SET)
 
 uint16_t MT6701_GetRawData(void);
 float MT6701_GetRawAngle(void);

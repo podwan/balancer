@@ -2018,6 +2018,12 @@
 		(uuid "20980993-63df-4eb0-866f-5d9e13ed870e")
 	)
 	(junction
+		(at 60.96 97.79)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "20da2284-9b33-4177-bd21-b7fd4e391902")
+	)
+	(junction
 		(at 251.46 167.64)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2346,6 +2352,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9625d03a-6d4e-438b-a022-48fb5ef7c115")
+	)
+	(junction
+		(at 66.04 204.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "98617c46-fe7c-4b23-923e-11c6ec3a7cd2")
 	)
 	(junction
 		(at 297.18 166.37)
@@ -2840,6 +2852,16 @@
 			(type default)
 		)
 		(uuid "11147fdc-4e97-49f8-8738-3900707a836e")
+	)
+	(wire
+		(pts
+			(xy 58.42 92.71) (xy 66.04 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "123cf9a4-7da0-4033-a276-ee31f49eb558")
 	)
 	(wire
 		(pts
@@ -11056,7 +11078,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 66.04 92.71 90)
+		(at 58.42 92.71 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11064,7 +11086,7 @@
 		(dnp no)
 		(uuid "5bd10d87-91a2-4f05-bc18-cb83f0570c48")
 		(property "Reference" "TP16"
-			(at 60.96 94.234 0)
+			(at 53.34 94.234 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11073,7 +11095,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 64.0079 90.17 0)
+			(at 56.3879 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11083,7 +11105,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 66.04 87.63 0)
+			(at 58.42 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11092,7 +11114,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 66.04 87.63 0)
+			(at 58.42 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11101,7 +11123,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 66.04 92.71 0)
+			(at 58.42 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12096,6 +12118,72 @@
 			(project "bldcDriver"
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87/f49693e9-44aa-4011-a606-f09dffd6beb1"
 					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+BATT")
+		(at 60.96 97.79 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7accd73b-bf12-4ff6-a2f7-2affacc7b72e")
+		(property "Reference" "#PWR066"
+			(at 60.96 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+BATT"
+			(at 60.96 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 60.96 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+BATT\""
+			(at 60.96 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e0921b15-10c0-47e2-9dc6-39c3237bc9db")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87/f49693e9-44aa-4011-a606-f09dffd6beb1"
+					(reference "#PWR066")
 					(unit 1)
 				)
 			)
@@ -14796,6 +14884,72 @@
 			(project "bldcDriver"
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87/f49693e9-44aa-4011-a606-f09dffd6beb1"
 					(reference "R25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+BATT")
+		(at 66.04 204.47 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dd084a1b-053a-452a-883e-23033b517019")
+		(property "Reference" "#PWR067"
+			(at 66.04 208.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+BATT"
+			(at 66.04 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 66.04 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+BATT\""
+			(at 66.04 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "87a07d2a-b2df-42db-abee-990c5af9baae")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87/f49693e9-44aa-4011-a606-f09dffd6beb1"
+					(reference "#PWR067")
 					(unit 1)
 				)
 			)
