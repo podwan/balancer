@@ -42,12 +42,12 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/usart.h ../Core/Inc/gpio.h ../Core/Src/../../User/app.h \
  ../Core/Src/../../User/userMain.h ../Core/Src/../../User/userMain.h \
  ../Core/Src/../../User/comm.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/FocLib/bldcMotor.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/User/userMain.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/FocLib/math_utils.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/FocLib/pid.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/FocLib/lowpass_filter.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/FocLib/encoder.h
+ C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/bldcMotor.h \
+ C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h \
+ C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/math_utils.h \
+ C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/pid.h \
+ C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/lowpass_filter.h \
+ C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/encoder.h
 ../Core/Inc/main.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
 ../Core/Inc/stm32g4xx_hal_conf.h:
@@ -100,9 +100,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Src/../../User/userMain.h:
 ../Core/Src/../../User/userMain.h:
 ../Core/Src/../../User/comm.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/FocLib/bldcMotor.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/User/userMain.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/FocLib/math_utils.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/FocLib/pid.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/FocLib/lowpass_filter.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriverBak/FocLib/encoder.h:
+C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/bldcMotor.h:
+C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h:
+C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/math_utils.h:
+C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/pid.h:
+C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/lowpass_filter.h:
+C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/encoder.h:

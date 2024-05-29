@@ -1,4 +1,4 @@
-23425332310481528
+23428766132847906
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -95466,6 +95466,13 @@ ESOP-8_L4.9-W3.9-P1.27-LS6.0-BL-EP3.1
 9
 9
 bat_rf
+FPC-SMD_3P-P1.00_HDGC_1.0K-N-3PB
+
+
+0
+5
+5
+bat_rf
 GCT_USB4515-GF-A_REVA
 
 
@@ -95570,6 +95577,13 @@ SW-SMD_EVQPUD02K
 0
 4
 4
+bat_rf
+SW-SMD_L4.0-W2.9-LS5.0
+
+
+0
+2
+2
 bat_rf
 SW-SMD_L6.0-W6.0-P6.00-LS6.6
 
