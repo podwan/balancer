@@ -76,6 +76,7 @@ void setup()
   analogSetPinAttenuation(BAT_FB, ADC_ATTENDB_MAX);
   strip.begin();
   strip.setBrightness(20);
+  delay(100);
   digitalWrite(POWER_EN, HIGH); //
   // digitalWrite(GREEN_LED, HIGH);  //
   // digitalWrite(BAT_EN, HIGH);     //
