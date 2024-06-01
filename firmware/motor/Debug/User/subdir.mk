@@ -7,47 +7,26 @@
 C_SRCS += \
 ../User/app.c \
 ../User/comm.c \
-../User/current.c \
-../User/encoder.c \
-../User/focMotor.c \
-../User/lowpass_filter.c \
-../User/math_utils.c \
 ../User/mt6701.c \
-../User/pid.c \
 ../User/time_utils.c \
 ../User/userMain.c \
-../User/userTimer.c \
-../User/voltage.c 
+../User/userTimer.c 
 
 OBJS += \
 ./User/app.o \
 ./User/comm.o \
-./User/current.o \
-./User/encoder.o \
-./User/focMotor.o \
-./User/lowpass_filter.o \
-./User/math_utils.o \
 ./User/mt6701.o \
-./User/pid.o \
 ./User/time_utils.o \
 ./User/userMain.o \
-./User/userTimer.o \
-./User/voltage.o 
+./User/userTimer.o 
 
 C_DEPS += \
 ./User/app.d \
 ./User/comm.d \
-./User/current.d \
-./User/encoder.d \
-./User/focMotor.d \
-./User/lowpass_filter.d \
-./User/math_utils.d \
 ./User/mt6701.d \
-./User/pid.d \
 ./User/time_utils.d \
 ./User/userMain.d \
-./User/userTimer.d \
-./User/voltage.d 
+./User/userTimer.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -57,7 +36,7 @@ User/%.o User/%.su User/%.cyclo: ../User/%.c User/subdir.mk
 clean: clean-User
 
 clean-User:
-	-$(RM) ./User/app.cyclo ./User/app.d ./User/app.o ./User/app.su ./User/comm.cyclo ./User/comm.d ./User/comm.o ./User/comm.su ./User/current.cyclo ./User/current.d ./User/current.o ./User/current.su ./User/encoder.cyclo ./User/encoder.d ./User/encoder.o ./User/encoder.su ./User/focMotor.cyclo ./User/focMotor.d ./User/focMotor.o ./User/focMotor.su ./User/lowpass_filter.cyclo ./User/lowpass_filter.d ./User/lowpass_filter.o ./User/lowpass_filter.su ./User/math_utils.cyclo ./User/math_utils.d ./User/math_utils.o ./User/math_utils.su ./User/mt6701.cyclo ./User/mt6701.d ./User/mt6701.o ./User/mt6701.su ./User/pid.cyclo ./User/pid.d ./User/pid.o ./User/pid.su ./User/time_utils.cyclo ./User/time_utils.d ./User/time_utils.o ./User/time_utils.su ./User/userMain.cyclo ./User/userMain.d ./User/userMain.o ./User/userMain.su ./User/userTimer.cyclo ./User/userTimer.d ./User/userTimer.o ./User/userTimer.su ./User/voltage.cyclo ./User/voltage.d ./User/voltage.o ./User/voltage.su
+	-$(RM) ./User/app.cyclo ./User/app.d ./User/app.o ./User/app.su ./User/comm.cyclo ./User/comm.d ./User/comm.o ./User/comm.su ./User/mt6701.cyclo ./User/mt6701.d ./User/mt6701.o ./User/mt6701.su ./User/time_utils.cyclo ./User/time_utils.d ./User/time_utils.o ./User/time_utils.su ./User/userMain.cyclo ./User/userMain.d ./User/userMain.o ./User/userMain.su ./User/userTimer.cyclo ./User/userTimer.d ./User/userTimer.o ./User/userTimer.su
 
 .PHONY: clean-User
 
