@@ -102,7 +102,7 @@ void foc(BldcMotor *motor, uint32_t adc_a, uint32_t adc_b)
         getCurrentOffsets(motor, adc_a, adc_b, 100);
         alignSensor(motor);
         motor->state = MOTOR_READY;
-        motor->stopPwm();
+        // motor->stopPwm();
     }
     else
     {
@@ -120,10 +120,10 @@ void foc(BldcMotor *motor, uint32_t adc_a, uint32_t adc_b)
 
         getElecAngle(motor);
 
-        if (motor->state == MOTOR_READY)
-        {
-        }
-        else if (motor->state == MOTOR_START)
+        // if (motor->state == MOTOR_READY)
+        // {
+        // }
+        // else if (motor->state == MOTOR_START)
         {
 
             switch (motor->controlType)
@@ -132,19 +132,20 @@ void foc(BldcMotor *motor, uint32_t adc_a, uint32_t adc_b)
 
                 if (motor->torqueType == VOLTAGE)
                 {
-                    motor->Uq = motor->target;
+                    motor->Uq = UqMAX; // motor->target;
                 }
                 else
                 {
                     motor->Ud = pidOperator(&motor->pidId, 0 - motor->Id);
-                    motor->Uq = pidOperator(&motor->pidIq, motor->target - motor->Iq);
+                    // motor->Uq = pidOperator(&motor->pidIq, motor->target - motor->Iq);
+                    motor->Uq = pidOperator(&motor->pidIq, 0.8f - motor->Iq);
                 }
                 break;
             case VELOCITY_OPEN_LOOP: // 用于验证setTorque（SVPWM)函数及编码器测速（驱动）方向
                 static float shaftAngle;
                 shaftAngle = _normalizeAngle(shaftAngle + motor->target * motor->Ts);
                 motor->angle_el = _electricalAngle(shaftAngle, motor->pole_pairs);
-                motor->Uq = OPEN_LOOP_TORQUE;
+                motor->Uq = UqMAX;
                 break;
             case VELOCITY:
                 if (motor->torqueType == VOLTAGE)

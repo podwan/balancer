@@ -1341,23 +1341,13 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 54.61) (xy 127 54.61)
+			(xy 124.46 54.61) (xy 124.46 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c45682cc-8091-40a2-8d0b-38d65dd279d0")
-	)
-	(wire
-		(pts
-			(xy 124.46 57.15) (xy 124.46 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ce1bee82-f40f-4709-884d-9e1e48e98e6c")
+		(uuid "c1a091df-36ba-4ff8-9c68-b70fdcce22e8")
 	)
 	(wire
 		(pts
@@ -1368,6 +1358,26 @@
 			(type default)
 		)
 		(uuid "cf326d9b-b1e4-4db6-8657-2c742e41617e")
+	)
+	(wire
+		(pts
+			(xy 124.46 52.07) (xy 127 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4c1f2d2-cf61-4301-aadf-79f5d5484d29")
+	)
+	(wire
+		(pts
+			(xy 124.46 54.61) (xy 127 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d578d0e0-458c-4e43-865a-fb2083318534")
 	)
 	(wire
 		(pts
@@ -1399,16 +1409,6 @@
 		)
 		(uuid "f65b3c57-4b47-4fe2-b4e8-e79c2f256436")
 	)
-	(wire
-		(pts
-			(xy 124.46 57.15) (xy 127 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f8d05504-1ff1-4764-b10e-a36b9643a4cb")
-	)
 	(label "MISO"
 		(at 165.1 76.2 0)
 		(fields_autoplaced yes)
@@ -1420,7 +1420,18 @@
 		)
 		(uuid "0d574b48-3373-4b58-b190-99a7e6fb9d52")
 	)
-	(label "MISO"
+	(label "CSN"
+		(at 127 41.91 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1e72560f-cc35-46b2-a891-bc4a865396d5")
+	)
+	(label "CLK"
 		(at 127 49.53 180)
 		(fields_autoplaced yes)
 		(effects
@@ -1429,29 +1440,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "0d710fcf-f0f3-4c59-b520-fafcd0faa507")
-	)
-	(label "MOSI"
-		(at 127 46.99 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "23e2a3ae-b319-4645-bfc4-403008ada507")
-	)
-	(label "CSN"
-		(at 127 44.45 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "36da4235-850a-4d2d-9c7c-7fec1124c67e")
+		(uuid "2a3a908b-e4a6-4c12-b8a8-0e9aae9850aa")
 	)
 	(label "CSN"
 		(at 165.1 81.28 0)
@@ -1475,8 +1464,8 @@
 		)
 		(uuid "8772e299-f280-4621-be56-c082d4ebbf78")
 	)
-	(label "CLK"
-		(at 127 52.07 180)
+	(label "MOSI"
+		(at 127 44.45 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1484,7 +1473,83 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "f936132b-8d8e-4cef-b190-90406ce4510b")
+		(uuid "bb0878e7-f0f6-4c91-b95f-188132a6e948")
+	)
+	(label "MISO"
+		(at 127 46.99 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f814aeda-4eaf-432f-b13e-7a3004d24f75")
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 124.46 52.07 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "28af9412-1a5b-4882-81fb-0c6b477b7685")
+		(property "Reference" "#PWR02"
+			(at 128.27 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 119.126 52.324 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 124.46 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 124.46 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "89871745-6688-4486-9ccd-e31d43c315cc")
+		)
+		(instances
+			(project "encoder"
+				(path "/cbf7aacc-9925-4e73-a094-13fc31cc8a91"
+					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "encoder:SMF5.0CA")
@@ -1688,6 +1753,72 @@
 			(project "encoder"
 				(path "/cbf7aacc-9925-4e73-a094-13fc31cc8a91"
 					(reference "H3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 124.46 55.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "80dc7ab7-63a7-4c3d-b271-b91788613294")
+		(property "Reference" "#PWR03"
+			(at 124.46 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 128.27 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 124.46 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 124.46 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a91b29a3-7b59-4756-a48e-d3915cacf3da")
+		)
+		(instances
+			(project "encoder"
+				(path "/cbf7aacc-9925-4e73-a094-13fc31cc8a91"
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -1962,71 +2093,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
-		(at 124.46 54.61 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ba636b93-d227-476e-b942-f3c2157c6ddf")
-		(property "Reference" "#PWR05"
-			(at 128.27 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 119.126 54.864 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 124.46 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 124.46 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 124.46 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "38a4e7da-b3e8-4110-96ba-520ef7abafc1")
-		)
-		(instances
-			(project "encoder"
-				(path "/cbf7aacc-9925-4e73-a094-13fc31cc8a91"
-					(reference "#PWR05")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 152.4 107.95 0)
 		(unit 1)
@@ -2183,15 +2249,15 @@
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x06")
 		(at 132.08 49.53 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "dcc72466-ba9d-4467-97d0-d7c49736e55a")
 		(property "Reference" "J1"
-			(at 134.62 49.5299 0)
+			(at 134.62 49.5301 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2200,7 +2266,7 @@
 			)
 		)
 		(property "Value" "Conn_01x06"
-			(at 134.62 52.0699 0)
+			(at 134.62 46.9901 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2208,7 +2274,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "encoder:CONN-SMD_6P-P1.00_BX-SH1.0-6PLT"
+		(property "Footprint" "encoder:FPC-SMD_6P-P0.50_HDGC_0.5K-A-6PB"
 			(at 132.08 49.53 0)
 			(effects
 				(font
@@ -2257,72 +2323,6 @@
 			(project "encoder"
 				(path "/cbf7aacc-9925-4e73-a094-13fc31cc8a91"
 					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 124.46 58.42 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "fc12b148-a17d-4da5-9b68-110541584ec7")
-		(property "Reference" "#PWR06"
-			(at 124.46 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 128.27 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 124.46 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 124.46 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 124.46 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "eb9e41ad-72c7-4e59-8df8-178094a9a964")
-		)
-		(instances
-			(project "encoder"
-				(path "/cbf7aacc-9925-4e73-a094-13fc31cc8a91"
-					(reference "#PWR06")
 					(unit 1)
 				)
 			)
