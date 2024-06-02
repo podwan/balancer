@@ -1,6 +1,7 @@
 M48
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ; DRILL file {KiCad 8.0.1} date 2024-04-12T14:34:24+0800
 ; FORMAT={-:-/ absolute / inch / decimal}
 ; #@! TF.CreationDate,2024-04-12T14:34:24+08:00
@@ -12,8 +13,11 @@ M48
 ; #@! TF.GenerationSoftware,Kicad,Pcbnew,8.0.1
 =======
 ; DRILL file {KiCad 8.0.2} date 2024-05-29T00:04:52+0800
+=======
+; DRILL file {KiCad 8.0.2} date 2024-06-01T23:05:52+0800
+>>>>>>> eaa2527d7fae1c756caf7d441742e50d50757b73
 ; FORMAT={-:-/ absolute / inch / decimal}
-; #@! TF.CreationDate,2024-05-29T00:04:52+08:00
+; #@! TF.CreationDate,2024-06-01T23:05:52+08:00
 ; #@! TF.GenerationSoftware,Kicad,Pcbnew,8.0.2
 >>>>>>> eb250e1e65e3fef6f6998880e309a2abd2231076
 ; #@! TF.FileFunction,Plated,1,2,PTH
@@ -41,8 +45,7 @@ G05
 T1
 X2.8346Y-2.8903
 X3.0502Y-3.4341
-X3.0669Y-3.0236
-X3.1654Y-3.0271
+X3.1102Y-3.0669
 X3.1717Y-3.1244
 X3.2323Y-3.0512
 X3.2402Y-3.1615
@@ -54,6 +57,8 @@ X3.9124Y-3.7005
 X3.9823Y-2.9035
 X4.0039Y-3.1969
 X4.4882Y-3.0748
+X4.6614Y-3.0354
+X4.874Y-3.0157
 X5.5669Y-3.5748
 X5.7372Y-3.1471
 T2
@@ -153,7 +158,7 @@ X3.8976Y-3.9961
 X3.937Y-3.8465
 >>>>>>> eb250e1e65e3fef6f6998880e309a2abd2231076
 X3.9626Y-4.0091
-X4.0157Y-2.7756
+X4.0236Y-2.7598
 X4.0354Y-2.8346
 X4.1732Y-4.0118
 <<<<<<< HEAD

@@ -2,6 +2,7 @@
   "board": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "active_layer": 31,
 =======
     "active_layer": 44,
@@ -9,6 +10,9 @@
 =======
     "active_layer": 31,
 >>>>>>> eb250e1e65e3fef6f6998880e309a2abd2231076
+=======
+    "active_layer": 44,
+>>>>>>> eaa2527d7fae1c756caf7d441742e50d50757b73
     "active_layer_preset": "",
     "auto_track_width": false,
     "hidden_netclasses": [],

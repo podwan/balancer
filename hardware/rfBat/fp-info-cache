@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 23166091170600318
 =======
 23212376397743743
@@ -7,6 +8,9 @@
 =======
 23428766132847906
 >>>>>>> eb250e1e65e3fef6f6998880e309a2abd2231076
+=======
+23432200636084363
+>>>>>>> eaa2527d7fae1c756caf7d441742e50d50757b73
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -95481,6 +95485,13 @@ FPC-SMD_3P-P1.00_HDGC_1.0K-N-3PB
 5
 5
 bat_rf
+FPC-SMD_4P-L7.5-W2.0-P0.50
+
+
+0
+6
+6
+bat_rf
 GCT_USB4515-GF-A_REVA
 
 
@@ -95547,6 +95558,13 @@ bat_rf
 <<<<<<< HEAD
 =======
 SOT-23
+
+
+0
+3
+3
+bat_rf
+SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR
 
 
 0

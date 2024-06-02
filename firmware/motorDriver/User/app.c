@@ -60,7 +60,11 @@ static void motorInit()
     motor1.zeroElectricAngleOffSet = 0;
     motor1.Ts = 100 * 1e-6f;
     motor1.torqueType = VOLTAGE;
+<<<<<<< HEAD
     motor1.controlType = VELOCITY_OPEN_LOOP;
+=======
+    motor1.controlType = VELOCITY;
+>>>>>>> eaa2527d7fae1c756caf7d441742e50d50757b73
     motor1.state = MOTOR_CALIBRATE;
     encoderInit(&motor1.magEncoder, motor1.Ts, MT6701_GetRawAngle);
 
@@ -131,28 +135,38 @@ void appRunning()
         flashCnt = 0;
 
     ledOn = 0;
+<<<<<<< HEAD
 #if USE_COMM_TARGET == 0
     uint32_t Vpoten, adc_vbus;
     float Vbus, goalVelocity;
     HAL_ADC_Start(&hadc1);
     HAL_ADC_Start(&hadc2);
     Vpoten = HAL_ADC_GetValue(&hadc1);
+=======
 
-    goalVelocity = map(Vpoten, 0, 4095, -MAX_VELOCITY, MAX_VELOCITY);
+    // uint32_t Vpoten, adc_vbus;
+    // float Vbus, goalVelocity;
+    // HAL_ADC_Start(&hadc1);
+    // HAL_ADC_Start(&hadc2);
+    // Vpoten = HAL_ADC_GetValue(&hadc1);
+>>>>>>> eaa2527d7fae1c756caf7d441742e50d50757b73
+
+    // goalVelocity = map(Vpoten, 0, 4095, -MAX_VELOCITY, MAX_VELOCITY);
 
     // goalVelocity = Vpoten / 4095.0f * MAX_VELOCITY;
-    float goalTorqueV = map(Vpoten, 0, 4095, -UqMAX, UqMAX);
-    float goalTorqueC = map(Vpoten, 0, 4095, -CURRENT_MAX, CURRENT_MAX);
+    // float goalTorqueV = map(Vpoten, 0, 4095, -UqMAX, UqMAX);
+    // float goalTorqueC = map(Vpoten, 0, 4095, -CURRENT_MAX, CURRENT_MAX);
 
-    adc_vbus = HAL_ADC_GetValue(&hadc2);
+    // adc_vbus = HAL_ADC_GetValue(&hadc2);
 
-    Vbus = adc_vbus * 3.3f / 4096 * 26;
+    // Vbus = adc_vbus * 3.3f / 4096 * 26;
 
-    if (motor1.controlType == VELOCITY || motor1.controlType == VELOCITY_OPEN_LOOP)
-    {
-        motor1.target = goalVelocity;
-    }
+    // if (motor1.controlType == VELOCITY || motor1.controlType == VELOCITY_OPEN_LOOP)
+    // {
+    //     motor1.target = goalVelocity;
+    // }
 
+<<<<<<< HEAD
     else if (motor1.controlType == ANGLE)
     {
         motor1.target = goalVelocity / 3;
@@ -165,6 +179,20 @@ void appRunning()
             motor1.target = goalTorqueC;
     }
 #endif
+=======
+    // else if (motor1.controlType == ANGLE)
+    // {
+    //     motor1.target = goalVelocity / 3;
+    // }
+    // else if (motor1.controlType == TORQUE)
+    // {
+    //     if (motor1.torqueType == VOLTAGE)
+    //         motor1.target = goalTorqueV;
+    //     else
+    //         motor1.target = goalTorqueC;
+    // }
+
+>>>>>>> eaa2527d7fae1c756caf7d441742e50d50757b73
     switch (devState)
     {
     case STANDBY:
@@ -231,9 +259,15 @@ void txDataProcess()
 
     // sprintf(txBuffer, "target:%.2f fullAngle:%.2f velocity:%.2f Uq:%.2f Ud:%.2f Iq:%.2f Id:%.2f elec_angle:%.2f\n", motor1.target, motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id, motor1.angle_el);
 
+<<<<<<< HEAD
     //  sprintf(txBuffer, "fullAngle:%.2f velocity:%.2f  shaftAngle:%.2f\n", motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.magEncoder.shaftAngle);
 
     sprintf(txBuffer, "target:%f velocity:%f\n", motor1.target, motor1.magEncoder.velocity);
+=======
+    // sprintf(txBuffer, "fullAngle:%.2f velocity:%.2f  shaftAngle:%.2f\n", motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.magEncoder.shaftAngle);
+
+    sprintf(txBuffer, "target:%f Uq:%f\n", motor1.target, motor1.Uq);
+>>>>>>> eaa2527d7fae1c756caf7d441742e50d50757b73
     // sprintf(txBuffer, "offset_ia:%f offset_ib:%f, Ia:%f, Ib:%f\n", motor1.offset_ia, motor1.offset_ib, motor1.Ia, motor1.Ib);
 }
 
@@ -244,7 +278,11 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
     {
 
         foc(&motor1, hadc1.Instance->JDR1, hadc2.Instance->JDR1);
+<<<<<<< HEAD
         // svpwm_test(&motor1, 3.0f, 0.03f);
+=======
+        // svpwm_test(&motor1, 2.0f, 0.01f);
+>>>>>>> eaa2527d7fae1c756caf7d441742e50d50757b73
         dealPer100us();
 
 #if SHOW_WAVE
@@ -273,11 +311,11 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
         load_data[1] = hadc2.Instance->JDR1;
         // load_data[2] = hadc1.Instance->JDR2;
 
-        // load_data[3] = motor1.Ialpha;
-        // load_data[4] = motor1.Ibeta;
+        load_data[3] = motor1.Ialpha;
+        load_data[4] = motor1.Ibeta;
 
-        // load_data[5] = motor1.Id;
-        // load_data[6] = motor1.Iq;
+        load_data[5] = motor1.Id;
+        load_data[6] = motor1.Iq;
 
         memcpy(tempData, (uint8_t *)&load_data, sizeof(load_data));
         HAL_UART_Transmit_DMA(&huart3, (uint8_t *)tempData, sizeof(tempData));
