@@ -20,8 +20,6 @@
 "./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dac.o"
 "./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dac_ex.o"
 "./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.o"
-<<<<<<< HEAD:firmware/motor/Debug/objects.list
-=======
 "./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.o"
 "./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.o"
 "./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.o"
@@ -41,7 +39,6 @@
 "./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.o"
 "./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.o"
 "./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_adc.o"
->>>>>>> eb250e1e65e3fef6f6998880e309a2abd2231076:firmware/motorDriver/Debug/objects.list
 "./FocLib/bldcMotor.o"
 "./FocLib/current.o"
 "./FocLib/encoder.o"
@@ -51,11 +48,7 @@
 "./FocLib/voltage.o"
 "./User/app.o"
 "./User/comm.o"
-<<<<<<< HEAD:firmware/motor/Debug/objects.list
-=======
-"./User/key.o"
 "./User/led.o"
->>>>>>> eb250e1e65e3fef6f6998880e309a2abd2231076:firmware/motorDriver/Debug/objects.list
 "./User/mt6701.o"
 "./User/time_utils.o"
 "./User/userMain.o"

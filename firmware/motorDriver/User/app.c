@@ -60,7 +60,7 @@ static void motorInit()
     motor1.zeroElectricAngleOffSet = 0;
     motor1.Ts = 100 * 1e-6f;
     motor1.torqueType = VOLTAGE;
-    motor1.controlType = ANGLE;
+    motor1.controlType = VELOCITY_OPEN_LOOP;
     motor1.state = MOTOR_CALIBRATE;
     encoderInit(&motor1.magEncoder, motor1.Ts, MT6701_GetRawAngle);
 
@@ -131,7 +131,7 @@ void appRunning()
         flashCnt = 0;
 
     ledOn = 0;
-
+#if USE_COMM_TARGET == 0
     uint32_t Vpoten, adc_vbus;
     float Vbus, goalVelocity;
     HAL_ADC_Start(&hadc1);
@@ -164,7 +164,7 @@ void appRunning()
         else
             motor1.target = goalTorqueC;
     }
-
+#endif
     switch (devState)
     {
     case STANDBY:
@@ -231,9 +231,9 @@ void txDataProcess()
 
     // sprintf(txBuffer, "target:%.2f fullAngle:%.2f velocity:%.2f Uq:%.2f Ud:%.2f Iq:%.2f Id:%.2f elec_angle:%.2f\n", motor1.target, motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id, motor1.angle_el);
 
-    sprintf(txBuffer, "fullAngle:%.2f velocity:%.2f  shaftAngle:%.2f\n", motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.magEncoder.shaftAngle);
+    //  sprintf(txBuffer, "fullAngle:%.2f velocity:%.2f  shaftAngle:%.2f\n", motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.magEncoder.shaftAngle);
 
-    // sprintf(txBuffer, "target:%f Uq:%f\n", motor1.target, motor1.Uq);
+    sprintf(txBuffer, "target:%f velocity:%f\n", motor1.target, motor1.magEncoder.velocity);
     // sprintf(txBuffer, "offset_ia:%f offset_ib:%f, Ia:%f, Ib:%f\n", motor1.offset_ia, motor1.offset_ib, motor1.Ia, motor1.Ib);
 }
 
@@ -243,8 +243,8 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
     if (hadc == &hadc1)
     {
 
-    //  foc(&motor1, hadc1.Instance->JDR1, hadc2.Instance->JDR1);
-        svpwm_test(&motor1, 2.0f, 0.01f);
+        foc(&motor1, hadc1.Instance->JDR1, hadc2.Instance->JDR1);
+        // svpwm_test(&motor1, 3.0f, 0.03f);
         dealPer100us();
 
 #if SHOW_WAVE
