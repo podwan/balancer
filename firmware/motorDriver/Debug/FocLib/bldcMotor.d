@@ -1,5 +1,6 @@
 FocLib/bldcMotor.o: ../FocLib/bldcMotor.c ../FocLib/bldcMotor.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h \
+ ../FocLib/focLib.h \
+ C:/Users/Administrator/Desktop/balancer/firmware/motorDriver/User/userMain.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h \
  ../Core/Inc/stm32g4xx_hal_conf.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h \
@@ -28,8 +29,6 @@ FocLib/bldcMotor.o: ../FocLib/bldcMotor.c ../FocLib/bldcMotor.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ex.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ramfunc.h \
- ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_i2c.h \
- ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_i2c_ex.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_spi.h \
@@ -39,17 +38,12 @@ FocLib/bldcMotor.o: ../FocLib/bldcMotor.c ../FocLib/bldcMotor.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
  ../Core/Inc/tim.h ../Core/Inc/main.h ../Core/Inc/adc.h \
- ../Core/Inc/usart.h ../Core/Inc/spi.h ../FocLib/math_utils.h \
- ../FocLib/pid.h ../FocLib/lowpass_filter.h ../FocLib/encoder.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/mt6701.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h \
- ../FocLib/voltage.h ../FocLib/current.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/time_utils.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/comm.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/bldcMotor.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/app.h
+ ../Core/Inc/usart.h ../Core/Inc/spi.h ../FocLib/pid.h \
+ ../FocLib/lowpass_filter.h ../FocLib/encoder.h ../FocLib/math_utils.h \
+ ../FocLib/voltage.h ../FocLib/current.h
 ../FocLib/bldcMotor.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h:
+../FocLib/focLib.h:
+C:/Users/Administrator/Desktop/balancer/firmware/motorDriver/User/userMain.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
 ../Core/Inc/stm32g4xx_hal_conf.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h:
@@ -78,8 +72,6 @@ C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ex.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ramfunc.h:
-../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_i2c.h:
-../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_i2c_ex.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_spi.h:
@@ -93,15 +85,9 @@ C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h:
 ../Core/Inc/adc.h:
 ../Core/Inc/usart.h:
 ../Core/Inc/spi.h:
-../FocLib/math_utils.h:
 ../FocLib/pid.h:
 ../FocLib/lowpass_filter.h:
 ../FocLib/encoder.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/mt6701.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h:
+../FocLib/math_utils.h:
 ../FocLib/voltage.h:
 ../FocLib/current.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/time_utils.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/comm.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/bldcMotor.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/app.h:

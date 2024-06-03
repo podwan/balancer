@@ -1,7 +1,7 @@
 
 #include "app.h"
 #include "led.h"
-#include "key.h"
+// #include "key.h"
 #include "comm.h"
 #include "mt6701.h"
 #include "bldcMotor.h"
@@ -60,9 +60,11 @@ static void motorInit()
     motor1.zeroElectricAngleOffSet = 0;
     motor1.Ts = 100 * 1e-6f;
     motor1.torqueType = VOLTAGE;
-    motor1.controlType = VELOCITY;
+
+    motor1.controlType = TORQUE;
+
     motor1.state = MOTOR_CALIBRATE;
-    encoderInit(&motor1.magEncoder, motor1.Ts, MT6701_GetRawAngle);
+    encoderInit(&motor1.magEncoder, motor1.Ts, MT6701_GetRawAngle, UNKNOWN);
 
     if (motor1.controlType == TORQUE && motor1.torqueType == CURRENT)
     {
@@ -76,11 +78,11 @@ static void motorInit()
     {
         if (motor1.torqueType == CURRENT)
         {
-            pidInit(&motor1.velocityPID, -0.02, -0.01, 0, 0, CURRENT_MAX, motor1.Ts);
+            pidInit(&motor1.velocityPID, 0.02, 0.01, 0, 0, CURRENT_MAX, motor1.Ts);
 
             float kp, ki;
-            kp = -200;
-            ki = -20;
+            kp = 200;
+            ki = 20;
             pidInit(&motor1.pidId, kp, ki, 0, 0, UqMAX, motor1.Ts);
             pidInit(&motor1.pidIq, kp, ki, 0, 0, UqMAX, motor1.Ts);
         }
@@ -125,18 +127,19 @@ static bool zeroReset;
 void appRunning()
 {
 
-    getKeyState(&keyState);
+    //  getKeyState(&keyState);
     commander_run(&motor1);
     if (++flashCnt >= 10)
         flashCnt = 0;
 
     ledOn = 0;
 
-    // uint32_t Vpoten, adc_vbus;
-    // float Vbus, goalVelocity;
-    // HAL_ADC_Start(&hadc1);
-    // HAL_ADC_Start(&hadc2);
-    // Vpoten = HAL_ADC_GetValue(&hadc1);
+#if USE_COMM_TARGET == 0
+    uint32_t Vpoten, adc_vbus;
+    float Vbus, goalVelocity;
+    HAL_ADC_Start(&hadc1);
+    HAL_ADC_Start(&hadc2);
+    Vpoten = HAL_ADC_GetValue(&hadc1);
 
     // goalVelocity = map(Vpoten, 0, 4095, -MAX_VELOCITY, MAX_VELOCITY);
 
@@ -152,6 +155,19 @@ void appRunning()
     // {
     //     motor1.target = goalVelocity;
     // }
+
+    else if (motor1.controlType == ANGLE)
+    {
+        motor1.target = goalVelocity / 3;
+    }
+    else if (motor1.controlType == TORQUE)
+    {
+        if (motor1.torqueType == VOLTAGE)
+            motor1.target = goalTorqueV;
+        else
+            motor1.target = goalTorqueC;
+    }
+#endif
 
     // else if (motor1.controlType == ANGLE)
     // {
@@ -180,6 +196,8 @@ void appRunning()
 }
 static void standingBy()
 {
+    static uchar cnt;
+
     ledOn = 1;
     // setTorque(&motor1, 0, OPEN_LOOP_TORQUE, 0);
     if (zeroReset == 0)
@@ -190,7 +208,7 @@ static void standingBy()
     else
         motor1.stopPwm();
 
-    if (keyState == USER3_SHORT)
+    if (++cnt >= 10)
     {
         WORK_INIT;
     }
@@ -231,9 +249,8 @@ void txDataProcess()
 
     // sprintf(txBuffer, "target:%.2f fullAngle:%.2f velocity:%.2f Uq:%.2f Ud:%.2f Iq:%.2f Id:%.2f elec_angle:%.2f\n", motor1.target, motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id, motor1.angle_el);
 
-    // sprintf(txBuffer, "fullAngle:%.2f velocity:%.2f  shaftAngle:%.2f\n", motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.magEncoder.shaftAngle);
-
-    sprintf(txBuffer, "target:%f Uq:%f\n", motor1.target, motor1.Uq);
+    // sprintf(txBuffer, "target:%.2f  velocity:%.2f  Uq:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Uq);
+    sprintf(txBuffer, "target:%.2f  velocity:%.2f Uq%.2f Iq:%.2f Id:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Uq, motor1.Iq, motor1.Id);
     // sprintf(txBuffer, "offset_ia:%f offset_ib:%f, Ia:%f, Ib:%f\n", motor1.offset_ia, motor1.offset_ib, motor1.Ia, motor1.Ib);
 }
 
@@ -244,7 +261,7 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
     {
 
         foc(&motor1, hadc1.Instance->JDR1, hadc2.Instance->JDR1);
-        // svpwm_test(&motor1, 2.0f, 0.01f);
+
         dealPer100us();
 
 #if SHOW_WAVE
@@ -269,9 +286,9 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
 
         // show current
 
-        load_data[0] = hadc1.Instance->JDR1;
-        load_data[1] = hadc2.Instance->JDR1;
-        // load_data[2] = hadc1.Instance->JDR2;
+        load_data[0] = motor1.Ia;
+        load_data[1] = motor1.Ib;
+        load_data[2] = motor1.Ic;
 
         load_data[3] = motor1.Ialpha;
         load_data[4] = motor1.Ibeta;

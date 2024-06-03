@@ -2,9 +2,9 @@
 ../User/app.c:36:13:stopPwm1	8	static
 ../User/app.c:45:13:updatePwm1	16	static
 ../User/app.c:53:13:motorInit	32	static
-../User/app.c:118:6:appInit	8	static
-../User/app.c:125:6:appRunning	8	static
-../User/app.c:181:13:standingBy	8	static
-../User/app.c:199:13:working	4	static
-../User/app.c:229:6:txDataProcess	24	static
-../User/app.c:240:6:HAL_ADCEx_InjectedConvCpltCallback	16	static
+../User/app.c:120:6:appInit	8	static
+../User/app.c:127:6:appRunning	8	static
+../User/app.c:197:13:standingBy	8	static
+../User/app.c:217:13:working	4	static
+../User/app.c:247:6:txDataProcess	72	static
+../User/app.c:257:6:HAL_ADCEx_InjectedConvCpltCallback	24	static

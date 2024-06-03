@@ -180,6 +180,10 @@
       ],
       "track_widths": [
         0.0,
+<<<<<<< HEAD
+        0.3,
+        0.6
+=======
         0.0,
         0.0,
         0.15,
@@ -200,6 +204,7 @@
         3.0,
         3.5,
         4.0
+>>>>>>> 3f97a153d958220e151b39468fc548032aad0f0d
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -234,6 +239,13 @@
         },
         {
           "diameter": 0.5,
+<<<<<<< HEAD
+          "drill": 0.3
+        },
+        {
+          "diameter": 1.0,
+          "drill": 0.6
+=======
           "drill": 0.25
         },
         {
@@ -255,6 +267,7 @@
         {
           "diameter": 1.5,
           "drill": 0.8
+>>>>>>> 3f97a153d958220e151b39468fc548032aad0f0d
         }
       ],
       "zones_allow_external_fillets": false
