@@ -9025,6 +9025,17 @@
 		)
 		(uuid "18a60300-871a-4e0b-a88e-4700b6419ece")
 	)
+	(label "ADC1_IN2"
+		(at 218.44 134.62 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1a2968f1-3e5b-4944-89c8-8d5e5b13e471")
+	)
 	(label "SPI1_SCK"
 		(at 243.84 45.72 0)
 		(fields_autoplaced yes)
@@ -9464,6 +9475,17 @@
 			(justify right bottom)
 		)
 		(uuid "92f67765-a397-48f2-ad16-6daf8c10a60a")
+	)
+	(label "ADC1_IN2"
+		(at 374.65 49.53 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9355ae68-5440-46af-8eb3-3e3679ad09a2")
 	)
 	(label "TIM1_CH2"
 		(at 374.65 69.85 0)
@@ -18539,73 +18561,6 @@
 			(project "bldcDriver"
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
 					(reference "TP25")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 374.65 49.53 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e1ad6c2b-0b1f-44f5-8c44-9d6d997336f9")
-		(property "Reference" "TP10"
-			(at 376.682 47.498 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 376.6821 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 374.65 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 374.65 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 374.65 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3f3debaa-a840-4f98-b0a4-23e02c40cc96")
-		)
-		(instances
-			(project "bldcDriver"
-				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
-					(reference "TP10")
 					(unit 1)
 				)
 			)
