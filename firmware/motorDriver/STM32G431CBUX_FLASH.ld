@@ -1,5 +1,3 @@
-<<<<<<< HEAD:firmware/motor/STM32G431RBTX_FLASH.ld
-=======
 /*
 ******************************************************************************
 **
@@ -187,4 +185,3 @@ SECTIONS
 
   .ARM.attributes 0 : { *(.ARM.attributes) }
 }
->>>>>>> 3f97a153d958220e151b39468fc548032aad0f0d:firmware/motor/STM32G431CBUX_FLASH.ld

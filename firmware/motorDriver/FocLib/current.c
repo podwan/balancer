@@ -1,7 +1,7 @@
 
 #include "current.h"
 #include "math_utils.h"
-#include "comm.h"
+#include "focLib.h"
 
 // Function finding zero offsets of the ADC
 void getCurrentOffsets(BldcMotor *motor, uint32_t adc_a, uint32_t adc_b, uint32_t rounds)
@@ -30,7 +30,8 @@ void getCurrentOffsets(BldcMotor *motor, uint32_t adc_a, uint32_t adc_b, uint32_
 void getPhaseCurrents(BldcMotor *motor, uint32_t adc_a, uint32_t adc_b)
 {
     motor->Ia = ADC_2_CURRENT(adc_a) - motor->offset_ia; // amps
-    motor->Ib = ADC_2_CURRENT(adc_b) - motor->offset_ib;
+    motor->Ic = ADC_2_CURRENT(adc_b) - motor->offset_ib;
+    motor->Ib = 0 - motor->Ia - motor->Ic;
 }
 
 /*============================================================================*/

@@ -8,7 +8,7 @@
 #include "voltage.h"
 #include "comm.h"
 #include "app.h"
-#include "key.h"
+//#include "key.h"
 
 #define PHASE_SHIFT_ANGLE (float)(120.0f / 360.0f * 2.0f * PI)
 
@@ -34,10 +34,10 @@ uint8_t HallReadTemp = 0;
 void userMain(void)
 {
 
-	if (get5MsFlag())
-	{
-		keyScan();
-	}
+//	if (get5MsFlag())
+//	{
+//		keyScan();
+//	}
 
 	if (get100MsFlag())
 	{

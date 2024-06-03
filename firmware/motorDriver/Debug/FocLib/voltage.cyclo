@@ -1,0 +1,4 @@
+../FocLib/voltage.c:7:6:getDQVoltages	1
+../FocLib/voltage.c:21:6:getABVoltages	1
+../FocLib/voltage.c:239:6:setTorque	13
+../FocLib/voltage.c:282:6:svpwm_test	2

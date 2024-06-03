@@ -1,7 +1,8 @@
 
 #include "encoder.h"
 #include "math_utils.h"
-void encoderInit(MagEncoder *encoder, float _Ts, float (*_getRawAngle)(void))
+#include "focLib.h"
+void encoderInit(MagEncoder *encoder, float _Ts, float (*_getRawAngle)(void), Direction _direction)
 {
     encoder->angle_prev = 0;
     encoder->vel_angle_prev = 0;
@@ -12,16 +13,16 @@ void encoderInit(MagEncoder *encoder, float _Ts, float (*_getRawAngle)(void))
     encoder->velocity = 0;
     encoder->Ts = _Ts;
     encoder->getRawAngle = _getRawAngle;
-    encoder->direction = UNKNOWN;
+    encoder->direction = _direction;
 }
 
 void encoderUpdate(MagEncoder *encoder)
 {
-    float val = encoder->getRawAngle();
+    float val = encoder->getRawAngle() * encoder->direction;
 
     float d_angle = val - encoder->angle_prev;
     // 圈数检测
-    if (abs(d_angle) > (0.8f * _2PI))
+    if (fabsf(d_angle) > (0.8f * _2PI))
         encoder->full_rotations += (d_angle > 0) ? -1 : 1;
 
     // angle
@@ -36,5 +37,3 @@ void encoderUpdate(MagEncoder *encoder)
     encoder->vel_full_rotations = encoder->full_rotations;
     encoder->velocity = val;
 }
-
-
