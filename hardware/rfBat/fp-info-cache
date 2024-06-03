@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-23166091170600318
-=======
-23212376397743743
->>>>>>> 3f97a153d958220e151b39468fc548032aad0f0d
-=======
-23428766132847906
->>>>>>> eb250e1e65e3fef6f6998880e309a2abd2231076
-=======
 23432200636084363
->>>>>>> eaa2527d7fae1c756caf7d441742e50d50757b73
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -95555,8 +95543,6 @@ SOP8-PAD
 9
 9
 bat_rf
-<<<<<<< HEAD
-=======
 SOT-23
 
 
@@ -95592,7 +95578,6 @@ SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR
 6
 6
 bat_rf
->>>>>>> 3f97a153d958220e151b39468fc548032aad0f0d
 SW-SMD_4P-L4.2-W3.3-P2.15-LS5.1
 
 
@@ -95683,3 +95668,73 @@ batCase_18650x2
 0
 4
 4
+encoder
+PG-DSO-8_L5.0-W4.0-P1.27-LS6.0-BL
+
+
+0
+8
+8
+kicadLib
+CONN-SMD_3P-P1.00_WAFER-SH1.0-3PWB
+
+
+0
+5
+5
+kicadLib
+CONN-SMD_6P-P1.00_XYECONN_XY-SH1.0-6A61
+
+
+0
+8
+8
+kicadLib
+CONN-SMD_BM06B-GHS-TBT-LF-SN
+
+
+0
+8
+8
+kicadLib
+CONN-TH_BM03B-GHS-TBT-LF-SN
+
+
+0
+5
+5
+kicadLib
+CONN-TH_MR30PW-F
+
+
+0
+5
+5
+kicadLib
+CONN-TH_XT30UPB-M
+
+
+0
+2
+2
+kicadLib
+PDFN-8_L4.9-W5.8-P1.27-LS6.1-BL
+
+
+0
+9
+9
+kicadLib
+QFN-24_L3.0-W3.0-P0.40-BL-EP
+
+
+0
+25
+25
+kicadLib
+QFN-24_L4.0-W4.0-P0.50-BL-EP2.6
+
+
+0
+25
+25
