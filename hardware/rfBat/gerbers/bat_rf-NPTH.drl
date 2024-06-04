@@ -1,25 +1,8 @@
 M48
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-; DRILL file {KiCad 8.0.1} date 2024-04-12T14:34:24+0800
-; FORMAT={-:-/ absolute / inch / decimal}
-; #@! TF.CreationDate,2024-04-12T14:34:24+08:00
-=======
-; DRILL file {KiCad 8.0.1} date 2024-05-01T11:44:24+0800
-; FORMAT={-:-/ absolute / inch / decimal}
-; #@! TF.CreationDate,2024-05-01T11:44:24+08:00
->>>>>>> 3f97a153d958220e151b39468fc548032aad0f0d
-; #@! TF.GenerationSoftware,Kicad,Pcbnew,8.0.1
-=======
-; DRILL file {KiCad 8.0.2} date 2024-05-29T00:04:52+0800
-=======
 ; DRILL file {KiCad 8.0.2} date 2024-06-01T23:05:52+0800
->>>>>>> eaa2527d7fae1c756caf7d441742e50d50757b73
 ; FORMAT={-:-/ absolute / inch / decimal}
 ; #@! TF.CreationDate,2024-06-01T23:05:52+08:00
 ; #@! TF.GenerationSoftware,Kicad,Pcbnew,8.0.2
->>>>>>> eb250e1e65e3fef6f6998880e309a2abd2231076
 ; #@! TF.FileFunction,NonPlated,1,2,NPTH
 FMAT,2
 INCH

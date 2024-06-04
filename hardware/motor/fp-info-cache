@@ -1,4 +1,4 @@
-23394526413330276
+23397961265858516
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -95403,6 +95403,13 @@ CONN-TH_XT30UPB-M
 2
 2
 balancerDriver
+FPC-SMD_4P-L7.5-W2.0-P0.50
+
+
+0
+6
+6
+balancerDriver
 FPC-SMD_6P-P0.50_HC-FPC-0.5-6P-CSH20
 
 
@@ -95458,6 +95465,13 @@ MPU-6500
 0
 25
 25
+balancerDriver
+RES-ADJ-TH_3362P
+
+
+0
+3
+3
 balancerDriver
 SC70-6_L2.1-W1.3-P0.65-LS2.3-BL
 
