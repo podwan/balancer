@@ -31,4 +31,4 @@ goal:库与应用进行解耦，面向对象让不同的电机进行解耦
 2. 使 torqueType = VOLTAGE; controlType = TORQUE; Uq = UqMax让电机最大转速运行（正反转），观察电流波形是否正确(Id基本保持不变，Iq符号在换向后发生翻转)
 3. 使 torqueType = CURRENT; controlType = TORQUE;
 a. 先单独调静态参数Id的PID，PID先设定P值，后加入I值消除稳态误差，确保Id是否能够根据设定的值进行响应后将目标值设为0
-b. 加入Iq控制闭环，
+b. 加入Iq控制闭环，PID参数可以和Id一致
