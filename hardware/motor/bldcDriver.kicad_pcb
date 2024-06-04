@@ -1708,7 +1708,7 @@
 	(footprint "balancerDriver:FPC-SMD_4P-L7.5-W2.0-P0.50"
 		(layer "F.Cu")
 		(uuid "25cd53b7-5a7c-4f50-8540-ab24021c775e")
-		(at 88.786 41.05 90)
+		(at 93.237 41.099 90)
 		(property "Reference" "P1"
 			(at 1.514 -3.45 270)
 			(layer "F.SilkS")
@@ -2024,7 +2024,7 @@
 			(at -1.014 0.25)
 			(size 0.4 1.5)
 			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 71 "/USART2_TX")
+			(net 3 "+3V3")
 			(pinfunction "3")
 			(pintype "input")
 			(uuid "dc889188-c5e6-401f-a08d-564cc80c1917")
@@ -2033,7 +2033,7 @@
 			(at 1.014 0.75)
 			(size 0.4 1.5)
 			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 3 "+3V3")
+			(net 71 "/USART2_TX")
 			(pinfunction "4")
 			(pintype "input")
 			(uuid "c42b231e-c15e-4444-897d-1a4ab9023280")
@@ -3157,7 +3157,7 @@
 		(descr "LED SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
 		(tags "LED handsolder")
 		(property "Reference" "D12"
-			(at 0 -1.65 360)
+			(at 0 -1.65 0)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "d06f6d15-d2c0-4381-9be2-18f0b8a7d0f4")
@@ -3169,7 +3169,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 0 1.65 360)
+			(at 0 1.65 0)
 			(layer "F.Fab")
 			(uuid "47f63403-01c1-41c4-926f-b75d5dfd67b3")
 			(effects
@@ -3341,7 +3341,7 @@
 			(uuid "cb56f0e1-4043-4133-bb7d-7cd45ba7c85a")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "5f9023b6-e585-4f99-b73e-b006974c7a53")
 			(effects
@@ -28381,7 +28381,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor handsolder")
 		(property "Reference" "R53"
-			(at 0 1.43 360)
+			(at 0 1.43 0)
 			(layer "B.SilkS")
 			(hide yes)
 			(uuid "07a6f069-6824-4b90-b42e-2e240e060ef5")
@@ -28394,7 +28394,7 @@
 			)
 		)
 		(property "Value" "4.7k"
-			(at 0 -1.43 360)
+			(at 0 -1.43 0)
 			(layer "B.Fab")
 			(uuid "bd913ecb-cea8-469d-97a7-f6ca0ed57893")
 			(effects
@@ -28550,7 +28550,7 @@
 			(uuid "7a7623f7-f63c-415e-9a15-25c2ce040f61")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "B.Fab")
 			(uuid "6906564f-0752-4bb2-933f-e24b1d668413")
 			(effects
@@ -43509,7 +43509,7 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor handsolder")
 		(property "Reference" "C21"
-			(at 0 1.43 270)
+			(at 0 1.43 -90)
 			(layer "B.SilkS")
 			(hide yes)
 			(uuid "7bac38e5-281b-4d33-9ec7-7406ad580f72")
@@ -43522,7 +43522,7 @@
 			)
 		)
 		(property "Value" "100n"
-			(at 0 -1.43 270)
+			(at 0 -1.43 -90)
 			(layer "B.Fab")
 			(uuid "5b8a720d-28f0-4c6e-b636-db782c955b59")
 			(effects
@@ -43678,7 +43678,7 @@
 			(uuid "9480bb47-f05f-476a-8d61-7656d699cafb")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 270)
+			(at 0 0 -90)
 			(layer "B.Fab")
 			(uuid "f940993a-386e-4fed-80ce-abffda393128")
 			(effects
@@ -48846,7 +48846,7 @@
 		)
 	)
 	(gr_text "TX"
-		(at 94.1365 39.1 0)
+		(at 93.3 38.9 90)
 		(layer "F.SilkS")
 		(uuid "347d6656-290c-48da-a44b-ba1f0f91a4a6")
 		(effects
@@ -48932,6 +48932,19 @@
 			(justify left bottom)
 		)
 	)
+	(gr_text "3V3"
+		(at 92.9 44.4 90)
+		(layer "F.SilkS")
+		(uuid "5aff321e-3704-44c7-9058-c747e77f1542")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.1)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
 	(gr_text "T8_CH3"
 		(at 54.8 54.5 0)
 		(layer "F.SilkS")
@@ -49005,7 +49018,7 @@
 		)
 	)
 	(gr_text "MOSI\n"
-		(at 116.05 42.15 180)
+		(at 114 42.9 0)
 		(layer "F.SilkS")
 		(uuid "891ccae7-3ebd-4b37-a700-c614ff592ba0")
 		(effects
@@ -49055,7 +49068,7 @@
 		)
 	)
 	(gr_text "NSS"
-		(at 116.05 41.45 180)
+		(at 114.6 42 0)
 		(layer "F.SilkS")
 		(uuid "b546a4fe-c13b-48ed-87a5-0ef471ea81b2")
 		(effects
@@ -49193,7 +49206,7 @@
 		)
 	)
 	(gr_text "RX"
-		(at 94.1365 40 0)
+		(at 94.3 39 90)
 		(layer "F.SilkS")
 		(uuid "f74d7a44-f585-4573-b91d-ae9498b528c7")
 		(effects
@@ -49230,7 +49243,7 @@
 		)
 	)
 	(gr_text "GND"
-		(at 93.8365 41 0)
+		(at 93.7 44.6 90)
 		(layer "F.SilkS")
 		(uuid "fcb9c879-eb06-4480-a2cc-cbd2e90c2b48")
 		(effects
