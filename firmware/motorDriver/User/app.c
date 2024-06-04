@@ -59,9 +59,9 @@ static void motorInit()
     motor1.stopPwm = stopPwm1;
     motor1.zeroElectricAngleOffSet = 0;
     motor1.Ts = 100 * 1e-6f;
-    motor1.torqueType = VOLTAGE;
+    motor1.torqueType = CURRENT;
 
-    motor1.controlType = TORQUE;
+    motor1.controlType = VELOCITY;
 
     motor1.state = MOTOR_CALIBRATE;
     encoderInit(&motor1.magEncoder, motor1.Ts, MT6701_GetRawAngle, UNKNOWN);
@@ -69,8 +69,8 @@ static void motorInit()
     if (motor1.controlType == TORQUE && motor1.torqueType == CURRENT)
     {
         float kp, ki;
-        kp = -200;
-        ki = -20;
+        kp = 500.0f;
+        ki = 50.0f;
         pidInit(&motor1.pidId, kp, ki, 0, 0, UqMAX, motor1.Ts);
         pidInit(&motor1.pidIq, kp, ki, 0, 0, UqMAX, motor1.Ts);
     }
@@ -81,8 +81,8 @@ static void motorInit()
             pidInit(&motor1.velocityPID, 0.02, 0.01, 0, 0, CURRENT_MAX, motor1.Ts);
 
             float kp, ki;
-            kp = 200;
-            ki = 20;
+            kp = 500.0f;
+            ki = 50.0f;
             pidInit(&motor1.pidId, kp, ki, 0, 0, UqMAX, motor1.Ts);
             pidInit(&motor1.pidIq, kp, ki, 0, 0, UqMAX, motor1.Ts);
         }
@@ -250,7 +250,7 @@ void txDataProcess()
     // sprintf(txBuffer, "target:%.2f fullAngle:%.2f velocity:%.2f Uq:%.2f Ud:%.2f Iq:%.2f Id:%.2f elec_angle:%.2f\n", motor1.target, motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id, motor1.angle_el);
 
     // sprintf(txBuffer, "target:%.2f  velocity:%.2f  Uq:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Uq);
-    sprintf(txBuffer, "target:%.2f  velocity:%.2f Uq%.2f Iq:%.2f Id:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Uq, motor1.Iq, motor1.Id);
+    sprintf(txBuffer, "target:%.2f,velocity:%.2f,Uq%.2f,Ud%.2f,Iq:%.2f,Id:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id);
     // sprintf(txBuffer, "offset_ia:%f offset_ib:%f, Ia:%f, Ib:%f\n", motor1.offset_ia, motor1.offset_ib, motor1.Ia, motor1.Ib);
 }
 

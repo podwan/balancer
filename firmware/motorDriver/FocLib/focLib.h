@@ -10,7 +10,7 @@
 #define CARRIER_FREQUENCY 10000                          // PWM载波频率
 #define PWM_PERIOD_VALUE (160000000 / CARRIER_FREQUENCY) // 16000
 #define HALP_PWM_PERIOD (PWM_PERIOD_VALUE / 2.0f)        // PWM period * 2
-#define U_DC 12.0f
+#define U_DC 8.0f
 #define UqMAX (U_DC * _1_SQRT3)
 #define OPEN_LOOP_TORQUE UqMAX / 2.0
 #define PWM_GENERATE(p1, p2, p3) \
@@ -29,6 +29,9 @@
 #define ADC_VLOTS_RADIO ADC_REF / ADC_MAX // 0.0008
 
 #define ADC_2_CURRENT(adc) adc *ADC_VLOTS_RADIO *VLOTS_AMPS_RATIO
+
+#define IqMax 0.06f
+#define VELOCITY_MAX 234
 
 void FOC_log(const char *format, ...);
 void delay(uint32_t ms);

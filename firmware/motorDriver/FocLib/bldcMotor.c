@@ -135,19 +135,6 @@ void foc(BldcMotor *motor, uint32_t adc_a, uint32_t adc_b)
 
             switch (motor->controlType)
             {
-            case TORQUE:
-
-                if (motor->torqueType == VOLTAGE)
-                {
-                    motor->target = UqMAX;
-                    motor->Uq = motor->target;
-                }
-                else
-                {
-                    motor->Ud = pidOperator(&motor->pidId, 0 - motor->Id);
-                    motor->Uq = pidOperator(&motor->pidIq, motor->target - motor->Iq);
-                }
-                break;
             case VELOCITY_OPEN_LOOP:
                 // 用于验证setTorque（SVPWM马鞍波)函数、编码器测速（方向）及相电流采样（正弦波）的验证，
                 // 避免长时间运行（发热）
@@ -157,6 +144,21 @@ void foc(BldcMotor *motor, uint32_t adc_a, uint32_t adc_b)
                 motor->angle_el = _electricalAngle(shaftAngle, motor->pole_pairs);
                 motor->Uq = OPEN_LOOP_TORQUE;
                 break;
+            case TORQUE:
+
+                if (motor->torqueType == VOLTAGE)
+                {
+                    motor->target = UqMAX;
+                    motor->Uq = motor->target;
+                }
+                else
+                {
+                    // motor->target = 0;
+                    motor->Ud = pidOperator(&motor->pidId, 0 - motor->Id);
+                    motor->Uq = pidOperator(&motor->pidIq, motor->target - motor->Iq);
+                }
+                break;
+
             case VELOCITY:
                 if (motor->torqueType == VOLTAGE)
                 {
