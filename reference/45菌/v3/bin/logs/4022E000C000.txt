@@ -1,0 +1,57 @@
+*************************** START ****************************
+START TIME: 202307061409
+CONNECT BAUD: 115200
+set state: ESP_DL_SYNC
+serial port opened
+-----------
+baud:115200
+root baud:115200
+-------------
+===============BAUD : 115200===============CALL DEVICE SYNC
+connecting...
+chip sync ok
+mac l: 0xe000c000
+mac h: 0xf34022
+crc_cal: 243
+crc_read: 243
+crc_test: 0
+ESP32 MAC CRC OK
+get mac res: 1
+com closed
+Use time: 12 s
+Download result: FAIL
+*************************** END ****************************
+
+*************************** START ****************************
+START TIME: 202307061410
+CONNECT BAUD: 115200
+set state: ESP_DL_SYNC
+serial port opened
+-----------
+baud:115200
+root baud:115200
+-------------
+===============BAUD : 115200===============CALL DEVICE SYNC
+connecting...
+chip sync ok
+com closed
+Use time: 32 s
+Download result: FAIL
+*************************** END ****************************
+
+*************************** START ****************************
+START TIME: 202307061410
+CONNECT BAUD: 115200
+set state: ESP_DL_SYNC
+serial port opened
+-----------
+baud:115200
+root baud:115200
+-------------
+===============BAUD : 115200===============CALL DEVICE SYNC
+connecting...
+com closed
+Use time: 10 s
+Download result: FAIL
+*************************** END ****************************
+

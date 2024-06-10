@@ -1,0 +1,81 @@
+*************************** START ****************************
+START TIME: 202307021449
+CONNECT BAUD: 115200
+set state: ESP_DL_SYNC
+serial port opened
+-----------
+baud:115200
+root baud:115200
+-------------
+===============BAUD : 115200===============CALL DEVICE SYNC
+connecting...
+chip sync ok
+mac l: 0xd807f4ac
+mac h: 0xc74022
+crc_cal: 199
+crc_read: 199
+crc_test: 0
+ESP32 MAC CRC OK
+get mac res: 1
+get flash id : 0x0016405e
+manufacturer_id: 0x5e
+device_id: 0x4016
+Wrote 886080 bytes (547274 compressed) at 0x00000000 in 8.6 seconds (effective 827.6 kbit/s)...
+Hash of data verified.
+Leaving...
+com closed
+Use time: 15 s
+Download result: PASS
+*************************** END ****************************
+
+*************************** START ****************************
+START TIME: 202307021449
+CONNECT BAUD: 115200
+set state: ESP_DL_SYNC
+serial port opened
+-----------
+baud:115200
+root baud:115200
+-------------
+===============BAUD : 115200===============CALL DEVICE SYNC
+connecting...
+chip sync ok
+com closed
+Use time: 6 s
+Download result: FAIL
+*************************** END ****************************
+
+*************************** START ****************************
+START TIME: 202307021449
+CONNECT BAUD: 115200
+set state: ESP_DL_SYNC
+serial port opened
+-----------
+baud:115200
+root baud:115200
+-------------
+===============BAUD : 115200===============CALL DEVICE SYNC
+connecting...
+chip sync ok
+com closed
+Use time: 8 s
+Download result: FAIL
+*************************** END ****************************
+
+*************************** START ****************************
+START TIME: 202307021450
+CONNECT BAUD: 115200
+set state: ESP_DL_SYNC
+serial port opened
+-----------
+baud:115200
+root baud:115200
+-------------
+===============BAUD : 115200===============CALL DEVICE SYNC
+connecting...
+chip sync ok
+com closed
+Use time: 6 s
+Download result: FAIL
+*************************** END ****************************
+

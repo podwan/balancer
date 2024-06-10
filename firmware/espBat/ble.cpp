@@ -6,7 +6,8 @@
 
 
 extern HardwareSerial serial1;
-
+static boolean connected = false;
+static boolean doScan = false;
 /* UUID's of the service, characteristic that we want to read*/
 // BLE Service
 static BLEUUID bmeServiceUUID("91bad492-b950-4226-aa2b-4ede9fa42f59");
@@ -18,7 +19,7 @@ static BLEUUID txCharacteristicUUID("ca73b3ba-39f6-4ab3-91ae-186dc9577d99");
 
 // Flags stating if should begin connecting and if the connection is up
 static boolean doConnect = false;
-static boolean connected = false;
+
 
 // Address of the peripheral device. Address will be found during scanning...
 static BLEAddress *pServerAddress;
@@ -30,7 +31,15 @@ static BLERemoteCharacteristic *txCharacteristic;
 const uint8_t notificationOn[] = { 0x1, 0x0 };
 const uint8_t notificationOff[] = { 0x0, 0x0 };
 
+class MyClientCallback : public BLEClientCallbacks {
+  void onConnect(BLEClient* pclient) {
+  }
 
+  void onDisconnect(BLEClient* pclient) {
+    connected = false;
+    Serial1.println("onDisconnect");
+  }
+};
 
 
 // When the BLE Server sends a new humidity reading with the notify property
@@ -40,7 +49,7 @@ static void txNotifyCallback(BLERemoteCharacteristic *pBLERemoteCharacteristic,
 
   // serial1.print(length);
   uart_write_bytes(UART_NUM_1, (char *)pData, length);
-  serial1.printf("recved data \n");
+  // serial1.printf("recved data \n");
   digitalWrite(BLUE_LED, HIGH);  //
 }
 
@@ -48,7 +57,7 @@ static void txNotifyCallback(BLERemoteCharacteristic *pBLERemoteCharacteristic,
 // Connect to the BLE Server that has the name, Service, and Characteristics
 bool connectToServer(BLEAddress pAddress) {
   BLEClient *pClient = BLEDevice::createClient();
-
+  pClient->setClientCallbacks(new MyClientCallback());
   // Connect to the remove BLE Server.
   pClient->connect(pAddress);
   serial1.println(" - Connected to server");
@@ -83,7 +92,8 @@ class MyAdvertisedDeviceCallbacks : public BLEAdvertisedDeviceCallbacks {
     if (advertisedDevice.getName() == bleServerName) {                 // Check if the name of the advertiser matches
       advertisedDevice.getScan()->stop();                              // Scan can be stopped, we found what we are looking for
       pServerAddress = new BLEAddress(advertisedDevice.getAddress());  // Address of advertiser is the one we need
-      doConnect = true;                                                // Set indicator, stating that we are ready to connect
+      doConnect = true;
+      doScan = true;  // Set indicator, stating that we are ready to connect
       serial1.println("Device found. Connecting!");
     }
   }
@@ -95,8 +105,10 @@ void bleInit() {
   BLEDevice::init("");
   BLEScan *pBLEScan = BLEDevice::getScan();
   pBLEScan->setAdvertisedDeviceCallbacks(new MyAdvertisedDeviceCallbacks());
+  pBLEScan->setInterval(1349);
+  pBLEScan->setWindow(449);
   pBLEScan->setActiveScan(true);
-  pBLEScan->start(15, true);
+  pBLEScan->start(5, false);
 }
 
 
@@ -112,10 +124,24 @@ void blePolling() {
       // temperatureCharacteristic->getDescriptor(BLEUUID((uint16_t)0x2902))->writeValue((uint8_t *)notificationOn, 2, true);
       txCharacteristic->getDescriptor(BLEUUID((uint16_t)0x2902))->writeValue((uint8_t *)notificationOn, 2, true);
       connected = true;
-      
+
     } else {
       serial1.println("We have failed to connect to the server; Restart your device to scan for nearby BLE server again.");
     }
     doConnect = false;
+  }
+
+
+
+  // If we are connected to a peer BLE Server, update the characteristic each time we are reached
+  // with the current time since boot.
+  if (connected) {
+    // String newValue = "Time since boot: " + String(millis() / 1000);
+    // Serial1.println("Setting new characteristic value to \"" + newValue + "\"");
+
+    // Set the characteristic's value to be the array of bytes that is actually a string.
+    // pRemoteCharacteristic->writeValue(newValue.c_str(), newValue.length());
+  } else if (doScan) {
+    BLEDevice::getScan()->start(0);  // this is just example to start scan after disconnect, most likely there is better way to do it in arduino
   }
 }

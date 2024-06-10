@@ -7,7 +7,6 @@
 
 #include <BLEDevice.h>
 #include "Freenove_WS2812_Lib_for_ESP32.h"
-#include <Adafruit_Sensor.h>
 #include "ble.h"
 #include <Joystick.h>
 #include "esp32-hal-gpio.h"

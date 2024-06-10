@@ -1,0 +1,119 @@
+*************************** START ****************************
+START TIME: 202306261630
+CONNECT BAUD: 115200
+set state: ESP_DL_SYNC
+serial port opened
+-----------
+baud:115200
+root baud:115200
+-------------
+===============BAUD : 115200===============CALL DEVICE SYNC
+connecting...
+chip sync ok
+mac l: 0x9ebc5eb4
+mac h: 0x93c8f0
+crc_cal: 147
+crc_read: 147
+crc_test: 0
+ESP32 MAC CRC OK
+get mac res: 1
+get flash id : 0x0016405e
+manufacturer_id: 0x5e
+device_id: 0x4016
+com closed
+Use time: 11 s
+Download result: FAIL
+*************************** END ****************************
+
+*************************** START ****************************
+START TIME: 202306261630
+CONNECT BAUD: 115200
+set state: ESP_DL_SYNC
+serial port opened
+-----------
+baud:115200
+root baud:115200
+-------------
+===============BAUD : 115200===============CALL DEVICE SYNC
+connecting...
+chip sync ok
+mac l: 0x9ebc5eb4
+mac h: 0x93c8f0
+crc_cal: 147
+crc_read: 147
+crc_test: 0
+ESP32 MAC CRC OK
+get mac res: 1
+get flash id : 0x0016405e
+manufacturer_id: 0x5e
+device_id: 0x4016
+Wrote 886032 bytes (547253 compressed) at 0x00000000 in 8.5 seconds (effective 832.5 kbit/s)...
+File  md5: 826ad0b8ec5f977f36e9eff86aa7838eFlash md5: 39436efd7bbdcacd1334f3d6c0a108dfMD5 of 0xFF is a29dfdec65325510b3e8375008de974dcom closed
+Use time: 14 s
+Download result: FAIL
+*************************** END ****************************
+
+*************************** START ****************************
+START TIME: 202306261630
+CONNECT BAUD: 115200
+set state: ESP_DL_SYNC
+serial port opened
+-----------
+baud:115200
+root baud:115200
+-------------
+===============BAUD : 115200===============CALL DEVICE SYNC
+connecting...
+chip sync ok
+mac l: 0x9ebc5eb4
+mac h: 0x93c8f0
+crc_cal: 147
+crc_read: 147
+crc_test: 0
+ESP32 MAC CRC OK
+get mac res: 1
+get flash id : 0x0016405e
+manufacturer_id: 0x5e
+device_id: 0x4016
+Wrote 886032 bytes (547253 compressed) at 0x00000000 in 8.5 seconds (effective 832.6 kbit/s)...
+Hash of data verified.
+Leaving...
+com closed
+Use time: 11 s
+Download result: PASS
+*************************** END ****************************
+
+*************************** START ****************************
+START TIME: 202306261631
+CONNECT BAUD: 115200
+set state: ESP_DL_SYNC
+serial port opened
+-----------
+baud:115200
+root baud:115200
+-------------
+===============BAUD : 115200===============CALL DEVICE SYNC
+connecting...
+chip sync ok
+com closed
+Use time: 17 s
+Download result: FAIL
+*************************** END ****************************
+
+*************************** START ****************************
+START TIME: 202306261632
+CONNECT BAUD: 115200
+set state: ESP_DL_SYNC
+serial port opened
+-----------
+baud:115200
+root baud:115200
+-------------
+===============BAUD : 115200===============CALL DEVICE SYNC
+connecting...
+chip sync ok
+com closed
+Use time: 15 s
+Download result: FAIL
+*************************** END ****************************
+
