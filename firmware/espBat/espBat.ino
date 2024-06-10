@@ -22,7 +22,7 @@
 #define RGB 0
 #define BAT_FB 3
 
-#define RGB_COUNT 2
+#define RGB_COUNT 12
 
 #define CHANNEL 0
 
@@ -89,7 +89,7 @@ void setup()
 
 void loop()
 {
-
+   digitalWrite(POWER_EN, LOW);
   blePolling();
 
   // delay(1000); // Delay a second between loops.

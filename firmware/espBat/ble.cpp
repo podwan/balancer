@@ -96,7 +96,7 @@ void bleInit() {
   BLEScan *pBLEScan = BLEDevice::getScan();
   pBLEScan->setAdvertisedDeviceCallbacks(new MyAdvertisedDeviceCallbacks());
   pBLEScan->setActiveScan(true);
-  pBLEScan->start(30);
+  pBLEScan->start(15, true);
 }
 
 
