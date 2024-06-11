@@ -12538,7 +12538,7 @@
 		(uuid "5b72dacc-de05-4bb6-84bd-676b413521cf")
 		(at 124.8 79 90)
 		(property "Reference" "P1"
-			(at 0 3.207 270)
+			(at 0 3.207 -90)
 			(layer "B.SilkS")
 			(hide yes)
 			(uuid "104c4a9e-984f-457d-83f4-6f1a76848f0e")
@@ -12551,7 +12551,7 @@
 			)
 		)
 		(property "Value" "FPC_0.5MM_4P_Vertical_mounting_type_H2.0mm"
-			(at 0 0.667 270)
+			(at 0 0.667 -90)
 			(layer "B.Fab")
 			(uuid "7e5f12a9-c667-488e-8a98-a6265ff6ea6a")
 			(effects
@@ -21511,7 +21511,7 @@
 		(uuid "c1d8255a-5ac3-4334-9d6d-3ac0a2ca0162")
 		(at 77.5 77.7)
 		(property "Reference" "U4"
-			(at 0 3.207 360)
+			(at 0 3.207 0)
 			(layer "B.SilkS")
 			(hide yes)
 			(uuid "992dcac5-1580-4b7a-a521-42d3a470ee9d")
@@ -21524,7 +21524,7 @@
 			)
 		)
 		(property "Value" "SS8050_C7420370"
-			(at 0 0.667 360)
+			(at 0 0.667 0)
 			(layer "B.Fab")
 			(uuid "89124b33-c561-4d95-bf65-4348fc0cd713")
 			(effects

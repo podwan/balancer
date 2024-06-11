@@ -1,11 +1,7 @@
 {
   "board": {
     "active_layer": 0,
-<<<<<<< HEAD
-    "active_layer_preset": "All Layers",
-=======
     "active_layer_preset": "",
->>>>>>> 3f97a153d958220e151b39468fc548032aad0f0d
     "auto_track_width": true,
     "hidden_netclasses": [],
     "hidden_nets": [],
@@ -23,11 +19,7 @@
       "footprints": true,
       "graphics": true,
       "keepouts": true,
-<<<<<<< HEAD
       "lockedItems": false,
-=======
-      "lockedItems": true,
->>>>>>> 3f97a153d958220e151b39468fc548032aad0f0d
       "otherItems": true,
       "pads": true,
       "text": true,
@@ -72,12 +64,8 @@
       39,
       40
     ],
-<<<<<<< HEAD
-    "visible_layers": "fffffff_ffffffff",
-=======
     "visible_layers": "ffcffff_ffffffff",
->>>>>>> 3f97a153d958220e151b39468fc548032aad0f0d
-    "zone_display_mode": 0
+    "zone_display_mode": 1
   },
   "git": {
     "repo_password": "",
