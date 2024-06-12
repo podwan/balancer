@@ -1,4 +1,4 @@
-23375621289502301
+23377359506140160
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -95360,6 +95360,13 @@ PG-DSO-8_L5.0-W4.0-P1.27-LS6.0-BL
 0
 8
 8
+espController
+BUZ-SMD_L5.0-W5.5-P4.60
+
+
+0
+3
+3
 espController
 CN-XH2P
 
