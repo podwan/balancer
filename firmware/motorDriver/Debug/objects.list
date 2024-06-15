@@ -46,6 +46,7 @@
 "./User/app.o"
 "./User/comm.o"
 "./User/led.o"
+"./User/mpu6500.o"
 "./User/mt6701.o"
 "./User/time_utils.o"
 "./User/userMain.o"

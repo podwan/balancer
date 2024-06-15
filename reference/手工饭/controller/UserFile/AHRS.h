@@ -17,11 +17,11 @@ typedef struct
 }int16_3i;
 
 typedef struct{    
-  float_3f offset;    //���ݽ��ٶȾ�ֹƫ��ֵ
-	float_3f filter;    //�˲�ֵ  
-	int16_3i Initial;   //��ʼֵ
-	int16_3i data;      //ԭʼ����
-	float_3f Primitive; //ԭʼֵ
+  float_3f offset;    //陀螺角速度静止偏差值
+	float_3f filter;    //滤波值  
+	int16_3i Initial;   //初始值
+	int16_3i data;      //原始数据
+	float_3f Primitive; //原始值
 }trans_t;
 
 typedef struct

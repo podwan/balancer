@@ -8,7 +8,8 @@
 #include "voltage.h"
 #include "comm.h"
 #include "app.h"
-//#include "key.h"
+#include "mpu6500.h"
+// #include "key.h"
 
 #define PHASE_SHIFT_ANGLE (float)(120.0f / 360.0f * 2.0f * PI)
 
@@ -30,14 +31,18 @@ float HallThetaAdd = 0;
 float HallTheta = 0;
 float HallSpeed = 0;
 uint8_t HallReadTemp = 0;
-//static bool powerLost;
+// static bool powerLost;
 void userMain(void)
 {
 
-//	if (get5MsFlag())
-//	{
-//		keyScan();
-//	}
+	//	if (get5MsFlag())
+	//	{
+	//		keyScan();
+	//	}
+	if (getOneMsFlag())
+	{
+		IMU_handle();
+	}
 
 	if (get100MsFlag())
 	{
@@ -47,7 +52,7 @@ void userMain(void)
 	// if (get500MsFlag())
 	if (getOneSecFlag())
 	{
-		printLog();
+		uartTx();
 	}
 #endif
 }

@@ -39,13 +39,36 @@ typedef unsigned long ulong;
 
 #define USE_COMM_TARGET 1
 
-
-
-
 /*===========================================================================*/
 
 /*===========================================================================*/
 
+// union sFaultBitTypeDef
+// {
+//     struct
+//     {
+//         uint8_t IMU : 1;
+//         uint8_t rev0 : 1;
+//         uint8_t rev1 : 1;
+//         uint8_t rev2 : 1;
+
+//         uint8_t M1_Encoder : 1;
+//         uint8_t M2_Encoder : 1;
+//         uint8_t M1_Current : 1;
+//         uint8_t M2_Current : 1;
+
+//         uint8_t rev3; //
+//         uint8_t rev4; //
+//         uint8_t rev5; //
+//         uint8_t rev6; //
+
+//         uint8_t rev7;  //
+//         uint8_t rev8;  //
+//         uint8_t rev9;  //
+//         uint8_t rev10; //
+//     } bit;
+//     uint16_t all;
+// };
 
 /*===========================================================================*/
 

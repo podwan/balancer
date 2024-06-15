@@ -33,7 +33,7 @@
 #define IqMax 0.06f
 #define VELOCITY_MAX 234
 
-void FOC_log(const char *format, ...);
+void printLog(const char *format, ...);
 void delay(uint32_t ms);
 
 ////////////above is user port code/////////////////////

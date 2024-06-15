@@ -13,7 +13,7 @@ uint16_t MT6701_GetRawData(void)
     {
         if (timeOut-- == 0)
         {
-            //   FOC_log("SPI state error!\r\n");
+            //   printLog("SPI state error!\r\n");
             return 0; // 在超时时直接返回，避免继续执行后续代码
         }
     }
@@ -24,7 +24,7 @@ uint16_t MT6701_GetRawData(void)
     if (spiStatus != HAL_OK)
     {
         MT6701_CS_Disable;
-        //  FOC_log("MT6701 read data error!\r\n");
+        //  printLog("MT6701 read data error!\r\n");
         return 0; // 在SPI传输错误时直接返回，避免继续执行后续代码
     }
 

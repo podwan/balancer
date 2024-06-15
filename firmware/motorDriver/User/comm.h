@@ -7,11 +7,11 @@
 
 #define USART_BUFFER_SIZE 100
 
-void printLog(void);
+void uartTx();
 void uartRcv(const char buf);
 void commander_run(BldcMotor *motor);
 void communicationLoop(void *argument);
-void FOC_log(const char *format, ...);
+void printLog(const char *format, ...);
 void log_DMA_TX(const char *format, ...);
 void t_log(const char *s);
 void _dbg_printf(const char *format, ...);

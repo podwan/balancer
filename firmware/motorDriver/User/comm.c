@@ -21,7 +21,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 }
 
 // DMA模式
-void FOC_log(const char *format, ...)
+void printLog(const char *format, ...)
 {
 
   // uint32_t length;
@@ -64,7 +64,7 @@ void t_log(const char *s)
 //   HAL_UART_Transmit_DMA(&huart3, (const char *)txBuffer, length);
 // }
 
-void printLog()
+void uartTx()
 {
 
 #if SHOW_WAVE == 0

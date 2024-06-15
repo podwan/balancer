@@ -18,7 +18,7 @@ int alignSensor(BldcMotor *motor)
     // delay(200);
     // encoderUpdate(&motor->magEncoder);
     // float start_angle = motor->magEncoder.fullAngle;
-    // FOC_log("start_angle:%f\n", start_angle);
+    // printLog("start_angle:%f\n", start_angle);
     for (int i = 0; i <= 500; i++)
     {
         float angle = _3PI_2 + _2PI * i / 500.0f;
@@ -29,7 +29,7 @@ int alignSensor(BldcMotor *motor)
     // encoderUpdate(&motor->magEncoder);
 
     float mid_angle = motor->magEncoder.fullAngle;
-    FOC_log("mid_angle:%f\n", mid_angle);
+    printLog("mid_angle:%f\n", mid_angle);
     // move one electrical revolution backwards
     for (int i = 500; i >= 0; i--)
     {
@@ -41,37 +41,37 @@ int alignSensor(BldcMotor *motor)
     // encoderUpdate(&motor->magEncoder);
 
     float end_angle = motor->magEncoder.fullAngle;
-    FOC_log("end_angle:%f\n", end_angle);
+    printLog("end_angle:%f\n", end_angle);
     // setPhaseVoltage(0, 0, 0);
     delay(200);
 
     // determine the direction the sensor moved
     float moved = fabsf(mid_angle - end_angle);
-    FOC_log("moved:%f\n", moved);
+    printLog("moved:%f\n", moved);
     if (moved < MIN_ANGLE_DETECT_MOVEMENT)
     { // minimum angle to detect movement
-        FOC_log("Failed to notice movement\n");
+        printLog("Failed to notice movement\n");
         return 0; // failed calibration
     }
     else if (mid_angle < end_angle)
     {
-        FOC_log("sensor_direction==CCW\n");
+        printLog("sensor_direction==CCW\n");
         motor->magEncoder.direction = CCW;
     }
     else
     {
-        FOC_log("sensor_direction==CW\n");
+        printLog("sensor_direction==CW\n");
         motor->magEncoder.direction = CW;
     }
     // check pole pair number
     bool pp_check_result = !(fabsf(moved * motor->pole_pairs - _2PI) > 0.5f); // 0.5f is arbitrary number it can be lower or higher!
     if (pp_check_result == false)
     {
-        FOC_log("PP check: fail - estimated pp: %d\n", (int)(_2PI / moved));
+        printLog("PP check: fail - estimated pp: %d\n", (int)(_2PI / moved));
     }
     else
     {
-        FOC_log("PP check: OK!\n");
+        printLog("PP check: OK!\n");
     }
 
     // align the electrical phases of the motor and sensor
@@ -88,9 +88,9 @@ int alignSensor(BldcMotor *motor)
     // encoderUpdate(&motor->magEncoder);
     getElecAngle(motor);
     // motor->zeroElectricAngleOffSet = 0;
-    // FOC_log("[zeroAngleOffset]:%f  [zeroAngle]:%f\r\n", motor->zeroElectricAngleOffSet, motor->angle_el);
-    FOC_log("[zeroAngleOffset]:%f\n", motor->zeroElectricAngleOffSet);
-    FOC_log("[zeroAngle]:%f\n", motor->angle_el);
+    // printLog("[zeroAngleOffset]:%f  [zeroAngle]:%f\r\n", motor->zeroElectricAngleOffSet, motor->angle_el);
+    printLog("[zeroAngleOffset]:%f\n", motor->zeroElectricAngleOffSet);
+    printLog("[zeroAngle]:%f\n", motor->angle_el);
     // // make sure the angle_el is about zero
 
     // delay(200);

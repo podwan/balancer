@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "usermain.h": "c",
+        "mpu6500.h": "c",
+        "stdarg.h": "c"
+    }
+}

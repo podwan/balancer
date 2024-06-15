@@ -1,6 +1,6 @@
 FocLib/voltage.o: ../FocLib/voltage.c ../FocLib/voltage.h \
  ../FocLib/bldcMotor.h ../FocLib/focLib.h \
- C:/Users/Administrator/Desktop/balancer/firmware/motorDriver/User/userMain.h \
+ C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h \
  ../Core/Inc/stm32g4xx_hal_conf.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h \
@@ -43,7 +43,7 @@ FocLib/voltage.o: ../FocLib/voltage.c ../FocLib/voltage.h \
 ../FocLib/voltage.h:
 ../FocLib/bldcMotor.h:
 ../FocLib/focLib.h:
-C:/Users/Administrator/Desktop/balancer/firmware/motorDriver/User/userMain.h:
+C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
 ../Core/Inc/stm32g4xx_hal_conf.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h:

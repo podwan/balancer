@@ -11,6 +11,7 @@
 #include "current.h"
 #include "userTimer.h"
 #include "voltage.h"
+#include "mpu6500.h"
 
 static DevState devState = WORK;
 static KeyState keyState;
@@ -121,6 +122,10 @@ void appInit()
 {
     motorInit();
     devState = WORK;
+    if (IMU_Init() == 1)
+    {
+        printLog("IMU_Init failed\n");
+    }
     //    MPU6050_Init(); // MPU6050初始化
 }
 static bool zeroReset;
@@ -246,11 +251,13 @@ static void working(void)
 
 void txDataProcess()
 {
+    uint8_t Who_Am_I = IMU_Read_Reg(MPU6500_WHO_AM_I);
+    sprintf(txBuffer, "Who_Am_I:%d, mpu6500.gyroAngle.y: %.2f\n", Who_Am_I, mpu6500.gyroAngle.y);
 
     // sprintf(txBuffer, "target:%.2f fullAngle:%.2f velocity:%.2f Uq:%.2f Ud:%.2f Iq:%.2f Id:%.2f elec_angle:%.2f\n", motor1.target, motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id, motor1.angle_el);
 
     // sprintf(txBuffer, "target:%.2f  velocity:%.2f  Uq:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Uq);
-    sprintf(txBuffer, "target:%.2f,velocity:%.2f,Uq%.2f,Ud%.2f,Iq:%.2f,Id:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id);
+    // sprintf(txBuffer, "target:%.2f,velocity:%.2f,Uq%.2f,Ud%.2f,Iq:%.2f,Id:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id);
     // sprintf(txBuffer, "offset_ia:%f offset_ib:%f, Ia:%f, Ib:%f\n", motor1.offset_ia, motor1.offset_ib, motor1.Ia, motor1.Ib);
 }
 
