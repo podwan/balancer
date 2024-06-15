@@ -3,8 +3,8 @@
 ../User/app.c:46:13:updatePwm1	16	static
 ../User/app.c:54:13:motorInit	32	static
 ../User/app.c:121:6:appInit	8	static
-../User/app.c:132:6:appRunning	8	static
-../User/app.c:202:13:standingBy	8	static
-../User/app.c:222:13:working	4	static
-../User/app.c:252:6:txDataProcess	32	static
-../User/app.c:264:6:HAL_ADCEx_InjectedConvCpltCallback	16	static
+../User/app.c:135:6:appRunning	8	static
+../User/app.c:205:13:standingBy	8	static
+../User/app.c:225:13:working	4	static
+../User/app.c:255:6:txDataProcess	40	static
+../User/app.c:268:6:HAL_ADCEx_InjectedConvCpltCallback	16	static

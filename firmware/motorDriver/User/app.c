@@ -122,10 +122,13 @@ void appInit()
 {
     motorInit();
     devState = WORK;
-    if (IMU_Init() == 1)
+
+    if (mpu_device_init() == 1)
     {
         printLog("IMU_Init failed\n");
     }
+    else
+        init_quaternion();
     //    MPU6050_Init(); // MPU6050初始化
 }
 static bool zeroReset;
@@ -251,8 +254,9 @@ static void working(void)
 
 void txDataProcess()
 {
-    uint8_t Who_Am_I = IMU_Read_Reg(MPU6500_WHO_AM_I);
-    sprintf(txBuffer, "Who_Am_I:%d, mpu6500.gyroAngle.y: %.2f\n", Who_Am_I, mpu6500.gyroAngle.y);
+
+
+    sprintf(txBuffer, "yaw : %.2f,roll : %.2f,pitch : %.2f\n", imu.yaw, imu.rol, imu.pit);
 
     // sprintf(txBuffer, "target:%.2f fullAngle:%.2f velocity:%.2f Uq:%.2f Ud:%.2f Iq:%.2f Id:%.2f elec_angle:%.2f\n", motor1.target, motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id, motor1.angle_el);
 

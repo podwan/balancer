@@ -14,7 +14,8 @@ typedef unsigned long ulong;
 #include "adc.h"
 #include "usart.h"
 #include "spi.h"
-
+#include "math.h"
+#include "string.h"
 #define TOUCH_KEY 0
 #define FEED_WATCH_DOG 0
 #define TOUCH_KEY_SCAN 0

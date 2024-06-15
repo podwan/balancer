@@ -41,7 +41,10 @@ void userMain(void)
 	//	}
 	if (getOneMsFlag())
 	{
-		IMU_handle();
+		mpu_get_data();
+		imu_ahrs_update();
+		imu_attitude_update();
+		//		IMU_handle();
 	}
 
 	if (get100MsFlag())
