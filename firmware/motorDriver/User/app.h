@@ -14,6 +14,8 @@
         flashCnt = 0;               \
         motor1.state = MOTOR_START; \
         motor1.startPwm();          \
+        motor2.state = MOTOR_START; \
+        motor2.startPwm();          \
     }
 
 #define STANDBY_INIT                \
@@ -21,6 +23,7 @@
         devState = STANDBY;         \
         flashCnt = 0;               \
         motor1.state = MOTOR_READY; \
+        motor2.state = MOTOR_READY; \
     }
 
 #ifdef __cplusplus // 使用C语言的方式编译方法名。

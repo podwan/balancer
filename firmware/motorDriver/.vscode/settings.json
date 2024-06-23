@@ -2,6 +2,8 @@
     "files.associations": {
         "usermain.h": "c",
         "mpu6500.h": "c",
-        "stdarg.h": "c"
+        "stdarg.h": "c",
+        "mt6701.h": "c",
+        "comm.h": "c"
     }
 }

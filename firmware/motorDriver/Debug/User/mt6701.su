@@ -1,2 +1,4 @@
-../User/mt6701.c:6:10:MT6701_GetRawData	24	static
-../User/mt6701.c:37:7:MT6701_GetRawAngle	16	static
+../User/mt6701.c:6:10:_1_MT6701_GetRawData	24	static
+../User/mt6701.c:37:7:_1_MT6701_GetRawAngle	16	static
+../User/mt6701.c:43:10:_2_MT6701_GetRawData	24	static
+../User/mt6701.c:74:7:_2_MT6701_GetRawAngle	16	static

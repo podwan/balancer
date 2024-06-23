@@ -26,7 +26,7 @@
 #define CHANNEL 0
 
 #define L_Y 4
-#define L_X 5
+#define L_X 0
 #define R_Y 1
 #define R_X 2
 u8 m_color[7][3] = {
@@ -112,11 +112,15 @@ void loop() {
   if (_100ms) {
     _100ms = 0;
     int rawValue = analogRead(L_Y);
-    lyValue = map(rawValue, 348, 4095, 0, 100);
-    rawValue = analogRead(R_X);
-    rxValue = map(rawValue, 348, 4095, 0, 100);
-    rawValue = analogRead(R_Y);
-    ryValue = map(rawValue, 348, 4095, 0, 100);
+    lyValue = rawValue;
+    rawValue = analogRead(L_X);
+    lxValue = rawValue;
+    // rawValue = analogRead(R_X);
+    // lyValue = map(rawValue, 348, 4095, 0, 100);
+    // rawValue = analogRead(R_X);
+    // rxValue = map(rawValue, 348, 4095, 0, 100);
+    // rawValue = analogRead(R_Y);
+    // ryValue = map(rawValue, 348, 4095, 0, 100);
   }
 
   if (powerOff) {
@@ -182,7 +186,7 @@ void loop() {
     //   adcValue = analogRead(BAT_FB);
     voltage = analogReadMilliVolts(BAT_FB) / 1000.0f / 0.6f;
     serial1.printf("voltage: %.1f\n", voltage);
-    
+
     //   if (voltage < POWER_LOW)
     //   {
     //     powerLow = 1;

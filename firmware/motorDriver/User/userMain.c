@@ -39,21 +39,20 @@ void userMain(void)
 	//	{
 	//		keyScan();
 	//	}
-	if (getOneMsFlag())
-	{
-		mpu_get_data();
-		imu_ahrs_update();
-		imu_attitude_update();
-		//		IMU_handle();
-	}
+	// if (getOneMsFlag())
+	// {
+	// 	mpu_get_data();
+	// 	imu_ahrs_update();
+	// 	imu_attitude_update();
+	
+	// }
 
 	if (get100MsFlag())
 	{
 		appRunning();
 	}
 #if SHOW_WAVE == 0 //&& COMMAMNDER == 0
-	// if (get500MsFlag())
-	if (getOneSecFlag())
+	if (get500MsFlag())
 	{
 		uartTx();
 	}

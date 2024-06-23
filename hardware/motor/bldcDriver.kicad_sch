@@ -5862,6 +5862,12 @@
 		(uuid "5002ad7c-90f3-49b9-a5d9-73ea17241a2f")
 	)
 	(junction
+		(at 78.74 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "570237c8-376c-4118-9182-b01574814068")
+	)
+	(junction
 		(at 50.8 254)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6030,13 +6036,13 @@
 		(uuid "c1ef715e-e9be-4eb5-8af8-1e3de293a4ae")
 	)
 	(junction
-		(at 43.18 64.77)
+		(at 86.36 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c20837ed-febf-47c9-ba7c-ca75c53aebe2")
 	)
 	(junction
-		(at 59.69 64.77)
+		(at 102.87 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c277ca3e-83a9-4c3d-a022-fbecde8f3ef7")
@@ -6064,6 +6070,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cc759c64-7e04-4f8d-9687-8e94dff642a5")
+	)
+	(junction
+		(at 218.44 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cfda4ae3-75d8-4073-865c-f8eecee7be95")
+	)
+	(junction
+		(at 307.34 105.41)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d09ff58b-ac92-4b62-b932-fb9e1cb15f4b")
 	)
 	(junction
 		(at 146.05 43.18)
@@ -6148,6 +6166,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f700710a-cef4-4753-bb4d-401e66c8b2f2")
+	)
+	(junction
+		(at 237.49 167.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f8cfca8a-48f0-4076-a10a-b29df1969146")
 	)
 	(no_connect
 		(at 374.65 46.99)
@@ -6391,6 +6415,16 @@
 	)
 	(wire
 		(pts
+			(xy 365.76 180.34) (xy 377.19 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e7746c2-07c5-4a6c-b41b-7a54427c17b3")
+	)
+	(wire
+		(pts
 			(xy 152.4 228.6) (xy 146.05 228.6)
 		)
 		(stroke
@@ -6428,6 +6462,16 @@
 			(type default)
 		)
 		(uuid "12381ba1-99bb-4c0a-8aa0-a4a186d0e8c6")
+	)
+	(wire
+		(pts
+			(xy 313.69 186.69) (xy 325.12 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1562c14a-bea9-4cc3-91ef-bcf74eb7ab8d")
 	)
 	(wire
 		(pts
@@ -6501,7 +6545,7 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 64.77) (xy 63.5 64.77)
+			(xy 102.87 71.12) (xy 106.68 71.12)
 		)
 		(stroke
 			(width 0)
@@ -6771,6 +6815,16 @@
 	)
 	(wire
 		(pts
+			(xy 313.69 189.23) (xy 325.12 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36876c02-516b-4761-8abf-77c754215a27")
+	)
+	(wire
+		(pts
 			(xy 132.08 246.38) (xy 132.08 233.68)
 		)
 		(stroke
@@ -6838,6 +6892,16 @@
 			(type default)
 		)
 		(uuid "3c0fd4f9-af84-4ebd-b6ad-54fd9a2abd12")
+	)
+	(wire
+		(pts
+			(xy 303.53 105.41) (xy 307.34 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c43b2ae-9964-4f95-8e5e-7f267a03b773")
 	)
 	(wire
 		(pts
@@ -6968,6 +7032,16 @@
 			(type default)
 		)
 		(uuid "49ad46bb-8395-4716-8d7f-815c1f0684ac")
+	)
+	(wire
+		(pts
+			(xy 313.69 184.15) (xy 325.12 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a798d62-74c4-47ed-a212-eb7167fa8a8d")
 	)
 	(wire
 		(pts
@@ -7481,7 +7555,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 64.77) (xy 59.69 64.77)
+			(xy 97.79 71.12) (xy 102.87 71.12)
 		)
 		(stroke
 			(width 0)
@@ -7881,6 +7955,16 @@
 	)
 	(wire
 		(pts
+			(xy 340.36 226.06) (xy 328.93 226.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a110a99b-6e6e-4f44-a1f0-73248b183d95")
+	)
+	(wire
+		(pts
 			(xy 359.41 38.1) (xy 359.41 41.91)
 		)
 		(stroke
@@ -7971,7 +8055,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 64.77) (xy 46.99 64.77)
+			(xy 86.36 71.12) (xy 90.17 71.12)
 		)
 		(stroke
 			(width 0)
@@ -8001,6 +8085,16 @@
 	)
 	(wire
 		(pts
+			(xy 209.55 134.62) (xy 218.44 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b0e479e2-c478-4664-b85b-815b667cf2f3")
+	)
+	(wire
+		(pts
 			(xy 106.68 246.38) (xy 132.08 246.38)
 		)
 		(stroke
@@ -8008,6 +8102,16 @@
 			(type default)
 		)
 		(uuid "b1047fe5-9845-459e-9de3-c1da4bac4582")
+	)
+	(wire
+		(pts
+			(xy 233.68 167.64) (xy 237.49 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b14d7405-8a18-4ce6-9e86-b394da95bfc4")
 	)
 	(wire
 		(pts
@@ -8028,6 +8132,16 @@
 			(type default)
 		)
 		(uuid "b2aac6b9-b24b-443a-8983-cebe21b04a7c")
+	)
+	(wire
+		(pts
+			(xy 78.74 138.43) (xy 87.63 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b3190ccd-9f86-460e-81cb-8f89d4b3234d")
 	)
 	(wire
 		(pts
@@ -8671,6 +8785,16 @@
 	)
 	(wire
 		(pts
+			(xy 313.69 181.61) (xy 325.12 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8cd8b08-3a2f-4c10-8200-3c1552924fff")
+	)
+	(wire
+		(pts
 			(xy 107.95 43.18) (xy 107.95 44.45)
 		)
 		(stroke
@@ -8701,7 +8825,7 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 64.77) (xy 43.18 64.77)
+			(xy 83.82 71.12) (xy 86.36 71.12)
 		)
 		(stroke
 			(width 0)
@@ -8831,6 +8955,16 @@
 	)
 	(wire
 		(pts
+			(xy 340.36 220.98) (xy 328.93 220.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb3dae7f-0d73-4f7a-b820-257196ac5280")
+	)
+	(wire
+		(pts
 			(xy 356.87 38.1) (xy 359.41 38.1)
 		)
 		(stroke
@@ -8943,7 +9077,7 @@
 	)
 	(text "current sense"
 		(exclude_from_sim no)
-		(at 118.11 148.59 0)
+		(at 147.32 156.21 0)
 		(effects
 			(font
 				(size 2.032 2.032)
@@ -10494,7 +10628,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 43.18 64.77 0)
+		(at 86.36 71.12 0)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10503,7 +10637,7 @@
 		(dnp no)
 		(uuid "16934daf-4e3b-4ae0-92e0-42c395440fb3")
 		(property "Reference" "TP21"
-			(at 43.18 69.342 90)
+			(at 86.36 75.692 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10512,7 +10646,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 45.72 66.8021 0)
+			(at 88.9 73.1521 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10522,7 +10656,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 48.26 64.77 0)
+			(at 91.44 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10531,7 +10665,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 48.26 64.77 0)
+			(at 91.44 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10540,7 +10674,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 43.18 64.77 0)
+			(at 86.36 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11093,6 +11227,73 @@
 			(project "bldcDriver"
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
 					(reference "C27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 340.36 220.98 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2109b240-db49-43c0-bead-8969ac7b2b37")
+		(property "Reference" "TP34"
+			(at 345.186 221.234 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 342.3921 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 340.36 226.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 340.36 226.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 340.36 220.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5e1921c0-bbde-4548-9f44-bae77d689d0c")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
+					(reference "TP34")
 					(unit 1)
 				)
 			)
@@ -11705,6 +11906,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 233.68 167.64 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2ffd8fea-0ba5-4b56-9eab-77b5d7ac1044")
+		(property "Reference" "TP38"
+			(at 232.41 170.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 231.6479 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 233.68 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 233.68 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 233.68 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "83058f9f-788d-495d-b471-33fe9cbd8ce5")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
+					(reference "TP38")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 388.62 106.68 0)
 		(unit 1)
@@ -11989,6 +12257,73 @@
 			(project "bldcDriver"
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
 					(reference "R35")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 313.69 184.15 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "339b63ac-ff0f-4463-beca-fd91ad42e804")
+		(property "Reference" "TP29"
+			(at 308.864 183.896 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 311.6579 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 313.69 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 313.69 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 313.69 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a9d6aff2-d60f-4890-baed-a861604294b1")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
+					(reference "TP29")
 					(unit 1)
 				)
 			)
@@ -12323,6 +12658,73 @@
 			(project "bldcDriver"
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
 					(reference "#PWR058")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 87.63 138.43 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "450fd3e3-88b3-4cb5-8f1c-41bc6fc57ea1")
+		(property "Reference" "TP36"
+			(at 92.71 136.906 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 89.6621 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 87.63 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 87.63 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 87.63 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "26847d4d-344d-43e8-bc57-039e71e443a0")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
+					(reference "TP36")
 					(unit 1)
 				)
 			)
@@ -13381,73 +13783,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GNDD")
-		(at 146.05 53.34 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5cc3267b-1f2e-4448-a02b-5ee06384b9c2")
-		(property "Reference" "#PWR057"
-			(at 146.05 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GNDD"
-			(at 146.05 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 146.05 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 146.05 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDD\" , digital ground"
-			(at 146.05 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6544ecfe-ccdc-4f21-b47d-4c59c6701ad6")
-		)
-		(instances
-			(project "bldcDriver"
-				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
-					(reference "#PWR057")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
 		(at 154.94 31.75 0)
 		(unit 1)
@@ -14347,17 +14682,35 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GNDD")
-		(at 107.95 44.45 0)
+		(lib_id "Connector:TestPoint")
+		(at 303.53 105.41 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6c72f6fb-533c-4b4f-885e-b5f5b81129a2")
-		(property "Reference" "#PWR05"
-			(at 107.95 50.8 0)
+		(uuid "6fb901d0-b4f3-443f-881e-8cecfef0462d")
+		(property "Reference" "TP39"
+			(at 302.26 107.95 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 301.4979 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 303.53 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14365,8 +14718,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GNDD"
-			(at 107.95 48.26 0)
+		(property "Datasheet" "~"
+			(at 303.53 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14374,26 +14727,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" ""
-			(at 107.95 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 107.95 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDD\" , digital ground"
-			(at 107.95 44.45 0)
+		(property "Description" "test point"
+			(at 303.53 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14402,12 +14737,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "d568382b-8f42-4e11-96be-d8d5cf9f0dd9")
+			(uuid "9c4bc98c-cd22-454d-b99a-82f89c041786")
 		)
 		(instances
 			(project "bldcDriver"
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
-					(reference "#PWR05")
+					(reference "TP39")
 					(unit 1)
 				)
 			)
@@ -14777,16 +15112,15 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 59.69 64.77 0)
-		(mirror x)
+		(at 209.55 134.62 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "78b75559-e25f-4f28-9eb1-c7b80eea8d50")
-		(property "Reference" "TP22"
-			(at 59.69 69.342 90)
+		(uuid "752566c6-6836-404c-b93c-afbe8cea8f25")
+		(property "Reference" "TP37"
+			(at 208.28 137.16 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14795,7 +15129,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 62.23 66.8021 0)
+			(at 207.5179 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14805,7 +15139,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 64.77 64.77 0)
+			(at 209.55 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14814,7 +15148,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 64.77 64.77 0)
+			(at 209.55 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14823,7 +15157,75 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 59.69 64.77 0)
+			(at 209.55 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "599e6ad4-650e-44ab-bcf5-c066e4a5b747")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
+					(reference "TP37")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 102.87 71.12 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "78b75559-e25f-4f28-9eb1-c7b80eea8d50")
+		(property "Reference" "TP22"
+			(at 102.87 75.692 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 105.41 73.1521 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 107.95 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 107.95 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 102.87 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15379,6 +15781,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 313.69 181.61 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "88516627-c63f-43e8-94d8-72a649c45f4f")
+		(property "Reference" "TP32"
+			(at 308.864 181.356 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 311.6579 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 313.69 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 313.69 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 313.69 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "37491fd4-05e3-476d-8026-be3a3cd71dc2")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
+					(reference "TP32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 106.68 241.3 0)
 		(unit 1)
@@ -15449,7 +15918,7 @@
 	)
 	(symbol
 		(lib_id "power:GNDPWR")
-		(at 40.64 64.77 270)
+		(at 83.82 71.12 270)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -15459,7 +15928,7 @@
 		(fields_autoplaced yes)
 		(uuid "89543cfb-6ad7-488c-aeb0-4a92c06a0498")
 		(property "Reference" "#PWR04"
-			(at 35.56 64.77 0)
+			(at 78.74 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15468,7 +15937,7 @@
 			)
 		)
 		(property "Value" "GNDPWR"
-			(at 36.83 64.897 0)
+			(at 80.01 71.247 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15477,7 +15946,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 39.37 64.77 0)
+			(at 82.55 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15486,7 +15955,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 39.37 64.77 0)
+			(at 82.55 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15495,7 +15964,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
-			(at 40.64 64.77 0)
+			(at 83.82 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15643,6 +16112,74 @@
 			(project "bldcDriver"
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
 					(reference "#PWR040")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GNDPWR")
+		(at 146.05 53.34 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "93ee428f-8372-4985-b3e1-200e9ef23f04")
+		(property "Reference" "#PWR03"
+			(at 146.05 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GNDPWR"
+			(at 146.177 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 146.05 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 146.05 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+			(at 146.05 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d7142d3a-eab1-4e6d-9de0-25adb4d66b79")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -15853,7 +16390,7 @@
 	)
 	(symbol
 		(lib_id "Device:FerriteBead")
-		(at 50.8 64.77 90)
+		(at 93.98 71.12 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -15863,7 +16400,7 @@
 		(fields_autoplaced yes)
 		(uuid "9b3b5df6-b97f-469d-b9ca-4715ed26eab7")
 		(property "Reference" "FB2"
-			(at 50.7492 72.39 90)
+			(at 93.9292 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15871,7 +16408,7 @@
 			)
 		)
 		(property "Value" "FerriteBead"
-			(at 50.7492 69.85 90)
+			(at 93.9292 76.2 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15879,7 +16416,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
-			(at 50.8 62.992 90)
+			(at 93.98 69.342 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15888,7 +16425,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 50.8 64.77 0)
+			(at 93.98 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15897,7 +16434,7 @@
 			)
 		)
 		(property "Description" "Ferrite bead"
-			(at 50.8 64.77 0)
+			(at 93.98 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16547,6 +17084,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 340.36 226.06 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ad12b3e3-1226-474f-b96d-5106850e32a7")
+		(property "Reference" "TP35"
+			(at 345.186 226.314 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 342.3921 228.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 340.36 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 340.36 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 340.36 226.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1937f22f-6390-49d0-ab84-fc21072a41c3")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
+					(reference "TP35")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Diode:1N5712UR")
 		(at 107.95 38.1 270)
 		(unit 1)
@@ -16817,6 +17421,73 @@
 			(project "bldcDriver"
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
 					(reference "FB3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 313.69 186.69 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b84832e7-1a50-4193-b398-27000ac3ca26")
+		(property "Reference" "TP30"
+			(at 308.864 186.436 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 311.6579 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 313.69 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 313.69 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 313.69 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ffe81c67-42b0-4f37-9e68-b192b5817e74")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
+					(reference "TP30")
 					(unit 1)
 				)
 			)
@@ -17249,72 +17920,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GNDD")
-		(at 76.2 50.8 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c6ffd460-b775-4ea6-bfc2-aa30d90b4fee")
-		(property "Reference" "#PWR03"
-			(at 76.2 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GNDD"
-			(at 76.2 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 76.2 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 76.2 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDD\" , digital ground"
-			(at 76.2 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "775b6146-422f-4256-b5d9-bd94637e73af")
-		)
-		(instances
-			(project "bldcDriver"
-				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
-					(reference "#PWR03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Small")
 		(at 193.04 57.15 270)
 		(unit 1)
@@ -17514,6 +18119,74 @@
 			(project "bldcDriver"
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
 					(reference "R20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GNDPWR")
+		(at 107.95 44.45 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cc4dc67d-59b0-4529-9bba-f67d1e515882")
+		(property "Reference" "#PWR05"
+			(at 107.95 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GNDPWR"
+			(at 108.077 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 107.95 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 107.95 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+			(at 107.95 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1bbfe752-e2e3-48bd-8e09-95fcb09d65f6")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -17831,6 +18504,74 @@
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
 					(reference "U6")
 					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GNDPWR")
+		(at 76.2 50.8 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d424d024-2ab6-4669-9d82-182f05fd38b6")
+		(property "Reference" "#PWR057"
+			(at 76.2 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GNDPWR"
+			(at 76.327 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 76.2 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+			(at 76.2 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dcaa61a6-fd23-47b3-a8fc-5905ab1b75c2")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
+					(reference "#PWR057")
+					(unit 1)
 				)
 			)
 		)
@@ -18984,7 +19725,7 @@
 	)
 	(symbol
 		(lib_id "power:GNDD")
-		(at 63.5 64.77 90)
+		(at 106.68 71.12 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -18994,7 +19735,7 @@
 		(fields_autoplaced yes)
 		(uuid "ee9eeace-db6e-438d-9366-5e34d3ec55a8")
 		(property "Reference" "#PWR056"
-			(at 69.85 64.77 0)
+			(at 113.03 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19003,7 +19744,7 @@
 			)
 		)
 		(property "Value" "GNDD"
-			(at 67.31 64.77 0)
+			(at 110.49 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19012,7 +19753,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 63.5 64.77 0)
+			(at 106.68 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19021,7 +19762,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 63.5 64.77 0)
+			(at 106.68 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19030,7 +19771,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDD\" , digital ground"
-			(at 63.5 64.77 0)
+			(at 106.68 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19183,6 +19924,73 @@
 			(project "bldcDriver"
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
 					(reference "FB1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 365.76 180.34 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f151c701-0743-40c1-b9c3-319518195564")
+		(property "Reference" "TP33"
+			(at 360.934 180.086 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 363.7279 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 365.76 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 365.76 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 365.76 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9fcbb3ab-cca0-44f5-b9a9-b135543c2c51")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
+					(reference "TP33")
 					(unit 1)
 				)
 			)
@@ -19668,6 +20476,73 @@
 			(project "bldcDriver"
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
 					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 313.69 189.23 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fd2ac88a-7395-4ae0-b0e3-c5204fbc8b24")
+		(property "Reference" "TP31"
+			(at 308.864 188.976 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 311.6579 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 313.69 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 313.69 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 313.69 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "759769c0-6f0b-43a9-9bb9-c31bafad1527")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
+					(reference "TP31")
 					(unit 1)
 				)
 			)

@@ -70,6 +70,7 @@ void uartTx()
 #if SHOW_WAVE == 0
   txDataProcess();
   HAL_UART_Transmit_DMA(&huart3, (uint8_t *)txBuffer, sizeof(txBuffer));
+ // memset(txBuffer, 0, sizeof(txBuffer));
 #endif
 }
 

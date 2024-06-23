@@ -1,0 +1,6 @@
+../User/pwm.c:3:7:startPwm1	8	static
+../User/pwm.c:10:7:stopPwm1	8	static
+../User/pwm.c:17:7:updatePwm1	16	static
+../User/pwm.c:24:7:startPwm2	8	static
+../User/pwm.c:31:7:stopPwm2	8	static
+../User/pwm.c:39:7:updatePwm2	16	static

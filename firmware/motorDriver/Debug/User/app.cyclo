@@ -1,10 +1,7 @@
-../User/app.c:28:13:startPwm1	1
-../User/app.c:37:13:stopPwm1	1
-../User/app.c:46:13:updatePwm1	1
-../User/app.c:54:13:motorInit	7
-../User/app.c:121:6:appInit	2
-../User/app.c:135:6:appRunning	4
-../User/app.c:205:13:standingBy	3
-../User/app.c:225:13:working	2
-../User/app.c:255:6:txDataProcess	1
-../User/app.c:268:6:HAL_ADCEx_InjectedConvCpltCallback	2
+../User/app.c:31:13:motorInit	7
+../User/app.c:116:6:appInit	1
+../User/app.c:130:6:appRunning	4
+../User/app.c:200:13:standingBy	3
+../User/app.c:224:13:working	2
+../User/app.c:254:6:txDataProcess	1
+../User/app.c:287:6:HAL_ADCEx_InjectedConvCpltCallback	2

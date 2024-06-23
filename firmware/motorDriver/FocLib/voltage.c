@@ -274,7 +274,7 @@ void setTorque(BldcMotor *motor, float Uq, float Ud, float angle_el)
     motor->Tb = _constrain(Ub / U_DC, 0.0f, 1.0f);
     motor->Tc = _constrain(Uc / U_DC, 0.0f, 1.0f);
 
-    motor->updatePwm(HALP_PWM_PERIOD * motor->Ta, HALP_PWM_PERIOD * motor->Tb, HALP_PWM_PERIOD * motor->Tc);
+    motor->updatePwm(HALP_PWM_PERIOD * motor->Tb, HALP_PWM_PERIOD * motor->Ta, HALP_PWM_PERIOD * motor->Tc);
     // set the voltages in driver
     // driver->setPwm(Ua, Ub, Uc);
 }

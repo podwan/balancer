@@ -12295,8 +12295,8 @@
 				)
 			)
 		)
-		(property "Value" "5k"
-			(at 210.82 49.276 0)
+		(property "Value" "3k6"
+			(at 217.17 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)

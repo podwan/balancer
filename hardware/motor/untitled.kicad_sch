@@ -8781,10 +8781,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "285ea171-50b2-4057-8a8a-aed0a98cfc20")
 		(property "Reference" "D7"
-			(at 106.68 67.3099 90)
+			(at 104.14 66.04 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8792,8 +8791,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
-			(at 106.68 69.8499 90)
+		(property "Value" "DSK34"
+			(at 101.6 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10579,7 +10578,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "DSK34"
 			(at 125.73 69.8499 90)
 			(effects
 				(font
@@ -11407,7 +11406,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "DSK34"
 			(at 120.65 176.5299 90)
 			(effects
 				(font
@@ -11753,7 +11752,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "730f7580-a25a-431b-937e-483280f24cce")
 		(property "Reference" "D2"
 			(at 111.76 173.9899 90)
@@ -11764,8 +11762,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
-			(at 111.76 176.5299 90)
+		(property "Value" "DSK34"
+			(at 106.68 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14902,7 +14900,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "DSK34"
 			(at 115.57 69.8499 90)
 			(effects
 				(font
@@ -15353,7 +15351,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "DSK34"
 			(at 130.81 176.5299 90)
 			(effects
 				(font
