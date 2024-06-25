@@ -25,8 +25,8 @@
 
 #define CHANNEL 0
 
-#define L_Y 4
-#define L_X 0
+#define L_Y 0
+#define L_X 4
 #define R_Y 1
 #define R_X 2
 u8 m_color[7][3] = {
@@ -46,7 +46,7 @@ HardwareSerial serial1(1);
 static bool _1000ms, _1ms, powerOff, _20ms, _10ms, powerLow, _500ms, _100ms;
 
 hw_timer_t *timer = NULL;
-char lyValue, lxValue, ryValue, rxValue;
+char leftY, leftX, rightY, rightX;
 // Joystick joystickL(4, 5, 13);
 extern unsigned char BLEBUF[];
 static void IRAM_ATTR Timer0_CallBack(void) {
@@ -91,6 +91,8 @@ void setup() {
   strip.setBrightness(10);
 
   adcAttachPin(BAT_FB);
+
+  analogReadResolution(8);
   // pinMode(L_X, ANALOG);
   // adcAttachPin(L_X);
   analogSetPinAttenuation(BAT_FB, ADC_ATTENDB_MAX);
@@ -111,16 +113,17 @@ void loop() {
 
   if (_100ms) {
     _100ms = 0;
-    int rawValue = analogRead(L_Y);
-    lyValue = rawValue;
-    rawValue = analogRead(L_X);
-    lxValue = rawValue;
+    leftX = analogRead(L_X);
+    // leftY = rawValue;
+    leftY = analogRead(L_Y);
+    // leftX = rawValue;
+    serial1.printf("leftX %d, leftY %d\n", leftX, leftY);
     // rawValue = analogRead(R_X);
-    // lyValue = map(rawValue, 348, 4095, 0, 100);
+    // leftY = map(rawValue, 348, 4095, 0, 100);
     // rawValue = analogRead(R_X);
-    // rxValue = map(rawValue, 348, 4095, 0, 100);
+    // rightX = map(rawValue, 348, 4095, 0, 100);
     // rawValue = analogRead(R_Y);
-    // ryValue = map(rawValue, 348, 4095, 0, 100);
+    // rightY = map(rawValue, 348, 4095, 0, 100);
   }
 
   if (powerOff) {
@@ -169,15 +172,15 @@ void loop() {
 
   if (_1000ms) {
     BLEBUF[0] = 0xA5;     // 包头
-    BLEBUF[1] = lxValue;  //
-    BLEBUF[2] = lyValue;  //
-    BLEBUF[3] = rxValue;  //
-    BLEBUF[4] = ryValue;  //
+    BLEBUF[1] = leftX;  //
+    BLEBUF[2] = leftY;  //
+    BLEBUF[3] = rightX;  //
+    BLEBUF[4] = rightY;  //
 
     BLEBUF[5] = 0x5A;  // 包尾
 
-    // serial1.printf("%03d%03d%03d\n",lyValue, rxValue,ryValue);
-    serial1.printf("%03d,%03d,%03d,%03d\n", BLEBUF[1], BLEBUF[2], BLEBUF[3], BLEBUF[4]);
+    // serial1.printf("%03d%03d%03d\n",leftY, rightX,rightY);
+    //serial1.printf("%03d,%03d,%03d,%03d\n", BLEBUF[1], BLEBUF[2], BLEBUF[3], BLEBUF[4]);
 
     _1000ms = 0;
     // if (!powerOff)

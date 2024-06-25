@@ -9,7 +9,7 @@ unsigned char BLEBUF[13];
 extern HardwareSerial serial1;
 
 bool deviceConnected = false;
-extern char lyValue, lxValue, ryValue, rxValue;
+extern char leftY, leftX, rightY, rightX;
 
 // Humidity Characteristic and Descriptor
 BLECharacteristic txCharacteristics("ca73b3ba-39f6-4ab3-91ae-186dc9577d99", BLECharacteristic::PROPERTY_NOTIFY);
@@ -64,10 +64,10 @@ void blePolling()
     serial1.printf("connected\n");
 
     BLEBUF[0] = 'K';    // 包头
-    BLEBUF[1] = lxValue; //
-    BLEBUF[2] = lyValue; //
-    BLEBUF[3] = rxValue; //
-    BLEBUF[4] = ryValue; //
+    // BLEBUF[1] = lxValue; //
+    // BLEBUF[2] = lyValue; //
+    // BLEBUF[3] = rxValue; //
+    // BLEBUF[4] = ryValue; //
     BLEBUF[5] = 'X'; // 包尾
 
     txCharacteristics.setValue(BLEBUF, 7);

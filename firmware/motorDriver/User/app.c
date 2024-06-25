@@ -144,20 +144,20 @@ void appRunning()
     HAL_ADC_Start(&hadc2);
     Vpoten = HAL_ADC_GetValue(&hadc1);
 
-    // goalVelocity = map(Vpoten, 0, 4095, -MAX_VELOCITY, MAX_VELOCITY);
+     goalVelocity = map(Vpoten, 0, 4095, -MAX_VELOCITY, MAX_VELOCITY);
 
-    // goalVelocity = Vpoten / 4095.0f * MAX_VELOCITY;
-    // float goalTorqueV = map(Vpoten, 0, 4095, -UqMAX, UqMAX);
-    // float goalTorqueC = map(Vpoten, 0, 4095, -CURRENT_MAX, CURRENT_MAX);
+     goalVelocity = Vpoten / 4095.0f * MAX_VELOCITY;
+     float goalTorqueV = map(Vpoten, 0, 4095, -UqMAX, UqMAX);
+     float goalTorqueC = map(Vpoten, 0, 4095, -CURRENT_MAX, CURRENT_MAX);
 
-    // adc_vbus = HAL_ADC_GetValue(&hadc2);
+     adc_vbus = HAL_ADC_GetValue(&hadc2);
 
-    // Vbus = adc_vbus * 3.3f / 4096 * 26;
+     Vbus = adc_vbus * 3.3f / 4096 * 26;
 
-    // if (motor1.controlType == VELOCITY || motor1.controlType == VELOCITY_OPEN_LOOP)
-    // {
-    //     motor1.target = goalVelocity;
-    // }
+     if (motor1.controlType == VELOCITY || motor1.controlType == VELOCITY_OPEN_LOOP)
+     {
+         motor1.target = goalVelocity;
+     }
 
     else if (motor1.controlType == ANGLE)
     {
@@ -270,11 +270,11 @@ void txDataProcess()
     //     _1_MT6701_CS_Enable;
     // else
     //     _1_MT6701_CS_Disable;
-    uint16_t rawData1, rawData2;
-    rawData1 = _1_MT6701_GetRawData();
-     rawData2 = _2_MT6701_GetRawData();
+    // uint16_t rawData1, rawData2;
+    // rawData1 = _1_MT6701_GetRawData();
+    //  rawData2 = _2_MT6701_GetRawData();
 
-    sprintf(txBuffer, "rawData1: %d,rawData2: %d\n", rawData1, rawData2);
+    //  sprintf(txBuffer, "rawData1: %d,rawData2: %d\n", rawData1, rawData2);
     // sprintf(txBuffer, "yaw : %.2f,roll : %.2f,pitch : %.2f\n", imu.yaw, imu.rol, imu.pit);
 
     // sprintf(txBuffer, "target:%.2f fullAngle:%.2f velocity:%.2f Uq:%.2f Ud:%.2f Iq:%.2f Id:%.2f elec_angle:%.2f\n", motor1.target, motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id, motor1.angle_el);
@@ -289,19 +289,27 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
     HAL_GPIO_WritePin(TEST_GPIO_Port, TEST_Pin, GPIO_PIN_SET);
     if (hadc == &hadc1)
     {
+        static bool shift;
+        shift = !shift;
+        if (shift)
+        {
+            foc(&motor1, hadc1.Instance->JDR1, hadc2.Instance->JDR1);
+        }
+        else
+        {
+            foc(&motor2, hadc1.Instance->JDR2, hadc2.Instance->JDR2);
+        }
 
-        // foc(&motor1, hadc1.Instance->JDR1, hadc2.Instance->JDR1);
-        // foc(&motor2, hadc1.Instance->JDR2, hadc2.Instance->JDR2);
         dealPer100us();
 
 #if SHOW_WAVE
         // #if SHOW_SVPWM
-        // load_data[0] = motor1.Ta;
-        // load_data[1] = motor1.Tb;
-        // load_data[2] = motor1.Tc;
-        // load_data[0] = motor2.Ta;
-        // load_data[1] = motor2.Tb;
-        // load_data[2] = motor2.Tc;
+        load_data[0] = motor1.Ta;
+        load_data[1] = motor1.Tb;
+        load_data[2] = motor1.Tc;
+        load_data[3] = motor2.Ta;
+        load_data[4] = motor2.Tb;
+        load_data[5] = motor2.Tc;
         //         load_data[3] = motor1.Id;
         //         load_data[4] = motor1.Iq;
         //         load_data[5] = motor1.angle_el;
@@ -323,9 +331,13 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
         // load_data[1] = motor1.Ib;
         // load_data[2] = motor1.Ic;
 
-        load_data[0] = motor2.Ia;
-        load_data[1] = motor2.Ib;
-        load_data[2] = motor2.Ic;
+        // load_data[0] = motor1.Ia;
+        // load_data[1] = motor1.Ib;
+        // load_data[2] = motor1.Ic;
+
+        // load_data[3] = motor2.Ia;
+        // load_data[4] = motor2.Ib;
+        // load_data[5] = motor2.Ic;
 
         // load_data[3] = motor1.Ialpha;
         // load_data[4] = motor1.Ibeta;

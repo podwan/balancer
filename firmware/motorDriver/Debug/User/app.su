@@ -1,7 +1,7 @@
 ../User/app.c:31:13:motorInit	32	static
 ../User/app.c:116:6:appInit	8	static
-../User/app.c:130:6:appRunning	8	static
+../User/app.c:130:6:appRunning	32	static
 ../User/app.c:200:13:standingBy	8	static
 ../User/app.c:224:13:working	4	static
-../User/app.c:254:6:txDataProcess	16	static
-../User/app.c:287:6:HAL_ADCEx_InjectedConvCpltCallback	16	static
+../User/app.c:254:6:txDataProcess	4	static
+../User/app.c:287:6:HAL_ADCEx_InjectedConvCpltCallback	24	static

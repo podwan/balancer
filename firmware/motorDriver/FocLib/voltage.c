@@ -257,7 +257,7 @@ void setTorque(BldcMotor *motor, float Uq, float Ud, float angle_el)
     Ub = -0.5f * Ualpha + _SQRT3_2 * Ubeta;
     Uc = -0.5f * Ualpha - _SQRT3_2 * Ubeta;
 
-    center = UqMAX / 2;
+    center = U_DC / 2;
 
     // discussed here: https://community.simplefoc.com/t/embedded-world-2023-stm32-cordic-co-processor/3107/165?u=candas1
     // a bit more info here: https://microchipdeveloper.com/mct5001:which-zsm-is-best

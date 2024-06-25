@@ -36,9 +36,9 @@ typedef unsigned long ulong;
 #define DEBUG_DISPLAY 0
 #define DEBUG_KEY 0
 #define MAX_LEN 20
-#define SHOW_WAVE 0
+#define SHOW_WAVE 1
 
-#define USE_COMM_TARGET 1
+#define USE_COMM_TARGET 0
 
 /*===========================================================================*/
 
