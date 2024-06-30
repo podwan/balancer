@@ -1,6 +1,8 @@
 #ifndef __BLE_H
 #define __BLE_H
 #include <Arduino.h>
+
+#define DEBUG 1  //debug mode to send data through usb serial ble to stm32
 //BLE server name
 #define bleServerName "controller"
 // See the following for generating UUIDs:

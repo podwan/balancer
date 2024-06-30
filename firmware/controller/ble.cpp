@@ -5,7 +5,7 @@
 #include "BLEDevice.h"
 #include "driver/uart.h"
 #include "ble.h"
-unsigned char BLEBUF[13];
+unsigned char bleBuff[10];
 extern HardwareSerial serial1;
 
 bool deviceConnected = false;
@@ -16,14 +16,11 @@ BLECharacteristic txCharacteristics("ca73b3ba-39f6-4ab3-91ae-186dc9577d99", BLEC
 BLEDescriptor txDescriptor(BLEUUID((uint16_t)0x2903));
 
 // Setup callbacks onConnect and onDisconnect
-class MyServerCallbacks : public BLEServerCallbacks
-{
-  void onConnect(BLEServer *pServer)
-  {
+class MyServerCallbacks : public BLEServerCallbacks {
+  void onConnect(BLEServer *pServer) {
     deviceConnected = true;
   };
-  void onDisconnect(BLEServer *pServer)
-  {
+  void onDisconnect(BLEServer *pServer) {
     deviceConnected = false;
     pServer->getAdvertising()->start();
   }
@@ -31,8 +28,7 @@ class MyServerCallbacks : public BLEServerCallbacks
 
 BLECharacteristic *pTxCharacteristic;
 
-void bleInit()
-{
+void bleInit() {
   // Create the BLE Device
   BLEDevice::init(bleServerName);
 
@@ -57,20 +53,20 @@ void bleInit()
   serial1.println("Waiting a client connection to notify...");
 }
 
-void blePolling()
-{
-  if (deviceConnected)
-  {
-    serial1.printf("connected\n");
+void blePolling() {
+  if (deviceConnected) {
+    // serial1.printf("connected\n");
 
-    BLEBUF[0] = 'K';    // 包头
-    // BLEBUF[1] = lxValue; //
-    // BLEBUF[2] = lyValue; //
-    // BLEBUF[3] = rxValue; //
-    // BLEBUF[4] = ryValue; //
-    BLEBUF[5] = 'X'; // 包尾
+    //  if (toSend) {
+ 
+    //   txCharacteristics.setValue(rxBuff, rxIndex);
+    // } else {
+ 
+      txCharacteristics.setValue(bleBuff, 10);
+    // }
 
-    txCharacteristics.setValue(BLEBUF, 7);
+
     txCharacteristics.notify();
+  } else {
   }
 }
