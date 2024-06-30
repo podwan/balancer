@@ -35,8 +35,9 @@ User/userMain.o: ../User/userMain.c ../User/userMain.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim_ex.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
- ../Core/Inc/tim.h ../Core/Inc/main.h ../Core/Inc/adc.h \
- ../Core/Inc/usart.h ../Core/Inc/spi.h ../User/userTimer.h \
+ ../Core/Inc/main.h ../Core/Inc/tim.h ../Core/Inc/main.h \
+ ../Core/Inc/adc.h ../Core/Inc/usart.h ../Core/Inc/spi.h \
+ ../User/userTimer.h \
  C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/bldcMotor.h \
  C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/focLib.h \
  C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h \
@@ -47,7 +48,8 @@ User/userMain.o: ../User/userMain.c ../User/userMain.h \
  C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/math_utils.h \
  C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/math_utils.h \
  C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/voltage.h \
- ../User/comm.h ../User/app.h ../User/mpu6500.h
+ ../User/comm.h ../User/app.h ../User/mpu6500.h ../User/key.h \
+ ../User/AHRS.h
 ../User/userMain.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
 ../Core/Inc/stm32g4xx_hal_conf.h:
@@ -85,6 +87,7 @@ User/userMain.o: ../User/userMain.c ../User/userMain.h \
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim_ex.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h:
+../Core/Inc/main.h:
 ../Core/Inc/tim.h:
 ../Core/Inc/main.h:
 ../Core/Inc/adc.h:
@@ -104,3 +107,5 @@ C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/voltage.h:
 ../User/comm.h:
 ../User/app.h:
 ../User/mpu6500.h:
+../User/key.h:
+../User/AHRS.h:

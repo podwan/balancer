@@ -108,8 +108,8 @@ void foc(BldcMotor *motor, uint32_t adc_a, uint32_t adc_b)
     {
         getCurrentOffsets(motor, adc_a, adc_b, 100);
         alignSensor(motor);
-        motor->state = MOTOR_START;
-        // motor->stopPwm();
+        motor->state = MOTOR_READY;
+        motor->stopPwm();
     }
     else
     {
@@ -148,7 +148,7 @@ void foc(BldcMotor *motor, uint32_t adc_a, uint32_t adc_b)
 
                 if (motor->torqueType == VOLTAGE)
                 {
-                    motor->target = UqMAX;
+                    // motor->target = UqMAX;
                     motor->Uq = motor->target;
                 }
                 else
@@ -162,7 +162,7 @@ void foc(BldcMotor *motor, uint32_t adc_a, uint32_t adc_b)
             case VELOCITY:
                 if (motor->torqueType == VOLTAGE)
                 {
-                    motor->target = 190;
+                    // motor->target = 190;
                     velocityErr = motor->target - motor->magEncoder.velocity;
                     motor->Uq = pidOperator(&motor->velocityPID, velocityErr);
                 }

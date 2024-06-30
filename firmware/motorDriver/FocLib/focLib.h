@@ -12,7 +12,7 @@
 #define HALP_PWM_PERIOD (PWM_PERIOD_VALUE / 2.0f)        // PWM period * 2
 #define U_DC 8.0f
 #define UqMAX (U_DC * _1_SQRT3)
-#define OPEN_LOOP_TORQUE UqMAX / 2.0
+#define OPEN_LOOP_TORQUE UqMAX / 3.0
 #define PWM_GENERATE(p1, p2, p3) \
     {                            \
         TIM1->CCR1 = p1;         \

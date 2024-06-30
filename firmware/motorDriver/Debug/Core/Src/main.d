@@ -47,7 +47,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/pid.h \
  C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/lowpass_filter.h \
  C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/encoder.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/math_utils.h
+ C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/math_utils.h \
+ C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/app.h
 ../Core/Inc/main.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
 ../Core/Inc/stm32g4xx_hal_conf.h:
@@ -103,3 +104,4 @@ C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/pid.h:
 C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/lowpass_filter.h:
 C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/encoder.h:
 C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/math_utils.h:
+C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/app.h:

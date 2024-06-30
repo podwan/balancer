@@ -9,7 +9,8 @@
 #include "comm.h"
 #include "app.h"
 #include "mpu6500.h"
-// #include "key.h"
+#include "key.h"
+#include "AHRS.h"
 
 #define PHASE_SHIFT_ANGLE (float)(120.0f / 360.0f * 2.0f * PI)
 
@@ -35,17 +36,32 @@ uint8_t HallReadTemp = 0;
 void userMain(void)
 {
 
-	//	if (get5MsFlag())
-	//	{
-	//		keyScan();
-	//	}
-	// if (getOneMsFlag())
-	// {
-	// 	mpu_get_data();
-	// 	imu_ahrs_update();
-	// 	imu_attitude_update();
-	
-	// }
+	if (get5MsFlag())
+	{
+		keyScan();
+	}
+	if (getOneMsFlag())
+	{
+		static bool imuInited;
+
+		if (imuInited == false)
+		{
+			if (IMU_Init() == 0)
+			{
+				init_quaternion();
+				imuInited = true;
+				printLog("mpu init done\n");
+			}
+		}
+		else
+		{
+			// IMU_handle();
+			mpu_get_data();
+			imu_ahrs_update();
+			imu_attitude_update();
+			balancerControl();
+		}
+	}
 
 	if (get100MsFlag())
 	{

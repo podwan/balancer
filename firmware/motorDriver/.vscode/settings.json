@@ -4,6 +4,9 @@
         "mpu6500.h": "c",
         "stdarg.h": "c",
         "mt6701.h": "c",
-        "comm.h": "c"
+        "comm.h": "c",
+        "key.h": "c",
+        "pwm.h": "c",
+        "*.b": "c"
     }
 }

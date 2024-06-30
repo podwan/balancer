@@ -1,0 +1,88 @@
+#include "mpu6500.h"
+#include "time_utils.h"
+
+// MPU6500单次写命令
+uint8_t IMU_Write_Reg(uint8_t const reg, uint8_t const data)
+{
+    // MPU_NSS_LOW;                                         // 开始通讯
+    //    tx = reg & 0x7F;                                     // 使第一位为0（写模式）
+    //    HAL_SPI_TransmitReceive(&MPU_HSPI, &tx, &rx, 1, 55); // 写入命令地址
+    //    tx = data;
+    //    HAL_SPI_TransmitReceive(&MPU_HSPI, &tx, &rx, 1, 55); // 写入数据
+    //    MPU_NSS_HIGH;                                        // 结束通讯
+    //    return 0;
+
+    MPU_NSS_LOW; // 开始通讯
+    uint8_t tx = reg & 0x7F;
+    uint8_t rx, x;                                       // 使第一位为0（写模式）
+    HAL_SPI_TransmitReceive(&MPU_HSPI, &tx, &rx, 1, 55); // 写入命令地址
+    tx = data;
+    HAL_SPI_TransmitReceive(&MPU_HSPI, &tx, &x, 1, 55); // 写入数据
+    MPU_NSS_HIGH;                                       // 结束通讯
+    return rx;
+}
+// MPU6500单次读取单字节数据
+uint8_t IMU_Read_Reg(uint8_t const reg)
+{
+
+    //  MPU_NSS_LOW;
+    // tx = reg | 0x80;                                     // 使地址第一位为1（读模式）
+    // HAL_SPI_TransmitReceive(&MPU_HSPI, &tx, &rx, 1, 55); // 写入需要读取的地址
+    // HAL_SPI_TransmitReceive(&MPU_HSPI, &tx, &rx, 1, 55); // 为读取的数据提供存储空间
+    // MPU_NSS_HIGH;
+    // return rx;
+
+    MPU_NSS_LOW;
+    uint8_t tx = reg | 0x80; // 使地址第一位为1（读模式）
+    uint8_t rx;
+    HAL_SPI_TransmitReceive(&MPU_HSPI, &tx, &rx, 1, 55); // 写入需要读取的地址
+    HAL_SPI_TransmitReceive(&MPU_HSPI, &tx, &rx, 1, 55); // 为读取的数据提供存储空间
+    MPU_NSS_HIGH;
+    return rx;
+}
+
+uint8_t Who_Am_I = 0;
+
+bool IMU_Init(void)
+{
+
+    Who_Am_I = IMU_Read_Reg(MPU6500_WHO_AM_I); // 读取MPU6500地址
+    if (Who_Am_I != 0x70)
+    {
+        printLog("mpu init failed\n");
+        return 1;
+    }
+    else
+    {
+
+        delay(10);
+        IMU_Write_Reg(MPU6500_PWR_MGMT_1, 0X80);
+        delay(10);
+        IMU_Write_Reg(MPU6500_PWR_MGMT_1, 0X01);
+        delay(10);
+        IMU_Write_Reg(MPU6500_SIGNAL_PATH_RESET, 0X07);
+        delay(10);
+        IMU_Write_Reg(MPU6500_CONFIG, 0X0);
+        delay(10);
+        IMU_Write_Reg(MPU6500_GYRO_CONFIG, 0x18);
+        delay(10);
+        IMU_Write_Reg(MPU6500_ACCEL_CONFIG, 0x10);
+        delay(10);
+        printLog("mpu init done\n");
+        return 0;
+    }
+}
+void Get_mpu6500(uint8_t *data)
+{
+
+    MPU_NSS_LOW;
+
+    uint8_t tx = MPU6500_ACCEL_XOUT_H | 0x80; // 使地址第一位为1（读模式）
+    uint8_t rx;
+    HAL_SPI_TransmitReceive(&MPU_HSPI, &tx, &rx, 1, 55);
+    // for (i = 0; i < 14; i++)
+    // {
+    HAL_SPI_TransmitReceive(&MPU_HSPI, &tx, data, 14, 55);
+    // }
+    MPU_NSS_HIGH;
+}

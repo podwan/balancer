@@ -12,6 +12,7 @@
 #include "esp32-hal-gpio.h"
 #include "driver/adc.h"
 #include "esp32-hal-adc.h"
+#include "beeper.h"
 #define POWER_EN 18
 #define POWER_KEY 10
 #define R_STICK_BUTTON 19
@@ -20,7 +21,7 @@
 #define LU_SWTICH 6
 #define RGB 7
 #define LOW_POWER_VOLTAGE 3.3f
-
+#define BEEPER 5
 #define RGB_COUNT 1
 
 #define CHANNEL 0
@@ -30,13 +31,13 @@
 #define R_Y 1
 #define R_X 2
 u8 m_color[7][3] = {
-  { 255, 0, 0 },
-  { 0, 255, 0 },
-  { 0, 0, 255 },
-  { 255, 255, 0 },
-  { 255, 0, 255 },
-  { 0, 255, 255 },
-  { 0, 0, 0 },
+    {255, 0, 0},
+    {0, 255, 0},
+    {0, 0, 255},
+    {255, 255, 0},
+    {255, 0, 255},
+    {0, 255, 255},
+    {0, 0, 0},
 };
 int delayval = 100;
 
@@ -49,33 +50,40 @@ hw_timer_t *timer = NULL;
 char leftY, leftX, rightY, rightX;
 // Joystick joystickL(4, 5, 13);
 extern unsigned char BLEBUF[];
-static void IRAM_ATTR Timer0_CallBack(void) {
+static void IRAM_ATTR Timer0_CallBack(void)
+{
   static int _1000msCnt, _20msCnt, _10msCnt, _500msCnt, _100msCnt;
   _1ms = 1;
-  if (++_1000msCnt >= 1000) {
+  if (++_1000msCnt >= 1000)
+  {
     _1000msCnt = 0;
     _1000ms = 1;
   }
-  if (++_500msCnt >= 500) {
+  if (++_500msCnt >= 500)
+  {
     _500msCnt = 0;
     _500ms = 1;
   }
-  if (++_20msCnt >= 20) {
+  if (++_20msCnt >= 20)
+  {
     _20msCnt = 0;
     _20ms = 1;
   }
 
-  if (++_10msCnt >= 10) {
+  if (++_10msCnt >= 10)
+  {
     _10msCnt = 0;
     _10ms = 1;
   }
 
-  if (++_100msCnt >= 100) {
+  if (++_100msCnt >= 100)
+  {
     _100msCnt = 0;
     _100ms = 1;
   }
 }
-void setup() {
+void setup()
+{
   // Start serial communication
   serial1.begin(115200, SERIAL_8N1, 20, 21);
 
@@ -84,8 +92,8 @@ void setup() {
 
   timer = timerBegin(0, 80, true);
   timerAttachInterrupt(timer, Timer0_CallBack, true);
-  timerAlarmWrite(timer, 1000, true);  // 单位us,定时模式,10ms
-  timerAlarmEnable(timer);             // 启动定时器
+  timerAlarmWrite(timer, 1000, true); // 单位us,定时模式,10ms
+  timerAlarmEnable(timer);            // 启动定时器
 
   strip.begin();
   strip.setBrightness(10);
@@ -95,92 +103,121 @@ void setup() {
   analogReadResolution(8);
   // pinMode(L_X, ANALOG);
   // adcAttachPin(L_X);
+
+  ledcSetup(5, 4000, 10);
+  ledcAttachPin(BEEPER, 5);
+
   analogSetPinAttenuation(BAT_FB, ADC_ATTENDB_MAX);
   delay(100);
   if (digitalRead(POWER_KEY) == 1)
     return;
   pinMode(POWER_KEY, INPUT_PULLUP);
-  bleInit();
+  // bleInit();
   serial1.println("MCU init done\n");
 }
 
-void loop() {
+void loop()
+{
 
-  if (_500ms) {
-    _500ms = 0;
-    blePolling();
-  }
 
-  if (_100ms) {
+  if (_100ms)
+  {
     _100ms = 0;
-    leftX = analogRead(L_X);
-    // leftY = rawValue;
-    leftY = analogRead(L_Y);
-    // leftX = rawValue;
-    serial1.printf("leftX %d, leftY %d\n", leftX, leftY);
-    // rawValue = analogRead(R_X);
+    // leftX = analogRead(L_X);
+    // // leftY = rawValue;
+    // leftY = analogRead(L_Y);
+    // // leftX = rawValue;
+    // serial1.printf("leftX %d, leftY %d\n", leftX, leftY);
+    rightX = analogRead(R_X);
+    rightY = analogRead(R_Y);
     // leftY = map(rawValue, 348, 4095, 0, 100);
     // rawValue = analogRead(R_X);
     // rightX = map(rawValue, 348, 4095, 0, 100);
     // rawValue = analogRead(R_Y);
     // rightY = map(rawValue, 348, 4095, 0, 100);
+    serial1.printf("rightX %d, righttY %d\n", rightX, rightY);
+  }
+  if (_20ms)
+  {
+    _20ms = 0;
+    beepPolling();
+  //  digitalWrite(BLUE_LED, LOW); //
   }
 
-  if (powerOff) {
+  if (powerOff)
+  {
     digitalWrite(POWER_EN, LOW);
     strip.setLedColorData(0, m_color[6][0], m_color[6][1], m_color[6][2]);
     strip.show();
     delay(delayval);
-  } else {
-    digitalWrite(POWER_EN, HIGH);  //
-    if (!powerLow) {
+  }
+  else
+  {
+    digitalWrite(POWER_EN, HIGH); //
+    if (!powerLow)
+    {
 
-      if (_10ms) {
+      if (_10ms)
+      {
         _10ms = 0;
 
         static int j = 0;
         static int i = 0;
-        if (i < RGB_COUNT) {
-          if (j < 255) {
+        if (i < RGB_COUNT)
+        {
+          if (j < 255)
+          {
             j += 2;
             strip.setLedColorData(i, strip.Wheel((i * 256 / RGB_COUNT + j) & 255));
-          } else {
+          }
+          else
+          {
             j = 0;
             i++;
           }
           strip.show();
-        } else {
+        }
+        else
+        {
           i = 0;
         }
       }
     }
   }
 
-  if (_1ms) {
+  if (_1ms)
+  {
     _1ms = 0;
     static int keyDownCnt;
-    if (!powerOff) {
-      if (digitalRead(POWER_KEY) == 0) {
-        if (++keyDownCnt >= 1000) {
+    if (!powerOff)
+    {
+      if (digitalRead(POWER_KEY) == 0)
+      {
+        if (++keyDownCnt >= 1000)
+        {
           powerOff = 1;
         }
-      } else {
+      }
+      else
+      {
         keyDownCnt = 0;
       }
     }
   }
 
-  if (_1000ms) {
-    BLEBUF[0] = 0xA5;     // 包头
+  if (_1000ms)
+  {
+  //  beepOnce();
+    BLEBUF[0] = 0xA5;   // 包头
     BLEBUF[1] = leftX;  //
     BLEBUF[2] = leftY;  //
-    BLEBUF[3] = rightX;  //
-    BLEBUF[4] = rightY;  //
+    BLEBUF[3] = rightX; //
+    BLEBUF[4] = rightY; //
 
-    BLEBUF[5] = 0x5A;  // 包尾
+    BLEBUF[5] = 0x5A; // 包尾
 
     // serial1.printf("%03d%03d%03d\n",leftY, rightX,rightY);
-    //serial1.printf("%03d,%03d,%03d,%03d\n", BLEBUF[1], BLEBUF[2], BLEBUF[3], BLEBUF[4]);
+    // serial1.printf("%03d,%03d,%03d,%03d\n", BLEBUF[1], BLEBUF[2], BLEBUF[3], BLEBUF[4]);
 
     _1000ms = 0;
     // if (!powerOff)

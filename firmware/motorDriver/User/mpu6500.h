@@ -162,7 +162,7 @@ extern imu_t imu;
 #define MPU6500_ZA_OFFSET_L (0x7E)
 
 #define MPU6050_ID (0x68)
-#define MPU6500_ID (0x70) // mpu6500 id = 0x70
+#define MPU6500_ID (0x75) // mpu6500 id = 0x70
 
 #define MPU_HSPI hspi1 // SPI句柄定义
 #define MPU_NSS_LOW HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI1_CS_Pin, GPIO_PIN_RESET)
@@ -177,7 +177,7 @@ extern imu_t imu;
                   * 陀螺仪偏差收敛 \
                   */
 
-bool mpu_device_init(void);
+bool IMU_Init(void);
 void init_quaternion(void);
 void mpu_get_data(void);
 void imu_ahrs_update(void);

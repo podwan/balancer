@@ -5,8 +5,8 @@
 
 #define CALI_PID 1
 
-#define CURRENT_MAX 0.5f
-#define MAX_VELOCITY 300
+#define CURRENT_MAX 0.2f
+#define MAX_VELOCITY 400
 
 #define WORK_INIT                   \
     {                               \
@@ -38,6 +38,7 @@ extern "C"
 
 void appRunning();
 void txDataProcess();
+void balancerControl();
 extern float txA, txB, txC;
 extern float load_data[];
 #endif

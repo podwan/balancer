@@ -64,8 +64,6 @@ uint8_t mpu_read_bytes(uint8_t const regAddr, uint8_t *pData, uint8_t len)
     return 0;
 }
 
-
-
 // 设置imu 6500陀螺仪测量范围
 uint8_t mpu_set_gyro_fsr(uint8_t fsr)
 {
@@ -128,11 +126,13 @@ void mpu_offset_call(void)
 }
 
 // 初始化mpu6500和ist3810
-uint8_t mpu_device_init(void)
+uint8_t IMU_Init(void)
 {
     HAL_Delay(100);
 
-    id = mpu_read_byte(MPU6500_WHO_AM_I);
+    id = mpu_read_byte(MPU6500_ID);
+    if (id != 0x70)
+        return 1;
     uint8_t i = 0;
     uint8_t MPU6500_Init_Data[10][2] = {
         {MPU6500_PWR_MGMT_1, 0x80},     /* 重置设备*/
@@ -153,11 +153,10 @@ uint8_t mpu_device_init(void)
     mpu_set_gyro_fsr(3);
     mpu_set_accel_fsr(2);
 
-   // ist8310_init();
+    // ist8310_init();
     mpu_offset_call();
     return 0;
 }
-
 
 // 初始化四元数
 void init_quaternion(void)

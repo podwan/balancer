@@ -533,7 +533,7 @@
       "idf": "",
       "netlist": "",
       "plot": "gerber/",
-      "pos_files": "",
+      "pos_files": "SMT/",
       "specctra_dsn": "",
       "step": "",
       "svg": "",

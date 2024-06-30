@@ -1,7 +1,7 @@
 
 #include "app.h"
 #include "led.h"
-// #include "key.h"
+#include "key.h"
 #include "comm.h"
 #include "mt6701.h"
 #include "bldcMotor.h"
@@ -13,6 +13,7 @@
 #include "voltage.h"
 #include "mpu6500.h"
 #include "pwm.h"
+#include "AHRS.h"
 
 static DevState devState = WORK;
 static KeyState keyState;
@@ -22,6 +23,8 @@ uint8_t tempData[36] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 
 float txA, txB, txC;
 static BldcMotor motor1, motor2;
+
+static PidController balancePid;
 
 static void standingBy();
 static void working(void);
@@ -38,9 +41,9 @@ static void motorInit()
     motor1.stopPwm = stopPwm1;
     motor1.zeroElectricAngleOffSet = 0;
     motor1.Ts = 100 * 1e-6f;
-    motor1.torqueType = CURRENT;
+    motor1.torqueType = VOLTAGE;
 
-    motor1.controlType = VELOCITY_OPEN_LOOP;
+    motor1.controlType = VELOCITY;
 
     motor1.state = MOTOR_CALIBRATE;
     encoderInit(&motor1.magEncoder, motor1.Ts, _1_MT6701_GetRawAngle, UNKNOWN);
@@ -51,7 +54,7 @@ static void motorInit()
         kp = 500.0f;
         ki = 50.0f;
         pidInit(&motor1.pidId, kp, ki, 0, 0, UqMAX, motor1.Ts);
-        pidInit(&motor1.pidIq, kp, ki, 0, 0, UqMAX, motor1.Ts);
+        // pidInit(&motor1.pidIq, kp, ki, 0, 0, UqMAX, motor1.Ts);
     }
     else if (motor1.controlType == VELOCITY)
     {
@@ -103,11 +106,57 @@ static void motorInit()
     motor2.stopPwm = stopPwm2;
     motor2.zeroElectricAngleOffSet = 0;
     motor2.Ts = 100 * 1e-6f;
-    motor2.torqueType = CURRENT;
-    motor2.controlType = VELOCITY_OPEN_LOOP;
+    motor2.torqueType = VOLTAGE;
+    motor2.controlType = VELOCITY;
 
     motor2.state = MOTOR_CALIBRATE;
-    encoderInit(&motor2.magEncoder, motor1.Ts, _2_MT6701_GetRawAngle, UNKNOWN);
+    encoderInit(&motor2.magEncoder, motor2.Ts, _2_MT6701_GetRawAngle, UNKNOWN);
+    if (motor2.controlType == TORQUE && motor2.torqueType == CURRENT)
+    {
+        float kp, ki;
+        kp = -200;
+        ki = -20;
+        pidInit(&motor2.pidId, kp, ki, 0, 0, UqMAX, motor2.Ts);
+        pidInit(&motor2.pidIq, kp, ki, 0, 0, UqMAX, motor2.Ts);
+    }
+    else if (motor2.controlType == VELOCITY)
+    {
+        if (motor2.torqueType == CURRENT)
+        {
+            pidInit(&motor2.velocityPID, 0.02, 0.01, 0, 0, CURRENT_MAX, motor2.Ts);
+
+            float kp, ki;
+            kp = 500.0f;
+            ki = 50.0f;
+            pidInit(&motor2.pidId, kp, ki, 0, 0, UqMAX, motor2.Ts);
+            pidInit(&motor2.pidIq, kp, ki, 0, 0, UqMAX, motor2.Ts);
+        }
+        else
+        {
+            pidInit(&motor2.velocityPID, 0.15, 0.05, 0, 0, UqMAX, motor2.Ts);
+        }
+    }
+    else if (motor2.controlType == ANGLE)
+    {
+        if (motor2.torqueType == CURRENT)
+        {
+            pidInit(&motor2.anglePID, 2, 0, 0, 0, MAX_VELOCITY, motor2.Ts);
+
+            pidInit(&motor2.velocityPID, -0.02, -0.01, 0, 0, CURRENT_MAX, motor2.Ts);
+
+            // pidInit(&motor1.anglePID, -0.001, -0.0001, 0, 0, CURRENT_MAX / 2, motor1.Ts);
+
+            float kp, ki;
+            kp = -200;
+            ki = -20;
+            pidInit(&motor2.pidId, kp, ki, 0, 0, UqMAX, motor2.Ts);
+            pidInit(&motor2.pidIq, kp, ki, 0, 0, UqMAX, motor2.Ts);
+        }
+        else
+        {
+            pidInit(&motor2.anglePID, 0.3, 0.001, 0, 0, UqMAX / 2, motor2.Ts);
+        }
+    }
 
     lpfInit(&motor2.IqFilter, 0.05, motor1.Ts);
     lpfInit(&motor2.IdFilter, 0.05, motor1.Ts);
@@ -115,22 +164,18 @@ static void motorInit()
 }
 void appInit()
 {
-    motorInit();
-    devState = WORK;
 
-    // if (mpu_device_init() == 1)
-    // {
-    //     printLog("IMU_Init failed\n");
-    // }
-    // else
-    //     init_quaternion();
-    //    MPU6050_Init(); // MPU6050初始化
+    motorInit();
+    devState = STANDBY;
+
+    // balance
+    pidInit(&balancePid, -1, 0, 0, 0, VELOCITY_MAX, 1 * 1e-3f);
 }
 static bool zeroReset, _1s;
 void appRunning()
 {
     _1s = getOneSecFlag();
-    //  getKeyState(&keyState);
+    getKeyState(&keyState);
     // commander_run(&motor1);
     if (++flashCnt >= 10)
         flashCnt = 0;
@@ -138,26 +183,26 @@ void appRunning()
     ledOn = 0;
 
 #if USE_COMM_TARGET == 0
-    uint32_t Vpoten, adc_vbus;
-    float Vbus, goalVelocity;
+    uint32_t Vpoten;
+    float goalVelocity;
     HAL_ADC_Start(&hadc1);
-    HAL_ADC_Start(&hadc2);
+    // HAL_ADC_Start(&hadc2);
     Vpoten = HAL_ADC_GetValue(&hadc1);
 
-     goalVelocity = map(Vpoten, 0, 4095, -MAX_VELOCITY, MAX_VELOCITY);
+    goalVelocity = map(Vpoten, 0, 4095, -MAX_VELOCITY, MAX_VELOCITY);
 
-     goalVelocity = Vpoten / 4095.0f * MAX_VELOCITY;
-     float goalTorqueV = map(Vpoten, 0, 4095, -UqMAX, UqMAX);
-     float goalTorqueC = map(Vpoten, 0, 4095, -CURRENT_MAX, CURRENT_MAX);
+    // goalVelocity = Vpoten / 4095.0f * MAX_VELOCITY;
+    float goalTorqueV = map(Vpoten, 0, 4095, -UqMAX, UqMAX);
+    float goalTorqueC = map(Vpoten, 0, 4095, -CURRENT_MAX, CURRENT_MAX);
 
-     adc_vbus = HAL_ADC_GetValue(&hadc2);
+    // adc_vbus = HAL_ADC_GetValue(&hadc2);
 
-     Vbus = adc_vbus * 3.3f / 4096 * 26;
+    // Vbus = adc_vbus * 3.3f / 4096 * 26;
 
-     if (motor1.controlType == VELOCITY || motor1.controlType == VELOCITY_OPEN_LOOP)
-     {
-         motor1.target = goalVelocity;
-     }
+    if (motor1.controlType == VELOCITY || motor1.controlType == VELOCITY_OPEN_LOOP)
+    {
+        motor1.target = goalVelocity;
+    }
 
     else if (motor1.controlType == ANGLE)
     {
@@ -166,9 +211,35 @@ void appRunning()
     else if (motor1.controlType == TORQUE)
     {
         if (motor1.torqueType == VOLTAGE)
+        {
             motor1.target = goalTorqueV;
+        }
         else
+        {
             motor1.target = goalTorqueC;
+        }
+    }
+
+    if (motor2.controlType == VELOCITY || motor2.controlType == VELOCITY_OPEN_LOOP)
+    {
+
+        motor2.target = goalVelocity;
+    }
+
+    else if (motor2.controlType == ANGLE)
+    {
+        motor2.target = goalVelocity / 3;
+    }
+    else if (motor2.controlType == TORQUE)
+    {
+        if (motor2.torqueType == VOLTAGE)
+        {
+            motor2.target = goalTorqueV;
+        }
+        else
+        {
+            motor2.target = goalTorqueC;
+        }
     }
 #endif
 
@@ -199,7 +270,6 @@ void appRunning()
 }
 static void standingBy()
 {
-    static uchar cnt;
 
     ledOn = 1;
     // setTorque(&motor1, 0, OPEN_LOOP_TORQUE, 0);
@@ -215,7 +285,7 @@ static void standingBy()
         motor2.stopPwm();
     }
 
-    if (++cnt >= 10)
+    if (keyState == USER1_SHORT)
     {
         WORK_INIT;
     }
@@ -227,10 +297,10 @@ static void working(void)
     if (flashCnt < 5)
         ledOn = 1;
 
-    //    if (keyState == USER3_SHORT)
-    //    {
-    //        STANDBY_INIT;
-    //    }
+    if (keyState == USER1_SHORT)
+    {
+        STANDBY_INIT;
+    }
     //    else if (keyState == USER2_SHORT)
     //    {
     //        //  if (bldcMotor.controlMode == VELOCITY)
@@ -254,8 +324,6 @@ static void working(void)
 void txDataProcess()
 {
 
-    static bool on;
-
     // if (_1s)
     // {
     //     static uchar cnt;
@@ -273,15 +341,16 @@ void txDataProcess()
     // uint16_t rawData1, rawData2;
     // rawData1 = _1_MT6701_GetRawData();
     //  rawData2 = _2_MT6701_GetRawData();
+    // sprintf(txBuffer, "accAngle.y : %.2f gyroAngle.y : %.2f\n", mpu6500.accAngle.y, mpu6500.gyroAngle.y);
 
     //  sprintf(txBuffer, "rawData1: %d,rawData2: %d\n", rawData1, rawData2);
-    // sprintf(txBuffer, "yaw : %.2f,roll : %.2f,pitch : %.2f\n", imu.yaw, imu.rol, imu.pit);
-
+    sprintf(txBuffer, "pitch : %.2f,  wy: %.2f,  velocity1:%.2f, velocity2:%.2f \n", imu.pit, imu.wy, motor1.magEncoder.velocity, motor2.magEncoder.velocity);
+    // sprintf(txBuffer, "target:%.2f  velocity1:%.2f  Iq1:%.2f Id1:%.2f  velocity2:%.2f  Iq2:%.2f Id2:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Iq, motor1.Id, motor2.magEncoder.velocity, motor2.Iq, motor2.Id);
     // sprintf(txBuffer, "target:%.2f fullAngle:%.2f velocity:%.2f Uq:%.2f Ud:%.2f Iq:%.2f Id:%.2f elec_angle:%.2f\n", motor1.target, motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id, motor1.angle_el);
-    // sprintf(txBuffer, "_1_fullAngle:%.2f _1_velocity:%.2f _2_fullAngle:%.2f _2_velocity:%.2f\n", motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor2.magEncoder.fullAngle, motor2.magEncoder.velocity);
-    // sprintf(txBuffer, "target:%.2f  velocity:%.2f  Uq:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Uq);
-    // sprintf(txBuffer, "target:%.2f,velocity:%.2f,Uq%.2f,Ud%.2f,Iq:%.2f,Id:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id);
-    // sprintf(txBuffer, "offset_ia:%f offset_ib:%f, Ia:%f, Ib:%f\n", motor1.offset_ia, motor1.offset_ib, motor1.Ia, motor1.Ib);
+    //  sprintf(txBuffer, "_1_fullAngle:%.2f _1_velocity:%.2f _2_fullAngle:%.2f _2_velocity:%.2f\n", motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor2.magEncoder.fullAngle, motor2.magEncoder.velocity);
+    //   sprintf(txBuffer, "target:%.2f  velocity:%.2f  Uq:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Uq);
+    //   sprintf(txBuffer, "target:%.2f,velocity:%.2f,Uq%.2f,Ud%.2f,Iq:%.2f,Id:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id);
+    //   sprintf(txBuffer, "offset_ia:%f offset_ib:%f, Ia:%f, Ib:%f\n", motor1.offset_ia, motor1.offset_ib, motor1.Ia, motor1.Ib);
 }
 
 void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
@@ -304,12 +373,12 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
 
 #if SHOW_WAVE
         // #if SHOW_SVPWM
-        load_data[0] = motor1.Ta;
-        load_data[1] = motor1.Tb;
-        load_data[2] = motor1.Tc;
-        load_data[3] = motor2.Ta;
-        load_data[4] = motor2.Tb;
-        load_data[5] = motor2.Tc;
+        // load_data[0] = motor1.Ta;
+        // load_data[1] = motor1.Tb;
+        // load_data[2] = motor1.Tc;
+        // load_data[3] = motor2.Ta;
+        // load_data[4] = motor2.Tb;
+        // load_data[5] = motor2.Tc;
         //         load_data[3] = motor1.Id;
         //         load_data[4] = motor1.Iq;
         //         load_data[5] = motor1.angle_el;
@@ -331,23 +400,31 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
         // load_data[1] = motor1.Ib;
         // load_data[2] = motor1.Ic;
 
-        // load_data[0] = motor1.Ia;
-        // load_data[1] = motor1.Ib;
-        // load_data[2] = motor1.Ic;
+        load_data[0] = motor1.Id;
+        load_data[1] = motor1.Iq;
 
-        // load_data[3] = motor2.Ia;
-        // load_data[4] = motor2.Ib;
-        // load_data[5] = motor2.Ic;
+        load_data[3] = motor2.Id;
+        load_data[4] = motor2.Iq;
 
+        //  load_data[3] = motor2.Ia;
+        //         load_data[4] = motor2.Ib;
+        //         load_data[5] = motor2.Ic;
         // load_data[3] = motor1.Ialpha;
         // load_data[4] = motor1.Ibeta;
 
-        // load_data[5] = motor1.Id;
-        // load_data[6] = motor1.Iq;
-
+        load_data[5] = motor2.target;
+        load_data[6] = motor2.Uq;
+        // load_data[6] = motor1.magEncoder.velocity;
+        load_data[7] = motor2.magEncoder.velocity;
         memcpy(tempData, (uint8_t *)&load_data, sizeof(load_data));
         HAL_UART_Transmit_DMA(&huart3, (uint8_t *)tempData, sizeof(tempData));
 #endif
     }
     HAL_GPIO_WritePin(TEST_GPIO_Port, TEST_Pin, GPIO_PIN_RESET);
+}
+
+void balancerControl()
+{
+    motor1.target = (&balancePid, 0 - imu.pit);
+    motor2.target = (&balancePid, 0 - imu.pit);
 }
