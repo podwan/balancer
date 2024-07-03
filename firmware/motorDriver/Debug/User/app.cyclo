@@ -4,5 +4,5 @@
 ../User/app.c:271:13:standingBy	3
 ../User/app.c:294:13:working	3
 ../User/app.c:324:6:txDataProcess	1
-../User/app.c:356:6:HAL_ADCEx_InjectedConvCpltCallback	3
-../User/app.c:426:6:balancerControl	1
+../User/app.c:352:6:HAL_ADCEx_InjectedConvCpltCallback	3
+../User/app.c:422:6:balancerControl	1

@@ -26,7 +26,7 @@
 
 #define CHANNEL 0
 
-#define POWER_LOW 3
+#define POWER_LOW 3.4
 
 #define L_Y 0
 #define L_X 4
@@ -51,10 +51,27 @@ extern bool deviceConnected;
 hw_timer_t *timer = NULL;
 int leftY, leftX, rightY, rightX;
 
+byte LX_zero = 127;
+byte LY_zero = 127;
+byte RX_zero = 127;
+byte RY_zero = 127;
+
 extern unsigned char bleBuff[10];
+
+int map_normal(int val, int lower, int middle, int upper, bool reverse) {
+  val = constrain(val, lower, upper);
+  if (val < middle)
+    val = map(val, lower, middle, 0, 127);
+  else
+    val = map(val, middle, upper, 127, 255);
+  return (reverse ? 255 - val : val);
+}
+
+
 static void IRAM_ATTR Timer0_CallBack(void) {
   static int _1000msCnt, _20msCnt, _10msCnt, _500msCnt, _100msCnt;
   _1ms = 1;
+
   if (++_1000msCnt >= 1000) {
     _1000msCnt = 0;
     _1000ms = 1;
@@ -84,7 +101,7 @@ void setup() {
 
   pinMode(POWER_EN, OUTPUT);
   pinMode(POWER_KEY, INPUT);
-
+  pinMode(9, OUTPUT);
   timer = timerBegin(0, 80, true);
   timerAttachInterrupt(timer, Timer0_CallBack, true);
   timerAlarmWrite(timer, 1000, true);  // 单位us,定时模式,10ms
@@ -92,12 +109,6 @@ void setup() {
 
   strip.begin();
   strip.setBrightness(10);
-
-  adcAttachPin(BAT_FB);
-
-  analogReadResolution(8);
-  // pinMode(L_X, ANALOG);
-  // adcAttachPin(L_X);
 
   ledcSetup(5, 4000, 10);
   ledcAttachPin(BEEPER, 5);
@@ -113,7 +124,7 @@ void setup() {
 
 static char rxIndex;
 void read_usart() {
-  int i = serial1.available();  //返回目前串口接收区内的已经接受的数据量
+  int i = serial1.available();  // 返回目前串口接收区内的已经接受的数据量
   if (i != 0) {
     if (i >= 10) {
       serial1.println("data too long");
@@ -124,13 +135,13 @@ void read_usart() {
     else {
       memset(bleBuff, 0, sizeof(bleBuff));
       while (i--) {
-        bleBuff[rxIndex++] = serial1.read();  //读取一个数据并且将它从缓存区删除
-                                              // serial1.print(temp);         //读取串口接收回来的数据但是不做处理只给与打印
+        bleBuff[rxIndex++] = serial1.read();  // 读取一个数据并且将它从缓存区删除
+                                              //  serial1.print(temp);         //读取串口接收回来的数据但是不做处理只给与打印
       }
       // toSend = 1;
       serial1.println((char *)bleBuff);
     }
-    //data_analyse();    //至关重要的一步，也就是把读取回来的数据进行分步截取直接拿到我们想要的数据，我下一篇博文会讲如何自己写这个函数
+    // data_analyse();    //至关重要的一步，也就是把读取回来的数据进行分步截取直接拿到我们想要的数据，我下一篇博文会讲如何自己写这个函数
   } else {
     rxIndex = 0;
     //   serial1.println("串口接收区没有数据！！！");
@@ -138,32 +149,36 @@ void read_usart() {
 }
 
 void loop() {
-  if (_500ms) {
-    _500ms = 0;
-  }
-
 
   if (_100ms) {
+    // analogReadResolution(8);
     _100ms = 0;
     memset(bleBuff, 0, sizeof(bleBuff));
     static bool zeroOffset;
-   static  int leftX_zero, leftY_zero, rightX_zero, rightY_zero;
+    static int leftX_zero, leftY_zero, rightX_zero, rightY_zero;
     if (zeroOffset == 0) {
-      for (int i = 0; i < 5; i++) {
+      // for (int i = 0; i < 5; i++) {
         leftX_zero = analogRead(L_X);
         leftY_zero = analogRead(L_Y);
         rightX_zero = analogRead(R_X);
         rightY_zero = analogRead(R_Y);
-      }
-      zeroOffset = 1;
+      // }
+     // zeroOffset = 1;
     }
-    leftX = analogRead(L_X) - leftX_zero;
-    leftY = analogRead(L_Y) - leftY_zero;
-    rightX = analogRead(R_X) - rightX_zero;
-    rightY = analogRead(R_Y) - rightY_zero;
- leftY = map(leftY, -150, 150, -100, 100);
-    serial1.printf("leftX %d, leftY %d, rightY %d, rightY %d\n", leftX, leftY, rightX, rightY);
-   
+    // leftX = analogRead(L_X) - leftX_zero;
+    // leftY = analogRead(L_Y) - leftY_zero;
+    // rightX = analogRead(R_X) - rightX_zero;
+    // rightY = analogRead(R_Y) - rightY_zero;
+
+    leftX = analogRead(L_X);
+    leftX = map(leftX, 0, 4095, 255, 0);
+    leftX_zero = map(leftX_zero, 0, 4095, 255, 0);
+    leftX_zero = map_normal(leftX_zero, 0, 127, 255, 0);
+    leftX = map_normal(leftX, 0, 111, 255, 0);
+    serial1.printf("zeroLeftX, %d leftX: %d\n", leftX_zero, leftX);
+    //  leftY = map(leftY, -150, 150, -100, 100);
+    // serial1.printf("leftX %d, leftY %d, rightY %d, rightY %d\n", leftX, leftY, rightX, rightY);
+
     // rawValue = analogRead(R_X);
     // rightX = map(rawValue, 348, 4095, 0, 100);
     // rawValue = analogRead(R_Y);
@@ -174,11 +189,14 @@ void loop() {
     bleBuff[2] = leftY;   //
     bleBuff[3] = rightX;  //
     bleBuff[4] = rightY;  //
-    //serial1.println((char *)bleBuff);
+    // serial1.println((char *)bleBuff);
     read_usart();
     blePolling();
   }
   if (_20ms) {
+    static bool tik;
+    tik = !tik;
+    digitalWrite(9, tik);
     _20ms = 0;
     beepPolling();
     //  digitalWrite(BLUE_LED, LOW); //
@@ -193,18 +211,30 @@ void loop() {
     digitalWrite(POWER_EN, HIGH);  //
   }
 
+  // if (powerLow) {  //红色灯闪烁
 
-  if (_10ms) {
+  // } else
+  if (deviceConnected == 0) {  // 蓝色灯闪烁
+    if (_500ms) {
+      _500ms = 0;
+      bool static on;
+      on = !on;
+      // beepOnce();
+      if (on)
+        strip.setLedColorData(0, m_color[2][0], m_color[2][1], m_color[2][2]);
 
-    _10ms = 0;
+      else
+        strip.setLedColorData(0, m_color[6][0], m_color[6][1], m_color[6][2]);
 
-    if (powerLow) {  //红色灯闪烁
+      strip.show();
 
+      //  serial1.println("hello");
+    }
+  } else {  // 七彩
 
-    } else if (deviceConnected == 0) {  //蓝色灯闪烁
+    if (_10ms) {
 
-
-    } else {  //七彩
+      _10ms = 0;
       static int j = 0;
       static int i = 0;
       if (i < RGB_COUNT) {
@@ -228,7 +258,7 @@ void loop() {
     if (!powerOff) {
       if (digitalRead(POWER_KEY) == 0) {
         if (++keyDownCnt >= 1000) {
-          powerOff = 1;
+          // powerOff = 1;
         }
       } else {
         keyDownCnt = 0;
@@ -237,7 +267,8 @@ void loop() {
   }
 
   if (_1000ms) {
-    //  beepOnce();
+    analogReadResolution(12);
+    // beepOnce();
     // bleBuff[0] = 0xA5;    // 包头
     // bleBuff[1] = leftX;   //
     // bleBuff[2] = leftY;   //
@@ -246,20 +277,19 @@ void loop() {
 
     // bleBuff[5] = 0x5A;  // 包尾
 
-
     // serial1.printf("%03d,%03d,%03d,%03d\n", bleBuff[1], bleBuff[2], bleBuff[3], bleBuff[4]);
 
     _1000ms = 0;
     // if (!powerOff)
     // {
     float voltage;
-    //   adcValue = analogRead(BAT_FB);
+    // uint adcValue = analogRead(BAT_FB);
+    // serial1.printf("%d\n", adcValue);
     voltage = analogReadMilliVolts(BAT_FB) / 1000.0f / 0.6f;
-    //  serial1.printf("voltage: %.1f\n", voltage);
+    serial1.printf("voltage: %.1f\n", voltage);
 
     if (voltage < POWER_LOW) {
       powerLow = 1;
-
     } else
       powerLow = 0;
   }

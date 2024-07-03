@@ -176,7 +176,7 @@ void appRunning()
 {
     _1s = getOneSecFlag();
     getKeyState(&keyState);
-    // commander_run(&motor1);
+     commander_run(&motor1);
     if (++flashCnt >= 10)
         flashCnt = 0;
 
@@ -323,7 +323,7 @@ static void working(void)
 
 void txDataProcess()
 {
-
+    sprintf(txBuffer, "ok\n");
     // if (_1s)
     // {
     //     static uchar cnt;
@@ -344,13 +344,9 @@ void txDataProcess()
     // sprintf(txBuffer, "accAngle.y : %.2f gyroAngle.y : %.2f\n", mpu6500.accAngle.y, mpu6500.gyroAngle.y);
 
     //  sprintf(txBuffer, "rawData1: %d,rawData2: %d\n", rawData1, rawData2);
-    sprintf(txBuffer, "pitch : %.2f,  wy: %.2f,  velocity1:%.2f, velocity2:%.2f \n", imu.pit, imu.wy, motor1.magEncoder.velocity, motor2.magEncoder.velocity);
+    // sprintf(txBuffer, "pitch : %.2f,  wy: %.2f,  velocity1:%.2f, velocity2:%.2f \n", imu.pit, imu.wy, motor1.magEncoder.velocity, motor2.magEncoder.velocity);
     // sprintf(txBuffer, "target:%.2f  velocity1:%.2f  Iq1:%.2f Id1:%.2f  velocity2:%.2f  Iq2:%.2f Id2:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Iq, motor1.Id, motor2.magEncoder.velocity, motor2.Iq, motor2.Id);
     // sprintf(txBuffer, "target:%.2f fullAngle:%.2f velocity:%.2f Uq:%.2f Ud:%.2f Iq:%.2f Id:%.2f elec_angle:%.2f\n", motor1.target, motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id, motor1.angle_el);
-    //  sprintf(txBuffer, "_1_fullAngle:%.2f _1_velocity:%.2f _2_fullAngle:%.2f _2_velocity:%.2f\n", motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor2.magEncoder.fullAngle, motor2.magEncoder.velocity);
-    //   sprintf(txBuffer, "target:%.2f  velocity:%.2f  Uq:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Uq);
-    //   sprintf(txBuffer, "target:%.2f,velocity:%.2f,Uq%.2f,Ud%.2f,Iq:%.2f,Id:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id);
-    //   sprintf(txBuffer, "offset_ia:%f offset_ib:%f, Ia:%f, Ib:%f\n", motor1.offset_ia, motor1.offset_ib, motor1.Ia, motor1.Ib);
 }
 
 void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)

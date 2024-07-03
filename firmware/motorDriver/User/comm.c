@@ -10,12 +10,13 @@ bool toProcessData;
 uint8_t aRxBuffer;
 float comm1, comm2, comm3, comm4, comm5, comm6, comm7, comm8, comm9, comm10, comm11;
 
+
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
-  if (huart == &huart3)
+  if (huart == &huart2)
   {
     // HAL_UART_Transmit_DMA(&huart3, rxBuffer, Size);
-    HAL_UARTEx_ReceiveToIdle_DMA(&huart3, rxBuffer, sizeof(rxBuffer));
+    HAL_UARTEx_ReceiveToIdle_DMA(&huart2, rxBuffer, sizeof(rxBuffer));
     toProcessData = 1;
   }
 }
@@ -23,14 +24,6 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 // DMA模式
 void printLog(const char *format, ...)
 {
-
-  // uint32_t length;
-  // va_list args;
-
-  // va_start(args, format);
-  // length = vsnprintf((char *)txBuffer, sizeof(txBuffer), (char *)format, args);
-  // va_end(args);
-  // HAL_UART_Transmit_DMA(&huart3, (const char *)txBuffer, length);
 
   va_list args;           // 定义参数列表变量
   va_start(args, format); // 从format位置开始接收参数表，放在arg里面
@@ -46,22 +39,11 @@ void printLog(const char *format, ...)
   }
   HAL_UART_Transmit(&huart3, (uint8_t *)strBuf, strlen(strBuf), 1000);
 }
-void t_log(const char *s)
-{
-  strcpy(txBuffer, s);
-
-  HAL_UART_Transmit_DMA(&huart3, (uint8_t *)txBuffer, sizeof(txBuffer));
-}
-
-// void _dbg_printf(const char *format, ...)
+// void t_log(const char *s)
 // {
-//   uint32_t length;
-//   va_list args;
+//   strcpy(txBuffer, s);
 
-//   va_start(args, format);
-//   length = vsnprintf((char *)txBuffer, sizeof(txBuffer), (char *)format, args);
-//   va_end(args);
-//   HAL_UART_Transmit_DMA(&huart3, (const char *)txBuffer, length);
+//   HAL_UART_Transmit_DMA(&huart3, (uint8_t *)txBuffer, sizeof(txBuffer));
 // }
 
 void uartTx()
@@ -69,8 +51,9 @@ void uartTx()
 
 #if SHOW_WAVE == 0
   txDataProcess();
-  HAL_UART_Transmit_DMA(&huart3, (uint8_t *)txBuffer, sizeof(txBuffer));
- // memset(txBuffer, 0, sizeof(txBuffer));
+  HAL_UART_Transmit_DMA(&huart2, (uint8_t *)txBuffer, 10);
+  // HAL_UART_Transmit_DMA(&huart3, (uint8_t *)txBuffer, 10);
+  // HAL_UART_Transmit_DMA(&huart3, (uint8_t *)txBuffer, sizeof(txBuffer));
 #endif
 }
 
@@ -79,7 +62,7 @@ void commander_run(BldcMotor *motor)
   if (toProcessData == 1)
   {
     // memset(txBuffer, '\0', sizeof(txBuffer));
-
+    printLog(rxBuffer);
     switch (rxBuffer[0])
     {
     case 'H':

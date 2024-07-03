@@ -24,17 +24,54 @@
 #define BAT_FB 3
 
 // #define CHANNEL 0
-
+char rxBuff[15];
 // Freenove_ESP32_WS2812 strip = Freenove_ESP32_WS2812(RGB_COUNT, RGB, CHANNEL, TYPE_GRB);
 
 HardwareSerial serial1(1);
+HardwareSerial serial0(0);
 
-static bool _1000ms, _1ms, powerOff, _20ms, _10ms;
+static bool _1000ms, _1ms, powerOff, _20ms, _10ms, _500ms;
 hw_timer_t *timer = NULL;
 
+
+static char rxIndex;
+void read_usart() {
+  int i = serial0.available();  //返回目前串口接收区内的已经接受的数据量
+  if (i != 0) {
+       beepOnce();
+    if (i >= 12) {
+      serial1.println("data too long");
+      serial0.flush(0);
+    }
+    // serial1.print("串口接收到的数据量为:");
+    // serial1.println(serial1.available());
+    else {
+   
+      memset(rxBuff, 0, sizeof(rxBuff));
+      while (i--) {
+        rxBuff[rxIndex++] = serial0.read();  //读取一个数据并且将它从缓存区删除
+                                             // serial1.print(temp);         //读取串口接收回来的数据但是不做处理只给与打印
+      }
+      // toSend = 1;
+      serial1.println((char *)rxBuff);
+          rxIndex = 0;
+    }
+    //data_analyse();    //至关重要的一步，也就是把读取回来的数据进行分步截取直接拿到我们想要的数据，我下一篇博文会讲如何自己写这个函数
+  } else {
+    rxIndex = 0;
+    //   serial1.println("串口接收区没有数据！！！");
+  }
+}
+
 static void IRAM_ATTR Timer0_CallBack(void) {
-  static int _1000msCnt, _20msCnt, _10msCnt;
+  static int _1000msCnt, _20msCnt, _10msCnt, _500msCnt;
   _1ms = 1;
+
+  if (++_500msCnt >= 500) {
+    _500msCnt = 0;
+    _500ms = 1;
+  }
+
   if (++_1000msCnt >= 1000) {
     _1000msCnt = 0;
     _1000ms = 1;
@@ -54,6 +91,7 @@ static void uart1_init(void);
 void setup() {
   // uart1_init();
   serial1.begin(115200, SERIAL_8N1, 20, 21);
+  serial0.begin(115200, SERIAL_8N1, 18, 19);
   pinMode(POWER_EN, OUTPUT);
   pinMode(YELLOW_LED, OUTPUT);
   pinMode(BLUE_LED, OUTPUT);
@@ -68,16 +106,14 @@ void setup() {
   pinMode(KEY, INPUT_PULLUP);
   adcAttachPin(BAT_FB);
   analogSetPinAttenuation(BAT_FB, ADC_ATTENDB_MAX);
-  // strip.begin();
-  // strip.setBrightness(20);
+
   // RGB
   strip.begin();                    // INITIALIZE NeoPixel strip object (REQUIRED)
   strip.show();                     // Turn OFF all pixels ASAP
   strip.setBrightness(brightness);  // Set BRIGHTNESS to about 1/5 (max = 255)
   delay(100);
   digitalWrite(POWER_EN, HIGH);  //
-  // digitalWrite(GREEN_LED, HIGH);  //
-  // digitalWrite(BAT_EN, HIGH);     //
+
   // Init BLE device
   bleInit();
 
@@ -86,7 +122,11 @@ void setup() {
 }
 
 void loop() {
-  // digitalWrite(POWER_EN, LOW);
+  if (_500ms) {
+    _500ms = 0;
+    read_usart();
+
+  }
 
 
   // delay(1000); // Delay a second between loops.
@@ -102,6 +142,8 @@ void loop() {
 
   if (_1000ms) {
     _1000ms = 0;
+    serial0.println("hello");
+      //  beepOnce();
     uint adcValue, voltage;
     adcValue = analogRead(BAT_FB);
     voltage = analogReadMilliVolts(BAT_FB);
@@ -138,6 +180,5 @@ void loop() {
   if (_10ms) {
     _10ms = 0;
     rainbow2();
-    //rainbow1();
   }
 }

@@ -3,6 +3,6 @@
 ../User/app.c:175:6:appRunning	8	static
 ../User/app.c:271:13:standingBy	8	static
 ../User/app.c:294:13:working	4	static
-../User/app.c:324:6:txDataProcess	56	static
-../User/app.c:356:6:HAL_ADCEx_InjectedConvCpltCallback	16	static
-../User/app.c:426:6:balancerControl	4	static
+../User/app.c:324:6:txDataProcess	8	static
+../User/app.c:352:6:HAL_ADCEx_InjectedConvCpltCallback	16	static
+../User/app.c:422:6:balancerControl	4	static
