@@ -1,6 +1,4 @@
-#ifndef MAPDATA_H
-#define MAPDATA_H
-
+#include "joystick.h"
 #include <EEPROM.h>
 #define EEPROM_SIZE 9
 
@@ -21,9 +19,6 @@
 #define RS 19
 
 
-
-
-int buttons[2] = {LS,RS};
 
 
 const int numberOfPotSamples = 5;     // Number of pot samples to take (to smooth the values)
@@ -55,11 +50,7 @@ int invert_counter = 0;
 float voltage = 3.00;
 int percentage = 0;
 
-void pinmode_pullup(){
-  for (int i = 0; i < 7; i++) {
-    pinMode(buttons[i], INPUT_PULLUP);
-  }
-}
+
 
   
 /**************************************************/
@@ -165,7 +156,7 @@ void zero_test(){   //摇杆原点纠偏程序
   Serial.print(" RY_zero: ");Serial.println(EEPROM.read(4));  
 }
   
-void eeprom_ini(){ 
+void eeprom_init(){ 
   EEPROM.begin(EEPROM_SIZE);
    
   if( EEPROM.read(0) != 55){     //判断是否首次使用（新的所有地址貌似是255的值）
@@ -183,5 +174,3 @@ void eeprom_ini(){
   
 }
 
-
-#endif 

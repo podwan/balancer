@@ -8,13 +8,15 @@
 #include <BLEDevice.h>
 #include "Freenove_WS2812_Lib_for_ESP32.h"
 #include "ble.h"
-#include <Joystick.h>
+#include "joystick.h"
 #include "esp32-hal-gpio.h"
 #include "driver/adc.h"
 #include "esp32-hal-adc.h"
 #include "beeper.h"
+#include "key.h"
+
 #define POWER_EN 18
-#define POWER_KEY 10
+
 #define R_STICK_BUTTON 19
 #define BAT_FB 3
 #define RU_SWITCH 0
@@ -46,32 +48,21 @@ int delayval = 100;
 Freenove_ESP32_WS2812 strip = Freenove_ESP32_WS2812(RGB_COUNT, RGB, CHANNEL, TYPE_GRB);
 static bool toSend;
 HardwareSerial serial1(1);
-static bool _1000ms, _1ms, powerOff, _20ms, _10ms, powerLow, _500ms, _100ms;
+static bool _1000ms, _1ms, powerOff, _20ms, _10ms, powerLow, _500ms, _100ms, _5ms;
 extern bool deviceConnected;
 hw_timer_t *timer = NULL;
 int leftY, leftX, rightY, rightX;
 
-byte LX_zero = 127;
-byte LY_zero = 127;
-byte RX_zero = 127;
-byte RY_zero = 127;
-
 extern unsigned char bleBuff[10];
 
-int map_normal(int val, int lower, int middle, int upper, bool reverse) {
-  val = constrain(val, lower, upper);
-  if (val < middle)
-    val = map(val, lower, middle, 0, 127);
-  else
-    val = map(val, middle, upper, 127, 255);
-  return (reverse ? 255 - val : val);
-}
-
-
 static void IRAM_ATTR Timer0_CallBack(void) {
-  static int _1000msCnt, _20msCnt, _10msCnt, _500msCnt, _100msCnt;
+  static int _1000msCnt, _20msCnt, _10msCnt, _500msCnt, _100msCnt, _5msCnt;
   _1ms = 1;
 
+  if (++_5msCnt >= 5) {
+    _5msCnt = 0;
+    _5ms = 1;
+  }
   if (++_1000msCnt >= 1000) {
     _1000msCnt = 0;
     _1000ms = 1;
@@ -98,7 +89,7 @@ static void IRAM_ATTR Timer0_CallBack(void) {
 void setup() {
   // Start serial communication
   serial1.begin(115200, SERIAL_8N1, 20, 21);
-
+  eeprom_init();
   pinMode(POWER_EN, OUTPUT);
   pinMode(POWER_KEY, INPUT);
   pinMode(9, OUTPUT);
@@ -118,6 +109,9 @@ void setup() {
   if (digitalRead(POWER_KEY) == 1)
     return;
   pinMode(POWER_KEY, INPUT_PULLUP);
+
+  pinMode(L_BUTTON, INPUT_PULLUP);
+  pinMode(R_BUTTON, INPUT_PULLUP);
   bleInit();
   serial1.println("MCU init done\n");
 }
@@ -149,57 +143,40 @@ void read_usart() {
 }
 
 void loop() {
-
+  static KeyState keyState;
   if (_100ms) {
-    // analogReadResolution(8);
     _100ms = 0;
+
+    getKeyState(&keyState);
     memset(bleBuff, 0, sizeof(bleBuff));
-    static bool zeroOffset;
-    static int leftX_zero, leftY_zero, rightX_zero, rightY_zero;
-    if (zeroOffset == 0) {
-      // for (int i = 0; i < 5; i++) {
-        leftX_zero = analogRead(L_X);
-        leftY_zero = analogRead(L_Y);
-        rightX_zero = analogRead(R_X);
-        rightY_zero = analogRead(R_Y);
-      // }
-     // zeroOffset = 1;
+
+    read_joydata();
+
+    if (keyState == DUAL_LONG) {
+      beepSet(1, 25, 25);
+      zero_test();
+    } else if (keyState == POWER_LONG) {
+      beepSet(1, 25, 25);
+      powerOff = 1;
+    } else if (keyState == L_BUTTON_SHORT) {
+      beepOnce();
+    } else if (keyState == R_BUTTON_SHORT) {
+      beepOnce();
     }
-    // leftX = analogRead(L_X) - leftX_zero;
-    // leftY = analogRead(L_Y) - leftY_zero;
-    // rightX = analogRead(R_X) - rightX_zero;
-    // rightY = analogRead(R_Y) - rightY_zero;
-
-    leftX = analogRead(L_X);
-    leftX = map(leftX, 0, 4095, 255, 0);
-    leftX_zero = map(leftX_zero, 0, 4095, 255, 0);
-    leftX_zero = map_normal(leftX_zero, 0, 127, 255, 0);
-    leftX = map_normal(leftX, 0, 111, 255, 0);
-    serial1.printf("zeroLeftX, %d leftX: %d\n", leftX_zero, leftX);
-    //  leftY = map(leftY, -150, 150, -100, 100);
-    // serial1.printf("leftX %d, leftY %d, rightY %d, rightY %d\n", leftX, leftY, rightX, rightY);
-
-    // rawValue = analogRead(R_X);
-    // rightX = map(rawValue, 348, 4095, 0, 100);
-    // rawValue = analogRead(R_Y);
-    // rightY = map(rawValue, 348, 4095, 0, 100);
-    // serial1.printf("rightX %d, righttY %d\n", rightX, rightY);
-    bleBuff[0] = 'J';     //
-    bleBuff[1] = leftX;   //
-    bleBuff[2] = leftY;   //
-    bleBuff[3] = rightX;  //
-    bleBuff[4] = rightY;  //
-    // serial1.println((char *)bleBuff);
+    serial1.printf("LX %d LY %d RX %d RY %d\n", LX_read, LY_read, RX_read, RY_read);
+    // serial1.printf("keyState: %d\n", keyFlags);
+    //  serial1.println((char *)bleBuff);
     read_usart();
     blePolling();
   }
   if (_20ms) {
-    static bool tik;
-    tik = !tik;
-    digitalWrite(9, tik);
     _20ms = 0;
     beepPolling();
-    //  digitalWrite(BLUE_LED, LOW); //
+  }
+
+  if (_5ms) {
+    _5ms = 0;
+    keyScan();
   }
 
   if (powerOff) {
@@ -252,19 +229,7 @@ void loop() {
     }
   }
 
-  if (_1ms) {
-    _1ms = 0;
-    static int keyDownCnt;
-    if (!powerOff) {
-      if (digitalRead(POWER_KEY) == 0) {
-        if (++keyDownCnt >= 1000) {
-          // powerOff = 1;
-        }
-      } else {
-        keyDownCnt = 0;
-      }
-    }
-  }
+
 
   if (_1000ms) {
     analogReadResolution(12);
