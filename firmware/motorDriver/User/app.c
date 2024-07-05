@@ -323,7 +323,7 @@ static void working(void)
 
 void txDataProcess()
 {
-    sprintf(txBuffer, "ok\n");
+  //  sprintf(txBuffer, "ok\n");
     // if (_1s)
     // {
     //     static uchar cnt;
@@ -345,7 +345,7 @@ void txDataProcess()
 
     //  sprintf(txBuffer, "rawData1: %d,rawData2: %d\n", rawData1, rawData2);
     // sprintf(txBuffer, "pitch : %.2f,  wy: %.2f,  velocity1:%.2f, velocity2:%.2f \n", imu.pit, imu.wy, motor1.magEncoder.velocity, motor2.magEncoder.velocity);
-    // sprintf(txBuffer, "target:%.2f  velocity1:%.2f  Iq1:%.2f Id1:%.2f  velocity2:%.2f  Iq2:%.2f Id2:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Iq, motor1.Id, motor2.magEncoder.velocity, motor2.Iq, motor2.Id);
+     sprintf(txBuffer, "target:%.2f  velocity1:%.2f  Iq1:%.2f Id1:%.2f  velocity2:%.2f  Iq2:%.2f Id2:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Iq, motor1.Id, motor2.magEncoder.velocity, motor2.Iq, motor2.Id);
     // sprintf(txBuffer, "target:%.2f fullAngle:%.2f velocity:%.2f Uq:%.2f Ud:%.2f Iq:%.2f Id:%.2f elec_angle:%.2f\n", motor1.target, motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id, motor1.angle_el);
 }
 
@@ -396,11 +396,11 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
         // load_data[1] = motor1.Ib;
         // load_data[2] = motor1.Ic;
 
-        load_data[0] = motor1.Id;
-        load_data[1] = motor1.Iq;
+        // load_data[0] = motor1.Id;
+        // load_data[1] = motor1.Iq;
 
-        load_data[3] = motor2.Id;
-        load_data[4] = motor2.Iq;
+        // load_data[3] = motor2.Id;
+        // load_data[4] = motor2.Iq;
 
         //  load_data[3] = motor2.Ia;
         //         load_data[4] = motor2.Ib;
@@ -408,12 +408,12 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
         // load_data[3] = motor1.Ialpha;
         // load_data[4] = motor1.Ibeta;
 
-        load_data[5] = motor2.target;
-        load_data[6] = motor2.Uq;
-        // load_data[6] = motor1.magEncoder.velocity;
-        load_data[7] = motor2.magEncoder.velocity;
-        memcpy(tempData, (uint8_t *)&load_data, sizeof(load_data));
-        HAL_UART_Transmit_DMA(&huart3, (uint8_t *)tempData, sizeof(tempData));
+        // load_data[5] = motor2.target;
+        // load_data[6] = motor2.Uq;
+        // // load_data[6] = motor1.magEncoder.velocity;
+        // load_data[7] = motor2.magEncoder.velocity;
+        // memcpy(tempData, (uint8_t *)&load_data, sizeof(load_data));
+        // HAL_UART_Transmit_DMA(&huart3, (uint8_t *)tempData, sizeof(tempData));
 #endif
     }
     HAL_GPIO_WritePin(TEST_GPIO_Port, TEST_Pin, GPIO_PIN_RESET);

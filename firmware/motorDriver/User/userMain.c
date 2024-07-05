@@ -59,7 +59,7 @@ void userMain(void)
 			mpu_get_data();
 			imu_ahrs_update();
 			imu_attitude_update();
-			balancerControl();
+			// balancerControl();
 		}
 	}
 

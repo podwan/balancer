@@ -52,7 +52,7 @@ static bool _1000ms, _1ms, powerOff, _20ms, _10ms, powerLow, _500ms, _100ms, _5m
 extern bool deviceConnected;
 hw_timer_t *timer = NULL;
 int leftY, leftX, rightY, rightX;
-
+  DataPackage dataPackage;
 extern unsigned char bleBuff[10];
 
 static void IRAM_ATTR Timer0_CallBack(void) {
@@ -144,6 +144,9 @@ void read_usart() {
 
 void loop() {
   static KeyState keyState;
+ 
+
+
   if (_100ms) {
     _100ms = 0;
 

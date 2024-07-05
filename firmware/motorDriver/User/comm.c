@@ -10,7 +10,6 @@ bool toProcessData;
 uint8_t aRxBuffer;
 float comm1, comm2, comm3, comm4, comm5, comm6, comm7, comm8, comm9, comm10, comm11;
 
-
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
   if (huart == &huart2)
@@ -51,9 +50,9 @@ void uartTx()
 
 #if SHOW_WAVE == 0
   txDataProcess();
-  HAL_UART_Transmit_DMA(&huart2, (uint8_t *)txBuffer, 10);
+  // HAL_UART_Transmit_DMA(&huart2, (uint8_t *)txBuffer, 10);
   // HAL_UART_Transmit_DMA(&huart3, (uint8_t *)txBuffer, 10);
-  // HAL_UART_Transmit_DMA(&huart3, (uint8_t *)txBuffer, sizeof(txBuffer));
+  HAL_UART_Transmit_DMA(&huart3, (uint8_t *)txBuffer, sizeof(txBuffer));
 #endif
 }
 

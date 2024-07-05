@@ -5,6 +5,7 @@
 #include "BLEDevice.h"
 #include "driver/uart.h"
 #include "ble.h"
+extern DataPackage dataPackage;
 unsigned char bleBuff[10];
 extern HardwareSerial serial1;
 
@@ -58,11 +59,11 @@ void blePolling() {
     // serial1.printf("connected\n");
 
     //  if (toSend) {
- 
+
     //   txCharacteristics.setValue(rxBuff, rxIndex);
     // } else {
- 
-      txCharacteristics.setValue(bleBuff, 10);
+
+    txCharacteristics.setValue((uint8_t *)&dataPackage, sizeof(dataPackage));
     // }
 
 
