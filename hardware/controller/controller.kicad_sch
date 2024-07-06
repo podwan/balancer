@@ -2236,151 +2236,6 @@
 				)
 			)
 		)
-		(symbol "Switch:SW_Push"
-			(pin_numbers hide)
-			(pin_names
-				(offset 1.016) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "SW"
-				(at 1.27 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "SW_Push"
-				(at 0 -1.524 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Push button switch, generic, two pins"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "switch normally-open pushbutton push-button"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SW_Push_0_1"
-				(circle
-					(center -2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.27) (xy 0 3.048)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 1.27) (xy -2.54 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "bat_rf:AO3401"
 			(pin_numbers hide)
 			(pin_names
@@ -3983,6 +3838,186 @@
 				)
 			)
 		)
+		(symbol "espController:TC-1102N-C-AS-B"
+			(pin_numbers hide)
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 0 4.064 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TC-1102N-C-AS-B"
+				(at 0 9.144 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "espController:SW-TH_TC-1102N-C-AS-B"
+				(at 0 -1.016 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.szlcsc.com/product/details_393914.html"
+				(at 0 -6.096 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "C406151"
+				(at 0 -11.176 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "uuid" "std:62ddec029f9448109c55e50d5022673b"
+				(at 0 -11.176 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TC-1102N-C-AS-B_1_1"
+				(circle
+					(center -2.032 0)
+					(radius 0.381)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -2.54) (xy 2.54 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 1.524) (xy 2.286 0.508)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.381)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 5.08 -2.54 180)
+					(length 2.54)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -5.08 -2.54 0)
+					(length 2.54)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "espController:TP4059"
 			(pin_names
 				(offset 1.016)
@@ -4955,6 +4990,22 @@
 	(no_connect
 		(at 52.07 49.53)
 		(uuid "384d3902-7873-4a95-8a02-9be0247da4a3")
+	)
+	(no_connect
+		(at 120.65 88.9)
+		(uuid "5b9730bb-9716-4652-9828-cdd620ab07dd")
+	)
+	(no_connect
+		(at 135.89 99.06)
+		(uuid "63ef8e62-c2bc-4f58-a189-a9ee6d572d9f")
+	)
+	(no_connect
+		(at 120.65 99.06)
+		(uuid "736e32f9-f9c2-497e-8447-6be212199070")
+	)
+	(no_connect
+		(at 135.89 88.9)
+		(uuid "85dbda0f-5a67-476c-adb3-74d9c732806b")
 	)
 	(wire
 		(pts
@@ -6802,13 +6853,13 @@
 		(uuid "e6983c9e-40e7-459b-8dd8-6f73e5e3f244")
 	)
 	(label "IO3"
-		(at 133.35 88.9 0)
+		(at 133.35 88.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "ebacf79c-7fa3-4509-9ae2-0beb44399499")
 	)
@@ -7087,76 +7138,6 @@
 			(project "controller"
 				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
 					(reference "H3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 118.11 93.98 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "104d0208-ffd4-412c-897f-478caa170654")
-		(property "Reference" "SW4"
-			(at 119.38 92.7099 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "SW_Push"
-			(at 119.38 95.2499 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 113.03 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 113.03 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 118.11 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "bd1f461b-bdb6-46a4-b559-bc231698b71c")
-		)
-		(pin "2"
-			(uuid "ec92d6cd-0aac-46ef-8d19-f934f31a266f")
-		)
-		(instances
-			(project "controller"
-				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
-					(reference "SW4")
 					(unit 1)
 				)
 			)
@@ -8518,6 +8499,89 @@
 			(project "controller"
 				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
 					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "espController:TC-1102N-C-AS-B")
+		(at 133.35 93.98 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "469dc38c-d424-450b-8adb-5a4a69044f75")
+		(property "Reference" "SW4"
+			(at 129.54 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TC-1102N-C-AS-B"
+			(at 129.54 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "espController:SW-TH_TC-1102N-C-AS-B"
+			(at 134.366 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.szlcsc.com/product/details_393914.html"
+			(at 139.446 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "C406151"
+			(at 144.526 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "uuid" "std:62ddec029f9448109c55e50d5022673b"
+			(at 144.526 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "c129fe7f-8e60-4942-82ba-05b04a7a3fa8")
+		)
+		(pin "3"
+			(uuid "c7228ce7-06ea-4d34-b09d-8905955d05f7")
+		)
+		(pin "2"
+			(uuid "5fda39dc-fabf-441f-a980-46dd963b7f92")
+		)
+		(pin "1"
+			(uuid "e1585f58-9264-4b30-9f70-60ae3013fef5")
+		)
+		(instances
+			(project "controller"
+				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
+					(reference "SW4")
 					(unit 1)
 				)
 			)
@@ -9992,6 +10056,89 @@
 			(project "controller"
 				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
 					(reference "SW3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "espController:TC-1102N-C-AS-B")
+		(at 118.11 93.98 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "87c3aeac-0c63-4cbf-bbbe-1c023a6928a1")
+		(property "Reference" "SW7"
+			(at 114.3 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TC-1102N-C-AS-B"
+			(at 114.3 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "espController:SW-TH_TC-1102N-C-AS-B"
+			(at 119.126 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.szlcsc.com/product/details_393914.html"
+			(at 124.206 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "C406151"
+			(at 129.286 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "uuid" "std:62ddec029f9448109c55e50d5022673b"
+			(at 129.286 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "7bebccc6-3eb0-48ce-8c05-eab3d8dff3b5")
+		)
+		(pin "3"
+			(uuid "68734f38-f4ed-4c79-9427-aa9604e14bac")
+		)
+		(pin "2"
+			(uuid "44e9d71c-3977-4d5d-9c06-e497ce4cedba")
+		)
+		(pin "1"
+			(uuid "bb622c49-0a7a-4787-beb4-ddb0d8e817e2")
+		)
+		(instances
+			(project "controller"
+				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
+					(reference "SW7")
 					(unit 1)
 				)
 			)
@@ -12838,76 +12985,6 @@
 			(project "controller"
 				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
 					(reference "BUZZER2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 133.35 93.98 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fbcf0428-fd0c-4e5a-bd50-2732c9ca8655")
-		(property "Reference" "SW6"
-			(at 134.62 92.7099 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "SW_Push"
-			(at 134.62 95.2499 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 128.27 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 128.27 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 133.35 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d8071434-75de-4451-8122-7d4c349b3a47")
-		)
-		(pin "2"
-			(uuid "149f5ab9-8787-4ea6-9153-58b4f15a8614")
-		)
-		(instances
-			(project "controller"
-				(path "/ac6122ee-da02-46ca-bfd7-d634b1b1f53e"
-					(reference "SW6")
 					(unit 1)
 				)
 			)

@@ -39,9 +39,9 @@ int LY_to_send = 0;
 int RX_to_send = 0;
 int RY_to_send = 0;
 
-bool LY_inverted = false; 
+bool LY_inverted = true; 
 bool LX_inverted = false; 
-bool RY_inverted = false; 
+bool RY_inverted = true; 
 bool RX_inverted = false; 
 
 int counter = 0;
@@ -117,6 +117,21 @@ void read_joydata(){
     }
     potValue4 = potValue4 / numberOfPotSamples;
     RY_read = map(potValue4, 0, 4095, 255, 0);
+
+
+    /*********************************************************************************************/
+
+  LX_to_send = map_normal(LX_read, 0, LX_zero, 255, LX_inverted);    
+  LY_to_send = map_normal(LY_read, 0, LY_zero, 255, LY_inverted);     
+  RX_to_send = map_normal(RX_read, 0, RX_zero, 255, RX_inverted);    
+  RY_to_send = map_normal(RY_read, 0, RY_zero, 255, RY_inverted);    
+  
+/*********************************************************************************************/  
+     
+  LX_to_send = constrain(LX_to_send,0,255);
+  LY_to_send = constrain(LY_to_send,0,255);
+  RX_to_send = constrain(RX_to_send,0,255);  
+  RY_to_send = constrain(RY_to_send,0,255);
 }
 
 
@@ -125,10 +140,10 @@ void zero_test(){   //摇杆原点纠偏程序
   read_joydata();
   delay (300);
   
-  LX_to_send = map_normal(LX_read, 0, 127, 255, 0);    
-  LY_to_send = map_normal(LY_read, 0, 127, 255, 0);     
-  RX_to_send = map_normal(RX_read, 0, 127, 255, 0);    
-  RY_to_send = map_normal(RY_read, 0, 127, 255, 0);
+  LX_to_send = map_normal(LX_read, 0, 127, 255, LX_inverted);    
+  LY_to_send = map_normal(LY_read, 0, 127, 255, LY_inverted);     
+  RX_to_send = map_normal(RX_read, 0, 127, 255, RX_inverted);    
+  RY_to_send = map_normal(RY_read, 0, 127, 255, RY_inverted);
        
   LX_to_send = constrain(LX_to_send,0,255);
   LY_to_send = constrain(LY_to_send,0,255);

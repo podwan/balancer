@@ -30,7 +30,7 @@ char rxBuff[15];
 HardwareSerial serial1(1);
 HardwareSerial serial0(0);
 
-static bool _1000ms, _1ms, powerOff, _20ms, _10ms, _500ms;
+static bool _1000ms, _1ms, powerOff, _20ms, _10ms, _500ms, _100ms;
 hw_timer_t *timer = NULL;
 
 
@@ -38,7 +38,7 @@ static char rxIndex;
 void read_usart() {
   int i = serial0.available();  //返回目前串口接收区内的已经接受的数据量
   if (i != 0) {
-       beepOnce();
+    beepOnce();
     if (i >= 12) {
       serial1.println("data too long");
       serial0.flush(0);
@@ -46,7 +46,7 @@ void read_usart() {
     // serial1.print("串口接收到的数据量为:");
     // serial1.println(serial1.available());
     else {
-   
+
       memset(rxBuff, 0, sizeof(rxBuff));
       while (i--) {
         rxBuff[rxIndex++] = serial0.read();  //读取一个数据并且将它从缓存区删除
@@ -54,7 +54,7 @@ void read_usart() {
       }
       // toSend = 1;
       serial1.println((char *)rxBuff);
-          rxIndex = 0;
+      rxIndex = 0;
     }
     //data_analyse();    //至关重要的一步，也就是把读取回来的数据进行分步截取直接拿到我们想要的数据，我下一篇博文会讲如何自己写这个函数
   } else {
@@ -64,7 +64,7 @@ void read_usart() {
 }
 
 static void IRAM_ATTR Timer0_CallBack(void) {
-  static int _1000msCnt, _20msCnt, _10msCnt, _500msCnt;
+  static int _1000msCnt, _20msCnt, _10msCnt, _500msCnt, _100msCnt;
   _1ms = 1;
 
   if (++_500msCnt >= 500) {
@@ -85,6 +85,11 @@ static void IRAM_ATTR Timer0_CallBack(void) {
   if (++_10msCnt >= 10) {
     _10msCnt = 0;
     _10ms = 1;
+  }
+
+  if (++_100msCnt >= 100) {
+    _100msCnt = 0;
+    _100ms = 1;
   }
 }
 static void uart1_init(void);
@@ -125,7 +130,6 @@ void loop() {
   if (_500ms) {
     _500ms = 0;
     read_usart();
-
   }
 
 
@@ -143,7 +147,7 @@ void loop() {
   if (_1000ms) {
     _1000ms = 0;
     serial0.println("hello");
-      //  beepOnce();
+    //  beepOnce();
     uint adcValue, voltage;
     adcValue = analogRead(BAT_FB);
     voltage = analogReadMilliVolts(BAT_FB);
@@ -180,5 +184,11 @@ void loop() {
   if (_10ms) {
     _10ms = 0;
     rainbow2();
+  }
+
+
+  if (_100ms) {
+    _100ms = 0;
+    // if()
   }
 }

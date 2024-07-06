@@ -5,6 +5,8 @@
 #include "BLEDevice.h"
 #include "driver/uart.h"
 #include "ble.h"
+#include "joystick.h"
+extern bool toSendCMD;
 extern DataPackage dataPackage;
 unsigned char bleBuff[10];
 extern HardwareSerial serial1;
@@ -28,17 +30,18 @@ class MyServerCallbacks : public BLEServerCallbacks {
 };
 
 BLECharacteristic *pTxCharacteristic;
-
+BLEServer *pServer;
+BLEService *bmeService;
 void bleInit() {
   // Create the BLE Device
   BLEDevice::init(bleServerName);
 
   // Create the BLE Server
-  BLEServer *pServer = BLEDevice::createServer();
+  pServer = BLEDevice::createServer();
   pServer->setCallbacks(new MyServerCallbacks());
 
   // Create the BLE Service
-  BLEService *bmeService = pServer->createService(SERVICE_UUID);
+  bmeService = pServer->createService(SERVICE_UUID);
 
   bmeService->addCharacteristic(&txCharacteristics);
   txDescriptor.setValue("joyStick");
@@ -56,18 +59,25 @@ void bleInit() {
 
 void blePolling() {
   if (deviceConnected) {
-    // serial1.printf("connected\n");
+    serial1.printf("connected\n");
 
-    //  if (toSend) {
+    if (toSendCMD) {
 
-    //   txCharacteristics.setValue(rxBuff, rxIndex);
-    // } else {
+      serial1.printf("send %s\n", bleBuff);
+      txCharacteristics.setValue((uint8_t *)&bleBuff, sizeof(bleBuff));
+      toSendCMD = 0;
+    }
 
-    txCharacteristics.setValue((uint8_t *)&dataPackage, sizeof(dataPackage));
-    // }
+    else {
+      dataPackage.firstByte = 'J';
+      txCharacteristics.setValue((uint8_t *)&dataPackage, sizeof(dataPackage));
+    }
 
-
+    // serial1.printf("send data length%d\n", sizeof(dataPackage));
     txCharacteristics.notify();
   } else {
+
+    pServer->getAdvertising()->start();
+    serial1.println("Waiting a client connection to notify...");
   }
 }

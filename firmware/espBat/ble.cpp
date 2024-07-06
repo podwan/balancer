@@ -3,9 +3,9 @@
 #include "BLEDevice.h"
 #include "driver/uart.h"
 
-
-
-extern HardwareSerial serial1;
+bool gotData;
+DataPackage dataPackage;
+extern HardwareSerial serial1, serial0;
 static boolean connected = false;
 static boolean doScan = false;
 /* UUID's of the service, characteristic that we want to read*/
@@ -32,24 +32,33 @@ const uint8_t notificationOn[] = { 0x1, 0x0 };
 const uint8_t notificationOff[] = { 0x0, 0x0 };
 
 class MyClientCallback : public BLEClientCallbacks {
-  void onConnect(BLEClient* pclient) {
+  void onConnect(BLEClient *pclient) {
   }
 
-  void onDisconnect(BLEClient* pclient) {
+  void onDisconnect(BLEClient *pclient) {
     connected = false;
     Serial1.println("onDisconnect");
   }
 };
-
-
 // When the BLE Server sends a new humidity reading with the notify property
 static void txNotifyCallback(BLERemoteCharacteristic *pBLERemoteCharacteristic,
                              uint8_t *pData, size_t length, bool isNotify) {
-  // store humidity value
 
-  // serial1.print(length);
-  uart_write_bytes(UART_NUM_1, (char *)pData, length);
-  // serial1.printf("recved data \n");
+
+
+  if (length == sizeof(DataPackage)) {
+    uint8_t t[length];
+    for (int i = 0; i < length; i++) {
+      t[i] = pData[i];
+    }
+    if (t[0] == 'J') {
+      serial1.printf("leftPotX %d, leftPotY %d, rightPotX %d rightPotY %d buttons %d\n", dataPackage.leftPotX, dataPackage.leftPotY, dataPackage.rightPotX, dataPackage.rightPotY, dataPackage.buttons);
+      dataPackage = *(DataPackage *)t;
+    } else serial1.write(pData, length);
+    serial0.write(pData, length);  //send to stm32
+  }
+
+
   digitalWrite(BLUE_LED, HIGH);  //
 }
 
@@ -93,7 +102,7 @@ class MyAdvertisedDeviceCallbacks : public BLEAdvertisedDeviceCallbacks {
       advertisedDevice.getScan()->stop();                              // Scan can be stopped, we found what we are looking for
       pServerAddress = new BLEAddress(advertisedDevice.getAddress());  // Address of advertiser is the one we need
       doConnect = true;
-      doScan = true;  // Set indicator, stating that we are ready to connect
+      // doScan = true;  // Set indicator, stating that we are ready to connect
       serial1.println("Device found. Connecting!");
     }
   }
@@ -109,11 +118,12 @@ void bleInit() {
   pBLEScan->setWindow(449);
   pBLEScan->setActiveScan(true);
   pBLEScan->start(5, false);
+  serial1.println("scanning");
 }
 
 
 void blePolling() {
-
+  // serial1.println("blePolling");
   //  If the flag "doConnect" is true then we have scanned for and found the desired
   //  BLE Server with which we wish to connect.  Now we connect to it.  Once we are
   //  connected we set the connected flag to be true.
@@ -138,10 +148,13 @@ void blePolling() {
   if (connected) {
     // String newValue = "Time since boot: " + String(millis() / 1000);
     // Serial1.println("Setting new characteristic value to \"" + newValue + "\"");
-
+    serial1.println("connected");
     // Set the characteristic's value to be the array of bytes that is actually a string.
     // pRemoteCharacteristic->writeValue(newValue.c_str(), newValue.length());
-  } else if (doScan) {
-    BLEDevice::getScan()->start(0);  // this is just example to start scan after disconnect, most likely there is better way to do it in arduino
+  } else  //if (doScan)
+  {
+    bleInit();
+    // this is just example to start scan after disconnect, most likely there is better way to do it in arduino
+    //
   }
 }
