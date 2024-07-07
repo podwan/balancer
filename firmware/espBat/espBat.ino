@@ -122,7 +122,7 @@ void setup() {
   // Init BLE device
   bleInit();
 
-  serial1.println("mcu init done\n");
+  serial1.println("MCU init done");
   beepSet(2, 5, 10);
 }
 
@@ -146,7 +146,8 @@ void loop() {
 
   if (_1000ms) {
     _1000ms = 0;
-    serial0.println("hello");
+    serial0.println("H");
+    // serial1.println("H");
     //  beepOnce();
     uint adcValue, voltage;
     adcValue = analogRead(BAT_FB);

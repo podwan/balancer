@@ -9,7 +9,7 @@
 
 void uartTx();
 void uartRcv(const char buf);
-void commander_run(BldcMotor *motor);
+void commander_run(BldcMotor *motor1, BldcMotor *motor2);
 void communicationLoop(void *argument);
 void printLog(const char *format, ...);
 void log_DMA_TX(const char *format, ...);

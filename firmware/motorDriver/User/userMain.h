@@ -22,7 +22,7 @@ typedef unsigned long ulong;
 #define TOUCH_KEY_SCAN 0
 
 #define USE_UART 0
-#define PRINT_LOG 0
+#define PRINT_RUNNING 0
 #define SPEED_UP 0
 #define DISPLAY_TEMP 0
 #define WITHOUT_POWER_BOARD 0
@@ -37,9 +37,11 @@ typedef unsigned long ulong;
 #define DEBUG_DISPLAY 0
 #define DEBUG_KEY 0
 #define MAX_LEN 20
-#define SHOW_WAVE 1
+#define SHOW_WAVE 0
 
-#define USE_COMM_TARGET 0
+#define USE_COMM_TARGET 1
+#define CALI_BALANCE 1
+#define PRINT_RUNNING 1
 
 /*===========================================================================*/
 

@@ -59,25 +59,24 @@ void bleInit() {
 
 void blePolling() {
   if (deviceConnected) {
-    serial1.printf("connected\n");
+    //serial1.printf("connected\n");
 
     if (toSendCMD) {
-
-      serial1.printf("send %s\n", bleBuff);
+      serial1.printf("send %s", bleBuff);
       txCharacteristics.setValue((uint8_t *)&bleBuff, sizeof(bleBuff));
+      txCharacteristics.notify();
       toSendCMD = 0;
     }
-
-    else {
-      dataPackage.firstByte = 'J';
-      txCharacteristics.setValue((uint8_t *)&dataPackage, sizeof(dataPackage));
-    }
+    // else {
+    //   dataPackage.firstByte = 'J';
+    //   txCharacteristics.setValue((uint8_t *)&dataPackage, sizeof(dataPackage));
+    // txCharacteristics.notify();
+    // }
 
     // serial1.printf("send data length%d\n", sizeof(dataPackage));
-    txCharacteristics.notify();
+
   } else {
 
     pServer->getAdvertising()->start();
-    serial1.println("Waiting a client connection to notify...");
   }
 }

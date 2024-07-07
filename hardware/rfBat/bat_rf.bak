@@ -6936,7 +6936,7 @@
 				)
 			)
 		)
-		(property "Footprint" "kicad_lceda:SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR"
+		(property "Footprint" "bat_rf:SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR"
 			(at 0 2.8194 0)
 			(effects
 				(font

@@ -59,7 +59,7 @@ void userMain(void)
 			mpu_get_data();
 			imu_ahrs_update();
 			imu_attitude_update();
-			// balancerControl();
+			
 		}
 	}
 
@@ -67,7 +67,7 @@ void userMain(void)
 	{
 		appRunning();
 	}
-#if SHOW_WAVE == 0 //&& COMMAMNDER == 0
+#if SHOW_WAVE == 0 && PRINT_RUNNING
 	if (get500MsFlag())
 	{
 		uartTx();

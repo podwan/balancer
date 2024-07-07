@@ -46,17 +46,20 @@ static void txNotifyCallback(BLERemoteCharacteristic *pBLERemoteCharacteristic,
 
 
 
-  if (length == sizeof(DataPackage)) {
-    uint8_t t[length];
-    for (int i = 0; i < length; i++) {
-      t[i] = pData[i];
-    }
-    if (t[0] == 'J') {
-      serial1.printf("leftPotX %d, leftPotY %d, rightPotX %d rightPotY %d buttons %d\n", dataPackage.leftPotX, dataPackage.leftPotY, dataPackage.rightPotX, dataPackage.rightPotY, dataPackage.buttons);
-      dataPackage = *(DataPackage *)t;
-    } else serial1.write(pData, length);
-    serial0.write(pData, length);  //send to stm32
+
+  uint8_t t[length];
+  for (int i = 0; i < length; i++) {
+    t[i] = pData[i];
   }
+
+  if (t[0] == 'J') {
+    serial1.printf("leftPotX %d, leftPotY %d, rightPotX %d rightPotY %d buttons %d\n", dataPackage.leftPotX, dataPackage.leftPotY, dataPackage.rightPotX, dataPackage.rightPotY, dataPackage.buttons);
+    dataPackage = *(DataPackage *)t;
+  } else serial1.write(pData, length);
+
+
+  serial0.write(pData, length);  //send to stm32
+
 
 
   digitalWrite(BLUE_LED, HIGH);  //
@@ -109,10 +112,10 @@ class MyAdvertisedDeviceCallbacks : public BLEAdvertisedDeviceCallbacks {
 };
 
 
-
+static BLEScan *pBLEScan;
 void bleInit() {
   BLEDevice::init("");
-  BLEScan *pBLEScan = BLEDevice::getScan();
+  pBLEScan = BLEDevice::getScan();
   pBLEScan->setAdvertisedDeviceCallbacks(new MyAdvertisedDeviceCallbacks());
   pBLEScan->setInterval(1349);
   pBLEScan->setWindow(449);
@@ -153,7 +156,8 @@ void blePolling() {
     // pRemoteCharacteristic->writeValue(newValue.c_str(), newValue.length());
   } else  //if (doScan)
   {
-    bleInit();
+    // bleInit();
+    pBLEScan->start(5, false);
     // this is just example to start scan after disconnect, most likely there is better way to do it in arduino
     //
   }

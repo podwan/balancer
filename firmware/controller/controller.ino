@@ -36,7 +36,7 @@
 #define L_X 4
 #define R_Y 1
 #define R_X 2
-u8 m_color[7][3] = {
+unsigned char m_color[7][3] = {
     {255, 0, 0},
     {0, 255, 0},
     {0, 0, 255},
@@ -48,7 +48,7 @@ u8 m_color[7][3] = {
 int delayval = 100;
 char rxBuff[10];
 Freenove_ESP32_WS2812 strip = Freenove_ESP32_WS2812(RGB_COUNT, RGB, CHANNEL, TYPE_GRB);
- bool toSendCMD;
+bool toSendCMD;
 HardwareSerial serial1(1);
 static bool _1000ms, _1ms, powerOff, _20ms, _10ms, powerLow, _500ms, _100ms, _5ms;
 extern bool deviceConnected;
@@ -95,6 +95,38 @@ static void IRAM_ATTR Timer0_CallBack(void)
     _100ms = 1;
   }
 }
+static char rxIndex;
+void read_usart()
+{
+  int i = serial1.available(); // 返回目前串口接收区内的已经接受的数据量
+  if (i != 0)
+  {
+    if (i >= 10)
+    {
+      serial1.println("data too long");
+      serial1.flush(0);
+    }
+    // serial1.print("串口接收到的数据量为:");
+    // serial1.println(serial1.available());
+    else
+    {
+      memset(bleBuff, 0, sizeof(bleBuff));
+      while (i--)
+      {
+        bleBuff[rxIndex++] = serial1.read(); // 读取一个数据并且将它从缓存区删除
+                                             //  serial1.print(temp);         //读取串口接收回来的数据但是不做处理只给与打印
+      }
+      toSendCMD = 1;
+      serial1.println((char *)bleBuff);
+    }
+    // data_analyse();    //至关重要的一步，也就是把读取回来的数据进行分步截取直接拿到我们想要的数据，我下一篇博文会讲如何自己写这个函数
+  }
+  else
+  {
+    rxIndex = 0;
+    //   serial1.println("串口接收区没有数据！！！");
+  }
+}
 void setup()
 {
   // Start serial communication
@@ -123,40 +155,8 @@ void setup()
   pinMode(L_BUTTON, INPUT_PULLUP);
   pinMode(R_BUTTON, INPUT_PULLUP);
   bleInit();
-  serial1.println("MCU init done\n");
-}
-
-static char rxIndex;
-void read_usart()
-{
-  int i = serial1.available(); // 返回目前串口接收区内的已经接受的数据量
-  if (i != 0)
-  {
-    if (i >= 10)
-    {
-      serial1.println("data too long");
-      serial1.flush(0);
-    }
-    // serial1.print("串口接收到的数据量为:");
-    // serial1.println(serial1.available());
-    else
-    {
-      memset(bleBuff, 0, sizeof(bleBuff));
-      while (i--)
-      {
-        bleBuff[rxIndex++] = serial1.read(); // 读取一个数据并且将它从缓存区删除
-                                             //  serial1.print(temp);         //读取串口接收回来的数据但是不做处理只给与打印
-      }
-       toSendCMD = 1;
-      serial1.println((char *)bleBuff);
-    }
-    // data_analyse();    //至关重要的一步，也就是把读取回来的数据进行分步截取直接拿到我们想要的数据，我下一篇博文会讲如何自己写这个函数
-  }
-  else
-  {
-    rxIndex = 0;
-    //   serial1.println("串口接收区没有数据！！！");
-  }
+  serial1.println("MCU init done");
+  beepSet(2, 5, 10);
 }
 
 void loop()
@@ -202,9 +202,9 @@ void loop()
     dataPackage.rightPotX = RX_to_send;
     dataPackage.rightPotY = RY_to_send;
 
-    serial1.printf("LX %d LY %d RX %d RY %d\n", LX_to_send, LY_to_send, RX_to_send, RY_to_send);
-    // serial1.printf("keyState: %d\n", keyFlags);
-    //  serial1.println((char *)bleBuff);
+    // serial1.printf("LX %d LY %d RX %d RY %d\n", LX_to_send, LY_to_send, RX_to_send, RY_to_send);
+    //  serial1.printf("keyState: %d\n", keyFlags);
+    //   serial1.println((char *)bleBuff);
     read_usart();
     blePolling();
   }
@@ -288,19 +288,24 @@ void loop()
   {
 
     _1000ms = 0;
+
+    if (deviceConnected)
+      serial1.println("BLE connected");
+    else
+      serial1.println("Waiting a client connection to notify...");
     // if (!powerOff)
     // {
-    float voltage;
-    // uint adcValue = analogRead(BAT_FB);
-    // serial1.printf("%d\n", adcValue);
-    voltage = analogReadMilliVolts(BAT_FB) / 1000.0f / 0.6f;
-    serial1.printf("voltage: %.1f\n", voltage);
+    // float voltage;
+    // // uint adcValue = analogRead(BAT_FB);
+    // // serial1.printf("%d\n", adcValue);
+    // voltage = analogReadMilliVolts(BAT_FB) / 1000.0f / 0.6f;
+    // serial1.printf("voltage: %.1f\n", voltage);
 
-    if (voltage < POWER_LOW)
-    {
-      powerLow = 1;
-    }
-    else
-      powerLow = 0;
+    // if (voltage < POWER_LOW)
+    // {
+    //   powerLow = 1;
+    // }
+    // else
+    //   powerLow = 0;
   }
 }

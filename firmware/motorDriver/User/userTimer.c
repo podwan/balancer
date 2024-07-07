@@ -122,9 +122,6 @@ static void dealPerMs()
 #endif
     _1ms = 1;
 
-
-
-
 }
 
 

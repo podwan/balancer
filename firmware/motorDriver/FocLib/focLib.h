@@ -31,7 +31,7 @@
 #define ADC_2_CURRENT(adc) adc *ADC_VLOTS_RADIO *VLOTS_AMPS_RATIO
 
 #define IqMax 0.06f
-#define VELOCITY_MAX 234
+#define VELOCITY_MAX 400
 
 void printLog(const char *format, ...);
 void delay(uint32_t ms);
