@@ -27373,7 +27373,7 @@
 			(justify left bottom mirror)
 		)
 	)
-	(gr_text "V2.6"
+	(gr_text "V2.7"
 		(at 140 77.3 0)
 		(layer "B.SilkS" knockout)
 		(uuid "c248272a-da44-42a6-863b-4c8e05947cef")
