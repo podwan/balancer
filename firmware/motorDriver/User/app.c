@@ -334,11 +334,11 @@ void txDataProcess()
     // sprintf(txBuffer, "accAngle.y : %.2f gyroAngle.y : %.2f\n", mpu6500.accAngle.y, mpu6500.gyroAngle.y);
 
     //  sprintf(txBuffer, "rawData1: %d,rawData2: %d\n", rawData1, rawData2);
-    // sprintf(txBuffer, "pitch : %.2f,  wy: %.2f,  velocity1:%.2f, velocity2:%.2f \n", imu.pit, imu.wy, motor1.magEncoder.velocity, motor2.magEncoder.velocity);
+     sprintf(txBuffer, "pitch : %.2f,  wy: %.2f,  velocity1:%.2f, velocity2:%.2f \n", imu.pit, imu.wy, motor1.magEncoder.velocity, motor2.magEncoder.velocity);
     // sprintf(txBuffer, "target:%.2f  velocity1:%.2f  Iq1:%.2f Id1:%.2f  velocity2:%.2f  Iq2:%.2f Id2:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Iq, motor1.Id, motor2.magEncoder.velocity, motor2.Iq, motor2.Id);
     // sprintf(txBuffer, "target:%.2f fullAngle:%.2f velocity:%.2f Uq:%.2f Ud:%.2f Iq:%.2f Id:%.2f elec_angle:%.2f\n", motor1.target, motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id, motor1.angle_el);
 
-    sprintf(txBuffer, "pitch : %.2f,  P: %.2f,  I:%.2f, D:%.2f, V1:%.2f, T2:%.2f\n", imu.pit, balancePid.P, balancePid.I, balancePid.D, motor1.magEncoder.velocity, motor2.target);
+   // sprintf(txBuffer, "pitch : %.2f,  P: %.2f,  I:%.2f, D:%.2f, V1:%.2f, T2:%.2f\n", imu.pit, balancePid.P, balancePid.I, balancePid.D, motor1.magEncoder.velocity, motor2.target);
 }
 
 void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)

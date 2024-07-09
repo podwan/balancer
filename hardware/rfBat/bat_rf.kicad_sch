@@ -8771,6 +8771,16 @@
 		)
 		(uuid "803ef140-adb3-423b-b95f-2d39c2f11423")
 	)
+	(wire
+		(pts
+			(xy 130.81 144.78) (xy 139.7 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "807b4aa2-45db-4a6b-bcc8-f45801605133")
+	)
 	(polyline
 		(pts
 			(xy 17.78 92.71) (xy 133.35 92.71)
@@ -14269,6 +14279,73 @@
 			(project "bat_rf"
 				(path "/4b9911c3-08ff-4557-9b31-2480476fb503"
 					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 139.7 144.78 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "658c36f0-c793-42c9-9787-4436e9320aaf")
+		(property "Reference" "TP5"
+			(at 144.78 144.78 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 144.78 146.0499 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 139.7 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 139.7 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 139.7 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "748fc863-f563-40a0-a876-971634eaf6e4")
+		)
+		(instances
+			(project "bat_rf"
+				(path "/4b9911c3-08ff-4557-9b31-2480476fb503"
+					(reference "TP5")
 					(unit 1)
 				)
 			)

@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "adc.h"
+#include "comp.h"
 #include "dac.h"
 #include "dma.h"
 #include "spi.h"
@@ -105,6 +106,8 @@ int main(void)
   MX_TIM8_Init();
   MX_SPI3_Init();
   MX_USART2_UART_Init();
+  MX_COMP1_Init();
+  MX_COMP4_Init();
   /* USER CODE BEGIN 2 */
   appInit();
 #if 1
