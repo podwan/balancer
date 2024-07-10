@@ -6589,10 +6589,6 @@
 		(uuid "f8cfca8a-48f0-4076-a10a-b29df1969146")
 	)
 	(no_connect
-		(at 374.65 46.99)
-		(uuid "016abb83-bd2e-4b8f-95ac-7e6e67d401a8")
-	)
-	(no_connect
 		(at 332.74 176.53)
 		(uuid "0541b5e0-0f2a-43b1-b147-427f03de5e60")
 	)
@@ -6619,6 +6615,10 @@
 	(no_connect
 		(at 243.84 55.88)
 		(uuid "2b15fb1d-6cd7-4dd8-ad40-e911cc931a20")
+	)
+	(no_connect
+		(at 341.63 120.65)
+		(uuid "2d1918ef-39ca-4fe4-8392-7f4db2565ab7")
 	)
 	(no_connect
 		(at 243.84 63.5)
@@ -6667,6 +6667,10 @@
 	(no_connect
 		(at 208.28 52.07)
 		(uuid "ba947ea3-db43-4389-8990-738d4fab9d60")
+	)
+	(no_connect
+		(at 341.63 115.57)
+		(uuid "bb13df0a-de37-4226-bbf0-1d091bd2d4b5")
 	)
 	(no_connect
 		(at 208.28 44.45)
@@ -10066,17 +10070,6 @@
 		)
 		(uuid "1fc6fe1a-e867-4bc8-abe4-88d157c9a5e6")
 	)
-	(label "ADC1_IN5"
-		(at 341.63 120.65 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "2bbfaef1-196e-48a3-b20c-a5329fbe7cdb")
-	)
 	(label "KEY"
 		(at 237.49 167.64 0)
 		(fields_autoplaced yes)
@@ -10562,13 +10555,13 @@
 		(uuid "97cabf41-f037-4b1d-b2ab-0da71dd2198e")
 	)
 	(label "RGB"
-		(at 325.12 76.2 180)
+		(at 374.65 46.99 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "98f328d3-0b07-439b-b21c-8f63e25d9d2a")
 	)
@@ -10791,17 +10784,6 @@
 			(justify right bottom)
 		)
 		(uuid "c8686f3e-0aa4-4cc7-8f62-fa5731a957cf")
-	)
-	(label "ADC1_IN11"
-		(at 341.63 115.57 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "c899abf5-ed46-4095-81d5-7ae83aadf75a")
 	)
 	(label "SPI3_SCK"
 		(at 325.12 189.23 180)
@@ -11592,92 +11574,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Operational:TLV9062xD")
-		(at 95.25 128.27 0)
-		(unit 2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "15beccb7-e9bf-4533-bd36-73481b071d24")
-		(property "Reference" "U8"
-			(at 95.25 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TLV9062xD"
-			(at 95.25 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
-			(at 97.79 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tlv9062.pdf"
-			(at 101.6 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual operational amplifier, 300 uV Offset, SOIC-8"
-			(at 95.25 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8653b542-4efb-490b-a214-de47c08b4ad5")
-		)
-		(pin "8"
-			(uuid "1ef4d19f-07ca-49fc-81a9-f3769470baf4")
-		)
-		(pin "2"
-			(uuid "4f4d3a5b-4964-4abe-9ff9-1cda96563e81")
-		)
-		(pin "4"
-			(uuid "362d98ff-a1e5-4838-ac00-1788ed57a2c2")
-		)
-		(pin "3"
-			(uuid "8f84d4d2-60ac-4d74-9bc7-4321e38b24ba")
-		)
-		(pin "7"
-			(uuid "519c18c4-09a8-45e4-853f-f2b7add6214c")
-		)
-		(pin "6"
-			(uuid "382c8d93-a097-41e9-a1bc-7464503c48b6")
-		)
-		(pin "5"
-			(uuid "6c2719c7-010b-4e97-9889-9f4106349dbf")
-		)
-		(instances
-			(project "bldcDriver"
-				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
-					(reference "U8")
-					(unit 2)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 90.17 57.15 0)
 		(mirror x)
@@ -11740,92 +11636,6 @@
 			(project "bldcDriver"
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
 					(reference "TP21")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Amplifier_Operational:TLV9062xD")
-		(at 50.8 127 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "17b84533-4293-4d27-bdb7-92ed3253e9a2")
-		(property "Reference" "U8"
-			(at 50.8 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TLV9062xD"
-			(at 50.8 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
-			(at 53.34 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tlv9062.pdf"
-			(at 57.15 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual operational amplifier, 300 uV Offset, SOIC-8"
-			(at 50.8 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4ef588e7-7f66-42b4-8d67-a32f5285c17d")
-		)
-		(pin "8"
-			(uuid "1ef4d19f-07ca-49fc-81a9-f3769470baf3")
-		)
-		(pin "2"
-			(uuid "ffb8cd68-e71e-4aa0-b166-749f9e7b7666")
-		)
-		(pin "4"
-			(uuid "362d98ff-a1e5-4838-ac00-1788ed57a2c1")
-		)
-		(pin "3"
-			(uuid "157a2865-ee95-4a2d-af40-e0999f0c9a78")
-		)
-		(pin "7"
-			(uuid "b4327f0b-7ce8-40f2-9ca1-eca86542b6d6")
-		)
-		(pin "6"
-			(uuid "aa298cd3-d475-484b-8e70-8030ceb381b5")
-		)
-		(pin "5"
-			(uuid "7b8b419b-8eea-4499-9cec-b297d1596f41")
-		)
-		(instances
-			(project "bldcDriver"
-				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
-					(reference "U8")
 					(unit 1)
 				)
 			)
@@ -17418,6 +17228,92 @@
 		)
 	)
 	(symbol
+		(lib_id "Amplifier_Operational:TLV9062xD")
+		(at 95.25 128.27 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8e37e359-b3ad-4b32-8925-394681a20a9d")
+		(property "Reference" "U8"
+			(at 95.25 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TLV9062xD"
+			(at 95.25 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+			(at 97.79 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tlv9062.pdf"
+			(at 101.6 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual operational amplifier, 300 uV Offset, SOIC-8"
+			(at 95.25 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ea46e3ca-32eb-4bde-b905-63bbc6a0f5b6")
+		)
+		(pin "8"
+			(uuid "1ef4d19f-07ca-49fc-81a9-f3769470baf3")
+		)
+		(pin "2"
+			(uuid "5fd73f19-7e7d-4722-b444-486bfe0df9ce")
+		)
+		(pin "4"
+			(uuid "362d98ff-a1e5-4838-ac00-1788ed57a2c1")
+		)
+		(pin "3"
+			(uuid "e4d1a309-b98b-404b-a8b2-38bdc0be4a75")
+		)
+		(pin "7"
+			(uuid "b4327f0b-7ce8-40f2-9ca1-eca86542b6d6")
+		)
+		(pin "6"
+			(uuid "aa298cd3-d475-484b-8e70-8030ceb381b5")
+		)
+		(pin "5"
+			(uuid "7b8b419b-8eea-4499-9cec-b297d1596f41")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
+					(reference "U8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 114.3 95.25 180)
 		(unit 1)
@@ -18886,7 +18782,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 44.45 85.852 90)
 			(effects
 				(font
@@ -21429,6 +21325,92 @@
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
 					(reference "C53")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:TLV9062xD")
+		(at 50.8 127 0)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e991c7aa-2e44-4ae7-b176-af9b0e380294")
+		(property "Reference" "U8"
+			(at 50.8 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TLV9062xD"
+			(at 50.8 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+			(at 53.34 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tlv9062.pdf"
+			(at 57.15 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual operational amplifier, 300 uV Offset, SOIC-8"
+			(at 50.8 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8653b542-4efb-490b-a214-de47c08b4ad5")
+		)
+		(pin "8"
+			(uuid "1ef4d19f-07ca-49fc-81a9-f3769470baf4")
+		)
+		(pin "2"
+			(uuid "4f4d3a5b-4964-4abe-9ff9-1cda96563e81")
+		)
+		(pin "4"
+			(uuid "362d98ff-a1e5-4838-ac00-1788ed57a2c2")
+		)
+		(pin "3"
+			(uuid "8f84d4d2-60ac-4d74-9bc7-4321e38b24ba")
+		)
+		(pin "7"
+			(uuid "8ac95b5b-982d-4602-8114-89668a401f96")
+		)
+		(pin "6"
+			(uuid "ff78bbf5-38c1-4194-a983-20e4d92f08dd")
+		)
+		(pin "5"
+			(uuid "d9dd9ff7-0008-4a17-845f-e314d663e6c8")
+		)
+		(instances
+			(project "bldcDriver"
+				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
+					(reference "U8")
+					(unit 2)
 				)
 			)
 		)
