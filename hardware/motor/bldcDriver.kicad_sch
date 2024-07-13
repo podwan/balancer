@@ -6361,12 +6361,6 @@
 		(uuid "cc759c64-7e04-4f8d-9687-8e94dff642a5")
 	)
 	(junction
-		(at 307.34 105.41)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d09ff58b-ac92-4b62-b932-fb9e1cb15f4b")
-	)
-	(junction
 		(at 146.05 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7253,16 +7247,6 @@
 			(type default)
 		)
 		(uuid "3c0fd4f9-af84-4ebd-b6ad-54fd9a2abd12")
-	)
-	(wire
-		(pts
-			(xy 303.53 105.41) (xy 307.34 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3c43b2ae-9964-4f95-8e5e-7f267a03b773")
 	)
 	(wire
 		(pts
@@ -15372,73 +15356,6 @@
 			(project "bldcDriver"
 				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
 					(reference "C24")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 303.53 105.41 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "6fb901d0-b4f3-443f-881e-8cecfef0462d")
-		(property "Reference" "TP39"
-			(at 302.26 107.95 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 301.4979 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 303.53 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 303.53 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 303.53 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9c4bc98c-cd22-454d-b99a-82f89c041786")
-		)
-		(instances
-			(project "bldcDriver"
-				(path "/024b6358-58d2-4f27-baff-bf9e44899c87"
-					(reference "TP39")
 					(unit 1)
 				)
 			)

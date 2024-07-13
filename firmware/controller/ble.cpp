@@ -19,11 +19,14 @@ BLECharacteristic txCharacteristics("ca73b3ba-39f6-4ab3-91ae-186dc9577d99", BLEC
 BLEDescriptor txDescriptor(BLEUUID((uint16_t)0x2903));
 
 // Setup callbacks onConnect and onDisconnect
-class MyServerCallbacks : public BLEServerCallbacks {
-  void onConnect(BLEServer *pServer) {
+class MyServerCallbacks : public BLEServerCallbacks
+{
+  void onConnect(BLEServer *pServer)
+  {
     deviceConnected = true;
   };
-  void onDisconnect(BLEServer *pServer) {
+  void onDisconnect(BLEServer *pServer)
+  {
     deviceConnected = false;
     pServer->getAdvertising()->start();
   }
@@ -32,7 +35,8 @@ class MyServerCallbacks : public BLEServerCallbacks {
 BLECharacteristic *pTxCharacteristic;
 BLEServer *pServer;
 BLEService *bmeService;
-void bleInit() {
+void bleInit()
+{
   // Create the BLE Device
   BLEDevice::init(bleServerName);
 
@@ -57,25 +61,30 @@ void bleInit() {
   serial1.println("Waiting a client connection to notify...");
 }
 
-void blePolling() {
-  if (deviceConnected) {
-    //serial1.printf("connected\n");
+void blePolling()
+{
+  if (deviceConnected)
+  {
+    // serial1.printf("connected\n");
 
-    if (toSendCMD) {
+    if (toSendCMD)
+    {
       serial1.printf("send %s", bleBuff);
       txCharacteristics.setValue((uint8_t *)&bleBuff, sizeof(bleBuff));
       txCharacteristics.notify();
       toSendCMD = 0;
     }
-    // else {
+    // else
+    // {
     //   dataPackage.firstByte = 'J';
     //   txCharacteristics.setValue((uint8_t *)&dataPackage, sizeof(dataPackage));
-    // txCharacteristics.notify();
+    //   txCharacteristics.notify();
     // }
 
     // serial1.printf("send data length%d\n", sizeof(dataPackage));
-
-  } else {
+  }
+  else
+  {
 
     pServer->getAdvertising()->start();
   }
