@@ -362,9 +362,9 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
         // HAL_GPIO_TogglePin(TEST_GPIO_Port, TEST_Pin);
 #if SHOW_WAVE
         // #if SHOW_SVPWM
-        // load_data[0] = motor1.Ta;
-        // load_data[1] = motor1.Tb;
-        // load_data[2] = motor1.Tc;
+        load_data[0] = motor1.Ta;
+        load_data[1] = motor1.Tb;
+        load_data[2] = motor1.Tc;
         // load_data[3] = motor2.Ta;
         // load_data[4] = motor2.Tb;
         // load_data[5] = motor2.Tc;
@@ -385,9 +385,9 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
 
         // show current
 
-        // load_data[0] = motor1.Ia;
-        // load_data[1] = motor1.Ib;
-        // load_data[2] = motor1.Ic;
+        load_data[0] = motor1.Ia;
+        load_data[1] = motor1.Ib;
+        load_data[2] = motor1.Ic;
 
         // load_data[0] = motor1.Id;
         // load_data[1] = motor1.Iq;
@@ -406,11 +406,11 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
         // // load_data[6] = motor1.magEncoder.velocity;
         // load_data[7] = motor2.magEncoder.velocity;
 
-        load_data[0] = motor1.target;
-        load_data[1] = motor1.magEncoder.velocity;
-        load_data[2] = motor2.magEncoder.velocity;
-        load_data[3] = motor1.Uq;
-        load_data[4] = motor2.Uq;
+        // load_data[0] = motor1.target;
+        // load_data[1] = motor1.magEncoder.velocity;
+        // load_data[2] = motor2.magEncoder.velocity;
+        // load_data[3] = motor1.Uq;
+        // load_data[4] = motor2.Uq;
         memcpy(tempData, (uint8_t *)&load_data, sizeof(load_data));
         HAL_UART_Transmit_DMA(&huart3, (uint8_t *)tempData, sizeof(tempData));
 #endif

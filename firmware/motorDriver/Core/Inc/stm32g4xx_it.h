@@ -62,6 +62,8 @@ void DMA1_Channel4_IRQHandler(void);
 void ADC1_2_IRQHandler(void);
 void USART2_IRQHandler(void);
 void USART3_IRQHandler(void);
+void COMP1_2_3_IRQHandler(void);
+void COMP4_IRQHandler(void);
 /* USER CODE BEGIN EFP */
 
 /* USER CODE END EFP */

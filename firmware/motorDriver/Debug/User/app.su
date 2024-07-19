@@ -4,5 +4,5 @@
 ../User/app.c:259:13:standingBy	8	static
 ../User/app.c:284:13:working	4	static
 ../User/app.c:314:6:txDataProcess	56	static
-../User/app.c:344:6:HAL_ADCEx_InjectedConvCpltCallback	16	static
+../User/app.c:344:6:HAL_ADCEx_InjectedConvCpltCallback	24	static
 ../User/app.c:421:6:balancerControl	8	static

@@ -123,6 +123,17 @@ int main(void)
   __HAL_ADC_CLEAR_FLAG(&hadc2, ADC_FLAG_JEOC);
   HAL_ADCEx_InjectedStart_IT(&hadc1);
   HAL_ADCEx_InjectedStart(&hadc2);
+
+  HAL_DAC_Start(&hdac3, DAC_CHANNEL_1);
+  HAL_DAC_SetValue(&hdac3, DAC_CHANNEL_1, DAC_ALIGN_12B_R, 3000);
+  HAL_COMP_Start(&hcomp1);
+
+
+  HAL_DAC_Start(&hdac3, DAC_CHANNEL_2);
+  HAL_DAC_SetValue(&hdac3, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 3000);
+  HAL_COMP_Start(&hcomp4);
+
+
   HAL_TIM_Base_Start(&htim8);
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_4);
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);

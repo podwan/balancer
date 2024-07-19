@@ -17,27 +17,9 @@ typedef unsigned long ulong;
 #include "spi.h"
 #include "math.h"
 #include <string.h>
-#define TOUCH_KEY 0
-#define FEED_WATCH_DOG 0
-#define TOUCH_KEY_SCAN 0
 
-#define USE_UART 0
-#define PRINT_RUNNING 0
-#define SPEED_UP 0
-#define DISPLAY_TEMP 0
-#define WITHOUT_POWER_BOARD 0
-#define POWER_ADJUST 0
-#define USE_ZERO 0
-#define DEBUG_HEAT 0
-#define DEBUGGING 0
-#define SHOW_PWMDUTY 0
-#define DEBUG_MEMORY 0
-#define SIMU 0
-#define DEBUG_TEMP 0
-#define DEBUG_DISPLAY 0
-#define DEBUG_KEY 0
 #define MAX_LEN 20
-#define SHOW_WAVE 0
+#define SHOW_WAVE 1
 
 #define USE_COMM_TARGET 1
 #define CALI_BALANCE 1
