@@ -53,6 +53,8 @@
 "./User/mpu6500.o"
 "./User/mt6701.o"
 "./User/pwm.o"
+"./User/rgb.o"
 "./User/time_utils.o"
 "./User/userMain.o"
 "./User/userTimer.o"
+"./User/ws2812b.o"

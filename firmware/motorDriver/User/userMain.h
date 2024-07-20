@@ -15,8 +15,10 @@ typedef unsigned long ulong;
 #include "adc.h"
 #include "usart.h"
 #include "spi.h"
+#include "dac.h"
 #include "math.h"
 #include <string.h>
+
 
 #define MAX_LEN 20
 #define SHOW_WAVE 1

@@ -38,8 +38,8 @@ User/app.o: ../User/app.c ../User/app.h ../User/userMain.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
  ../Core/Inc/main.h ../Core/Inc/tim.h ../Core/Inc/main.h \
- ../Core/Inc/adc.h ../Core/Inc/usart.h ../Core/Inc/spi.h ../User/led.h \
- ../User/key.h ../User/comm.h \
+ ../Core/Inc/adc.h ../Core/Inc/usart.h ../Core/Inc/spi.h \
+ ../Core/Inc/dac.h ../User/led.h ../User/key.h ../User/comm.h \
  C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/bldcMotor.h \
  C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/focLib.h \
  C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h \
@@ -55,7 +55,8 @@ User/app.o: ../User/app.c ../User/app.h ../User/userMain.h \
  C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/current.h \
  ../User/userTimer.h \
  C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/voltage.h \
- ../User/mpu6500.h ../User/pwm.h ../User/AHRS.h
+ ../User/mpu6500.h ../User/pwm.h ../User/AHRS.h ../User/rgb.h \
+ ../User/ws2812b.h
 ../User/app.h:
 ../User/userMain.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
@@ -102,6 +103,7 @@ User/app.o: ../User/app.c ../User/app.h ../User/userMain.h \
 ../Core/Inc/adc.h:
 ../Core/Inc/usart.h:
 ../Core/Inc/spi.h:
+../Core/Inc/dac.h:
 ../User/led.h:
 ../User/key.h:
 ../User/comm.h:
@@ -123,3 +125,5 @@ C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/voltage.h:
 ../User/mpu6500.h:
 ../User/pwm.h:
 ../User/AHRS.h:
+../User/rgb.h:
+../User/ws2812b.h:

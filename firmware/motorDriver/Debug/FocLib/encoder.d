@@ -41,7 +41,8 @@ FocLib/encoder.o: ../FocLib/encoder.c ../FocLib/encoder.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
  ../Core/Inc/main.h ../Core/Inc/tim.h ../Core/Inc/main.h \
  ../Core/Inc/adc.h ../Core/Inc/usart.h ../Core/Inc/spi.h \
- ../FocLib/bldcMotor.h ../FocLib/pid.h ../FocLib/lowpass_filter.h
+ ../Core/Inc/dac.h ../FocLib/bldcMotor.h ../FocLib/pid.h \
+ ../FocLib/lowpass_filter.h
 ../FocLib/encoder.h:
 ../FocLib/math_utils.h:
 ../FocLib/focLib.h:
@@ -90,6 +91,7 @@ C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h:
 ../Core/Inc/adc.h:
 ../Core/Inc/usart.h:
 ../Core/Inc/spi.h:
+../Core/Inc/dac.h:
 ../FocLib/bldcMotor.h:
 ../FocLib/pid.h:
 ../FocLib/lowpass_filter.h:

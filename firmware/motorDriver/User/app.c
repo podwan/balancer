@@ -14,6 +14,8 @@
 #include "mpu6500.h"
 #include "pwm.h"
 #include "AHRS.h"
+#include "rgb.h"
+#include "ws2812b.h"
 
 static DevState devState = WORK;
 static KeyState keyState;
@@ -162,16 +164,19 @@ static void motorInit()
     lpfInit(&motor2.IdFilter, 0.05, motor1.Ts);
     lpfInit(&motor2.velocityFilter, 0.01, motor1.Ts);
 }
+
+static float v;
 void appInit()
 {
 
     motorInit();
     devState = STANDBY;
-
+    v = 2400;
     // balance
     pidInit(&balancePid, 20, 0, 0, 0, VELOCITY_MAX, 100 * 1e-6f);
 }
 static bool zeroReset, _1s;
+uint32_t rgbColor;
 void appRunning()
 {
     _1s = getOneSecFlag();
@@ -254,6 +259,27 @@ void appRunning()
         break;
     }
 
+    if (flashCnt < 5)
+    {
+        //  Set_LED(0, 0, 255, 0); // RGB
+        //  rgbColor = 0x18;
+        //  WS2812_Number_1(rgbColor);
+        // Set_LED_HEX(1, 0xFF0000);
+    }
+    else
+    {
+        // Set_LED_HEX(1, 0x000000);
+        // Set_LED(0, 0, 0, 0);
+        // rgbColor = 0;
+        // WS2812_Number_1(rgbColor);
+    }
+    // WS2812_Send();
+
+    if (_1s)
+    {
+        // v -= 20;
+        // HAL_DAC_SetValue(&hdac3, DAC_CHANNEL_1, DAC_ALIGN_12B_R, v);
+    }
     LED_drive();
 }
 static void standingBy()
@@ -334,11 +360,11 @@ void txDataProcess()
     // sprintf(txBuffer, "accAngle.y : %.2f gyroAngle.y : %.2f\n", mpu6500.accAngle.y, mpu6500.gyroAngle.y);
 
     //  sprintf(txBuffer, "rawData1: %d,rawData2: %d\n", rawData1, rawData2);
-     sprintf(txBuffer, "pitch : %.2f,  wy: %.2f,  velocity1:%.2f, velocity2:%.2f \n", imu.pit, imu.wy, motor1.magEncoder.velocity, motor2.magEncoder.velocity);
+    sprintf(txBuffer, "pitch : %.2f,  wy: %.2f,  velocity1:%.2f, velocity2:%.2f \n", imu.pit, imu.wy, motor1.magEncoder.velocity, motor2.magEncoder.velocity);
     // sprintf(txBuffer, "target:%.2f  velocity1:%.2f  Iq1:%.2f Id1:%.2f  velocity2:%.2f  Iq2:%.2f Id2:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Iq, motor1.Id, motor2.magEncoder.velocity, motor2.Iq, motor2.Id);
     // sprintf(txBuffer, "target:%.2f fullAngle:%.2f velocity:%.2f Uq:%.2f Ud:%.2f Iq:%.2f Id:%.2f elec_angle:%.2f\n", motor1.target, motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id, motor1.angle_el);
 
-   // sprintf(txBuffer, "pitch : %.2f,  P: %.2f,  I:%.2f, D:%.2f, V1:%.2f, T2:%.2f\n", imu.pit, balancePid.P, balancePid.I, balancePid.D, motor1.magEncoder.velocity, motor2.target);
+    // sprintf(txBuffer, "pitch : %.2f,  P: %.2f,  I:%.2f, D:%.2f, V1:%.2f, T2:%.2f\n", imu.pit, balancePid.P, balancePid.I, balancePid.D, motor1.magEncoder.velocity, motor2.target);
 }
 
 void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
@@ -350,11 +376,11 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
         shift = !shift;
         if (shift)
         {
-            foc(&motor1, hadc1.Instance->JDR1, hadc2.Instance->JDR1);
+            foc(&motor1, hadc1.Instance->JDR3, hadc2.Instance->JDR1); // tim8
         }
         else
         {
-            foc(&motor2, hadc1.Instance->JDR2, hadc2.Instance->JDR2);
+            foc(&motor2, hadc1.Instance->JDR1, hadc1.Instance->JDR2); // tim1
         }
 
         dealPer100us();
@@ -385,9 +411,9 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
 
         // show current
 
-        load_data[0] = motor1.Ia;
-        load_data[1] = motor1.Ib;
-        load_data[2] = motor1.Ic;
+        load_data[3] = motor1.Ia;
+        load_data[4] = motor1.Ib;
+        load_data[5] = motor1.Ic;
 
         // load_data[0] = motor1.Id;
         // load_data[1] = motor1.Iq;
@@ -411,11 +437,13 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
         // load_data[2] = motor2.magEncoder.velocity;
         // load_data[3] = motor1.Uq;
         // load_data[4] = motor2.Uq;
+        load_data[6] = v;
+        load_data[7] = hadc1.Instance->JDR3;
         memcpy(tempData, (uint8_t *)&load_data, sizeof(load_data));
         HAL_UART_Transmit_DMA(&huart3, (uint8_t *)tempData, sizeof(tempData));
 #endif
     }
-     HAL_GPIO_WritePin(TEST_GPIO_Port, TEST_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(TEST_GPIO_Port, TEST_Pin, GPIO_PIN_RESET);
 }
 
 void balancerControl()

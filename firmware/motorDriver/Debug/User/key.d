@@ -38,7 +38,8 @@ User/key.o: ../User/key.c ../User/key.h ../User/userMain.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
  ../Core/Inc/main.h ../Core/Inc/tim.h ../Core/Inc/main.h \
- ../Core/Inc/adc.h ../Core/Inc/usart.h ../Core/Inc/spi.h
+ ../Core/Inc/adc.h ../Core/Inc/usart.h ../Core/Inc/spi.h \
+ ../Core/Inc/dac.h
 ../User/key.h:
 ../User/userMain.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
@@ -85,3 +86,4 @@ User/key.o: ../User/key.c ../User/key.h ../User/userMain.h \
 ../Core/Inc/adc.h:
 ../Core/Inc/usart.h:
 ../Core/Inc/spi.h:
+../Core/Inc/dac.h:

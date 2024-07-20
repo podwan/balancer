@@ -39,6 +39,7 @@ User/mt6701.o: ../User/mt6701.c ../User/mt6701.h ../User/userMain.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
  ../Core/Inc/main.h ../Core/Inc/tim.h ../Core/Inc/main.h \
  ../Core/Inc/adc.h ../Core/Inc/usart.h ../Core/Inc/spi.h \
+ ../Core/Inc/dac.h \
  C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/focLib.h \
  C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h \
  C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/bldcMotor.h \
@@ -94,6 +95,7 @@ User/mt6701.o: ../User/mt6701.c ../User/mt6701.h ../User/userMain.h \
 ../Core/Inc/adc.h:
 ../Core/Inc/usart.h:
 ../Core/Inc/spi.h:
+../Core/Inc/dac.h:
 C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/focLib.h:
 C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h:
 C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/bldcMotor.h:
