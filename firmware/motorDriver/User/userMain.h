@@ -19,9 +19,8 @@ typedef unsigned long ulong;
 #include "math.h"
 #include <string.h>
 
-
 #define MAX_LEN 20
-#define SHOW_WAVE 1
+#define SHOW_WAVE 0
 
 #define USE_COMM_TARGET 1
 #define CALI_BALANCE 1

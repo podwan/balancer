@@ -14,8 +14,6 @@
 #include "mpu6500.h"
 #include "pwm.h"
 #include "AHRS.h"
-#include "rgb.h"
-#include "ws2812b.h"
 
 static DevState devState = WORK;
 static KeyState keyState;
@@ -45,7 +43,7 @@ static void motorInit()
     motor1.Ts = 100 * 1e-6f;
     motor1.torqueType = VOLTAGE;
 
-    motor1.controlType = VELOCITY_OPEN_LOOP;
+    motor1.controlType = VELOCITY;
 
     motor1.state = MOTOR_CALIBRATE;
     encoderInit(&motor1.magEncoder, motor1.Ts, _1_MT6701_GetRawAngle, UNKNOWN);
@@ -109,7 +107,7 @@ static void motorInit()
     motor2.zeroElectricAngleOffSet = 0;
     motor2.Ts = 100 * 1e-6f;
     motor2.torqueType = VOLTAGE;
-    motor2.controlType = VELOCITY_OPEN_LOOP;
+    motor2.controlType = VELOCITY;
 
     motor2.state = MOTOR_CALIBRATE;
     encoderInit(&motor2.magEncoder, motor2.Ts, _2_MT6701_GetRawAngle, UNKNOWN);
@@ -164,7 +162,6 @@ static void motorInit()
     lpfInit(&motor2.IdFilter, 0.05, motor1.Ts);
     lpfInit(&motor2.velocityFilter, 0.01, motor1.Ts);
 }
-
 static float v;
 void appInit()
 {
@@ -173,10 +170,9 @@ void appInit()
     devState = STANDBY;
     v = 2400;
     // balance
-    pidInit(&balancePid, 20, 0, 0, 0, VELOCITY_MAX, 100 * 1e-6f);
+    pidInit(&balancePid, 10, 0, 0, 0, VELOCITY_MAX, 100 * 1e-6f);
 }
 static bool zeroReset, _1s;
-uint32_t rgbColor;
 void appRunning()
 {
     _1s = getOneSecFlag();
@@ -259,28 +255,13 @@ void appRunning()
         break;
     }
 
-    if (flashCnt < 5)
-    {
-        //  Set_LED(0, 0, 255, 0); // RGB
-        //  rgbColor = 0x18;
-        //  WS2812_Number_1(rgbColor);
-        // Set_LED_HEX(1, 0xFF0000);
-    }
-    else
-    {
-        // Set_LED_HEX(1, 0x000000);
-        // Set_LED(0, 0, 0, 0);
-        // rgbColor = 0;
-        // WS2812_Number_1(rgbColor);
-    }
-    // WS2812_Send();
-
+    LED_drive();
     if (_1s)
     {
         // v -= 20;
-        // HAL_DAC_SetValue(&hdac3, DAC_CHANNEL_1, DAC_ALIGN_12B_R, v);
+        // HAL_DAC_SetValue(&hdac3, DAC_CHANNEL_2, DAC_ALIGN_12B_R, v);
     }
-    LED_drive();
+    _1s = 0;
 }
 static void standingBy()
 {
@@ -300,7 +281,7 @@ static void standingBy()
     motor2.stopPwm();
     // }
 
-    if ((++cnt >= 10 && notFirstTime == 0) || keyState == USER1_SHORT)
+    if (((+cnt >= 30 && notFirstTime == 0) || keyState == USER1_SHORT) && imu.pit <= 30 && imu.pit >= -30)
     {
         notFirstTime = 1;
         WORK_INIT;
@@ -313,7 +294,7 @@ static void working(void)
     if (flashCnt < 5)
         ledOn = 1;
 
-    if (keyState == USER1_SHORT)
+    if (keyState == USER1_SHORT || imu.pit > 30 || imu.pit < -30)
     {
         STANDBY_INIT;
     }
@@ -362,7 +343,7 @@ void txDataProcess()
     //  sprintf(txBuffer, "rawData1: %d,rawData2: %d\n", rawData1, rawData2);
     sprintf(txBuffer, "pitch : %.2f,  wy: %.2f,  velocity1:%.2f, velocity2:%.2f \n", imu.pit, imu.wy, motor1.magEncoder.velocity, motor2.magEncoder.velocity);
     // sprintf(txBuffer, "target:%.2f  velocity1:%.2f  Iq1:%.2f Id1:%.2f  velocity2:%.2f  Iq2:%.2f Id2:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Iq, motor1.Id, motor2.magEncoder.velocity, motor2.Iq, motor2.Id);
-    // sprintf(txBuffer, "target:%.2f fullAngle:%.2f velocity:%.2f Uq:%.2f Ud:%.2f Iq:%.2f Id:%.2f elec_angle:%.2f\n", motor1.target, motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id, motor1.angle_el);
+    //  sprintf(txBuffer, "target:%.2f fullAngle:%.2f velocity:%.2f Uq:%.2f Ud:%.2f Iq:%.2f Id:%.2f elec_angle:%.2f\n", motor1.target, motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id, motor1.angle_el);
 
     // sprintf(txBuffer, "pitch : %.2f,  P: %.2f,  I:%.2f, D:%.2f, V1:%.2f, T2:%.2f\n", imu.pit, balancePid.P, balancePid.I, balancePid.D, motor1.magEncoder.velocity, motor2.target);
 }
@@ -376,24 +357,26 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
         shift = !shift;
         if (shift)
         {
-            foc(&motor1, hadc1.Instance->JDR3, hadc2.Instance->JDR1); // tim8
+            foc(&motor1, hadc1.Instance->JDR1, hadc2.Instance->JDR1);
         }
         else
         {
-            foc(&motor2, hadc1.Instance->JDR1, hadc1.Instance->JDR2); // tim1
+            foc(&motor2, hadc1.Instance->JDR2, hadc2.Instance->JDR2);
         }
 
         dealPer100us();
+#if USE_COMM_TARGET
         balancerControl();
+#endif
         // HAL_GPIO_TogglePin(TEST_GPIO_Port, TEST_Pin);
 #if SHOW_WAVE
         // #if SHOW_SVPWM
         load_data[0] = motor1.Ta;
         load_data[1] = motor1.Tb;
         load_data[2] = motor1.Tc;
-        // load_data[3] = motor2.Ta;
-        // load_data[4] = motor2.Tb;
-        // load_data[5] = motor2.Tc;
+        load_data[3] = motor2.Ta;
+        load_data[4] = motor2.Tb;
+        load_data[5] = motor2.Tc;
         //         load_data[3] = motor1.Id;
         //         load_data[4] = motor1.Iq;
         //         load_data[5] = motor1.angle_el;
@@ -411,9 +394,9 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
 
         // show current
 
-        load_data[3] = motor1.Ia;
-        load_data[4] = motor1.Ib;
-        load_data[5] = motor1.Ic;
+        // load_data[0] = motor1.Ia;
+        // load_data[1] = motor1.Ib;
+        // load_data[2] = motor1.Ic;
 
         // load_data[0] = motor1.Id;
         // load_data[1] = motor1.Iq;
@@ -437,8 +420,10 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
         // load_data[2] = motor2.magEncoder.velocity;
         // load_data[3] = motor1.Uq;
         // load_data[4] = motor2.Uq;
-        load_data[6] = v;
-        load_data[7] = hadc1.Instance->JDR3;
+
+        load_data[6] = hadc1.Instance->JDR1;
+        load_data[7] = hadc1.Instance->JDR2;
+
         memcpy(tempData, (uint8_t *)&load_data, sizeof(load_data));
         HAL_UART_Transmit_DMA(&huart3, (uint8_t *)tempData, sizeof(tempData));
 #endif
@@ -448,6 +433,6 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
 
 void balancerControl()
 {
-    motor1.target = pidOperator(&balancePid, 0 - imu.pit);
-    motor2.target = pidOperator(&balancePid, 0 - imu.pit);
+    motor1.target = pidOperator(&balancePid, BALANCE_VALUE - imu.pit);
+    motor2.target = pidOperator(&balancePid, BALANCE_VALUE - imu.pit);
 }

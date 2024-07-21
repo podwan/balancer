@@ -38,7 +38,7 @@
 
  void updatePwm2(unsigned short int a, unsigned short int b, unsigned short int c)
 {
-    TIM1->CCR1 = a;
+    TIM1->CCR1 = c;
     TIM1->CCR2 = b;
-    TIM1->CCR3 = c;
+    TIM1->CCR3 = a;
 }

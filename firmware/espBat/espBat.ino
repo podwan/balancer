@@ -4,7 +4,7 @@
 #include "ble.h"
 #include "driver/uart.h"
 #include "rgb.h"
-#define DEBUG 1
+#define DEBUG 0
 #define RX1_BUF_SIZE (256)
 #define TX1_BUF_SIZE (256)
 #define TXD1_PIN (GPIO_NUM_19)
@@ -57,10 +57,10 @@ void read_usart() {
 #else
   int i = serial1.available();  // 返回目前串口接收区内的已经接受的数据量
   if (i != 0) {
-    int i = serial0.available();  // 返回目前串口接收区内的已经接受的数据量
+    // int i = serial0.available();  // 返回目前串口接收区内的已经接受的数据量
     if (i >= 12) {
       serial1.println("data too long");
-      serial0.flush(0);
+      serial1.flush(0);
     }
     // serial1.print("串口接收到的数据量为:");
     // serial1.println(serial1.available());
@@ -68,13 +68,13 @@ void read_usart() {
       beepOnce();
       memset(rxBuff, 0, sizeof(rxBuff));
       while (i--) {
-        rxBuff[rxIndex++] = serial0.read();  // 读取一个数据并且将它从缓存区删除
+        rxBuff[rxIndex++] = serial1.read();  // 读取一个数据并且将它从缓存区删除
                                              //  serial1.print(temp);         //读取串口接收回来的数据但是不做处理只给与打印
       }
 
 #endif
       toReply = 1;
-      serial1.println((char *)rxBuff);
+      serial0.println((char *)rxBuff);
       rxIndex = 0;
     }
     // data_analyse();    //至关重要的一步，也就是把读取回来的数据进行分步截取直接拿到我们想要的数据，我下一篇博文会讲如何自己写这个函数
@@ -166,7 +166,7 @@ void loop() {
 
   if (_1000ms) {
     _1000ms = 0;
-    serial0.println("H");
+    //serial0.println("H");
     // serial1.println("H");
     // beepOnce();
     uint adcValue, voltage;

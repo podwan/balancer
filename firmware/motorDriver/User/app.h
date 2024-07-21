@@ -7,6 +7,8 @@
 
 #define CURRENT_MAX 0.2f
 #define MAX_VELOCITY 400
+// #define FALL_ANGLE 30
+#define BALANCE_VALUE -2.65
 
 #define WORK_INIT                   \
     {                               \

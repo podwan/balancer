@@ -235,9 +235,9 @@ void loop() {
 
     _1000ms = 0;
 
-    if (deviceConnected)
-      serial1.println("BLE connected");
-    else
+    if (!deviceConnected)
+      //   serial1.println("BLE connected");
+      // else
       serial1.println("Waiting a client connection to notify...");
     // if (!powerOff)
     // {

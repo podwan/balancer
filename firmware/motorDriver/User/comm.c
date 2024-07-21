@@ -72,7 +72,7 @@ void commander_run(BldcMotor *motor1, BldcMotor *motor2)
   if (toProcessData == 1)
   {
     memset(txBuffer, '\0', sizeof(txBuffer));
-    printLog(rxBuffer);
+    // printLog(rxBuffer);
     switch (rxBuffer[0])
     {
       // case 'S':
@@ -89,21 +89,23 @@ void commander_run(BldcMotor *motor1, BldcMotor *motor2)
       sprintf(txBuffer, "Target=%.2f\r\n", motor1->target);
       // HAL_UART_Transmit_DMA(&huart3, (uint8_t *)txBuffer, sizeof(txBuffer));
       break;
+
     case 'P': // P0.5
-#if CALI_BALANCE
       balancePid.P = atof((const char *)(rxBuffer + 1));
       sprintf(txBuffer, "P=%.2f\r\n", balancePid.P);
       //   HAL_UART_Transmit_DMA(&huart3, (uint8_t *)txBuffer, sizeof(txBuffer));
-#else
-
-#endif
 
       break;
-      //    case 'I': // I0.2
-      //      bldcMotor.pidVelocity.I = atof((const char *)(rxBuffer + 1));
-      //      sprintf(sndBuff, "I=%.2f\r\n", bldcMotor.pidVelocity.I);
-      //      printf("%s", sndBuff);
-      //      break;
+    case 'I': // I0.2
+      balancePid.I = atof((const char *)(rxBuffer + 1));
+      sprintf(txBuffer, "I=%.2f\r\n", balancePid.I);
+
+      break;
+
+    case 'D': // I0.2
+      balancePid.D = atof((const char *)(rxBuffer + 1));
+      sprintf(txBuffer, "D=%.2f\r\n", balancePid.D);
+      break;
       // case 'V': // V
       //   sprintf(sndBuff, "Vel=%.2f\r\n", shaftVelocity);
       //   printf("%s", sndBuff);

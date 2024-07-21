@@ -62,8 +62,8 @@ all: main-build
 main-build: motorDriver.elf secondary-outputs
 
 # Tool invocations
-motorDriver.elf motorDriver.map: $(OBJS) $(USER_OBJS) C:\Users\18575\Desktop\balancer\firmware\motorDriver\STM32G431CBUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "motorDriver.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\18575\Desktop\balancer\firmware\motorDriver\STM32G431CBUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motorDriver.map" -Wl,--gc-sections -static -L../Middlewares/ST/ARM/DSP/Lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+motorDriver.elf motorDriver.map: $(OBJS) $(USER_OBJS) C:\Users\18575\Desktop\temp\balancer\firmware\motorDriver\STM32G431CBUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "motorDriver.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\18575\Desktop\temp\balancer\firmware\motorDriver\STM32G431CBUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motorDriver.map" -Wl,--gc-sections -static -L../Middlewares/ST/ARM/DSP/Lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

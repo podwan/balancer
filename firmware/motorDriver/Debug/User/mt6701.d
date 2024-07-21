@@ -40,14 +40,14 @@ User/mt6701.o: ../User/mt6701.c ../User/mt6701.h ../User/userMain.h \
  ../Core/Inc/main.h ../Core/Inc/tim.h ../Core/Inc/main.h \
  ../Core/Inc/adc.h ../Core/Inc/usart.h ../Core/Inc/spi.h \
  ../Core/Inc/dac.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/focLib.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/bldcMotor.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/focLib.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/math_utils.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/pid.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/lowpass_filter.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/encoder.h \
+ C:/Users/18575/Desktop/temp/balancer/firmware/motorDriver/FocLib/focLib.h \
+ C:/Users/18575/Desktop/temp/balancer/firmware/motorDriver/User/userMain.h \
+ C:/Users/18575/Desktop/temp/balancer/firmware/motorDriver/FocLib/bldcMotor.h \
+ C:/Users/18575/Desktop/temp/balancer/firmware/motorDriver/FocLib/focLib.h \
+ C:/Users/18575/Desktop/temp/balancer/firmware/motorDriver/FocLib/math_utils.h \
+ C:/Users/18575/Desktop/temp/balancer/firmware/motorDriver/FocLib/pid.h \
+ C:/Users/18575/Desktop/temp/balancer/firmware/motorDriver/FocLib/lowpass_filter.h \
+ C:/Users/18575/Desktop/temp/balancer/firmware/motorDriver/FocLib/encoder.h \
  ../User/time_utils.h
 ../User/mt6701.h:
 ../User/userMain.h:
@@ -96,12 +96,12 @@ User/mt6701.o: ../User/mt6701.c ../User/mt6701.h ../User/userMain.h \
 ../Core/Inc/usart.h:
 ../Core/Inc/spi.h:
 ../Core/Inc/dac.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/focLib.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/bldcMotor.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/focLib.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/math_utils.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/pid.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/lowpass_filter.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/encoder.h:
+C:/Users/18575/Desktop/temp/balancer/firmware/motorDriver/FocLib/focLib.h:
+C:/Users/18575/Desktop/temp/balancer/firmware/motorDriver/User/userMain.h:
+C:/Users/18575/Desktop/temp/balancer/firmware/motorDriver/FocLib/bldcMotor.h:
+C:/Users/18575/Desktop/temp/balancer/firmware/motorDriver/FocLib/focLib.h:
+C:/Users/18575/Desktop/temp/balancer/firmware/motorDriver/FocLib/math_utils.h:
+C:/Users/18575/Desktop/temp/balancer/firmware/motorDriver/FocLib/pid.h:
+C:/Users/18575/Desktop/temp/balancer/firmware/motorDriver/FocLib/lowpass_filter.h:
+C:/Users/18575/Desktop/temp/balancer/firmware/motorDriver/FocLib/encoder.h:
 ../User/time_utils.h:

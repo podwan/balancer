@@ -108,7 +108,6 @@ int main(void)
   MX_USART2_UART_Init();
   MX_COMP1_Init();
   MX_COMP4_Init();
-  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   appInit();
 #if 1
@@ -122,18 +121,17 @@ int main(void)
   __HAL_ADC_CLEAR_FLAG(&hadc1, ADC_FLAG_JEOC);
   __HAL_ADC_CLEAR_FLAG(&hadc1, ADC_FLAG_EOC);
   __HAL_ADC_CLEAR_FLAG(&hadc2, ADC_FLAG_JEOC);
-  HAL_ADCEx_InjectedStart_IT(&hadc1);
-  HAL_ADCEx_InjectedStart(&hadc2);
 
+  HAL_DAC_SetValue(&hdac3, DAC_CHANNEL_1, DAC_ALIGN_12B_R, 2300);
   HAL_DAC_Start(&hdac3, DAC_CHANNEL_1);
-  HAL_DAC_SetValue(&hdac3, DAC_CHANNEL_1, DAC_ALIGN_12B_R, 3000);
   HAL_COMP_Start(&hcomp1);
 
-
+  HAL_DAC_SetValue(&hdac3, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 2300);
   HAL_DAC_Start(&hdac3, DAC_CHANNEL_2);
-  HAL_DAC_SetValue(&hdac3, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 3000);
   HAL_COMP_Start(&hcomp4);
 
+  HAL_ADCEx_InjectedStart_IT(&hadc1);
+  HAL_ADCEx_InjectedStart(&hadc2);
 
   HAL_TIM_Base_Start(&htim8);
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_4);
