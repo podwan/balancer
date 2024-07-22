@@ -4,7 +4,7 @@
 #include "pid.h"
 #include "app.h"
 
-extern PidController balancePid;
+extern PidController pid_stb;
 // 串口采用DMA 空闲中断模式，参考keysking@bilibili
 char txBuffer[USART_BUFFER_SIZE];
 char rxBuffer[USART_BUFFER_SIZE];
@@ -91,20 +91,20 @@ void commander_run(BldcMotor *motor1, BldcMotor *motor2)
       break;
 
     case 'P': // P0.5
-      balancePid.P = atof((const char *)(rxBuffer + 1));
-      sprintf(txBuffer, "P=%.2f\r\n", balancePid.P);
+      pid_stb.P = atof((const char *)(rxBuffer + 1));
+      sprintf(txBuffer, "P=%.2f\r\n", pid_stb.P);
       //   HAL_UART_Transmit_DMA(&huart3, (uint8_t *)txBuffer, sizeof(txBuffer));
 
       break;
     case 'I': // I0.2
-      balancePid.I = atof((const char *)(rxBuffer + 1));
-      sprintf(txBuffer, "I=%.2f\r\n", balancePid.I);
+      pid_stb.I = atof((const char *)(rxBuffer + 1));
+      sprintf(txBuffer, "I=%.2f\r\n", pid_stb.I);
 
       break;
 
     case 'D': // I0.2
-      balancePid.D = atof((const char *)(rxBuffer + 1));
-      sprintf(txBuffer, "D=%.2f\r\n", balancePid.D);
+      pid_stb.D = atof((const char *)(rxBuffer + 1));
+      sprintf(txBuffer, "D=%.2f\r\n", pid_stb.D);
       break;
       // case 'V': // V
       //   sprintf(sndBuff, "Vel=%.2f\r\n", shaftVelocity);

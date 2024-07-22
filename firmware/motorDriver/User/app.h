@@ -8,7 +8,7 @@
 #define CURRENT_MAX 0.2f
 #define MAX_VELOCITY 400
 // #define FALL_ANGLE 30
-#define BALANCE_VALUE -2.65
+#define BALANCE_VALUE -3
 
 #define WORK_INIT                   \
     {                               \
@@ -18,6 +18,7 @@
         motor1.startPwm();          \
         motor2.state = MOTOR_START; \
         motor2.startPwm();          \
+        reset(&pid_stb);            \
     }
 
 #define STANDBY_INIT                \

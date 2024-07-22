@@ -1,5 +1,0 @@
-../User/rgb.c:6:6:WS2812_Display_1	24	static
-../User/rgb.c:20:6:WS2812_Display_2	32	static
-../User/rgb.c:33:6:WS2812_Number_4	400	static
-../User/rgb.c:74:6:WS2812_Number_1	240	static
-../User/rgb.c:96:6:HAL_TIM_PWM_PulseFinishedCallback	16	static

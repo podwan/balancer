@@ -1,6 +1,6 @@
 FocLib/encoder.o: ../FocLib/encoder.c ../FocLib/encoder.h \
  ../FocLib/math_utils.h ../FocLib/focLib.h \
- C:/Users/18575/Desktop/temp/balancer/firmware/motorDriver/User/userMain.h \
+ C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h \
  ../Core/Inc/stm32g4xx_hal_conf.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h \
@@ -46,7 +46,7 @@ FocLib/encoder.o: ../FocLib/encoder.c ../FocLib/encoder.h \
 ../FocLib/encoder.h:
 ../FocLib/math_utils.h:
 ../FocLib/focLib.h:
-C:/Users/18575/Desktop/temp/balancer/firmware/motorDriver/User/userMain.h:
+C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
 ../Core/Inc/stm32g4xx_hal_conf.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h:

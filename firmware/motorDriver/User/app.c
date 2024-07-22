@@ -24,8 +24,6 @@ uint8_t tempData[36] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 float txA, txB, txC;
 static BldcMotor motor1, motor2;
 
-PidController balancePid;
-
 static void standingBy();
 static void working(void);
 
@@ -43,7 +41,7 @@ static void motorInit()
     motor1.Ts = 100 * 1e-6f;
     motor1.torqueType = VOLTAGE;
 
-    motor1.controlType = VELOCITY;
+    motor1.controlType = TORQUE;
 
     motor1.state = MOTOR_CALIBRATE;
     encoderInit(&motor1.magEncoder, motor1.Ts, _1_MT6701_GetRawAngle, UNKNOWN);
@@ -107,7 +105,7 @@ static void motorInit()
     motor2.zeroElectricAngleOffSet = 0;
     motor2.Ts = 100 * 1e-6f;
     motor2.torqueType = VOLTAGE;
-    motor2.controlType = VELOCITY;
+    motor2.controlType = TORQUE;
 
     motor2.state = MOTOR_CALIBRATE;
     encoderInit(&motor2.magEncoder, motor2.Ts, _2_MT6701_GetRawAngle, UNKNOWN);
@@ -163,6 +161,13 @@ static void motorInit()
     lpfInit(&motor2.velocityFilter, 0.01, motor1.Ts);
 }
 static float v;
+
+PidController pid_stb;
+PidController pid_vel;
+float steering = 0;
+float throttle = 0;
+LowPassFilter lpf_pitch_cmd, lpf_throttle, lpf_steering;
+
 void appInit()
 {
 
@@ -170,7 +175,11 @@ void appInit()
     devState = STANDBY;
     v = 2400;
     // balance
-    pidInit(&balancePid, 10, 0, 0, 0, VELOCITY_MAX, 100 * 1e-6f);
+    pidInit(&pid_stb, 0.14, 0.005, 0.002, 0, UqMAX, 100 * 1e-6f);
+    pidInit(&pid_vel, 0, 0, 0, 0, VELOCITY_MAX, 100 * 1e-6f);
+    lpfInit(&lpf_pitch_cmd, 0.07, 100 * 1e-6f);
+    lpfInit(&lpf_throttle, 0.5, 100 * 1e-6f);
+    lpfInit(&lpf_steering, 0.1, 100 * 1e-6f);
 }
 static bool zeroReset, _1s;
 void appRunning()
@@ -345,7 +354,7 @@ void txDataProcess()
     // sprintf(txBuffer, "target:%.2f  velocity1:%.2f  Iq1:%.2f Id1:%.2f  velocity2:%.2f  Iq2:%.2f Id2:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Iq, motor1.Id, motor2.magEncoder.velocity, motor2.Iq, motor2.Id);
     //  sprintf(txBuffer, "target:%.2f fullAngle:%.2f velocity:%.2f Uq:%.2f Ud:%.2f Iq:%.2f Id:%.2f elec_angle:%.2f\n", motor1.target, motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id, motor1.angle_el);
 
-    // sprintf(txBuffer, "pitch : %.2f,  P: %.2f,  I:%.2f, D:%.2f, V1:%.2f, T2:%.2f\n", imu.pit, balancePid.P, balancePid.I, balancePid.D, motor1.magEncoder.velocity, motor2.target);
+    // sprintf(txBuffer, "pitch : %.2f,  P: %.2f,  I:%.2f, D:%.2f, V1:%.2f, T2:%.2f\n", imu.pit, pid_stb.P, pid_stb.I, pid_stb.D, motor1.magEncoder.velocity, motor2.target);
 }
 
 void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
@@ -433,6 +442,14 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
 
 void balancerControl()
 {
-    motor1.target = pidOperator(&balancePid, BALANCE_VALUE - imu.pit);
-    motor2.target = pidOperator(&balancePid, BALANCE_VALUE - imu.pit);
+    // float target_pitch = BALANCE_VALUE;
+    // calculate the target angle for throttle control
+    float target_pitch = pidOperator(&pid_vel, ((motor1.magEncoder.velocity + motor2.magEncoder.velocity) / 2 - lpfOperator(&lpf_throttle, throttle)));
+    // calculate the target voltage
+    float voltage_control = pidOperator(&pid_stb, target_pitch - imu.pit);
+    // filter steering
+    float steering_adj = lpfOperator(&lpf_steering, steering);
+    // set the tergat voltage value
+    motor1.target = voltage_control + steering_adj;
+    motor2.target = voltage_control - steering_adj;
 }

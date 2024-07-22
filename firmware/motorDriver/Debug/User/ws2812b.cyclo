@@ -1,4 +1,0 @@
-../User/ws2812b.c:10:6:Set_LED	1
-../User/ws2812b.c:17:6:Set_LED_HEX	1
-../User/ws2812b.c:26:6:Set_Brightness	1
-../User/ws2812b.c:49:6:WS2812_Send	5
