@@ -47,6 +47,7 @@
 "./FocLib/voltage.o"
 "./User/AHRS.o"
 "./User/app.o"
+"./User/balancer.o"
 "./User/comm.o"
 "./User/key.o"
 "./User/led.o"

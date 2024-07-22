@@ -175,7 +175,7 @@ void appInit()
     devState = STANDBY;
     v = 2400;
     // balance
-    pidInit(&pid_stb, 0.14, 0.005, 0.002, 0, UqMAX, 100 * 1e-6f);
+    pidInit(&pid_stb, 0.14, 0.5, 0.01, 0, UqMAX, 100 * 1e-6f);
     pidInit(&pid_vel, 0, 0, 0, 0, VELOCITY_MAX, 100 * 1e-6f);
     lpfInit(&lpf_pitch_cmd, 0.07, 100 * 1e-6f);
     lpfInit(&lpf_throttle, 0.5, 100 * 1e-6f);
@@ -350,7 +350,7 @@ void txDataProcess()
     // sprintf(txBuffer, "accAngle.y : %.2f gyroAngle.y : %.2f\n", mpu6500.accAngle.y, mpu6500.gyroAngle.y);
 
     //  sprintf(txBuffer, "rawData1: %d,rawData2: %d\n", rawData1, rawData2);
-    sprintf(txBuffer, "pitch : %.2f,  wy: %.2f,  velocity1:%.2f, velocity2:%.2f \n", imu.pit, imu.wy, motor1.magEncoder.velocity, motor2.magEncoder.velocity);
+    sprintf(txBuffer, "pitch : %.2f,  P: %.4f, I:%.4f,D:%.4f \n", imu.pit, pid_stb.P, pid_stb.I, pid_stb.D);
     // sprintf(txBuffer, "target:%.2f  velocity1:%.2f  Iq1:%.2f Id1:%.2f  velocity2:%.2f  Iq2:%.2f Id2:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Iq, motor1.Id, motor2.magEncoder.velocity, motor2.Iq, motor2.Id);
     //  sprintf(txBuffer, "target:%.2f fullAngle:%.2f velocity:%.2f Uq:%.2f Ud:%.2f Iq:%.2f Id:%.2f elec_angle:%.2f\n", motor1.target, motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id, motor1.angle_el);
 
@@ -442,9 +442,10 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
 
 void balancerControl()
 {
-    // float target_pitch = BALANCE_VALUE;
+
     // calculate the target angle for throttle control
-    float target_pitch = pidOperator(&pid_vel, ((motor1.magEncoder.velocity + motor2.magEncoder.velocity) / 2 - lpfOperator(&lpf_throttle, throttle)));
+    float target_pitch = pidOperator(&pid_vel, ((motor1.magEncoder.velocity + motor2.magEncoder.velocity) / 2 - lpfOperator(&lpf_throttle, throttle))) + STABLE_TIP;
+    // float target_pitch = ;
     // calculate the target voltage
     float voltage_control = pidOperator(&pid_stb, target_pitch - imu.pit);
     // filter steering

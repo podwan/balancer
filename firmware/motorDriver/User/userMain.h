@@ -23,8 +23,9 @@ typedef unsigned long ulong;
 #define SHOW_WAVE 0
 
 #define USE_COMM_TARGET 1
-#define CALI_BALANCE 1
-#define PRINT_RUNNING 1
+#define CALI_STA_PID 0
+#define CALI_VEL_PID 1
+#define PRINT_RUNNING 0
 
 /*===========================================================================*/
 

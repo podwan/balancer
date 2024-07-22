@@ -5,6 +5,7 @@
 #include "app.h"
 
 extern PidController pid_stb;
+extern PidController pid_vel;
 // 串口采用DMA 空闲中断模式，参考keysking@bilibili
 char txBuffer[USART_BUFFER_SIZE];
 char rxBuffer[USART_BUFFER_SIZE];
@@ -89,7 +90,7 @@ void commander_run(BldcMotor *motor1, BldcMotor *motor2)
       sprintf(txBuffer, "Target=%.2f\r\n", motor1->target);
       // HAL_UART_Transmit_DMA(&huart3, (uint8_t *)txBuffer, sizeof(txBuffer));
       break;
-
+#if CALI_STA_PID
     case 'P': // P0.5
       pid_stb.P = atof((const char *)(rxBuffer + 1));
       sprintf(txBuffer, "P=%.2f\r\n", pid_stb.P);
@@ -106,14 +107,25 @@ void commander_run(BldcMotor *motor1, BldcMotor *motor2)
       pid_stb.D = atof((const char *)(rxBuffer + 1));
       sprintf(txBuffer, "D=%.2f\r\n", pid_stb.D);
       break;
-      // case 'V': // V
-      //   sprintf(sndBuff, "Vel=%.2f\r\n", shaftVelocity);
-      //   printf("%s", sndBuff);
-      //   break;
-      // case 'A': // A
-      //   sprintf(sndBuff, "Ang=%.2f\r\n", shaftAngle);
-      //   printf("%s", sndBuff);
-      //   break;
+
+#elif CALI_VEL_PID
+    case 'P': // P0.5
+      pid_stb.P = atof((const char *)(rxBuffer + 1));
+      sprintf(txBuffer, "P=%.2f\r\n", pid_vel.P);
+      //   HAL_UART_Transmit_DMA(&huart3, (uint8_t *)txBuffer, sizeof(txBuffer));
+
+      break;
+    case 'I': // I0.2
+      pid_stb.I = atof((const char *)(rxBuffer + 1));
+      sprintf(txBuffer, "I=%.2f\r\n", pid_vel.I);
+
+      break;
+
+    case 'D': // I0.2
+      pid_stb.D = atof((const char *)(rxBuffer + 1));
+      sprintf(txBuffer, "D=%.2f\r\n", pid_vel.D);
+      break;
+#endif
     }
     HAL_UART_Transmit_DMA(&huart3, (uint8_t *)txBuffer, sizeof(txBuffer));
     memset(rxBuffer, '\0', sizeof(rxBuffer));
