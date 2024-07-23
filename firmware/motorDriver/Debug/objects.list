@@ -49,6 +49,7 @@
 "./User/app.o"
 "./User/balancer.o"
 "./User/comm.o"
+"./User/joyStick.o"
 "./User/key.o"
 "./User/led.o"
 "./User/mpu6500.o"

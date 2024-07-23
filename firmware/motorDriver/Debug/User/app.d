@@ -55,7 +55,7 @@ User/app.o: ../User/app.c ../User/app.h ../User/userMain.h \
  C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/current.h \
  ../User/userTimer.h \
  C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/voltage.h \
- ../User/mpu6500.h ../User/pwm.h ../User/AHRS.h
+ ../User/mpu6500.h ../User/pwm.h ../User/AHRS.h ../User/joyStick.h
 ../User/app.h:
 ../User/userMain.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
@@ -124,3 +124,4 @@ C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/voltage.h:
 ../User/mpu6500.h:
 ../User/pwm.h:
 ../User/AHRS.h:
+../User/joyStick.h:

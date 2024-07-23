@@ -7,6 +7,8 @@
         "comm.h": "c",
         "key.h": "c",
         "pwm.h": "c",
-        "*.b": "c"
+        "*.b": "c",
+        "balancer.h": "c",
+        "joystick.h": "c"
     }
 }

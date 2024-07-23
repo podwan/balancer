@@ -1,4 +1,4 @@
-User/comm.o: ../User/comm.c ../User/comm.h ../User/userMain.h \
+User/joyStick.o: ../User/joyStick.c ../User/joyStick.h ../User/userMain.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h \
  ../Core/Inc/stm32g4xx_hal_conf.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h \
@@ -39,19 +39,8 @@ User/comm.o: ../User/comm.c ../User/comm.h ../User/userMain.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
  ../Core/Inc/main.h ../Core/Inc/tim.h ../Core/Inc/main.h \
  ../Core/Inc/adc.h ../Core/Inc/usart.h ../Core/Inc/spi.h \
- ../Core/Inc/dac.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/bldcMotor.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/focLib.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/bldcMotor.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/pid.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/lowpass_filter.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/encoder.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/math_utils.h \
- ../User/mt6701.h \
- C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/pid.h \
- ../User/app.h ../User/joyStick.h
-../User/comm.h:
+ ../Core/Inc/dac.h
+../User/joyStick.h:
 ../User/userMain.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
 ../Core/Inc/stm32g4xx_hal_conf.h:
@@ -98,15 +87,3 @@ User/comm.o: ../User/comm.c ../User/comm.h ../User/userMain.h \
 ../Core/Inc/usart.h:
 ../Core/Inc/spi.h:
 ../Core/Inc/dac.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/bldcMotor.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/focLib.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/User/userMain.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/bldcMotor.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/pid.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/lowpass_filter.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/encoder.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/math_utils.h:
-../User/mt6701.h:
-C:/Users/18575/Desktop/balancer/firmware/motorDriver/FocLib/pid.h:
-../User/app.h:
-../User/joyStick.h:

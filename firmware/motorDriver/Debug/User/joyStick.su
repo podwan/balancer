@@ -1,0 +1,2 @@
+../User/joyStick.c:9:7:getThrottle	24	static
+../User/joyStick.c:24:7:getSteering	24	static

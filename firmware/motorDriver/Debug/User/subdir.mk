@@ -9,6 +9,7 @@ C_SRCS += \
 ../User/app.c \
 ../User/balancer.c \
 ../User/comm.c \
+../User/joyStick.c \
 ../User/key.c \
 ../User/led.c \
 ../User/mpu6500.c \
@@ -23,6 +24,7 @@ OBJS += \
 ./User/app.o \
 ./User/balancer.o \
 ./User/comm.o \
+./User/joyStick.o \
 ./User/key.o \
 ./User/led.o \
 ./User/mpu6500.o \
@@ -37,6 +39,7 @@ C_DEPS += \
 ./User/app.d \
 ./User/balancer.d \
 ./User/comm.d \
+./User/joyStick.d \
 ./User/key.d \
 ./User/led.d \
 ./User/mpu6500.d \
@@ -54,7 +57,7 @@ User/%.o User/%.su User/%.cyclo: ../User/%.c User/subdir.mk
 clean: clean-User
 
 clean-User:
-	-$(RM) ./User/AHRS.cyclo ./User/AHRS.d ./User/AHRS.o ./User/AHRS.su ./User/app.cyclo ./User/app.d ./User/app.o ./User/app.su ./User/balancer.cyclo ./User/balancer.d ./User/balancer.o ./User/balancer.su ./User/comm.cyclo ./User/comm.d ./User/comm.o ./User/comm.su ./User/key.cyclo ./User/key.d ./User/key.o ./User/key.su ./User/led.cyclo ./User/led.d ./User/led.o ./User/led.su ./User/mpu6500.cyclo ./User/mpu6500.d ./User/mpu6500.o ./User/mpu6500.su ./User/mt6701.cyclo ./User/mt6701.d ./User/mt6701.o ./User/mt6701.su ./User/pwm.cyclo ./User/pwm.d ./User/pwm.o ./User/pwm.su ./User/time_utils.cyclo ./User/time_utils.d ./User/time_utils.o ./User/time_utils.su ./User/userMain.cyclo ./User/userMain.d ./User/userMain.o ./User/userMain.su ./User/userTimer.cyclo ./User/userTimer.d ./User/userTimer.o ./User/userTimer.su
+	-$(RM) ./User/AHRS.cyclo ./User/AHRS.d ./User/AHRS.o ./User/AHRS.su ./User/app.cyclo ./User/app.d ./User/app.o ./User/app.su ./User/balancer.cyclo ./User/balancer.d ./User/balancer.o ./User/balancer.su ./User/comm.cyclo ./User/comm.d ./User/comm.o ./User/comm.su ./User/joyStick.cyclo ./User/joyStick.d ./User/joyStick.o ./User/joyStick.su ./User/key.cyclo ./User/key.d ./User/key.o ./User/key.su ./User/led.cyclo ./User/led.d ./User/led.o ./User/led.su ./User/mpu6500.cyclo ./User/mpu6500.d ./User/mpu6500.o ./User/mpu6500.su ./User/mt6701.cyclo ./User/mt6701.d ./User/mt6701.o ./User/mt6701.su ./User/pwm.cyclo ./User/pwm.d ./User/pwm.o ./User/pwm.su ./User/time_utils.cyclo ./User/time_utils.d ./User/time_utils.o ./User/time_utils.su ./User/userMain.cyclo ./User/userMain.d ./User/userMain.o ./User/userMain.su ./User/userTimer.cyclo ./User/userTimer.d ./User/userTimer.o ./User/userTimer.su
 
 .PHONY: clean-User
 

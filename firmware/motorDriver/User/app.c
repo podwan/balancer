@@ -14,6 +14,7 @@
 #include "mpu6500.h"
 #include "pwm.h"
 #include "AHRS.h"
+#include "joyStick.h"
 
 static DevState devState = WORK;
 static KeyState keyState;
@@ -162,11 +163,12 @@ static void motorInit()
 }
 static float v;
 
+// balancer
 PidController pid_stb;
 PidController pid_vel;
-float steering = 0;
-float throttle = 0;
+float target_pitch;
 LowPassFilter lpf_pitch_cmd, lpf_throttle, lpf_steering;
+// joyStick
 
 void appInit()
 {
@@ -176,7 +178,7 @@ void appInit()
     v = 2400;
     // balance
     pidInit(&pid_stb, 0.14, 0.5, 0.01, 0, UqMAX, 100 * 1e-6f);
-    pidInit(&pid_vel, 0, 0, 0, 0, VELOCITY_MAX, 100 * 1e-6f);
+    pidInit(&pid_vel, 0.05, 0, 0, 0, 15, 100 * 1e-6f);
     lpfInit(&lpf_pitch_cmd, 0.07, 100 * 1e-6f);
     lpfInit(&lpf_throttle, 0.5, 100 * 1e-6f);
     lpfInit(&lpf_steering, 0.1, 100 * 1e-6f);
@@ -350,7 +352,10 @@ void txDataProcess()
     // sprintf(txBuffer, "accAngle.y : %.2f gyroAngle.y : %.2f\n", mpu6500.accAngle.y, mpu6500.gyroAngle.y);
 
     //  sprintf(txBuffer, "rawData1: %d,rawData2: %d\n", rawData1, rawData2);
-    sprintf(txBuffer, "pitch : %.2f,  P: %.4f, I:%.4f,D:%.4f \n", imu.pit, pid_stb.P, pid_stb.I, pid_stb.D);
+    // sprintf(txBuffer, "pitch : %.2f,  P: %.4f, I:%.4f,D:%.4f \n", imu.pit, pid_stb.P, pid_stb.I, pid_stb.D);
+
+    sprintf(txBuffer, "target_pitch %.2f, throttle %.2f, steering %.2f P: %.4f, I:%.4f,D:%.4f \n", target_pitch, throttle, steering, pid_vel.P, pid_vel.I, pid_vel.D);
+
     // sprintf(txBuffer, "target:%.2f  velocity1:%.2f  Iq1:%.2f Id1:%.2f  velocity2:%.2f  Iq2:%.2f Id2:%.2f\n", motor1.target, motor1.magEncoder.velocity, motor1.Iq, motor1.Id, motor2.magEncoder.velocity, motor2.Iq, motor2.Id);
     //  sprintf(txBuffer, "target:%.2f fullAngle:%.2f velocity:%.2f Uq:%.2f Ud:%.2f Iq:%.2f Id:%.2f elec_angle:%.2f\n", motor1.target, motor1.magEncoder.fullAngle, motor1.magEncoder.velocity, motor1.Uq, motor1.Ud, motor1.Iq, motor1.Id, motor1.angle_el);
 
@@ -444,7 +449,8 @@ void balancerControl()
 {
 
     // calculate the target angle for throttle control
-    float target_pitch = pidOperator(&pid_vel, ((motor1.magEncoder.velocity + motor2.magEncoder.velocity) / 2 - lpfOperator(&lpf_throttle, throttle))) + STABLE_TIP;
+
+    target_pitch = pidOperator(&pid_vel, ((motor1.magEncoder.velocity + motor2.magEncoder.velocity) / 2 - lpfOperator(&lpf_throttle, throttle))) + STABLE_TIP;
     // float target_pitch = ;
     // calculate the target voltage
     float voltage_control = pidOperator(&pid_stb, target_pitch - imu.pit);
