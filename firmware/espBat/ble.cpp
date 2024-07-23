@@ -50,7 +50,8 @@ static void txNotifyCallback(BLERemoteCharacteristic *pBLERemoteCharacteristic,
   }
 
   if (t[0] == 'J') {
-    serial1.printf("leftPotX %d, leftPotY %d, rightPotX %d rightPotY %d buttons %d\n", dataPackage.leftPotX, dataPackage.leftPotY, dataPackage.rightPotX, dataPackage.rightPotY, dataPackage.buttons);
+    serial1.write(pData, length);
+  //  serial1.printf("leftPotX %d, leftPotY %d, rightPotX %d rightPotY %d buttons %d\n", dataPackage.leftPotX, dataPackage.leftPotY, dataPackage.rightPotX, dataPackage.rightPotY, dataPackage.buttons);
     dataPackage = *(DataPackage *)t;
   } else {
     serial1.write(pData, length);

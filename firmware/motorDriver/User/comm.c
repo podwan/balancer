@@ -76,10 +76,15 @@ void commander_run(BldcMotor *motor1, BldcMotor *motor2)
     // printLog(rxBuffer);
     switch (rxBuffer[0])
     {
-      // case 'S':
-      //   sprintf(txBuffer, "engine start!\r\n");
+    case 'J':
+     // sprintf(txBuffer, "recved %d bytes\r\n", sizeof(txBuffer));
+      char buffer[sizeof(DataPackage)];
+      memcpy(buffer, rxBuffer, sizeof(DataPackage));
+      sprintf(txBuffer, "leftPotX %d, leftPotY %d, rightPotX %d rightPotY %d buttons %d\n", buffer[1], buffer[2], buffer[3], buffer[4], buffer[5]);
+
+      // sprintf(buffer);
       //   HAL_UART_Transmit_DMA(&huart3, (uint8_t *)txBuffer, sizeof(txBuffer));
-      //   break;
+      break;
 
     case 'H':
       sprintf(txBuffer, "Hello World!\r\n");
@@ -113,12 +118,11 @@ void commander_run(BldcMotor *motor1, BldcMotor *motor2)
       pid_stb.P = atof((const char *)(rxBuffer + 1));
       sprintf(txBuffer, "P=%.2f\r\n", pid_vel.P);
       //   HAL_UART_Transmit_DMA(&huart3, (uint8_t *)txBuffer, sizeof(txBuffer));
-
       break;
+
     case 'I': // I0.2
       pid_stb.I = atof((const char *)(rxBuffer + 1));
       sprintf(txBuffer, "I=%.2f\r\n", pid_vel.I);
-
       break;
 
     case 'D': // I0.2
