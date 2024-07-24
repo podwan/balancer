@@ -177,8 +177,9 @@ void appInit()
     devState = STANDBY;
     v = 2400;
     // balance
-    pidInit(&pid_stb, 0.14, 0.5, 0.01, 0, UqMAX, 100 * 1e-6f);
-    pidInit(&pid_vel, 0.05, 0, 0, 0, 15, 100 * 1e-6f);
+    // pidInit(&pid_stb, 0.14, 0.5, 0.01, 0, UqMAX, 100 * 1e-6f);
+    pidInit(&pid_stb, 0.1, 0.4, 0.01, 0, UqMAX, 100 * 1e-6f);
+    pidInit(&pid_vel, 0.01, 0.03, 0, 0, 20, 100 * 1e-6f);
     lpfInit(&lpf_pitch_cmd, 0.07, 100 * 1e-6f);
     lpfInit(&lpf_throttle, 0.5, 100 * 1e-6f);
     lpfInit(&lpf_steering, 0.1, 100 * 1e-6f);
@@ -305,7 +306,7 @@ static void working(void)
     if (flashCnt < 5)
         ledOn = 1;
 
-    if (keyState == USER1_SHORT || imu.pit > 30 || imu.pit < -30)
+    if (keyState == USER1_SHORT || imu.pit > 60 || imu.pit < -60)
     {
         STANDBY_INIT;
     }
@@ -352,7 +353,7 @@ void txDataProcess()
     // sprintf(txBuffer, "accAngle.y : %.2f gyroAngle.y : %.2f\n", mpu6500.accAngle.y, mpu6500.gyroAngle.y);
 
     //  sprintf(txBuffer, "rawData1: %d,rawData2: %d\n", rawData1, rawData2);
-    // sprintf(txBuffer, "pitch : %.2f,  P: %.4f, I:%.4f,D:%.4f \n", imu.pit, pid_stb.P, pid_stb.I, pid_stb.D);
+  //  sprintf(txBuffer, "pitch : %.2f,  P: %.4f, I:%.4f,D:%.4f \n", imu.pit, pid_stb.P, pid_stb.I, pid_stb.D);
 
     sprintf(txBuffer, "target_pitch %.2f, throttle %.2f, steering %.2f P: %.4f, I:%.4f,D:%.4f \n", target_pitch, throttle, steering, pid_vel.P, pid_vel.I, pid_vel.D);
 

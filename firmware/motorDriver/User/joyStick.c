@@ -1,6 +1,6 @@
 #include "joyStick.h"
 
-float max_throttle = 50; // 20 rad/s
+float max_throttle = 100; // 20 rad/s
 float steering = 0;
 float throttle = 0;
 float max_steering = 1;  // 1 V
