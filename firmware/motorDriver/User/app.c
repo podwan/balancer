@@ -42,7 +42,7 @@ static void motorInit()
     motor1.Ts = 100 * 1e-6f;
     motor1.torqueType = VOLTAGE;
 
-    motor1.controlType = VELOCITY;
+    motor1.controlType = TORQUE;
 
     motor1.state = MOTOR_CALIBRATE;
     encoderInit(&motor1.magEncoder, motor1.Ts, _1_MT6701_GetRawAngle, UNKNOWN);
@@ -106,7 +106,7 @@ static void motorInit()
     motor2.zeroElectricAngleOffSet = 0;
     motor2.Ts = 100 * 1e-6f;
     motor2.torqueType = VOLTAGE;
-    motor2.controlType = VELOCITY;
+    motor2.controlType = TORQUE;
 
     motor2.state = MOTOR_CALIBRATE;
     encoderInit(&motor2.magEncoder, motor2.Ts, _2_MT6701_GetRawAngle, UNKNOWN);
