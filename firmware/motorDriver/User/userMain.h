@@ -20,13 +20,14 @@ typedef unsigned long ulong;
 #include <string.h>
 
 #define MAX_LEN 20
-#define SHOW_WAVE 0
+#define SHOW_WAVE 1
 
-#define USE_COMM_TARGET 1
+#define USE_COMM_TARGET 0
 #define CALI_STA_PID 0
 #define CALI_VEL_PID 1
 #define PRINT_RUNNING 1
 
+#define CALI_CURRENT_LOOP 1
 /*===========================================================================*/
 
 /*===========================================================================*/

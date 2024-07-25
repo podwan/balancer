@@ -1,4 +1,4 @@
 ../User/comm.c:18:6:HAL_UARTEx_RxEventCallback	16	static
 ../User/comm.c:36:6:printLog	272	static
-../User/comm.c:61:6:uartTx	8	static
+../User/comm.c:61:6:uartTx	4	static
 ../User/comm.c:72:6:commander_run	24	static

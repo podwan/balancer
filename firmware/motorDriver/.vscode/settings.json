@@ -9,6 +9,7 @@
         "pwm.h": "c",
         "*.b": "c",
         "balancer.h": "c",
-        "joystick.h": "c"
+        "joystick.h": "c",
+        "lowpass_filter.h": "c"
     }
 }

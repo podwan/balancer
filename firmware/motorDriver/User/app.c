@@ -42,7 +42,7 @@ static void motorInit()
     motor1.Ts = 100 * 1e-6f;
     motor1.torqueType = VOLTAGE;
 
-    motor1.controlType = TORQUE;
+    motor1.controlType = VELOCITY;
 
     motor1.state = MOTOR_CALIBRATE;
     encoderInit(&motor1.magEncoder, motor1.Ts, _1_MT6701_GetRawAngle, UNKNOWN);
@@ -106,7 +106,7 @@ static void motorInit()
     motor2.zeroElectricAngleOffSet = 0;
     motor2.Ts = 100 * 1e-6f;
     motor2.torqueType = VOLTAGE;
-    motor2.controlType = TORQUE;
+    motor2.controlType = VELOCITY;
 
     motor2.state = MOTOR_CALIBRATE;
     encoderInit(&motor2.magEncoder, motor2.Ts, _2_MT6701_GetRawAngle, UNKNOWN);
@@ -293,7 +293,8 @@ static void standingBy()
     motor2.stopPwm();
     // }
 
-    if (((+cnt >= 30 && notFirstTime == 0) || keyState == USER1_SHORT) && imu.pit <= 30 && imu.pit >= -30)
+    //  if (((+cnt >= 30 && notFirstTime == 0) || keyState == USER1_SHORT) && imu.pit <= 30 && imu.pit >= -30)
+    if (keyState == USER1_SHORT)
     {
         notFirstTime = 1;
         WORK_INIT;
@@ -306,7 +307,8 @@ static void working(void)
     if (flashCnt < 5)
         ledOn = 1;
 
-    if (keyState == USER1_SHORT || imu.pit > 60 || imu.pit < -60)
+    // if (keyState == USER1_SHORT || imu.pit > 60 || imu.pit < -60)
+    if (keyState == USER1_SHORT)
     {
         STANDBY_INIT;
     }
@@ -353,7 +355,7 @@ void txDataProcess()
     // sprintf(txBuffer, "accAngle.y : %.2f gyroAngle.y : %.2f\n", mpu6500.accAngle.y, mpu6500.gyroAngle.y);
 
     //  sprintf(txBuffer, "rawData1: %d,rawData2: %d\n", rawData1, rawData2);
-  //  sprintf(txBuffer, "pitch : %.2f,  P: %.4f, I:%.4f,D:%.4f \n", imu.pit, pid_stb.P, pid_stb.I, pid_stb.D);
+    //  sprintf(txBuffer, "pitch : %.2f,  P: %.4f, I:%.4f,D:%.4f \n", imu.pit, pid_stb.P, pid_stb.I, pid_stb.D);
 
     sprintf(txBuffer, "target_pitch %.2f, throttle %.2f, steering %.2f P: %.4f, I:%.4f,D:%.4f \n", target_pitch, throttle, steering, pid_vel.P, pid_vel.I, pid_vel.D);
 
@@ -372,11 +374,11 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
         shift = !shift;
         if (shift)
         {
-            foc(&motor1, hadc1.Instance->JDR1, hadc2.Instance->JDR1);
+             foc(&motor1, hadc1.Instance->JDR1, hadc2.Instance->JDR1);
         }
         else
         {
-            foc(&motor2, hadc1.Instance->JDR2, hadc2.Instance->JDR2);
+            //foc(&motor2, hadc1.Instance->JDR2, hadc1.Instance->JDR3);
         }
 
         dealPer100us();
@@ -386,12 +388,12 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
         // HAL_GPIO_TogglePin(TEST_GPIO_Port, TEST_Pin);
 #if SHOW_WAVE
         // #if SHOW_SVPWM
-        load_data[0] = motor1.Ta;
-        load_data[1] = motor1.Tb;
-        load_data[2] = motor1.Tc;
-        load_data[3] = motor2.Ta;
-        load_data[4] = motor2.Tb;
-        load_data[5] = motor2.Tc;
+        // load_data[0] = motor1.Ta;
+        // load_data[1] = motor1.Tb;
+        // load_data[2] = motor1.Tc;
+        // load_data[3] = motor2.Ta;
+        // load_data[4] = motor2.Tb;
+        // load_data[5] = motor2.Tc;
         //         load_data[3] = motor1.Id;
         //         load_data[4] = motor1.Iq;
         //         load_data[5] = motor1.angle_el;
@@ -409,12 +411,17 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
 
         // show current
 
-        // load_data[0] = motor1.Ia;
-        // load_data[1] = motor1.Ib;
-        // load_data[2] = motor1.Ic;
+        load_data[0] = motor1.Ia;
+        load_data[1] = motor1.Ib;
+        load_data[2] = motor1.Ic;
+        // load_data[0] = motor2.Ia;
+        // load_data[1] = motor2.Ib;
+        // load_data[2] = motor2.Ic;
+        load_data[3] = motor1.Ialpha;
+        load_data[4] = motor1.Ibeta;
 
-        // load_data[0] = motor1.Id;
-        // load_data[1] = motor1.Iq;
+        load_data[5] = motor1.Id;
+        load_data[6] = motor1.Iq;
 
         // load_data[3] = motor2.Id;
         // load_data[4] = motor2.Iq;
@@ -422,11 +429,11 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
         //  load_data[3] = motor2.Ia;
         //         load_data[4] = motor2.Ib;
         //         load_data[5] = motor2.Ic;
-        // load_data[3] = motor1.Ialpha;
-        // load_data[4] = motor1.Ibeta;
+        // load_data[3] = motor2.Ialpha;
+        // load_data[4] = motor2.Ibeta;
 
-        // load_data[5] = motor2.target;
-        // load_data[6] = motor2.Uq;
+        // load_data[5] = motor2.Id;
+        // load_data[6] = motor2.Iq;
         // // load_data[6] = motor1.magEncoder.velocity;
         // load_data[7] = motor2.magEncoder.velocity;
 
@@ -436,8 +443,8 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
         // load_data[3] = motor1.Uq;
         // load_data[4] = motor2.Uq;
 
-        load_data[6] = hadc1.Instance->JDR1;
-        load_data[7] = hadc1.Instance->JDR2;
+        // load_data[6] = hadc1.Instance->JDR1;
+        // load_data[7] = hadc1.Instance->JDR2;
 
         memcpy(tempData, (uint8_t *)&load_data, sizeof(load_data));
         HAL_UART_Transmit_DMA(&huart3, (uint8_t *)tempData, sizeof(tempData));
