@@ -51,7 +51,9 @@ static void txNotifyCallback(BLERemoteCharacteristic *pBLERemoteCharacteristic,
 
   if (t[0] == 'J') {
     serial1.write(pData, length);
-  //  serial1.printf("leftPotX %d, leftPotY %d, rightPotX %d rightPotY %d buttons %d\n", dataPackage.leftPotX, dataPackage.leftPotY, dataPackage.rightPotX, dataPackage.rightPotY, dataPackage.buttons);
+
+    if (dataPackage.buttons != 0) beepOnce();
+    //  serial1.printf("leftPotX %d, leftPotY %d, rightPotX %d rightPotY %d buttons %d\n", dataPackage.leftPotX, dataPackage.leftPotY, dataPackage.rightPotX, dataPackage.rightPotY, dataPackage.buttons);
     dataPackage = *(DataPackage *)t;
   } else {
     serial1.write(pData, length);
@@ -59,6 +61,8 @@ static void txNotifyCallback(BLERemoteCharacteristic *pBLERemoteCharacteristic,
   }
 
   serial0.write(pData, length);  // send to stm32
+
+
 
   digitalWrite(BLUE_LED, HIGH);  //
 }

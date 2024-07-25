@@ -1,6 +1,6 @@
 ../User/app.c:33:13:motorInit	56	static
 ../User/app.c:173:6:appInit	8	static
-../User/app.c:188:6:appRunning	24	static
+../User/app.c:188:6:appRunning	8	static
 ../User/app.c:278:13:standingBy	8	static
 ../User/app.c:304:13:working	4	static
 ../User/app.c:335:6:txDataProcess	88	static

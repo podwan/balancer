@@ -179,7 +179,7 @@ void appInit()
     // balance
     // pidInit(&pid_stb, 0.14, 0.5, 0.01, 0, UqMAX, 100 * 1e-6f);
     pidInit(&pid_stb, 0.1, 0.4, 0.01, 0, UqMAX, 100 * 1e-6f);
-    pidInit(&pid_vel, 0.01, 0.03, 0, 0, 20, 100 * 1e-6f);
+    pidInit(&pid_vel, 0.02, 0, 0, 0, 20, 100 * 1e-6f);
     lpfInit(&lpf_pitch_cmd, 0.07, 100 * 1e-6f);
     lpfInit(&lpf_throttle, 0.5, 100 * 1e-6f);
     lpfInit(&lpf_steering, 0.1, 100 * 1e-6f);
@@ -293,8 +293,8 @@ static void standingBy()
     motor2.stopPwm();
     // }
 
-    //  if (((+cnt >= 30 && notFirstTime == 0) || keyState == USER1_SHORT) && imu.pit <= 30 && imu.pit >= -30)
-    if (keyState == USER1_SHORT)
+    if (((+cnt >= 30 && notFirstTime == 0) || keyState == USER1_SHORT) && imu.pit <= 30 && imu.pit >= -30)
+    // if (keyState == USER1_SHORT)
     {
         notFirstTime = 1;
         WORK_INIT;
@@ -307,8 +307,8 @@ static void working(void)
     if (flashCnt < 5)
         ledOn = 1;
 
-    // if (keyState == USER1_SHORT || imu.pit > 60 || imu.pit < -60)
-    if (keyState == USER1_SHORT)
+    if (keyState == USER1_SHORT || imu.pit > 60 || imu.pit < -60)
+    // if (keyState == USER1_SHORT)
     {
         STANDBY_INIT;
     }
@@ -374,11 +374,11 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
         shift = !shift;
         if (shift)
         {
-             foc(&motor1, hadc1.Instance->JDR1, hadc2.Instance->JDR1);
+            foc(&motor1, hadc1.Instance->JDR1, hadc2.Instance->JDR1);
         }
         else
         {
-            //foc(&motor2, hadc1.Instance->JDR2, hadc1.Instance->JDR3);
+            foc(&motor2, hadc1.Instance->JDR2, hadc1.Instance->JDR3);
         }
 
         dealPer100us();
